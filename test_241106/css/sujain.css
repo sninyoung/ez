@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body {
+    font-family: "Noto Sans", sans-serif;
+    font-size : 17px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.4;    
+}
+* { /* 와일드 카드 이용해서 모든 여백 제거*/
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit; 
+    /*브라우저가 세팅해주는 기본값 말고 
+    내가 상속하는 값으로 적용하라는 의미*/
+}
+strong {
+    font-weight: inherit;
+}
+em {
+    font-style: normal;
+}
+a {
+    /*a태그는 기본값이 파란색에 언더라인이 들어감
+    색상은 상속받고, 밑줄은 없앤다.*/
+    color: inherit;
+    text-decoration: none;
+}
+/*각 태그마다 원래 주어진 스타일 다 빼고 시작하기 = 초기화*/
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.brand {
+    background-color: #f4f4f4;
+    text-align: center;
+    color: #3d3d3d;
+}
+.brand h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color : #1d1d1d;
+    padding: 140px 0 10px 0;
+}
+.brand .photo {
+    padding: 30px 0 100px 0;
+}
+.basic h2 {
+    font-size: 35px;
+    font-weight: 700;
+    color: #1d1d1d;
+    padding: 100px 0 0 0;
+}
+.basic h2 strong {
+    color: #00466e;
+}
+.basic h3 {
+    font-size: 24px;
+    font-weight: 700;
+    padding: 40px 0 20px 0;
+}
+.basic .photo {
+    margin: 30px 0 20px 0;
+}
+.basic .more {
+    text-align: center;
+    /*작은 요소(인라인 요소)를 가운데 정렬하려면 넓이가 넓은 감싸는 요소에서 text-align:center를 줘야 함*/
+}
+.basic .more a {
+    background-color: #00466e;
+    color: #fff;
+    padding: 12px 34px; /*2개만 적으면 첫번째가 위아래, 두번째 값이 좌우 */
+    display: inline-block;
+
+    /*
+    width: 200px;
+    height: 55px;
+    display: block;
+    인라인 태그는 width, height, padding, margin 적용 안됨. 그래서 display 를 이용함*/
+}
+.basic .link {
+    margin: 20px 0 100px 0;
+}
+.basic .link a {
+    color: #00466e;
+    border: 1px solid #00466e;
+    padding: 12px 34px;
+    display: inline-block;
+    border-radius: 30px;
+}
+
+
+
+
+
+
+
+.color {
+    height: 900px;
+}
