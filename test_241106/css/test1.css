@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+body {
+    font-family: "Noto Sans", sans-serif;
+    font-size : 17px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.4;    
+}
+* { /*모든 여백 제거*/
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+.envir {
+    background: url(../images/envir_bg.png) no-repeat center center /cover;
+    /*경로에서 ../는 폴더 밖에 나가라는 명령. 
+    주의사항! ./dhk /도 실제 존재하고 의미가 다름. 그래서 절대로 ../로 오타내면 안됨.*/
+    height: 700px;
+    /*배경으로 삽입한 이미지는 그 영역의 넓이만큼만 보임. 아무리 이미지가 커도 영역이 작으면 이미지가 짤림.
+     그럼 배경에 넣은 이미지를 다 보이게 하려면 영역이 커져야 함.
+     제일 간단한 방법은 높이를 주는 방법 */
+    color: #fff;
+    text-align: center;
+}
+.envir h1 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 270px 0 21px 0;   /*margin 안되면 padding으로 바꾸기*/
+}
+.health {
+    background-color: #fff;
+    width: 1260px;
+    height: 900px;
+}
+.health h1 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1d1d1d;
+    padding: 126px 0 21px 0;
+}
+.health h1 strong {
+    font-weight: 700;
+    color: #ce1527;
+}
+.health p strong {
+    font-weight: 400;
+    color: #ce1527;
+}
