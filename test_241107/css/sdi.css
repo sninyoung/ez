@@ -61,30 +61,101 @@ li {
 .color .list ul {
     display: flex;
     justify-content: space-between;
-}
+} /*li 요소를 옆으로 나란히 오게 만드는 코드 : li의 부모 요소에게 display-flex를 준다*/
+
 .color .list ul li {
     width: 404px;
 }
 .color .list ul li h2 {
     font-size: 24px;
     font-weight: 700;
+    line-height: 1.2;
     color: #3d3d3d;
-    margin: 100px 0 0 0;
+    margin: 100px 0 10px 0;
 }
 .color .list ul li h2 strong {
     color: #aaa;
     font-weight: 400;
 }
 .color .list ul li .code {
-    background-color: #034ea2;
+    background-color: inherit;
     color: #fff;
     font-size: 20px;
     font-weight: 700;
-    margin: 10px 0 0 0;
+    margin: 18px 0 0 0;
     /*margin은 외부여백 - 다른 요소와 사이에 여백을 줌*/
-    padding: 32px 0 32px 55px; /*오른쪽 여백은 주지 않음!!*/
+    padding: 36px 0 36px 55px; /*오른쪽 여백은 주지 않음!!*/
     /*margin은 내부여백 - 배경색을 늘림*/
     border-radius: 15px;
+}
+.color .list ul li .code.c1 {
+    background-color: #034ea2;
+}
+.color .list ul li .code.c2 {
+    background-color: #0265ac;
+}
+.color .list ul li .code.c3 {
+    background-color: #1428a0;
+}
+/*
+.code .c1
+ - 띄어쓰기 한 경우 :code 클래서 안에 있는 c1 클래스 요소를 의미하는 것
+<div class="code">
+    <div class="c1">
+    </div>
+</div>
+.code.c1
+ - 띄어쓰기 안한 경우 :하나의 클래스 요소가 code라는 이름과 c1 이라는 클래스명을 동시에 가지고 있는 것 
+<div class="code c1">
+</div>
+*/
+.download h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 180px 0 18px 0;
+}
+.download .list {
+    margin: 25px 0 0 0;
+}
+.download .list ul {
+    display: flex;
+    justify-content: space-between; /*이 코드 두줄은 꼭 같이 줘야 함.*/
+} /*li 요소를 옆으로 나란히 오게 만드는 코드 : li의 부모 요소에게 display-flex를 준다*/
+
+.download .list ul li {
+    width: 618px;
+}
+.download .list ul li .photo {
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    overflow: hidden; 
+    /*영역 밖으로 나오는 이미지를 안보이게 하기*/
+    line-height: 0;
+    font-size: 0;
+    /*img를 글자로 인식해서 행간으로 들어간 여백을 뺴준다.
+    img를 감싸는 요소인 photo에 line-height와 font-size에 값을 0을 주면 된다.*/
+}
+.download .list ul li .photo img {
+    width: 100%;
+    /*감싸고 있는 photo의 넓이의 100%를 말한다. 
+    img의 크기가 기준이 아니라 감싸는 요소(photo)의 넓이를 기준으로 100%이다. 
+    - 이미지의 특징 : 넓이를 바꾸면 비율에 맞게 높이가 자동 조정되기 떄문에 높이는 건드리지 마시오.
+    */
+}
+.download .list ul li .more {
+    margin: 22px 0 0 0;
+}
+.download .list ul li .more a {
+    border: 1px solid #aaa;
+    border-radius: 15px;
+    background-color: #fff;
+    display: block;
+    width: 618px;
+    padding: 14px 0;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
 }
 
 
@@ -103,14 +174,6 @@ li {
 
 
 
-
-
-
-
-
-
-
-
-.f {
-    margin: 800px 800px;
+body {
+    margin: 0 0 800px 0;
 }
