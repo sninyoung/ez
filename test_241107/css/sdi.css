@@ -1,0 +1,116 @@
+/*Pretendard 폰트 적용하는 법*/
+@font-face {
+	font-family: 'Prtd';
+	font-weight: 700;
+	font-display: swap;
+	src: local('Pretendard Bold'), url(../fonts/Pretendard-Bold.woff2) format('woff2'), url(../fonts/Pretendard-Bold.woff) format('woff');
+}
+@font-face {
+	font-family: 'Prtd';
+	font-weight: 400;
+	font-display: swap;
+	src: local('Pretendard Regular'), url(../fonts/Pretendard-Regular.woff2) format('woff2'), url(../fonts/Pretendard-Regular.woff) format('woff');
+}
+body {
+    font-family: 'Prtd', sans-serif;
+    /*woff, woff2 파일을 불러서 서체를 정의한 경우
+    내가 정의한 이름으로 서체를 불러주면 되고, sans-serif를 추가해서 고딕체를 쓰고 있음을 정의*/
+    font-size: 17px;
+    font-weight: 400;
+    color: #666;
+    line-height: 1.4;
+}
+* { /* 와일드 카드 이용해서 모든 여백 제거*/
+    margin: 0;
+    padding: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit; 
+    /*브라우저가 세팅해주는 기본값 말고 
+    내가 상속하는 값으로 적용하라는 의미*/
+}
+strong {
+    font-weight: inherit;
+}
+em {
+    font-style: normal;
+}
+a {
+    /*a태그는 기본값이 파란색에 언더라인이 들어감
+    색상은 상속받고, 밑줄은 없앤다.*/
+    color: inherit;
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+/*각 태그마다 원래 주어진 스타일 다 빼고 시작하기 = 초기화 reset*/ 
+
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.color h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 180px 0 18px 0;
+}
+.color .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.color .list ul li {
+    width: 404px;
+}
+.color .list ul li h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: #3d3d3d;
+    margin: 100px 0 0 0;
+}
+.color .list ul li h2 strong {
+    color: #aaa;
+    font-weight: 400;
+}
+.color .list ul li .code {
+    background-color: #034ea2;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    margin: 10px 0 0 0;
+    /*margin은 외부여백 - 다른 요소와 사이에 여백을 줌*/
+    padding: 32px 0 32px 55px; /*오른쪽 여백은 주지 않음!!*/
+    /*margin은 내부여백 - 배경색을 늘림*/
+    border-radius: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.f {
+    margin: 800px 800px;
+}

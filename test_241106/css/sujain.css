@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+/*noto sans 폰트 적용하는 법*/
+
 body {
     font-family: "Noto Sans", sans-serif;
     font-size : 17px;
