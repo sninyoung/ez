@@ -23,6 +23,7 @@ body {
 * { /* 와일드 카드 이용해서 모든 여백 제거*/
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
@@ -65,13 +66,14 @@ li {
 
 .color .list ul li {
     width: 404px;
+    margin: 100px 0 0 0;
 }
 .color .list ul li h2 {
     font-size: 24px;
     font-weight: 700;
     line-height: 1.2;
     color: #3d3d3d;
-    margin: 100px 0 10px 0;
+    margin: 0 0 10px 0;
 }
 .color .list ul li h2 strong {
     color: #aaa;
@@ -157,23 +159,46 @@ li {
     font-weight: 700;
     text-align: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.pass h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 180px 0 18px 0;
+}
+.pass .list {
+    margin: 25px 0 0 0;
+}
+.pass .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.pass .list ul li {
+    width: 404px;
+    height: 320px;
+    border: 1px solid #666;
+    border-radius: 15px;
+    padding: 44px 0 44px 44px;
+    margin: 65px 0 0 0;
+    /*
+    하나의 요소에 width, height와 padding, border가 동시에 들어가면 그만큼 넓이와 높이가 늘어나는데 
+    그걸 못하게 만들려면 '*' 와일드 카드 값에 이걸 넣어준다. box-sizing: border-box;*/
+}
+.pass .list ul li strong {
+    font-size: 17px;
+    font-weight: 400;
+    color: #0265ac;
+}
+.pass .list ul li h2 {
+    font-size: 38px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 125px 0 7px 0;
+}
+.pass .list ul li p {
+    font-size: 17px;
+    font-weight: 400;
+}
 
 body {
-    margin: 0 0 800px 0;
+    margin: 0 0 500px 0;
 }
