@@ -55,7 +55,7 @@ ul, li, ol {
     letter-spacing: -0.06em;
     margin: 0 0 7px 0;
 }
-.story .title .more a{
+.story .title .more a {
     font-weight: 700;
     color: #fff;
     background-color: #e96532;
@@ -63,6 +63,9 @@ ul, li, ol {
     border-radius: 30px;
     display: block;
     /*a에 스타일을 주면 display: block;은 필수. 단, 내가 예상한 것보다 사이즈가 너무 커지면 display: inline-block;으로 해야 함*/
+}
+.story .title .more a:hover { /*:hover 이런 애들을 가상선택자라고 함. html에 실존하지 않지만 상태를 나타냄.*/
+    background-color: #137fa3;
 }
 .story .list {
     margin: 55px 0 0 0;
@@ -81,7 +84,7 @@ ul, li, ol {
 .story .list ul li a {
     display: block;
 }
-.story .list ul li a .photo{
+.story .list ul li a .photo {
     border-radius: 20px 20px 0 0;
     overflow: hidden;
     /*img는 성깔이 드러워서 영역 밖으로 삐져나감. 삐져나간 부분을 가려주는 코드*/
