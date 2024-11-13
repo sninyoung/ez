@@ -104,7 +104,10 @@ header .gnb ul li a {
     padding: 12px 0;
     text-align: end;
 }
-
+.business .list ul li a .more:hover {
+    border-bottom: 1px solid #E54525;
+    color: #E54525;
+}
 .brand {
     background: url(../images/brand_bg.png) no-repeat center center / cover; /*반복여부 위아래위치 양옆위치 꽉꽉채워서*/
     height: 800px;
@@ -140,8 +143,34 @@ header .gnb ul li a {
     border를 빼면 넓이와 높이가 변경됨.*/
 }
 
-
-
 footer {
-    margin: 800px 0 0 0;
+    background-color: #0F1921;
+    color: rgba(255,255,255,0.8); /*투명도opercerty 주는 방법*/
+    padding: 100px 0 130px 0;
+}
+
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li {
+    margin: 0 42px 0 0;
+}
+footer .f_nav ul li:last-child {
+    margin-right: 0;
+}
+footer .f_nav ul li.privacy {
+    font-weight: 900;
+}
+/*li.privacy(띄어쓰기 없음) 라는 의미는 <li class="privacy"> 이렇게 코딩된 요소를 선택하라는 의미
+li .privacy(띄어쓰기 있음) 라는 의미는 <li><div class="privacy"> li 안에 privacy라는 클래스를 가진 요소*/
+footer .f_info {
+    margin: 15px 0 30px 0;
+}
+footer .f_info span {
+    margin: 0 15px 0 0; 
+    /*span태그는 인라인태그라 margin 속성이 안들어가지만 위아래 여백만 안들어가고 옆 여백은 들어감.*/
+    display: inline-block;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
 }
