@@ -2,113 +2,117 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--이게 반응형 코드임. 반응형 안할거면 이 코드 빼는게 나음.
+    핸드폰은 실제 해상도가  2000px ~3000px정도 됨 디바이스별로 글자 변형해서 실제로는 375~470px로 바뀌게 변경해 줌-->
     <link rel="stylesheet" href="css/main.css">
     <title>진흥기업</title>
 </head>
 <body>
-    <header>
-        <div class="wrapper">
-            <h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="진흥기업 로고"></a></h1>
-            <nav class="gnb"><!--grobal navigation bar 홈페이지 전체에 영향을 끼치는 메뉴-->
-                <ul>
-                    <li><a href="#n">기업소개</a></li>
-                    <li><a href="#n">사업분야</a></li>
-                    <li><a href="#n">홍보센터</a></li>
-                    <li><a href="#n">고객센터</a></li>
-                </ul>
-            </nav>
-        </div><!--wrapper-->
-    </header>
-    <main class="container">
-        <section class="visual">
-        <div class="wrapper">
-            <h2><strong>사람과 사람</strong>, <strong>사람과 자연</strong>을<br>이어주는 공간을 창조합니다.</h2>
-            <p>삶의 질을 선도하는 주택사업을 통해 고객 여러분의 생활 속에서 함께 호흡하고 있으며<br>도시에 생명력을 부여하는 다양한 건축사업과 국가기반시설 토목사업을 수행하고 있습니다</p>
-        </div><!--wrapper-->
-        </section><!--visual-->
-        <section class="business">
-        <div class="wrapper">
-            <div class="title">
-                <p class="point">CHINHUNG</p>
-                <h2>BUSINESS</h2>
-                <p>축적된 기술력을 통해 더욱더 나은 미래를 만들어 나갈 것입니다</p>
-            </div><!--title-->
-            <div class="list">  
-                <ul>
-                    <li> 
-                        <a href="#n">
-                            <div class="photo"><img src="images/business_img01.png" alt="굴착기가 공사하고 있는 사진"></div>
-                            <div class="inner">
-                                <h3>토목사업</h3>
-                                <p>축적된 실적과 기술력을 토대로 다양한 토목분야에서 활발한 활동</p>
-                                <span class="more">자세히 보기</span> <!--a태그 안에 a태그 못들어가서 span태그 줌-->
-                            </div>
-                        </a>
-                    </li>
-                    <li> 
-                        <a href="#n">
-                            <div class="photo"><img src="images/business_img02.png" alt="건물들이 반듯하게 있는 사진"></div>
-                            <div class="inner">
-                                <h3>건축사업</h3>
-                                <p>실용성과 예술성을 갖춘 건축미학을 고려해 건축함으로 도시환경 발전에 이바지</p>
-                                <span class="more">자세히 보기</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li> 
-                        <a href="#n">
-                            <div class="photo"><img src="images/business_img03.png" alt="주택 현관을 중심으로 건물의 일부분을 보여주는 사진"></div>
-                            <div class="inner">
-                                <h3>주택사업</h3>
-                                <p>고객중심의 주거공간 창조에 힘쓰며 예술적 가치를 실현해내도록 노력</p>
-                                <span class="more">자세히 보기</span>
-                            </div>
-                        </a>
-                    </li>
-                    <li> 
-                        <a href="#n">
-                            <div class="photo"><img src="images/business_img04.png" alt="외국의 건물을 공사하는 사진"></div>
-                            <div class="inner">
-                                <h3>해외사업</h3>
-                                <p>국내의 노하우를 바탕으로 괌, 사우디 등 해외에서 대한민국의 건축기술을 전파</p>
-                                <span class="more">자세히 보기</span>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div><!--list-->
-        </div><!--wrapper-->
-        </section><!--business-->
-        <section class="brand">
+    <div id="wrap">
+        <header>
             <div class="wrapper">
-                <h2>' Harrington Place '</h2>
-                <h4>바래지 않는 멋스러움과 합리적 실용성을 겸비한 당신만의 공간</h4>
-                <p>해링턴은 ‘Settlement On Stony Ground (반석 위에 지은 집)’이라는 어원을 가진 고전의 멋스러움과 현대적 감각을 겸비하여<br>
-                    고객의 편안하고 안락한 주거공간을 제공하기 위해 노력하는 효성과 진흥기업의 새로운 주거 브랜드입니다
-                </p>
-                <div class="more"><a href="#n">해링턴 플레이스 바로가기</a></div>
+                <h1 class="logo"><a href="index.html"><img src="images/logo.png" alt="진흥기업 로고"></a></h1>
+                <nav class="gnb"><!--grobal navigation bar 홈페이지 전체에 영향을 끼치는 메뉴-->
+                    <ul>
+                        <li><a href="#n">기업소개</a></li>
+                        <li><a href="#n">사업분야</a></li>
+                        <li><a href="#n">홍보센터</a></li>
+                        <li><a href="#n">고객센터</a></li>
+                    </ul>
+                </nav>
             </div><!--wrapper-->
-        </section><!--brand-->
-    
-    </main>
-    <footer>
-        <div class="wrapper">
-            <div class="f_nav">
-                <ul>
-                    <li class="privacy"><a href="#n">개인정보처리방침</a></li>
-                    <li><a href="#n">법적고지</a></li>
-                    <li><a href="#n">찾아오시는 길</a></li>
-                </ul>
+        </header>
+        <main class="container">
+            <section class="visual">
+            <div class="wrapper">
+                <h2><strong>사람과 사람</strong>, <strong>사람과 자연</strong>을<br>이어주는 공간을 창조합니다.</h2>
+                <p>삶의 질을 선도하는 주택사업을 통해 고객 여러분의 생활 속에서 함께 호흡하고 있으며<br>도시에 생명력을 부여하는 다양한 건축사업과 국가기반시설 토목사업을 수행하고 있습니다</p>
+            </div><!--wrapper-->
+            </section><!--visual-->
+            <section class="business">
+            <div class="wrapper">
+                <div class="title">
+                    <p class="point">CHINHUNG</p>
+                    <h2>BUSINESS</h2>
+                    <p>축적된 기술력을 통해 더욱더 나은 미래를 만들어 나갈 것입니다</p>
+                </div><!--title-->
+                <div class="list">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/business_img01.png" alt="굴착기가 공사하고 있는 사진"></div>
+                                <div class="inner">
+                                    <h3>토목사업</h3>
+                                    <p>축적된 실적과 기술력을 토대로 다양한 토목분야에서 활발한 활동</p>
+                                    <span class="more">자세히 보기</span> <!--a태그 안에 a태그 못들어가서 span태그 줌-->
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/business_img02.png" alt="건물들이 반듯하게 있는 사진"></div>
+                                <div class="inner">
+                                    <h3>건축사업</h3>
+                                    <p>실용성과 예술성을 갖춘 건축미학을 고려해 건축함으로 도시환경 발전에 이바지</p>
+                                    <span class="more">자세히 보기</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/business_img03.png" alt="주택 현관을 중심으로 건물의 일부분을 보여주는 사진"></div>
+                                <div class="inner">
+                                    <h3>주택사업</h3>
+                                    <p>고객중심의 주거공간 창조에 힘쓰며 예술적 가치를 실현해내도록 노력</p>
+                                    <span class="more">자세히 보기</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/business_img04.png" alt="외국의 건물을 공사하는 사진"></div>
+                                <div class="inner">
+                                    <h3>해외사업</h3>
+                                    <p>국내의 노하우를 바탕으로 괌, 사우디 등 해외에서 대한민국의 건축기술을 전파</p>
+                                    <span class="more">자세히 보기</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--list-->
+            </div><!--wrapper-->
+            </section><!--business-->
+            <section class="brand">
+                <div class="wrapper">
+                    <h2>' Harrington Place '</h2>
+                    <h4>바래지 않는 멋스러움과 합리적 실용성을 겸비한 당신만의 공간</h4>
+                    <p>해링턴은 ‘Settlement On Stony Ground (반석 위에 지은 집)’이라는 어원을 가진 고전의 멋스러움과 현대적 감각을 겸비하여<br>
+                        고객의 편안하고 안락한 주거공간을 제공하기 위해 노력하는 효성과 진흥기업의 새로운 주거 브랜드입니다
+                    </p>
+                    <div class="more"><a href="#n">해링턴 플레이스 바로가기</a></div>
+                </div><!--wrapper-->
+            </section><!--brand-->
+        </main>
+        <footer>
+            <div class="wrapper">
+                <div class="f_nav">
+                    <ul>
+                        <li class="privacy"><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">법적고지</a></li>
+                        <li><a href="#n">찾아오시는 길</a></li>
+                    </ul>
+                </div>
+                <div class="f_info">
+                    <address>인천광역시 연수구 컨벤시아대로 69 807호</address>
+                    <span>TEL 032-432-0658</span>
+                    <span>FAX 032-432-0659</span>
+                    <!--전화번호와 fax는 둘 사이에 여백잉 ㅣㅆ어서 이를 처리하기 위해 span태그 사용
+                    (span태그는 그냥 글자를 묶어주는 태그임)-->
+                </div>
+                <div class="copyright">Copyright Chinhung. All Rights Reserved.</div>
             </div>
-            <div class="f_info">
-                <address>인천광역시 연수구 컨벤시아대로 69 807호</address>
-                <span>TEL 032-432-0658</span>
-                <span>FAX 032-432-0659</span>
-                <!--전화번호와 fax는 둘 사이에 여백잉 ㅣㅆ어서 이를 처리하기 위해 span태그 사용
-                (span태그는 그냥 글자를 묶어주는 태그임)-->
-            </div>
-            <div class="copyright">Copyright Chinhung. All Rights Reserved.</div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 </body>
 </html>

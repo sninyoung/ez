@@ -19,7 +19,14 @@ body {
     width: 1260px;
     margin: 0 auto;
 }
-
+#wrap {
+    min-width: 1300px; 
+    /*브라우저의 최소넓이를 지정하는 코드임
+    -작은 브라우저에서 가로 스크롤이 생기면 배경이 잘리기 때문
+    -wrapper에서 지정한 width에 좌우여백 20px씩 준값 
+    1260 + 40 = 1300px*/
+    
+}
 h1 {
     font-size: inherit; /* 브라우저가 주는 글자크기 적용x*/
     font-weight: inherit;
@@ -85,7 +92,7 @@ header .gnb ul li a {
 .business .list ul li {
     width: 297px;
 }
-.business .list ul li a { 
+.business .list ul li a { 0
     display: block; /*a태그에는 무조건 block 주기!*/
 }
 .business .list ul li a .inner {
