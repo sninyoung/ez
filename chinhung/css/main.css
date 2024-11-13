@@ -132,9 +132,12 @@ header .gnb ul li a {
     padding: 15px 58px;
 }
 .brand .more a:hover {
-    background-color: #0F2A55;
-    border-color:  #0f2a55; 
-    /*만약 border가 있던 버튼에 마우스를 오버해서 배경색을 줫다면 border색상도 같은 색상으로 줘야함. border를 빼면 넓이와 높이가 변경됨.*/
+    background-color: #fff;
+    border-color:  #fff; 
+    color: #0F1921;
+    font-weight: 600;
+    /*만약 border가 있던 버튼에 마우스를 오버해서 배경색을 줫다면 border색상도 같은 색상으로 줘야함. 
+    border를 빼면 넓이와 높이가 변경됨.*/
 }
 
 
