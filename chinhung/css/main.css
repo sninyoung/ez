@@ -92,7 +92,7 @@ header .gnb ul li a {
 .business .list ul li {
     width: 297px;
 }
-.business .list ul li a { 0
+.business .list ul li a {
     display: block; /*a태그에는 무조건 block 주기!*/
 }
 .business .list ul li a .inner {

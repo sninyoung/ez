@@ -1,0 +1,104 @@
+/*본고딕(Noto Sans KR)가져오는 방법 : '구글폰트' 사이트에서 'Noto Sans KR'검색 후 import 코드 복붙,
+body에서 font-family 코드 복붙하기*/
+@import url(default.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200..900&display=swap');
+
+body {
+    font-family: "Noto Sans KR", sans-serif, "Noto Serif KR", serif; /*폰트*/
+    font-size: 17px; /*폰트 사이즈*/
+    font-weight: 400; /*폰트 두께 regular*/
+    color: #3d3d3d; /*폰트 색상*/
+    line-height: 1.4; /*행간*/
+    letter-spacing: -0.02em; /*자간; -20 줬을 때*/
+    word-break: keep-all; /*단어로 줄바꿈*/
+    word-wrap: break-word; /*단어가 너무 길어서 줄바꿈이 안될 때 강제로 줄바꿈
+    keep-all때문에 발생하는 오류(여백을 기준으로 단어 단위로 줄바꿈하는 오류)를 수정하기 위함*/
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+#wrap {
+    min-width: 1300px; 
+    /*브라우저의 최소넓이를 지정하는 코드임
+    -작은 브라우저에서 가로 스크롤이 생기면 배경이 잘리기 때문
+    -wrapper에서 지정한 width에 좌우여백 20px씩 준값 
+    1260 + 40 = 1300px*/
+}
+.sec01 {
+    height: 300px;
+    background-color: #f4f4f4;
+}
+.sec02 {
+    height: 500px;
+    background-color: #FFE2E2;
+    position: relative; /*box03의 정렬의 기준*/
+}
+.box {
+    width: 200px;
+    height: 150px;
+    border: 2px solid #3d3d3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sec02 .box02 {
+    position: absolute;
+    /*sec02 안에 있기 때문에 다른 요소를 기준으로 
+    sec02에 position 속성이 있기 때문에*/
+    left: 50%;
+    top: 0;
+}
+.sec02 .box03 {
+    position: absolute; /*sec02을 기준으로 정렬*/
+    right: 10px;
+    bottom: 10px;
+}
+.news {
+    margin: 100px 0 500px 0;
+}
+.news .wrapper {
+    position: relative;
+    /*'.news .wrapper'가 more 정렬의 기준점임*/
+}
+.news h2{
+    font-size: 45px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 0 0 20px 0;
+    position: relative;
+}
+.news h2::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 50px;
+    height: 2px;
+    background-color: #3d3d3d;
+    content: ""; /*가상요소*/
+}
+.news h2::after {
+    content: ""; /*가상요소*/
+}
+.news .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.news .list ul li {
+    width: 23%;
+    height: 100px;
+    background-color: #f4f4f4;
+}
+.news .more {
+    position: absolute;
+    right: 14px;
+    top: 20px;
+}
+.news .more a {
+    background-color: #3d3d3d;
+    color: #fff;
+    padding: 10px 30px;
+    border-radius: 20px;
+    display: inline-block;  
+}
