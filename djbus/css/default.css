@@ -1,0 +1,24 @@
+/*초기화해주는 css : 태그별로 브라우저가 주는 기본 스타일을 삭제*/
+ul, li, ol {
+    list-style: none;
+}
+a {
+    color: inherit;
+    text-decoration: none;
+}
+* { /*와일드 카드 : 모든 태그를 지칭하는 기호*/
+    margin: 0;
+    padding: 0; /*여백삭제*/
+    box-sizing: border-box;
+    /*width와 height를 늘리는 속성이 있는데 이것을 적용하지 않게 하는 것*/
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: inherit;
+    font-weight: inherit;
+}
+strong {
+    font-weight: inherit;
+}
+address {
+    font-style: normal; /*글자 기우는 기능 없애기*/
+}

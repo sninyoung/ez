@@ -1,0 +1,27 @@
+
+@import url(default.css);
+@import url(font.css);
+
+body {
+    font-family: "Pretendard", sans-serif; /*폰트*/
+    font-size: 17px; /*폰트 사이즈*/
+    font-weight: 400; /*폰트 두께 regular*/
+    line-height: 1.5; /*행간*/
+    letter-spacing: -0.03em; /*자간; -30 줌*/
+    color: #555; /*폰트 색상*/
+    word-break: keep-all; /*단어로 줄바꿈*/
+    word-wrap: break-word; /*단어가 너무 길어서 줄바꿈이 안될 때 강제로 줄바꿈
+    keep-all때문에 발생하는 오류(여백을 기준으로 단어 단위로 줄바꿈하는 오류)를 수정하기 위함*/
+}
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+#wrap { /*반응형때문에 생긴 코드*/
+    min-width: 1300px; 
+    /*브라우저의 최소넓이를 지정하는 코드임
+    -작은 브라우저에서 가로 스크롤이 생기면 배경이 잘리기 때문
+    -wrapper에서 지정한 width에 좌우여백 20px씩 준값 
+    1260 + 40 = 1300px*/
+    
+}
