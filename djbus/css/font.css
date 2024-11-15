@@ -1,7 +1,8 @@
 /*Pretendard 폰트 적용하는 법*/
 /*Pretendard 폰트 가져오는 방법 : 'Pretendard'검색 후 Pretendard 다운로드 페이지로 들어가서 다운로드 받고 압축 풀기, 
 web 폴더의 static폴더에 들어가서 woff랑 woff2 폴더 안에 있는 파일들을 해당 폴더에 만든 fonts 폴더에 복사붙여넣기 함.
-static 폴터에 있는 'pretendard.css' 파일을 VScode의 font.css 파일에 */
+static 폴터에 있는 'pretendard.css' 파일을 VScode에 던져서 열어주고 그 안에 있는 코드를 font.css 파일에 복사 붙여넣기를 한다. 
+url을 '../fonts/Pretendard-Black.woff2'이렇게 바꿔줘야 함. */
 @font-face {
 	font-family: 'Pretendard';
 	font-weight: 900;

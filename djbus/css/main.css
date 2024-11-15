@@ -23,5 +23,53 @@ body {
     -작은 브라우저에서 가로 스크롤이 생기면 배경이 잘리기 때문
     -wrapper에서 지정한 width에 좌우여백 20px씩 준값 
     1260 + 40 = 1300px*/
-    
+}
+header {
+    height: 100px;
+    background-color: #fff;
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin: 24px 0 0 0;
+}
+header .gnb ul {
+    display: flex;
+    justify-content: space-between;
+}
+header .gnb ul li a {
+    display: block;
+    padding: 40px 17px 34px 17px;
+    letter-spacing: -0.05em;
+    position: relative;
+}
+header .gnb ul li a:hover { /* a에게 마우스를 올렸을 때 상태 */
+    color: #232175;
+    font-weight: 700;
+}
+header .gnb ul li a:hover::after{ /* a에게 마우스를 올렸을 때 after 가상선택자 */
+    content: "";
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 17px;
+    bottom: 4px;
+    width: calc(100% - 34px); /* 100%의 의미 : a 넓이에 꽉 채워서*/
+    height: 3px;
+    background-color: #232175;
+}
+
+.visual {
+    height: 700px;
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;   
+}
+.visual strong {
+    padding: 158px 0 11px 0;
+    display: block;
+}
+.visual h1 {
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
 }
