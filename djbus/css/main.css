@@ -65,7 +65,7 @@ header .gnb ul li a:hover::after{ /* a에게 마우스를 올렸을 때 after �
     padding: 158px 0 11px 0;
     display: block;
 }
-.visual h1 {
+.visual h2 {
     font-size: 45px;
     font-weight: 700;
     line-height: 1.2;
