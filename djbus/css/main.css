@@ -1,29 +1,28 @@
 @import url(default.css);
 @import url(font.css);
+
 body {
-    font-family: "Pretendard", sans-serif;
-    font-size: 17px; /* 글자크기 17px */
-    font-weight: 400; /* 두께 400 regular */
-    color: #555555; /* 글자색상 */
-    line-height: 1.4; /* 행간 - 배수 */
-    letter-spacing: 0; /* -20준 경우 -0.02em */
-    word-break: keep-all; /* 단어로(여백을 기준으로) 줄바꿈 */
-    word-wrap: break-word; 
-    /* 단어가 너무 길어서 줄바꿈이 안될때 강제로 줄바꿈
-        word-break: keep-all;로 단어별로(여백) 줄바꿈때문에 생기는 오류 수정 */
+    font-family: "Pretendard", sans-serif; /*폰트*/
+    font-size: 17px; /*폰트 사이즈*/
+    font-weight: 400; /*폰트 두께 regular*/
+    line-height: 1.5; /*행간*/
+    letter-spacing: -0.03em; /*자간; -30 줌*/
+    color: #555; /*폰트 색상*/
+    word-break: keep-all; /*단어로 줄바꿈*/
+    word-wrap: break-word; /*단어가 너무 길어서 줄바꿈이 안될 때 강제로 줄바꿈
+    keep-all때문에 발생하는 오류(여백을 기준으로 단어 단위로 줄바꿈하는 오류)를 수정하기 위함*/
 }
 .wrapper {
     width: 1260px;
     margin: 0 auto;
 }
-#wrap {
-    min-width: 1300px;
-    /* 브라우저의 최소 넓이를 지정
-       - 작은 브라우저에서 가로스크롤이 생기면 배경이 짤려서
-       wrapper에서 지정한 width에 좌우여백 20px씩 준 값
-       1260 + 40 = 1300 */
+#wrap { /*반응형때문에 생긴 코드*/
+    min-width: 1300px; 
+    /*브라우저의 최소넓이를 지정하는 코드임
+    -작은 브라우저에서 가로 스크롤이 생기면 배경이 잘리기 때문
+    -wrapper에서 지정한 width에 좌우여백 20px씩 준값 
+    1260 + 40 = 1300px*/
 }
-
 header {
     height: 100px;
 }
@@ -32,47 +31,45 @@ header .wrapper {
     justify-content: space-between;
 }
 header .logo {
-    margin: 28px 0 0 0;
+    margin: 24px 0 0 0;
 }
 header .gnb ul {
     display: flex;
 }
 header .gnb ul li a {
     display: block;
-    padding: 38px 23px 31px 23px;
-    color: #1D1D1D;
-    font-size: 22px;
+    padding: 40px 17px 34px 17px;
     letter-spacing: -0.05em;
-    position: relative; /* after 정렬의 기준 */
+    position: relative;/* after 정렬의 기준 */
 }
-header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
-    color: #255698;
-    font-weight: 800;
+header .gnb ul li a:hover { /* a에게 마우스를 올렸을 때 상태 */
+    color: #232175;
+    font-weight: 700;
 }
-header .gnb ul li a:hover::after { /* a에게 마우스를 올렸을때 가상선택자 */
+header .gnb ul li a:hover::after{ /* a에게 마우스를 올렸을 때 after 가상선택자 */
     content: "";
     position: absolute; /* a를 기준으로 정렬 */
-    left: 20px;
-    bottom: 0;
-    width: calc(100% - 40px);
+    left: 17px;
+    bottom: 4px;
+    width: calc(100% - 34px); /* 100%의 의미 : a 넓이에 꽉 채워서*/
     height: 3px;
-    background-color: #255698;
+    background-color: #232175;
 }
 
 .visual {
-    height: 800px;
+    height: 700px;
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
-    color: #fff;
+    color: #fff;   
 }
 .visual strong {
-    padding: 291px 0 5px 0;
+    padding: 158px 0 11px 0;
     display: block;
 }
-.visual h2 {
-    font-size: 50px;
-    font-weight: 800;
+.visual h1 {
+    font-size: 45px;
+    font-weight: 700;
     line-height: 1.2;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
 }
 
 .int {
@@ -111,27 +108,29 @@ header .gnb ul li a:hover::after { /* a에게 마우스를 올렸을때 가상�
     width: 511px;
 }
 .int strong {
-    color: #255698;
+    color: #232175;
+    font-weight: 700;
     display: block;
 }
 .int .txt_left strong {
-    margin: 76px 0 8px 0;
+    margin: 60px 0 8px 0;
 }
 .int .txt_right strong {
-    margin: 104px 0 8px 0;
+    margin: 126px 0 8px 0;
 }
 .int h2 {
     font-size: 40px;
-    font-weight: 800;
+    font-weight: 700;
     color: #1d1d1d;
     letter-spacing: -0.02em;
     line-height: 1.2;
 }
 .int h2 em {
-    color: #255698;
+    color: #232175;
 }
 .int h3 {
     font-size: 20px;
+    font-weight: 700;
     margin: 8px 0 14px 0;
 }
 .int .more {
@@ -142,22 +141,22 @@ header .gnb ul li a:hover::after { /* a에게 마우스를 올렸을때 가상�
        이를 없애고 내가 디자인한대로 정확하게 여백주려고 */
 }
 .int .more a {
-    color: #255698;
-    border: 1px solid #255698;
-    padding: 12px 29px 12px 29px;
-    border-radius: 25px;
+    color: #232175;
+    border: 1px solid #232175;
+    padding: 12px 41px 12px 41px;
+    border-radius: 30px;
     display: inline-block;
     /* a태그에 display:block; inline-block 필수   */
     margin: 0 10px 0 0;
 }
 /* a태그 중에서 point 클래스를 갖은 a */
 .int .more a.point {
-    background-color: #255698;
+    background-color: #232175;
     color: #fff;
 }
 .int .more a:hover {
-    border-color: #229EA0;
-    background-color: #229EA0;
+    border-color: #F9B82A;
+    background-color: #F9B82A;
     color: #fff;
 }
 .int .photo {
@@ -169,17 +168,169 @@ header .gnb ul li a:hover::after { /* a에게 마우스를 올렸을때 가상�
 }
 
 .pr {
-    margin: 135px 0 0 0;
+    margin: 200px 0 0 0;
     background: url(../images/pr_bg.jpg) no-repeat center top;
     color: #fff;
 }
 .pr .news {
     display: flex;
-    padding: 137px 0 0 0;
+    justify-content: space-between;
+    padding: 150px 0 0 0; /*padding까지 .pr .news꺼*/
+    position: relative; /*more 정렬의 중심*/
 }
-.pr .news .more a {
+.pr .news .tit strong {
+    color: #F9B82A;
+    display: block; /*인라인태그라서 안전하게 준다.*/
+}
+.pr .news .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin: 12px 0 20px 0;
+}
+.pr .news .tit h2 em {
+    color: #F9B82A;
+}
+.pr .news .list {
+    width: 562px;
+}
+.pr .news .list ul li {
+    border-bottom: 1px solid rgba(255,2225,255,0.4); /*0.4는 %를 의미함*/
+}
+.pr .news .list ul li:first-child {
+    border-top: 1px solid rgba(255,2225,255,0.4); /*맨 위에 선*/
+}
+.pr .news .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 27px 0 21px 0;
+}
+.pr .news .list ul li a h3:hover {
+    color: #F9B82A;
+    font-weight: 500;
+}
+.pr .news .list ul li a span {
+    color: #ccc;
+    font-size: 14px;
+}
+.pr .news .more { 
+    position: absolute; /*정렬*/
+    left: 0;
+    top: 400px; /* 254px에 .pr .news 의 padding값(150px)을 더해줘야 함. */
+}
+.pr .news .more a { /*더보기 버튼*/
     display: block;
-    padding: 12px 30px 12px 30px;
+    padding: 12px 48px 12px 48px;
     border: 1px solid #fff;
-    border-radius: 25px;
+    border-radius: 30px;
+}
+.pr .news .more a:hover {
+    border-color: #F9B82A;
+    background-color: #F9B82A;
+}
+.pr .video {
+    margin: 210px 0 0 0; /*더보기 버튼 값을 빼줘야 함.*/
+    position: relative;
+}
+.pr .video .tit strong {
+    color: #F9B82A;
+    display: block; /*인라인태그라서 안전하게 준다.*/
+}
+.pr .video .tit h2 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    margin: 11px 0 30px 0;
+}
+.pr .video .tit h2 em {
+    color: #F9B82A;
+}
+.pr .video .list ul {
+    display: flex;
+    justify-content: space-between ;
+}
+.pr .video .list ul li {
+    width: 404px;
+}
+.pr .video .list ul li a {
+    display: block; /*a 한테는 무조건 블럭 주기!*/
+}
+.pr .video .list ul li a .photo {
+    border-radius: 15px;
+    border: 1px solid #222;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+}
+.pr .video .list ul li a h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    margin: 30px 0 0 15px;
+    text-align: center;
+}
+.pr .video .list ul li a:hover h3 {
+    font-weight: 700;
+}
+.pr .video .more {
+    position: absolute; /*video를 기준으로 정렬*/
+    right: 0;
+    top: 32px;
+}
+.pr .video .more a { /*더보기 버튼*/
+    display: block;
+    padding: 12px 48px 12px 48px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+}
+.pr .video .more a:hover {
+    border-color: #F9B82A;
+    background-color: #F9B82A;
+}
+
+footer {
+    background-color: #222;
+    color: rgba(255,255,255,0.8);
+    padding: 66px 0 80px 0;
+    margin: 342px 0 0 0;
+}
+footer .f_nav ul {
+    display: flex;
+}
+footer .f_nav ul li {
+    margin: 0 38px 0 0;
+    position: relative;
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute;
+    right: -19px;
+    top: 5px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(204,204,204,0.3); /*색상 #ccc의 불투명도 30%*/
+}
+footer .f_nav ul li:last-child::after{/*li 중에서 마지막 li의 after를 숨김처리하는 방법.*/
+    display: none; 
+}
+footer .f_nav ul li a {
+    display: block;
+}
+footer .f_nav ul li.privacy a {
+    font-weight: 700;
+    color: #fff;
+}
+footer .f_nav ul li a:hover {
+    text-decoration: underline; /*마우스 over했을 때 밑줄*/
+}
+footer .f_info {
+    margin: 30px 0 44px 0;
+}
+footer .f_info span {
+    margin: 0 26px 0 0 ;
+}
+footer .copyright {
+    color: rgba(204,204,204,0.6);
 }
