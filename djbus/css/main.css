@@ -1,75 +1,185 @@
-
 @import url(default.css);
 @import url(font.css);
-
 body {
-    font-family: "Pretendard", sans-serif; /*폰트*/
-    font-size: 17px; /*폰트 사이즈*/
-    font-weight: 400; /*폰트 두께 regular*/
-    line-height: 1.5; /*행간*/
-    letter-spacing: -0.03em; /*자간; -30 줌*/
-    color: #555; /*폰트 색상*/
-    word-break: keep-all; /*단어로 줄바꿈*/
-    word-wrap: break-word; /*단어가 너무 길어서 줄바꿈이 안될 때 강제로 줄바꿈
-    keep-all때문에 발생하는 오류(여백을 기준으로 단어 단위로 줄바꿈하는 오류)를 수정하기 위함*/
+    font-family: "Pretendard", sans-serif;
+    font-size: 17px; /* 글자크기 17px */
+    font-weight: 400; /* 두께 400 regular */
+    color: #555555; /* 글자색상 */
+    line-height: 1.4; /* 행간 - 배수 */
+    letter-spacing: 0; /* -20준 경우 -0.02em */
+    word-break: keep-all; /* 단어로(여백을 기준으로) 줄바꿈 */
+    word-wrap: break-word; 
+    /* 단어가 너무 길어서 줄바꿈이 안될때 강제로 줄바꿈
+        word-break: keep-all;로 단어별로(여백) 줄바꿈때문에 생기는 오류 수정 */
 }
 .wrapper {
     width: 1260px;
     margin: 0 auto;
 }
-#wrap { /*반응형때문에 생긴 코드*/
-    min-width: 1300px; 
-    /*브라우저의 최소넓이를 지정하는 코드임
-    -작은 브라우저에서 가로 스크롤이 생기면 배경이 잘리기 때문
-    -wrapper에서 지정한 width에 좌우여백 20px씩 준값 
-    1260 + 40 = 1300px*/
+#wrap {
+    min-width: 1300px;
+    /* 브라우저의 최소 넓이를 지정
+       - 작은 브라우저에서 가로스크롤이 생기면 배경이 짤려서
+       wrapper에서 지정한 width에 좌우여백 20px씩 준 값
+       1260 + 40 = 1300 */
 }
+
 header {
     height: 100px;
-    background-color: #fff;
 }
 header .wrapper {
     display: flex;
     justify-content: space-between;
 }
 header .logo {
-    margin: 24px 0 0 0;
+    margin: 28px 0 0 0;
 }
 header .gnb ul {
     display: flex;
-    justify-content: space-between;
 }
 header .gnb ul li a {
     display: block;
-    padding: 40px 17px 34px 17px;
+    padding: 38px 23px 31px 23px;
+    color: #1D1D1D;
+    font-size: 22px;
     letter-spacing: -0.05em;
-    position: relative;
+    position: relative; /* after 정렬의 기준 */
 }
-header .gnb ul li a:hover { /* a에게 마우스를 올렸을 때 상태 */
-    color: #232175;
-    font-weight: 700;
+header .gnb ul li a:hover { /* a에게 마우스를 올렸을때 */
+    color: #255698;
+    font-weight: 800;
 }
-header .gnb ul li a:hover::after{ /* a에게 마우스를 올렸을 때 after 가상선택자 */
+header .gnb ul li a:hover::after { /* a에게 마우스를 올렸을때 가상선택자 */
     content: "";
     position: absolute; /* a를 기준으로 정렬 */
-    left: 17px;
-    bottom: 4px;
-    width: calc(100% - 34px); /* 100%의 의미 : a 넓이에 꽉 채워서*/
+    left: 20px;
+    bottom: 0;
+    width: calc(100% - 40px);
     height: 3px;
-    background-color: #232175;
+    background-color: #255698;
 }
 
 .visual {
-    height: 700px;
+    height: 800px;
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
-    color: #fff;   
+    color: #fff;
 }
 .visual strong {
-    padding: 158px 0 11px 0;
+    padding: 291px 0 5px 0;
     display: block;
 }
-.visual h1 {
-    font-size: 45px;
-    font-weight: 700;
+.visual h2 {
+    font-size: 50px;
+    font-weight: 800;
     line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.int {
+    margin: 136px 0 0 0;
+}
+/*
+    다중선택자
+    .int .txt_left, .int .txt_right 
+    int안에 있는 txt_left와 txt_right
+    .int .txt_left,
+    .txt_right    --- 이렇게 코딩하면 안됨..
+*/
+.int .txt_left,
+.int .txt_right {
+    display: flex;
+    justify-content: space-between;
+}
+/*
+    <div class="int">
+        <div class="txt_left">
+            <div class="inner"></div>
+        </div>
+        <div class="txt_right">
+            <div class="inner"></div>
+        </div>
+    </div>
+    -- 이런구조에서 inner에 동일한 스타일이 적용된다면
+    .int .txt_left .inner,
+    .int .txt_right .inner {}
+    또는
+    .int .inner {} 
+    로 스타일을 선언할 수 있다.
+*/
+.int .txt_left .inner,
+.int .txt_right .inner {
+    width: 511px;
+}
+.int strong {
+    color: #255698;
+    display: block;
+}
+.int .txt_left strong {
+    margin: 76px 0 8px 0;
+}
+.int .txt_right strong {
+    margin: 104px 0 8px 0;
+}
+.int h2 {
+    font-size: 40px;
+    font-weight: 800;
+    color: #1d1d1d;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+}
+.int h2 em {
+    color: #255698;
+}
+.int h3 {
+    font-size: 20px;
+    margin: 8px 0 14px 0;
+}
+.int .more {
+    margin: 54px 0 0 0;
+    display: flex;
+    /* a태그가 inline태그라서 좌우로 배치되지만
+       중간에 space 한칸의 여백이 존재함
+       이를 없애고 내가 디자인한대로 정확하게 여백주려고 */
+}
+.int .more a {
+    color: #255698;
+    border: 1px solid #255698;
+    padding: 12px 29px 12px 29px;
+    border-radius: 25px;
+    display: inline-block;
+    /* a태그에 display:block; inline-block 필수   */
+    margin: 0 10px 0 0;
+}
+/* a태그 중에서 point 클래스를 갖은 a */
+.int .more a.point {
+    background-color: #255698;
+    color: #fff;
+}
+.int .more a:hover {
+    border-color: #229EA0;
+    background-color: #229EA0;
+    color: #fff;
+}
+.int .photo {
+    overflow: hidden;/* photo가 지정한 영역 밖에 나가는 요소는 숨김 */
+    border-radius: 30px;
+    /* 이미지 하단에 여백 */
+    font-size: 0;
+    line-height: 0;
+}
+
+.pr {
+    margin: 135px 0 0 0;
+    background: url(../images/pr_bg.jpg) no-repeat center top;
+    color: #fff;
+}
+.pr .news {
+    display: flex;
+    padding: 137px 0 0 0;
+}
+.pr .news .more a {
+    display: block;
+    padding: 12px 30px 12px 30px;
+    border: 1px solid #fff;
+    border-radius: 25px;
 }
