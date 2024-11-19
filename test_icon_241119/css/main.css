@@ -1,0 +1,255 @@
+@import url(default.css);
+@import url(common.css);
+@import url(font.css);
+
+.icon h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin: 180px 0 10px 0;
+}
+.icon h3 {
+    font-size: 25px;
+    font-weight: 700;
+    margin: 50px 0 7px 0;
+}
+.mobile_test ul li .img_wrap {
+    margin: 20px 0 0 0;
+}
+
+
+/*margin의 중첩현상
+위의 요소의 하단여백(margin)이 10px이고 하단 요소의 상단여백(margin)에 50px이면 
+둘 사이의 여백은 둘 중의 큰 값인 50px임. 즉, margin이 중복이 되면 둘중에 큰값만 적용된다.*/
+.svg_img .more {
+    margin: 50px 0;
+}
+.svg_img .more a {
+    display: flex;
+    align-items: center;
+    width: 170px;
+    border: 1px solid #777;
+    padding: 10px 20px 9px 24px;
+    border-radius: 30px;
+}
+.svg_img .more a:hover {
+    color: #fff;
+    background-color: #1481E8;
+    border-color: #1481E8;
+}
+.svg_img .more a strong {
+    margin-right: 24px; /*strong태그는 인라인태그지만 좌우 여백은 들어감. 위아래 여백이 못들어가는 것*/
+}
+.svg_img .list ul {
+    display: flex;
+}
+.svg_img .list ul li {
+    width: 83px;
+    margin-right: 12px;
+}
+.svg_img .list ul li a {
+    display: block;
+    text-align: center;
+}
+.svg_img .list ul li a .photo {
+    display: inline-block;
+    width: 59px;
+    height: 59px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    padding-top: 16px;
+    margin-bottom: 10px;
+}
+
+body {
+    margin-bottom: 500px;
+}
+.svg_bg .more a {
+    display: inline-block;
+    margin: 50px 0;
+    border: 1px solid #777;
+    padding: 10px 63px 9px 24px;
+    border-radius: 30px;
+    background: url(../images/more_icon.svg) no-repeat right 20px top 13px;
+}
+.svg_bg .more a:hover {
+    color: #fff;
+    background-color: #1481E8;
+    border-color: #1481E8;
+    background-image: url(../images/more_icon_w.svg); /*마우스 over했을 때 이미지 경로만 바뀐다.*/
+}
+.svg_bg .list ul {
+    display: flex;
+}
+.svg_bg .list ul li {
+    width: 83px;
+    margin-right: 12px;
+}
+.svg_bg .list ul li a {
+    display: block;
+    text-align: center;
+}
+.svg_bg .list ul li a i {
+    display: inline-block;
+    width: 59px;
+    height: 59px;
+    background-color: #f4f4f4;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    /*모든 배경의 위치와 반복값은 같고, 경로만 다르니까 - i한테는 겹치는 값 */
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.svg_bg .list ul li.ico1 a i {
+    background-image: url(../images/link_icon1.svg);
+}
+.svg_bg .list ul li.ico2 a i {
+    background-image: url(../images/link_icon2.svg);
+}
+.svg_bg .list ul li.ico3 a i {
+    background-image: url(../images/link_icon3.svg);
+}
+.svg_bg .list ul li.ico4 a i {
+    background-image: url(../images/link_icon4.svg);
+}
+
+.svg_bg .list ul li a:hover i {
+    background-color: #1481E8;
+}
+
+.svg_bg .list ul li.ico1 a:hover i {
+    background-image: url(../images/link_icon1_w.svg);
+}
+.svg_bg .list ul li.ico2 a:hover i {
+    background-image: url(../images/link_icon2_w.svg);
+}
+.svg_bg .list ul li.ico3 a:hover i {
+    background-image: url(../images/link_icon3_w.svg);
+}
+.svg_bg .list ul li.ico4 a:hover i {
+    background-image: url(../images/link_icon4_w.svg);
+}
+
+
+/* before/after 가상선택자를 이용하는 방법*/
+.svg_before .more {
+    margin: 50px 0;
+}
+.svg_before .more a {
+    display: inline-block;
+    border: 1px solid #777;
+    padding: 10px 63px 9px 24px;
+    border-radius: 30px;
+    position: relative; /*after 정렬의 기준점*/
+}
+.svg_before .more a::after {
+    content: "";
+    position: absolute;
+    right: 20px;
+    top: 13px;
+    width: 19px;
+    height: 19px;
+    background: url(../images/more_icon.svg) no-repeat center center;
+} 
+.svg_before .more a:hover::after {
+    background-image: url(../images/more_icon_w.svg); /*마우스 over했을 때 이미지 경로만 바뀐다.*/
+}
+.svg_before .more a:hover {
+    color: #fff;
+    background-color: #1481E8;
+    border-color: #1481E8;
+}
+.svg_before .list ul {
+    display: flex;
+}
+.svg_before .list ul li {
+    width: 83px;
+    margin-right: 12px;
+}
+.svg_before .list ul li a {
+    display: block;
+    text-align: center;
+    position: relative; /*before 정렬의 기준*/
+    padding-top: 81px;
+}
+/*a사이즈는 현재 83px인데 a:before가 59px임. 이걸 a 안에 가운데정렬로 싶음.
+방법 1. left를 12px를 준다 ( (83 - 59) / 2 =12)
+방법 2. left를 50%로 줘서 가운데에서 시작하고 넓이의 절반을 빼줌. left : calc(50% - 35px)
+방법 3. transform: translateX(-50%) 너의 넓이의 절반을 왼쪽으로 이동... -> 장점 : 넓이를 몰라도 줄 수가 있음*/
+
+.svg_before .list ul li a::before {
+    content: "";
+    position: absolute;
+    left: 50%; /*정렬의 기준이 되는 a를 기준으로 50%*/
+    transform: translateX(-50%); /*before의 넓이의 50%*/
+    top: 0;
+    width: 59px;
+    height: 59px;
+    background-color: #f4f4f4;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+}
+.svg_before .list ul li.ico1 a::before {
+    background-image: url(../images/link_icon1.svg);
+}
+.svg_before .list ul li.ico2 a::before {
+    background-image: url(../images/link_icon2.svg);
+}
+.svg_before .list ul li.ico3 a::before {
+    background-image: url(../images/link_icon3.svg);
+}
+.svg_before .list ul li.ico4 a::before {
+    background-image: url(../images/link_icon4.svg);
+}
+.svg_before .list ul li a:hover::before {
+    background-color: #1481E8;
+}
+
+.svg_before .list ul li.ico1 a:hover::before {
+    background-image: url(../images/link_icon1_w.svg);
+}
+.svg_before .list ul li.ico2 a:hover::before {
+    background-image: url(../images/link_icon2_w.svg);
+}
+.svg_before .list ul li.ico3 a:hover::before {
+    background-image: url(../images/link_icon3_w.svg);
+}
+.svg_before .list ul li.ico4 a:hover::before {
+    background-image: url(../images/link_icon4_w.svg);
+}
+
+
+
+
+.google .more {
+    margin: 50px 0;
+}
+
+.google .more a {
+    display: inline-block;
+    width: 170px;
+    border: 1px solid #777;
+    padding: 10px 63px 9px 24px;
+    border-radius: 30px;
+    position: relative;
+}
+.google .more a i {/*구글 아이콘은 아이콘을 서체로 인식함.*/
+    font-size: 19px; /*구글 아이콘은 크기를 font-size로 줌. 넓이가 19px이면 font-size도 19px*/
+    color: #777;
+    position: absolute;
+    right: 20px;
+    top: 13px;
+}
+.google .more a:hover {
+    border-color: #1481E8;
+    background-color: #1481E8;
+    color: #fff;
+}
+.google .more a:hover i {
+    color: #fff;
+}
+
+
+body {
+    margin-bottom: 500px;
+}
