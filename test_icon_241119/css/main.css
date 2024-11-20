@@ -306,8 +306,8 @@ body {
     left: 50%;
     transform: translateX(-50%);
     top: 14px;
-    width: 30px;
-    height: 30px;
+    width: 26px;
+    height: 26px;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain; /*내가 지정한 width/height에 맞게 아이콘이 잘리지 않고 딱 맞게 리사이즈되는 명령*/
