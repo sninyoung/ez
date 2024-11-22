@@ -203,6 +203,9 @@ header .gnb ul li a {
     background-color: #F9F9F9;
     border-top: 1px solid rgba(85,85,85,0.2);
 }
+.tour .wrapper {
+    position: relative;
+}
 .tour .title h2 {
     margin-bottom: 18px;
     color: #1d1d1d;
@@ -225,6 +228,7 @@ header .gnb ul li a {
     width: 618px;
 }
 .tour .list ul li a {
+    /* 오버한 li의 스타일 */
     display: block;
     height: 397px; /* li와 a 높이를 동일하게 주기 위해서 줌*/
     background-repeat: no-repeat;
@@ -235,10 +239,6 @@ header .gnb ul li a {
     /* 오버되지 않은 li의 스타일 */
     padding: 327px 0 0 0;
     text-align: center;
-}
-.tour .list ul li.on a { /* 오버한 a스타일 */
-    padding: 271px 0 0 36px;
-    text-align: left;
 }
 .tour .list ul li.list1 a {
     background-image: url(../images/tour_img01.jpg);
@@ -252,6 +252,25 @@ header .gnb ul li a {
 .tour .list ul li.list4 a {
     background-image: url(../images/tour_img04.jpg);
 }
+
+/* 오버한 a스타일 */
+.tour .list ul li.on a { 
+    padding: 260px 0 0 36px;
+    text-align: left;
+}
+/* 오버한 li의 스타일 'li.on'으로 코딩 h3, p, span*/
+.tour .list ul li.on a h3 {
+    font-size: 25px;
+}
+.tour .list ul li.on a p {
+    display: block; 
+    font-size: 14px;
+}
+.tour .list ul li.on a span {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 14px;
+}
 /* 오버되지 않은 li의 스타일 */
 .tour .list ul li a h3 {
     font-size: 20px;
@@ -259,41 +278,66 @@ header .gnb ul li a {
     line-height: 1.2;
     letter-spacing: -0.03em;
 
-    margin-bottom: 13px;/* p와의 여백은 오버했을 때만 적용될 스타일이지만 지금줘도 문제는 되지 않음, 그럼 미리 스타일 주는게 좋음. 그렇지 않으면 나중에 오류 발생할 확률 높음 */
-}
-.tour .list ul li.on a h3 {
-    font-size: 30px;
+    margin-bottom: 12px;/* p와의 여백은 오버했을 때만 적용될 스타일이지만 지금줘도 문제는 되지 않음, 그럼 미리 스타일 주는게 좋음. 그렇지 않으면 나중에 오류 발생할 확률 높음 */
 }
 .tour .list ul li a p {
     display: none; /*숨김처리. 나중에 자바스크립트로 오버하면 나타날 것임*/
+    font-size: 14px;
 }
-.tour .list ul li.on a p {
-    display: block; 
-}
-.tour .list ul li a span {
+.tour .list ul li a span { /*자세히 보기 버튼*/
     position: relative;
     display: none;
+    padding-right: 21px;
     /* display: inline-block; */ 
     margin-top: 10px;
     font-size: 14px;
-    /* 위는 오버했을 때만 나타날 요소이지만 미리 스타일을 주고, 보이고 안보이고 상태만 변경 */
+    /* 오버했을 때만 나타날 요소이지만 미리 스타일을 주고, 보이고 안보이고 상태만 변경 */
 }
-.tour .list ul li.on a span {
-    display: inline-block;
-}
-.tour .list ul li a span::after {
+.tour .list ul li a span::after { /*자세히 보기 글자 옆에 아이콘 넣기*/
     content: "";
     position: absolute;
     right: 0;
     top: 0;
     width: 20px;
     height: 20px;
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4231 11.9844L8.56934 7.12116L9.38459 6.30566L15.0538 11.9844L9.38459 17.6537L8.56934 16.8384L13.4231 11.9844Z' fill='%23999999'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4231 11.9844L8.56934 7.12116L9.38459 6.30566L15.0538 11.9844L9.38459 17.6537L8.56934 16.8384L13.4231 11.9844Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
 } 
 
+/*전체 보기 버튼*/
+.tour .more { /*.tour .wrapper가 more의 정렬의 기준이 되어줌. 동시에 a::after 정렬의 기준임.*/
+    position: absolute;
+    right: 0;
+    top: 90px;
+}
+.tour .more a { /*.tour .wrapper 가 정렬의 기준이 되어줌.*/
+    display: block;
+    padding: 5px 30px 5px 5px; 
+    color: #555555;
+}
+.tour .more a::after { /*전체 보기 옆에 아이콘 넣기*/
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2018 12.6498H5.2998V11.3498H16.2018L11.0806 6.22856L11.9998 5.2998L18.6998 11.9998L11.9998 18.6998L11.0806 17.7711L16.2018 12.6498Z' fill='%23737373'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 1s;
+}
+.tour .more a:hover {
+    color: #003C79;
+    font-weight: 500; 
+}
+.tour .more a:hover::after  {
+    transform: rotate(360deg); /*deg : 각도라는 의미*/
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2018 12.6498H5.2998V11.3498H16.2018L11.0806 6.22856L11.9998 5.2998L18.6998 11.9998L11.9998 18.6998L11.0806 17.7711L16.2018 12.6498Z' fill='%23003C79'/%3E%3C/svg%3E%0A");
+}
 
 
 #wrap {
