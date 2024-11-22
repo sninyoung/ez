@@ -2,14 +2,202 @@
 @import url(common.css);
 @import url(font.css);
 
+/* header */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100; /* position때문에 header의 nav메뉴가 클릭되지 않는 현상이 발생할 수 있음. header는 무조건 맨위에 있어야 하기 때문에 제일 높은 숫자 100을 준다- 하단 콘텐츠는 100이하의 값을 줌. */
+    width: 100%; /* block에 absolute를 줘도 넓이가 없음.(100%가 안됨) 내부요소만큼만 늘어남.*/
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255, 0.4);
+}
+header .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+header .logo {
+    margin-top: 30px;
+}
+header .gnb ul {
+    display: flex;
+}
+header .gnb ul li a {
+    display: block;
+    color: #fff;
+    padding: 36px 17px 36px 17px;
+}
+
+/* visual */
 .visual {
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
-    height: 100vh;
+    border-bottom-right-radius: 200px;
 }
-.visual h2 
-{
-    padding-top: 433px;
+.visual .wrapper { /*picturee의 기준이 되어줌.*/
+    height: 100vh;/* 브라우저의 콘텐츠 높이 100vh로 보는 상대값*/
+    position: relative;/*picture는 wrapper를 기준으로 오른쪽 하단에 absolute로 배치. 단, visual에 height가 있는 상태에서는 wrapper는 콘텐츠가 존재하는 만큼만 높이가 잡힘. 그래서 wrapper에 높이를 주고 visual은 그 높이만큼 들어가게 하면 좋다.*/
 }
-body {
-    margin-bottom: 500px;
+#wrap {
+    min-width: 1300px; 
+    overflow: hidden; /*wrap 영역 밖으로 나간 요소를 숨김처리 함. absolute가 대부분 나감.*/
+}
+.visual h2 {
+    padding-top: calc(50vh - 80px);/* 50vh - 95px를 빼야함. 단위가 안맞음. (vh는 상대값 px는 절대값) 이렇게 단위가 다른 수치를 계산할 때 쓰는 식이 calc이다. 이것을 이용함. 단, 반드시 - + 앞뒤로는 단위를 써줘야 함.*/
+    text-align: right;
+}
+.visual .picture {
+    position: absolute; /* wrapper를 기준으로 정렬함.*/
+    right: -86px;
+    bottom: -86px;
+}
+.visual .picture a {
+    display: block; /*picture a::before의 기준이 되어줌.*/
+    width: 184px;
+    height: 184px;
+    border-radius: 50%;
+    background-color: #003C79;
+    color: #fff;
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.03em;
+    padding-top: 82px;
+    text-align: center;
+    box-shadow: -5px 5px 10px rgba(0,0,0, 0.15);
+    transition: all 0.5s;
+}
+.visual .picture a::before {
+    content : ""; 
+    position: absolute; /**/
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%); /*좌우의 가운데*/
+    width: 36px;
+    height: 36px;
+    background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 26.25C19.875 26.25 21.4688 25.5938 22.7812 24.2812C24.0938 22.9688 24.75 21.375 24.75 19.5C24.75 17.625 24.0938 16.0312 22.7812 14.7188C21.4688 13.4062 19.875 12.75 18 12.75C16.125 12.75 14.5312 13.4062 13.2188 14.7188C11.9062 16.0312 11.25 17.625 11.25 19.5C11.25 21.375 11.9062 22.9688 13.2188 24.2812C14.5312 25.5938 16.125 26.25 18 26.25ZM18 23.25C16.95 23.25 16.0625 22.8875 15.3375 22.1625C14.6125 21.4375 14.25 20.55 14.25 19.5C14.25 18.45 14.6125 17.5625 15.3375 16.8375C16.0625 16.1125 16.95 15.75 18 15.75C19.05 15.75 19.9375 16.1125 20.6625 16.8375C21.3875 17.5625 21.75 18.45 21.75 19.5C21.75 20.55 21.3875 21.4375 20.6625 22.1625C19.9375 22.8875 19.05 23.25 18 23.25ZM6 31.5C5.175 31.5 4.46875 31.2063 3.88125 30.6188C3.29375 30.0313 3 29.325 3 28.5V10.5C3 9.675 3.29375 8.96875 3.88125 8.38125C4.46875 7.79375 5.175 7.5 6 7.5H10.725L13.5 4.5H22.5L25.275 7.5H30C30.825 7.5 31.5313 7.79375 32.1188 8.38125C32.7063 8.96875 33 9.675 33 10.5V28.5C33 29.325 32.7063 30.0313 32.1188 30.6188C31.5313 31.2063 30.825 31.5 30 31.5H6ZM6 28.5H30V10.5H23.925L21.1875 7.5H14.8125L12.075 10.5H6V28.5Z' fill='%23ffffff'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+    /*마우스 over했을 때*/
+.visual .picture a:hover {
+    color: #003C79;
+    font-weight: 700;
+    background-color: #C2CB20;
+    box-shadow: -5px 5px 10px rgba(0,0,0, 0.15);
+}
+.visual .picture a:hover::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='36' height='36' viewBox='0 0 36 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18 26.25C19.875 26.25 21.4688 25.5938 22.7812 24.2812C24.0938 22.9688 24.75 21.375 24.75 19.5C24.75 17.625 24.0938 16.0312 22.7812 14.7188C21.4688 13.4062 19.875 12.75 18 12.75C16.125 12.75 14.5312 13.4062 13.2188 14.7188C11.9062 16.0312 11.25 17.625 11.25 19.5C11.25 21.375 11.9062 22.9688 13.2188 24.2812C14.5312 25.5938 16.125 26.25 18 26.25ZM18 23.25C16.95 23.25 16.0625 22.8875 15.3375 22.1625C14.6125 21.4375 14.25 20.55 14.25 19.5C14.25 18.45 14.6125 17.5625 15.3375 16.8375C16.0625 16.1125 16.95 15.75 18 15.75C19.05 15.75 19.9375 16.1125 20.6625 16.8375C21.3875 17.5625 21.75 18.45 21.75 19.5C21.75 20.55 21.3875 21.4375 20.6625 22.1625C19.9375 22.8875 19.05 23.25 18 23.25ZM6 31.5C5.175 31.5 4.46875 31.2063 3.88125 30.6188C3.29375 30.0313 3 29.325 3 28.5V10.5C3 9.675 3.29375 8.96875 3.88125 8.38125C4.46875 7.79375 5.175 7.5 6 7.5H10.725L13.5 4.5H22.5L25.275 7.5H30C30.825 7.5 31.5313 7.79375 32.1188 8.38125C32.7063 8.96875 33 9.675 33 10.5V28.5C33 29.325 32.7063 30.0313 32.1188 30.6188C31.5313 31.2063 30.825 31.5 30 31.5H6ZM6 28.5H30V10.5H23.925L21.1875 7.5H14.8125L12.075 10.5H6V28.5Z' fill='%23003C79'/%3E%3C/svg%3E%0A");
+}
+
+/*culture*/
+.culture {
+    margin: 200px 0 115px 0 ;
+}
+.culture .wrapper {
+    position: relative; /*.culture .more의 정렬의 기준이 됨.*/
+}
+.culture .title h2 {
+    margin-bottom: 12px;
+    color: #1d1d1d;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+.culture .list {
+    margin: 50px 0 0 0;
+}
+.culture .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.culture .list ul li {
+    width: 404px;
+}
+.culture .list ul li a {
+    display: block;
+}
+.culture .list ul li a .photo {
+    overflow: hidden; /* photo 영역 밖에 나가는 img를 숨김처리*/
+    font-size: 0;
+    line-height: 0;
+}
+.culture .list ul li a .photo img {
+    transition: 0.5s;
+}
+.culture .list ul li a:hover .photo img {
+    transform: scale3d(1.1,1.1,1);
+}
+.culture .list ul li a h3 {
+    margin: 30px 0 10px 0;
+    color: #1d1d1d;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+.culture .list ul li a span { 
+    position: relative; /* a span::after 정렬의 기준*/
+    display: inline-block;
+    padding-right: 21px;
+    margin-top: 14px;
+    color: #999999;
+    font-size: 14px;
+}
+.culture .list ul li a:hover span {
+    color: #003C79;
+    font-weight: 700; 
+}
+.culture .list ul li a span::after { /*자세히 보기 옆에 아이콘 넣기*/
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4231 11.9844L8.56934 7.12116L9.38459 6.30566L15.0538 11.9844L9.38459 17.6537L8.56934 16.8384L13.4231 11.9844Z' fill='%23999999'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.culture .list ul li a:hover span::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.4231 11.9844L8.56934 7.12116L9.38459 6.30566L15.0538 11.9844L9.38459 17.6537L8.56934 16.8384L13.4231 11.9844Z' fill='%23003C79'/%3E%3C/svg%3E%0A");
+
+}
+.culture .more { /*.culture .wrapper가 more의 정렬의 기준이 되어줌 & a::after 정렬의 기준임.*/
+    position: absolute;
+    right: 0;
+    top: 90px;
+}
+.culture .more a { /*.culture .wrapper 가 정렬의 기준이 되어줌.*/
+    display: block;
+    padding: 5px 30px 5px 5px; 
+    color: #555555;
+}
+.culture .more a::after { /*전체 보기 옆에 아이콘 넣기*/
+    content: "";
+    position: absolute;
+    right: 2px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2018 12.6498H5.2998V11.3498H16.2018L11.0806 6.22856L11.9998 5.2998L18.6998 11.9998L11.9998 18.6998L11.0806 17.7711L16.2018 12.6498Z' fill='%23737373'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 1s;
+}
+.culture .more a:hover {
+    color: #003C79;
+    font-weight: 500; 
+}
+.culture .more a:hover::after  {
+    transform: rotate(360deg); /*deg : 각도라는 의미*/
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2018 12.6498H5.2998V11.3498H16.2018L11.0806 6.22856L11.9998 5.2998L18.6998 11.9998L11.9998 18.6998L11.0806 17.7711L16.2018 12.6498Z' fill='%23003C79'/%3E%3C/svg%3E%0A");
+}
+
+
+
+#wrap {
+    padding-bottom: 500px;
 }
