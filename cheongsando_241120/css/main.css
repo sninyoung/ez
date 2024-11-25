@@ -415,7 +415,9 @@ header .gnb ul li a {
 }
 .community .notice .more a:hover::after {
     transform: rotate(360deg); /*deg : 각도라는 의미*/
-    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2018 12.6498H5.2998V11.3498H16.2018L11.0806 6.22856L11.9998 5.2998L18.6998 11.9998L11.9998 18.6998L11.0806 17.7711L16.2018 12.6498Z' fill='%23C2CB20'/%3E%3C/svg%3E%0A");
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.2018 12.6498H5.2998V11.3498H16.2018L11.0806 6.22856L11.9998 5.2998L18.6998 11.9998L11.9998 18.6998L11.0806 17.7711L16.2018 12.6498Z' fill='%23C2CB20'/%3E%3C/svg%3E%0A");
+    width: 30px; /*아이콘의 크기*/
+    height: 30px;
 }
 
 .community .link {
@@ -513,8 +515,9 @@ footer .copyright{
 footer .copyright .license {
     display: inline-block; /*글자의 길이가 바뀌었을 때도 그 길이에 맞춰 underline을 주기 위함.-짝꿍*/
     position: relative;
+    font-size: 14px;
 }
-footer .copyright .license::after{ /*글자에 underline 주는 방법 : text-decoration or before/after or border-bottom*/
+footer .copyright .license::after{ /*글자에 underline 주는 방법 : text-decoration OR before/after or border-bottom*/
     content: "";
     position: absolute;
     left: 0;
