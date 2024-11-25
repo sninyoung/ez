@@ -27,6 +27,10 @@ header .gnb ul li a {
     color: #fff;
     padding: 36px 17px 36px 17px;
 }
+header .gnb ul li a:hover {
+    color: #C2CB20;
+    font-weight: 700;
+}
 
 /* visual */
 .visual {
