@@ -32,4 +32,5 @@ button {
     font-weight: inherit;
     color: inherit;
     line-height: inherit;
+    cursor: pointer;
 }
