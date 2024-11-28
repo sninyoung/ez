@@ -75,7 +75,7 @@ header .tnb .global button::before {
     background-size: contain;
 }
 
-
+/* visual */
 .visual {
     height: 900px;
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
@@ -88,4 +88,291 @@ header .tnb .global button::before {
     line-height: 1.2;
     text-align: left;
     padding: 705px 0 17px 0;
+}
+
+/* project */
+.project {
+    margin-top: 225px;
+}
+.project .wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* flex로 정렬된title하고 list의 높이가 동일하게 설정됨. 각자 콘텐츠의 높이대로만 높이가 잡히도록 설정하기 위해서. 
+    title에 sticky를 적용하기 위해선 꼭 필요함. */
+}
+.project .title {
+    position: sticky;
+    top: 100px; /* 고정될 때 위에서 떨어지는 값 */
+}
+.project .title em {
+    color: #DBA843;
+    font-weight: 700;
+}
+.project .title h2 {
+    font-family: 'Gmarket Sans';
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0;
+    margin: 15px 0 50px 0;
+}
+.project .title h2 strong {
+    font-family: 'Gmarket Sans';
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 0;
+}
+.project .list {
+    width: 617px;
+}
+.project .list ul {
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄 허용 */
+    gap: 25px;
+}
+.project .list ul li {
+    width: 296px;
+}
+.project .list ul li:nth-child(odd) { /* 홀수 선택자*/
+    transform: translateY(75px);
+}
+.project .list ul li:nth-child(even) {/* 짝수 선택자*/
+    transform: translateY(-75px);
+}
+.project .list ul li a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /*a 안에 photo, inner가 있는데 photo는 absolute를 줘서 flex의 영향을 안받음. */
+    position: relative; /* photo의 기준 */
+    height: 404px;
+    color: #f4f4f4;
+    font-size: 14px;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    overflow: hidden;
+}
+.project .list ul li a .photo {
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: -1; /* position이 있는 photo와 position이 없는 inner가 나란히 존재하는 경우, position이 있는 photo가 위에 올라감. 무조건 아래로 배치되게 하는 값*/
+    width: 100%; /*꽉 채우려고*/
+    height: 100%;
+}
+
+.project .list ul li a .inner {
+    padding: 0 35px 40px 35px;
+}
+.project .list ul li a h3 {
+    font-family: 'Gmarket Sans';
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    color: #fff;
+}
+.project .list ul li a p {
+    display: none;
+    margin: 7px 0 16px 2px;
+}
+.project .list ul li a span {
+    display: none;
+}
+.project .list ul li a span::after { /*아이콘*/
+    /* display: none;*/
+    content: "";
+    position: absolute;
+    right: -22px;
+    bottom: 0;
+    width: 17px;
+    height: 17px;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.52523 11.7832L7.78555 11.0435L9.09597 9.73307H5.86898V8.67057H9.09597L7.78555 7.36016L8.52523 6.62048L11.1066 9.20182L8.52523 11.7832ZM8.52399 15.931C9.45474 15.931 10.3296 15.7544 11.1485 15.4012C11.9675 15.0479 12.6798 14.5686 13.2856 13.9631C13.8913 13.3576 14.3709 12.6455 14.7244 11.8269C15.0777 11.0083 15.2544 10.1337 15.2544 9.20306C15.2544 8.27231 15.0778 7.39746 14.7246 6.57851C14.3713 5.75956 13.892 5.04721 13.2865 4.44147C12.681 3.83573 11.9689 3.35612 11.1503 3.00267C10.3317 2.64933 9.4571 2.47266 8.52647 2.47266C7.59572 2.47266 6.72087 2.64927 5.90192 3.00249C5.08296 3.35571 4.37062 3.83508 3.76487 4.44058C3.15913 5.04609 2.67953 5.75814 2.32607 6.57674C1.97273 7.39534 1.79606 8.26995 1.79606 9.20058C1.79606 10.1313 1.97267 11.0062 2.32589 11.8251C2.67912 12.6441 3.15848 13.3564 3.76399 13.9622C4.3695 14.5679 5.08155 15.0475 5.90014 15.401C6.71874 15.7543 7.59336 15.931 8.52399 15.931ZM8.52523 14.8685C6.94328 14.8685 5.60335 14.3195 4.50544 13.2216C3.40752 12.1237 2.85856 10.7838 2.85856 9.20182C2.85856 7.61988 3.40752 6.27995 4.50544 5.18203C5.60335 4.08411 6.94328 3.53516 8.52523 3.53516C10.1072 3.53516 11.4471 4.08411 12.545 5.18203C13.6429 6.27995 14.1919 7.61988 14.1919 9.20182C14.1919 10.7838 13.6429 12.1237 12.545 13.2216C11.4471 14.3195 10.1072 14.8685 8.52523 14.8685Z' fill='%23F4F4F4'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.project .list ul li a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #DBA843;
+    opacity: 0.9;
+    display: none; /* 혹은 opacity: 0; 를 준다. */
+}
+/* 마우스 over시 */
+.project .list ul li a:hover .photo::before { /* 이미지 위에 색*/
+    display: block;
+}
+.project .list ul li a:hover p {
+    display: block;
+}
+.project .list ul li a:hover span {
+    display: inline-block;
+}
+
+/*notice*/
+.notice {
+    background-color: #f7f7f7;
+    margin: 150px 0 0 0;
+    padding: 160px 0 160px 0;
+}
+.notice .wrapper {
+    position: relative; /*more의 정렬의 기준*/
+}
+.notice .title strong {
+    color: #DBA843;
+    font-weight: 700;
+}
+.notice .title h2 {
+    font-family: 'Gmarket Sans';
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin: 15px 0 17px 0;
+}
+.notice .list {
+    margin: 50px 0 0 0;
+}
+.notice .list ul li {
+    margin: 0 0 7px 0;
+}
+.notice .list ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 24px 30px;
+    border: 1px solid rgba(45, 45, 45, 0.3);
+    /* line-height: 72px; a의 높이를 행간으로 주면 글자가 그 높이의 위아래 가운데에 정렬함. 
+    정확하게 a의 높이가 정한대로 줘야 할 때 이 방법을 사용함. padding의 위아래 값인 24px을 빼야 함. */
+}
+.notice .list ul li a h3 {
+    font-family: 'Gmarket Sans';
+    font-weight: 500;
+    color: #5d5d5d;
+}
+.notice .list ul li a span {
+    color: #999;
+}
+/* 마우스 over 시*/
+.notice .list ul li a:hover {
+    background-color: #DBA843;
+    color: #ffffff;
+}
+.notice .more { 
+    position: absolute; /*wrapper가 정렬의 기준이 됨.*/
+    right: 0;
+    top: 78px;
+}
+.notice .more a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 22px 8px 15px;
+}
+.notice .more a::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 18px;
+    height: 18px;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00417 15.9812L5.20654 15.1835L11.3897 9.00034L5.20654 2.81716L6.00417 2.01953L12.985 9.00034L6.00417 15.9812Z' fill='%232d2d2d'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.notice .more a:hover {
+    color: #DBA843;
+}
+.notice .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.00417 15.9812L5.20654 15.1835L11.3897 9.00034L5.20654 2.81716L6.00417 2.01953L12.985 9.00034L6.00417 15.9812Z' fill='%23DBA843'/%3E%3C/svg%3E%0A");
+    transform: rotate(360deg);
+}
+
+/* webzine */
+.webzine {
+    margin: 150px 0 0 0;
+}
+.webzine .wrapper {
+    position: relative; /*more의 정렬의 기준*/
+}
+.webzine .title strong {
+    color: #DBA843;
+    font-weight: 700;
+}
+.webzine .title h2 {
+    font-family: 'Gmarket Sans';
+    font-size: 45px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    margin: 15px 0 17px 0;
+}
+.webzine .list {
+    margin: 40px 0 0 0;
+}
+.webzine .list ul {
+    display: flex;
+    gap: 24px;
+    width: 2116px  ;/* li의 넓이 * li의 개수 + li 사이의 여백 * (li의 개수 - 1) = 404 * 5 + 24 * 4 = 2116 */
+    /* flex로 정렬된 li들은 무조건 한줄로 들어가려고 li에 넓이를 줘도 찌그러짐..  (사이즈가 변경됨) 넓이를 유지하려면 넓이를 계산해서 ul(flex 조건을 가지고 있는 애 or li를 감싸고 있는 애)한테 줘야 함. */
+}
+.webzine .list ul li {
+    width: 404px;
+}
+.webzine .list ul li a {
+    display: block;
+}
+.webzine .list ul li a .photo {
+    position: relative; /* category1의 정렬의 기준 */
+    height: 221px;
+    border: 1px solid #f4f4f4;
+    /* 상자 테두리 둥글게 했으면 이거 줌
+    border-radius: 20px;
+    overflow: hidden; border-radius가 적용되려면 같이 줘야 함. */
+}
+
+.webzine .list ul li a .photo img {/* 이미지를 영역에 꽉차게 코딩하는 방법 -> object-fit 를 준다. */
+    width: 100%; 
+    height: 100%;
+    object-fit : cover;
+    transition: 1s;
+}
+.webzine .list ul li a:hover .photo img  {
+    transform: scale3d(1.2, 1.2, 1); /* 마우스 over했을 때 이미지 크게 보이게 하는 것*/
+}
+.webzine .list ul li a .photo .category1 {
+    position: absolute;
+    bottom: 7px;
+    left: 7px;
+    padding: 4px 12px;
+    background-color: #DBA843;
+    color: #fff;
+    font-size: 14px;
+    border-radius: 5px;
+}
+.webzine .list ul li a .category2 {
+    display: none;
+    /* display: block; */
+    color: #DBA843;
+    font-size: 14px;
+}
+.webzine .list ul li a h3 {
+    font-family: 'Gmarket Sans';
+    font-weight: 500;
+    margin: 17px 0 7px 0;
+
+    /* 1줄로 제한- 방법이 다름*/
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.webzine .list ul li a p {
+    /* 2줄로 제한 - 영역에 맞게 글을 잘라서 보이게 해주는 기능 */
+    line-height: 1.4;
+    height: 2.8em; /* 행간x줄수 (단위는 상대단위인 em을 써야 한다. )*/
+    overflow: hidden; 
+    /* 줄제한 할 때 절대 padding 주면 안됨.*/
 }
