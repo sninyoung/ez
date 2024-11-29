@@ -252,6 +252,15 @@ header .tnb .global button::before {
     font-family: 'Gmarket Sans';
     font-weight: 500;
     color: #5d5d5d;
+
+    width: calc(100% - 600px); /* a 안에는 제목과 날짜가 존재하는데 날짜는 길이가 변하지 않음. 그래서 날짜가 들어갈 넓이와 제목 사이의 여백을 더해서 100%(a의 넓이의 기준)에서 빼줌. 
+    h3가 가질 수 있는 최대 넓이. 제목은 길게 작성될 수도 있기 때문에 너무 길면 문자를 잘라버려야 함.
+    
+    제목을 한 줄로 제한할 때 조건
+    1. 너비가 명확해야 함. (block 요소거나) */
+    white-space: nowrap; /* 줄바꿈 금지 */
+    overflow: hidden; /* 넘치는 요소 숨기기 */
+    text-overflow: ellipsis; /* 잘린 글자는 뒤에 ...추가 - 한 줄일 때만 가능한 명령임*/
 }
 .notice .list ul li a span {
     color: #999;
