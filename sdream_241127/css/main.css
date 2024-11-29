@@ -6,7 +6,7 @@ header {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 180;
+    z-index: 100; /* position 속성을 갖은 요소는 서로 위아래 순서가 생김. header는 맨위에 둘 요소라 제일 높은값 100을 줌 */
     width: 100%;
     height: 100px;
     border-bottom:  1px solid rgba(255,255,255,0.4);
@@ -34,19 +34,19 @@ header .tnb {
 }
 header .tnb .mypage a {
     display: block;
-    position: relative;
     width: 24px;
     height: 24px;
-    /* 글자 안보이게 숨김처리하는 방법 - 글자 안쓰면 웹접근성 위배되기 때문에 쓰고 안보이게 해야 함. */
-    font-size: 0;
+
+    /*글자를 지우고 아이콘으로 대체*/
+    position: relative;  /* before의 정렬의 기준이 되어줌*/
+    font-size: 0;  /* 글자 안보이게 숨김처리하는 방법 : font-size와 line-height: 0 -> 글자 안쓰면 웹접근성 위배되기 때문에 쓰고 안보이게 해야 함. */
     line-height: 0;
 }
 header .tnb .mypage a::before {
     content: "";
-    position: absolute;
+    position: absolute; /* a를 기준으로 정렬*/
     right: 0;
     top: -2px;
-    margin: 0 18px 0 0;
     width: 100%;
     height: 100%;
     background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 14.6172C13.7969 14.6172 12.767 14.1889 11.9103 13.3322C11.0534 12.4753 10.625 11.4453 10.625 10.2422C10.625 9.03906 11.0534 8.00917 11.9103 7.1525C12.767 6.29563 13.7969 5.86719 15 5.86719C16.2031 5.86719 17.233 6.29563 18.0897 7.1525C18.9466 8.00917 19.375 9.03906 19.375 10.2422C19.375 11.4453 18.9466 12.4753 18.0897 13.3322C17.233 14.1889 16.2031 14.6172 15 14.6172ZM5.625 24.1366V21.3575C5.625 20.7454 5.79125 20.1785 6.12375 19.6569C6.45625 19.1352 6.90062 18.7342 7.45687 18.4537C8.69229 17.8481 9.93865 17.3939 11.1959 17.0909C12.4532 16.788 13.7213 16.6366 15 16.6366C16.2787 16.6366 17.5468 16.788 18.8041 17.0909C20.0614 17.3939 21.3077 17.8481 22.5431 18.4537C23.0994 18.7342 23.5437 19.1352 23.8762 19.6569C24.2087 20.1785 24.375 20.7454 24.375 21.3575V24.1366H5.625ZM7.5 22.2616H22.5V21.3575C22.5 21.1044 22.4267 20.87 22.28 20.6544C22.1333 20.439 21.9343 20.2631 21.6828 20.1269C20.6057 19.5965 19.5076 19.1946 18.3884 18.9213C17.2691 18.6481 16.1396 18.5116 15 18.5116C13.8604 18.5116 12.7309 18.6481 11.6116 18.9213C10.4924 19.1946 9.39427 19.5965 8.31719 20.1269C8.06573 20.2631 7.86667 20.439 7.72 20.6544C7.57333 20.87 7.5 21.1044 7.5 21.3575V22.2616ZM15 12.7422C15.6875 12.7422 16.276 12.4974 16.7656 12.0078C17.2552 11.5182 17.5 10.9297 17.5 10.2422C17.5 9.55469 17.2552 8.96615 16.7656 8.47656C16.276 7.98698 15.6875 7.74219 15 7.74219C14.3125 7.74219 13.724 7.98698 13.2344 8.47656C12.7448 8.96615 12.5 9.55469 12.5 10.2422C12.5 10.9297 12.7448 11.5182 13.2344 12.0078C13.724 12.4974 14.3125 12.7422 15 12.7422Z' fill='white'/%3E%3C/svg%3E%0A");
@@ -54,17 +54,21 @@ header .tnb .mypage a::before {
     background-position: center center;
     background-size: contain;
 }
+header .tnb .global {
+    margin: 0 0 0 18px;
+}
 header .tnb .global button {
-    position: relative;
     width: 22px;
     height: 22px;
-    /* 글자 안보이게 숨김처리하는 방법 - 글자 안쓰면 웹접근성 위배되기 때문에 쓰고 안보이게 해야 함. */
-    font-size: 0;
+
+    /* 글자 지우고 아이콘으로 대체 */
+    position: relative;  /* before의 정렬의 기준이 되어줌*/
+    font-size: 0;/* 글자 안보이게 숨김처리하는 방법 - 글자 안쓰면 웹접근성 위배되기 때문에 쓰고 안보이게 해야 함. */
     line-height: 0;
 }
 header .tnb .global button::before {
     content: "";
-    position: absolute;
+    position: absolute; /* a를 기준으로 정렬*/
     right: 0;
     top: -7px;
     width: 100%;
@@ -97,11 +101,10 @@ header .tnb .global button::before {
 .project .wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* flex로 정렬된title하고 list의 높이가 동일하게 설정됨. 각자 콘텐츠의 높이대로만 높이가 잡히도록 설정하기 위해서. 
-    title에 sticky를 적용하기 위해선 꼭 필요함. */
+    align-items: flex-start; /* flex로 정렬된title하고 list의 높이가 동일하게 설정됨. 각자 콘텐츠의 높이대로만 높이가 잡히도록 설정하기 위해서. title에 sticky를 적용하기 위해선 꼭 필요함. */
 }
 .project .title {
-    position: sticky;
+    position: sticky; /* 감싸고 있는 wrapper 안에서 고정. 주의사항!!!!!!!!!!!!! 감싸는 요소중에서 단 1개라도 overflow:hidden;이 적용되어 있으면 적용되지 않음. 그래서 실제로는 이렇게 코딩 못함!!! #wrap에는 무조건 overflow:hidden; 들어가야 하므로.... */
     top: 100px; /* 고정될 때 위에서 떨어지는 값 */
 }
 .project .title em {
@@ -124,6 +127,7 @@ header .tnb .global button::before {
 }
 .project .list {
     width: 617px;
+     /* padding-bottom: 61px;  list가 transform으로 이동한 만큼 */
 }
 .project .list ul {
     display: flex;
@@ -131,7 +135,7 @@ header .tnb .global button::before {
     gap: 25px;
 }
 .project .list ul li {
-    width: 296px;
+    width: 296px; /* 이미지 너비 */
 }
 .project .list ul li:nth-child(odd) { /* 홀수 선택자*/
     transform: translateY(75px);
@@ -142,14 +146,14 @@ header .tnb .global button::before {
 .project .list ul li a {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /*a 안에 photo, inner가 있는데 photo는 absolute를 줘서 flex의 영향을 안받음. */
-    position: relative; /* photo의 기준 */
+    justify-content: flex-end; /*a 안에 photo, inner가 있는데 photo는 absolute를 줘서 flex의 영향을 안받음.  inner를 a안에서 하단 정렬로 배치함.*/
+    position: relative; /* photo 정렬의 기준 */
     height: 404px;
     color: #f4f4f4;
     font-size: 14px;
     line-height: 1.2;
     letter-spacing: -0.03em;
-    overflow: hidden;
+    overflow: hidden;  /* 영역 밖에 나오는 요소 숨김 */
 }
 .project .list ul li a .photo {
     position: absolute; /* a를 기준으로 정렬 */
@@ -172,14 +176,16 @@ header .tnb .global button::before {
     color: #fff;
 }
 .project .list ul li a p {
-    display: none;
+    display: none; /* 숨김처리 */
     margin: 7px 0 16px 2px;
 }
 .project .list ul li a span {
-    display: none;
+    display: none; /* 숨김처리 */
+    font-size: 14px;
+    position: relative; /* after 정렬의 기준 */
+    padding-right: 2px; /* 오른쪽에 '자세히 보기' 아이콘 들어갈 자리 */
 }
-.project .list ul li a span::after { /*아이콘*/
-    /* display: none;*/
+.project .list ul li a span::after { /* 아이콘 */
     content: "";
     position: absolute;
     right: -22px;
@@ -191,6 +197,7 @@ header .tnb .global button::before {
     background-position: center center;
     background-size: contain;
 }
+/* 마우스 오버했을 때*/
 .project .list ul li a .photo::before {
     content: "";
     position: absolute;
@@ -207,7 +214,7 @@ header .tnb .global button::before {
     display: block;
 }
 .project .list ul li a:hover p {
-    display: block;
+    display: block;  /* display:none로 안보이게 한 요소는 display에 다른 속성 아무거나 줘도 나타나게됨. 만만한게 block이라 block줌 */
 }
 .project .list ul li a:hover span {
     display: inline-block;
@@ -243,9 +250,10 @@ header .tnb .global button::before {
 .notice .list ul li a {
     display: flex;
     justify-content: space-between;
-    padding: 24px 30px;
+    padding: 24px 30px 24px 30px;
     border: 1px solid rgba(45, 45, 45, 0.3);
-    /* line-height: 72px; a의 높이를 행간으로 주면 글자가 그 높이의 위아래 가운데에 정렬함. 
+    /* line-height: 72px; 
+    a의 높이를 행간으로 주면 글자가 그 높이의 위아래 가운데에 정렬함. 
     정확하게 a의 높이가 정한대로 줘야 할 때 이 방법을 사용함. padding의 위아래 값인 24px을 빼야 함. */
 }
 .notice .list ul li a h3 {
@@ -268,6 +276,7 @@ header .tnb .global button::before {
 /* ul에 마우스 over 시*/
 .notice .list ul li a:hover {
     background-color: #DBA843;
+    color: #fff;
 }
 .notice .list ul li a:hover h3 {
     color: #fff;
@@ -277,7 +286,7 @@ header .tnb .global button::before {
 }
 /* notice의 더보기 버튼*/
 .notice .more { 
-    position: absolute; /*wrapper가 정렬의 기준이 됨.*/
+    position: absolute; /*wrapper를 기준으로 정렬.*/
     right: 0;
     top: 78px;
 }
@@ -297,6 +306,7 @@ header .tnb .global button::before {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    transition: transform 1s; /* 변경되는 값을 천천히 변경 */
 }
 /* more에 마우스 over 시*/
 .notice .more a:hover {
@@ -353,12 +363,11 @@ header .tnb .global button::before {
     border-radius: 20px;
     overflow: hidden; border-radius가 적용되려면 같이 줘야 함. */
 }
-
 .webzine .list ul li a .photo img {/* 이미지를 영역에 꽉차게 코딩하는 방법 -> object-fit 를 준다. */
     width: 100%; 
     height: 100%;
     object-fit : cover;
-    transition: 1s;
+    transition: 1s; /* 오버하거나 class가 추가되거나 변경사항이 생겼을 때 그 수정사항을 천천히 실행하라는 뜻 */
 }
 .webzine .list ul li a:hover .photo img  {
     transform: scale3d(1.2, 1.2, 1); /* 마우스 over했을 때 이미지 크게 보이게 하는 것*/

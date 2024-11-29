@@ -1,0 +1,45 @@
+@import url(default.css);
+@import url(common.css);
+@import url(font.css);
+
+h2 {
+    margin: 150px 0 0 0;
+    font-size: 30px;
+}
+p {
+    margin: 20px 0 30px 0;
+}
+.fit .list1 ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.fit .list1 ul li {
+    width: 297px;
+}
+.fit .list1 ul li a {
+    display: block;
+}
+.fit .list1 ul li a .photo img {
+    width: 100%; /*photo 너비의 100%*/
+}
+.fit .list2 ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.fit .list2 ul li {
+    width: 297px;
+}
+.fit .list2 ul li a {
+    display: block;
+}
+.fit .list2 ul li a .photo { /* li에서 너비를 제한, 그리고 a, photo는 block 요소라 li의 너비를 그대로 가지고 있음.*/
+    height: 230px;
+}
+.fit .list2 ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
