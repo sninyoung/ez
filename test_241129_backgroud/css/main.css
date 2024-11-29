@@ -23,6 +23,7 @@ p {
 .fit .list1 ul li a .photo img {
     width: 100%; /*photo 너비의 100%*/
 }
+
 .fit .list2 ul {
     display: flex;
     gap: 24px;
@@ -43,3 +44,184 @@ p {
     object-fit: cover;
 }
 
+.fit .list3 ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center; /* 이미지를 가운데로 정렬 */
+}
+.fit .list3 ul li {
+    width: 297px;
+}
+.fit .list3 ul li a {
+    display: block;
+}
+.fit .list3 ul li a .photo { /* li에서 너비를 제한, 그리고 a, photo는 block 요소라 li의 너비를 그대로 가지고 있음.*/
+    height: 230px;
+    background-color: #2d2d2d;
+}
+.fit .list3 ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.bg .list ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.bg .list ul li {
+    width: 400px;
+}
+.bg .list ul li a {
+    display: block;
+    height: 400px;
+    border: 1px solid #2d2d2d;
+    color: #99ff00;
+    font-size: 30px;
+    text-align: center;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+.bg .list ul li.list1 a {
+    background-image: url(../images/bg1.jpg);
+}
+.bg .list ul li.list2 a {
+    background-image: url(../images/bg2.jpg);
+}
+
+.bg .list.case2 ul li a {
+    background-size: contain;
+}
+.bg .list.case3 ul li a {
+    background-size: 400px;
+}
+.bg .list.case4 ul li a {
+    background-size: auto 400px;
+}
+
+.over .list ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.over .list ul li {
+    width: 297px;
+}
+.over .list ul li a {
+    display: block;
+    height: 250px;
+    position: relative; /* photo 정렬의 기준*/
+}
+.over .list ul li a .photo {
+    position: absolute; /* a를 기준으로 정렬 & before의 정렬의 기준이 되어줌.*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 마우스 over해서 이미지 커지게 했을 때 영역 밖으로 삐져나가는 부분 숨김 처리 */
+}
+.over .list ul li a .photo::before {
+    content: "";
+    position: absolute; /* photo를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 1; /* photo 안에 before랑 img 태그가 위아래 존재. before를 꼭 위에 두기 위해서 z-index를 1이라도 주면 됨.*/
+    width: 100%;
+    height: 100%;
+    background-color: #2d2d2d;
+    opacity: 0; /* 숨김 처리  -display:none;으로 숨김처리한 요소는 transtion이 적용되지 않음. transtion을 적용하려면 opacity: 0; 으로 숨김처리 해야 함. */
+    transition: 0.5s;/* 부드럽게 인터랙션 */
+}
+.over .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;/* 부드럽게 인터랙션 */
+}
+.over .list ul li a h3 {
+    color: #99ff00;
+    font-size: 20px;
+    text-align: center;
+    padding-top: 20px;
+    transition: 0.5s;/* 부드럽게 인터랙션 */
+}
+/* 마우스 over 시*/
+.over .list ul li a:hover .photo::before {
+    opacity: 0.5; /* 이미지 위에 어둡게 처리*/
+}
+.over .list ul li a:hover .photo img {
+    transform: scale3d(1.2,1.2,1);  /* 마우스 over해서 이미지 커지게 하는 코드 */
+}
+.over .list ul li a:hover h3 {
+    padding-top: 100px;
+}
+
+.bg_over .list ul {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+}
+.bg_over .list ul li {
+    width: 297px;
+}
+.bg_over .list ul li a {
+    display: block;
+    height: 250px;
+    position: relative; /* before와 after 정렬의 기준*/
+    overflow: hidden;
+}
+.bg_over .list ul li a::before { /* 이미지 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    transition: 0.5s;/* 부드럽게 인터랙션 */
+}
+.bg_over .list ul li.bg1 a::before  {
+    background-image: url(../images/bg3.jpg);
+}
+.bg_over .list ul li.bg2 a::before  {
+    background-image: url(../images/bg4.jpg);
+}
+.bg_over .list ul li a::after { /* 어둡게 검정색 overlay */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    background-color: #2d2d2d;
+    opacity: 0;
+    transition: 0.5s;/* 부드럽게 인터랙션 */
+}
+.bg_over .list ul li a h3 { /* 글씨 */
+    position: relative; /* z-index을 주기 위해 필수로 들어가야 함. */
+    z-index: 3;
+    color: #99ff00;
+    font-size: 20px;
+    text-align: center;
+    transition: 0.5s; /* 부드럽게 인터랙션 */
+}
+/* 마우스 over시 */
+.bg_over .list ul li a:hover::before {
+    transform: scale3d(1.2,1.2,1);  /* 마우스 over해서 이미지 커지게 인터랙션 */
+}
+.bg_over .list ul li a:hover::after {
+    opacity: 0.5;
+}
+.bg_over .list ul li a:hover h3 {
+    padding-top: 100px;
+}
+
+body {
+    margin-bottom: 800px;
+}

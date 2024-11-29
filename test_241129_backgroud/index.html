@@ -11,37 +11,138 @@
         <div class="fit"><!--overfit 설명-->
             <div class="wrapper">
                 <h2>배경 이미지의 크기 조정</h2>
-                <p>이미지 태그로 코딩한 이미지는 너비나 높이 하나만 지정해주면 나머지는 비율에 맞게 리사이즈(조정)됨. 이미지 크기 조절할 때 너비와 높이를 동시에 주면 안됨.</p>
+                <p>이미지 태그로 코딩한 이미지는 너비나 높이 하나만 지정해주면 나머지는 비율에 맞게 리사이즈(조정)됨. 이미지 크기 조절할 때 너비와 높이를 동시에 주면 안됨.
+                   이미지의 크기를 
+                </p>
                 <div class="list1">
                     <ul>
                         <li>
                             <a href="#n">
                                 <div class="photo"><img src="images/bg1.jpg" alt="포토"></div>
-                                <h3>이미지</h3>
+                                <h3>text</h3>
                             </a>
                         </li>
                         <li>
                             <a href="#n">
                                 <div class="photo"><img src="images/bg2.jpg" alt="포토"></div>
-                                <h3>이미지</h3>
+                                <h3>text</h3>
                             </a>
                         </li>
                     </ul>
-                </div>
-                <h2>object fit</h2>
+                </div><!--list1-->
+                <h2>object fit - cover</h2>
                 <p>메인페이지 최근 게시물에 이미지가 있는 경우, 담당자가 어떤 이미지를 업로드하더라도 디자인한 영역에 이미지를 지끄러지지 않게 코딩하는게 중요함.</p>
                 <div class="list2">
                     <ul>
                         <li>
                             <a href="#n">
                                 <div class="photo"><img src="images/bg1.jpg" alt="포토"></div>
-                                <h3>이미지</h3>
+                                <h3>text</h3>
                             </a>
                         </li>
                         <li>
                             <a href="#n">
                                 <div class="photo"><img src="images/bg2.jpg" alt="포토"></div>
-                                <h3>글자 글자 </h3>
+                                <h3>text</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--list2-->
+                <h2>object fit - contain</h2>
+                <p>메인페이지 최근 게시물에 이미지가 있는 경우, 담당자가 어떤 이미지를 업로드하더라도 디자인한 영역에 이미지를 지끄러지지 않게 코딩하는게 중요함.</p>
+                <div class="list3">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/bg1.jpg" alt="포토"></div>
+                                <h3>text</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/bg2.jpg" alt="포토"></div>
+                                <h3>text</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div><!--list3-->
+            </div>
+        </div><!--fit-->
+        <div class="bg">
+            <div class="wrapper">
+                <h2>background=size:cover</h2>
+                <p>배경을 주는 요소에 빈 공간없이 배경 이미지를 꽉 채우는 방식. 단, 이미지가 짤릴 수 있음.</p>
+                <div class="list case1">
+                    <ul>
+                        <li class="list1"><a href="#n">text</a></li>
+                        <li class="list2"><a href="#n">text</a></li>
+                    </ul>
+                </div>
+
+                <h2>background=size:contain</h2>
+                <p>배경을 주는 요소에 배경이미지를 짤리지 않게 모두 표시하는 방식. 배경의 일부에는 배경이미지가 들어가지 않아 빈곳이 발생함.</p>
+                <div class="list case2">
+                    <ul>
+                        <li class="list1"><a href="#n">text</a></li>
+                        <li class="list2"><a href="#n">text</a></li>
+                    </ul>
+                </div>
+
+                <h2>background=size:직접입력</h2>
+                <p>배경의 크기를 px 또는 %로 직접 입력할 수도 있습니다. 이때는 img 태그와 동일하게 너비/높이 하나만 입력하면 비율에 맞게 사이즏가 줄어듦. ※절대 너비와 높이를 동시에 주면 안됨.!!<br><br>
+                    case 1 : background-size: 200px; 이렇게 값을 하나만 적으면 너비가 조절됨. 원래는 background-size: 200px auto; 이게 정확한 표현임.<br>
+                    case 2 : background-size: auto 200px; 이렇게 적으면 높이가 조절됨. <br>
+                    만약 단위를 %로 주면 배경을 준 요소의 너비/높이를 기준으로 퍼센트 계산함.(배경 이미지 사이즈는 상관없음.) </p>
+                <div class="list case3">
+                    <ul>
+                        <li class="list1"><a href="#n">case 1 </a></li>
+                        <li class="list2"><a href="#n">case 1 </a></li>
+                    </ul>
+                </div>
+                <div class="list case4">
+                    <ul>
+                        <li class="list1"><a href="#n">case 2 </a></li>
+                        <li class="list2"><a href="#n">case 2 </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div><!--bg-->
+        <div class="over">
+            <div class="wrapper">
+                <h2>img 태그로 배경을 코딩한 경우</h2>
+                <p>홈페이지에서 게시물의 이미지를 가져올 때는 꼭 img 태그로만 가져올 수 있음.</p>
+                <div class="list case1">
+                    <ul>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/bg3.jpg" alt="배경"></div>
+                                <h3>우주</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#n">
+                                <div class="photo"><img src="images/bg4.jpg" alt="배경"></div>
+                                <h3>피자</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="bg_over">
+            <div class="wrapper">
+                <h2>background 마우스 오버 시 확대</h2>
+                <p>배경을 확대하려면 background-size로 조절해야 한다. </p>
+                <div class="list">
+                    <ul>
+                        <li class="bg1">
+                            <a href="#n">
+                                <h3>우주</h3>
+                            </a>
+                        </li>
+                        <li class="bg2">
+                            <a href="#n">
+                                <h3>피자</h3>
                             </a>
                         </li>
                     </ul>
