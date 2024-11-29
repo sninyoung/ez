@@ -293,10 +293,8 @@ header .tnb .global button::before {
 
 /* webzine */
 .webzine {
+    position: relative; /* more의 정렬의 기준이 됨.*/
     margin: 150px 0 0 0;
-}
-.webzine .wrapper {
-    position: relative; /*more의 정렬의 기준*/
 }
 .webzine .title strong {
     color: #DBA843;
@@ -312,12 +310,18 @@ header .tnb .global button::before {
 }
 .webzine .list {
     margin: 40px 0 0 0;
+    overflow-x: hidden; /* 가로스크롤바 없애기 */
 }
 .webzine .list ul {
     display: flex;
     gap: 24px;
     width: 2116px  ;/* li의 넓이 * li의 개수 + li 사이의 여백 * (li의 개수 - 1) = 404 * 5 + 24 * 4 = 2116 */
     /* flex로 정렬된 li들은 무조건 한줄로 들어가려고 li에 넓이를 줘도 찌그러짐..  (사이즈가 변경됨) 넓이를 유지하려면 넓이를 계산해서 ul(flex 조건을 가지고 있는 애 or li를 감싸고 있는 애)한테 줘야 함. */
+    
+    /* 밑 세 줄 코드는 길이가 긴 ul을 가운데 오게 하는 코드임. */
+    position: relative; /* absolute는 공간을 차지하지 않고 순서를 역행. relative는 공간을 차지함.*/
+    left: 50%; /* 감싸는 영역 넓이의 50% */
+    transform: translateX(-50%); /* ul 자기 자신 넓이의 50% */
 }
 .webzine .list ul li {
     width: 404px;
@@ -375,4 +379,15 @@ header .tnb .global button::before {
     height: 2.8em; /* 행간x줄수 (단위는 상대단위인 em을 써야 한다. )*/
     overflow: hidden; 
     /* 줄제한 할 때 절대 padding 주면 안됨.*/
+}
+.webzine .more {
+    position: absolute; /* webzine을 기준으로 정렬*/
+    right: calc(50% - 566px); /* calc : 단위가 다른 값을 계산해주는 애. 부호 앞뒤로는 띄어쓰기 꼭 해줘야 함.*/
+    top: 72px;
+}
+
+
+
+footer {
+    margin-top: 800px;
 }
