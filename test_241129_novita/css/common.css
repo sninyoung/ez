@@ -2,9 +2,9 @@ body, html {
     font-family: "Pretendard", sans-serif;
     font-size: 17px;
     font-weight: 400; /*regular*/
-    color: #2d2d2d;
+    color: #3d3d3d;
     line-height: 1.4;
-    letter-spacing: -0.03em;
+    letter-spacing: 0;
     word-break: keep-all;
 }
 .wrapper {
@@ -14,5 +14,5 @@ body, html {
 }
 #wrap  {
     min-width : 1300px; /*콘텐츠 영역이 1260px 좌우여백 20px씩 해서 1260 + 20*2 = 1300*/
-    /* overflow: hidden; 영역 밖으로 나간 애들을 숨김처리함. */
+    overflow: hidden; /* 영역 밖으로 나간 애들을 숨김처리함. */
 }/* id 요소는 # 으로, class 요소는 . 으로 */
