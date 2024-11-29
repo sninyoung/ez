@@ -256,11 +256,17 @@ header .tnb .global button::before {
 .notice .list ul li a span {
     color: #999;
 }
-/* 마우스 over 시*/
+/* ul에 마우스 over 시*/
 .notice .list ul li a:hover {
     background-color: #DBA843;
-    color: #ffffff;
 }
+.notice .list ul li a:hover h3 {
+    color: #fff;
+}
+.notice .list ul li a:hover span {
+    color: #fff;
+}
+/* notice의 더보기 버튼*/
 .notice .more { 
     position: absolute; /*wrapper가 정렬의 기준이 됨.*/
     right: 0;
@@ -283,6 +289,7 @@ header .tnb .global button::before {
     background-position: center center;
     background-size: contain;
 }
+/* more에 마우스 over 시*/
 .notice .more a:hover {
     color: #DBA843;
 }
