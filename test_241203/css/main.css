@@ -1,192 +1,84 @@
-@import url(default.css); /* default.css를 이 문서에 복사해서 넣은 것처럼 불러오기 */
+@import url(default.css);
 @import url(font.css);
 @import url(common.css);
 
-.data {
-    margin: 150px 0 0 0;
-}
-h2 {
-    font-size: 45px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 0 20px 0;
-}
-/*이미지가 pc에서 코딩한 방식에 따라 모바일에서 어떻게 다르게 코딩되는지 알아보기 위함.*/
-.data .photo {
-    margin: 40px 0 0 0;
-    border-radius: 30px; /* border-radius와 overflow는 같이 줘야함. */
+.introduce .photo {
+    margin: 120px 0 0 0 ;
+    border-radius: 10px;
     overflow: hidden;
 }
-/* case1 : img 태그로 삽입한 이미지 사이즈 그대로 사용하고 이미지 하단의 여백을 삭제하기 위해 font-size와 line-height에 0을 넣어줌.(height 없음) 
-     -> 이렇게 하면 photo의 높이와 이미지의 높이가 동일해짐. */
-.data .photo.case1 {
+.introduce .photo.case1 {
     font-size: 0;
-    line-height: 0; 
+    line-height: 0;
 }
-/* case2 : 영역에 이미지가 들어갈 너비가 높이가 잡혀야 함. block 요소라서 넓이는 주지 않아도 잡힘. */
-.data .photo.case2 {
-    height: 275px;
+.introduce .photo.case1 img {
+    width: 100%;
 }
-.data .photo.case2 img {
+.introduce .photo.case2 {
+    /* 너비는 변경되지만 높이가 고정-이미지는 잘려도 됨.*/
+    height: 460px;
+}
+.introduce .photo.case2 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-} /*----data----*/
-
-
-
-
-/*mobile 버전 css - 변경된 값만 바꿔줌. 나머지는 상속받을 것임.*/
-@media screen and (max-width:640px){
-    .data {
-        margin: 120px 0 0 0;
-    }
-    h2 {
-        font-size: 25px;
-        margin: 0 0 13px 0;
-    }
-    /*이미지가 pc에서 코딩한 방식에 따라 모바일에서 어떻게 다르게 코딩되는지 알아보기 위함.*/
-    .data .photo {
-        margin: 20px 0 0 0;
-        border-radius: 15px; 
-    } 
-    .data .photo.case1 img {
-        width: 100%; /* 이미지를 감싸는 photo의 너비에 딱맞게 사이즈 조절. 높이는 비율에 맞게 조절 */
-    }
-    .data .photo.case2 {
-        height: 250px;
-    }
-} /*@media*/
-
-
-.esg {
-    margin: 100px 0 0 0;
 }
-.esg .list {
-    margin: 40px 0 0 0;
-}
-.esg .list ul {
+
+.introduce .group {
     display: flex;
-    flex-wrap: wrap; /* 두 줄 허용 */
-    gap: 24px;
+    justify-content: space-between;
+    margin: 60px 0 100px 0;
 }
-
-.esg .list ul li {
-    width: 618px;
-}
-
-.esg .list ul li a {
-    display: block; 
-    height: 275px; /* a한테 width 너비 주면 안들어감. 꼭 li한테 줘야 함. */
-    color: #fff; /* 글자 색상과 back색, 여백은 a한테 줘야 함.*/
-    padding: 60px 60px 0 60px; /* 높이 줬기 때문에 하단 여백은 주면 안됨.*/
-    border-radius: 30px;
-}
-.esg .list ul li.bg1 a {
-    background-color: #2D480C;
-}
-.esg .list ul li.bg2 a {
-    background-color: #8D9339;
-}
-.esg .list ul li.bg3 a {
-    background-color: #174577;
-}
-.esg .list ul li.bg4 a {
-    background-color: #1588B4;
-}
-
-.esg .list ul li a h3 {
-    font-size: 30px;
-    font-weight: 700;
+.introduce .group h2 {
+    font-size: 40px;
+    font-weight: 800;
     line-height: 1.2;
-    margin: 0 0 17px 0;
 }
-.esg .list ul li a span {
-    position: relative; /* after 정렬의 기준 */
-    display: inline-block; /* inline태그는 margin과 padding 중 위아래의 여백이 적용이 안되기 때문에 꼭 block 태그로 바꿔줘야 함. */
-    margin: 50px 0 0 0; /* 상단의 p태그와의 여백을 margin으로 줘야 함. */
-    padding: 0 30px 0 0 ; /* 오른쪽 아이콘까지의 범위를 padding으로 꼭 줘야 함!!*/
-} 
-.esg .list ul li a span::after {
-    position: absolute; /* a를 기준으로 정렬 */
-    content: "";
-    right: 0;
-    top: -2px;
-    width: 27px;
-    height: 27px;
-    margin: 0 0 0 3px;
-    background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.9538 13.5L9.77881 8.32503L10.575 7.52881L16.5462 13.5L10.575 19.4712L9.77881 18.675L14.9538 13.5Z' fill='white'/%3E%3C/svg%3E%0A");
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
+.introduce .group h2 span {
+    display: block;
 }
-
-
-/*mobile 버전 css - 변경된 값만 바꿔줌. 나머지는 상속받을 것임.*/
-@media screen and (max-width:640px){ /* max-width:640px <- 이걸 brack point라고 함. 총 4~5개 정도 줌.*/
-    .esg {
-        margin: 50px 0 0 0;
-    }
-    .esg .list {
-        margin: 20px 0 0 0;
-    }
-    .esg .list ul {
-        gap: 16px;
-    }
-    .esg .list ul li {
-        width: calc(50% - 8px); /* width: 152px으로 주면 안됨! 
-        !!계산식
-         1줄에 2개일 때; {100% / (한줄에 나타날 li의 개수)} - {li 사이의 여백(16px) * (한줄에 나타날 li의 개수 - 1) / (한줄에 나타날 li의 개수(2개))}
-         = calc(50% - 8px)
-         
-         1줄에 3개일 때; {100% / 3}  - {16*(3-1) / 3} 
-         = calc(33.3% - 10.6px)
-        ---- 브라우저 사이즈가 
-         */
-    }
-    .esg .list ul li a {
-        height: 100%;  /* auto 인데 li랑 a의 높이가 서로 안맞으면 100%를 줘본다. */
-        padding: 20px 20px 20px 20px; /* 높이를 고정값이 아니라 100%으로 줬기 때문에 하단 여백을 줘야 함. .*/
-        border-radius: 15px;
-    }
-    .esg .list ul li a h3 {
-        font-size: 15px;
-        margin: 0 0 13px 0;
-    }
-    .esg .list ul li a span {
-        margin: 45px 0 0 0; /* 상단의 p태그와의 여백 */
-        padding: 0 16px 0 0 ; /* 오른쪽 아이콘까지의 범위 */
-        font-size: 10px;
-    } 
-    .esg .list ul li a span::after {
-        top: 0;
-        width: 15px;
-        height: 15px;
-        margin: 0 0 0 1px;
-    }
-} /*@media*/
-
-@media screen and (max-width:360px){
-    .esg .list ul li {
-        width: auto; /* 여백 값이 들어가있으면 너비에 100% 주는 건 위험함. 
-        auto를 줌으로써 원래 성격대로 들어가게 한다. block 태그라서 auto로 하면 100%로 들어갈 것임. */
-    }
+.introduce .group p {
+    width: 680px;
 }
-
-/* work */
-.work {
-    margin: 100px 0 0 0;
+.introduce .group p strong {
+    font-weight: 600;
+    color: #3d3d3d;
 }
-@media screen and (max-width:640px){
-    .work {
-        margin: 50px 0 0 0;
-    }
-    .work p br {
-        display: none; /* 모바일 버전일 때 줄바꿈 태그인 br 태그를 none으로 해준다. */
-    }
-}
-
-
 body {
     margin-bottom: 500px;
 }
+
+/* mobile 버전 css */
+@media screen and (max-width:640px){ 
+    .introduce .photo {
+        margin: 60px 0 0 0 ;
+        border-radius: 5px;
+    }
+    .introduce .photo.case2 {
+        height: 117px; /* 높이가 고정됨. */
+    }
+    .introduce .group {
+        display: block; /* flex를 해제하려면 display에 다른 값을 선언해줘야 함.*/
+        margin: 30px 0 50px 0;
+    }
+    .introduce .group h2 {
+        font-size: 20px;
+        margin: 0 0 16px 0;
+    }
+    .introduce .group h2 span { /* 줄바꿈 없애는 방식1 : span태그 이용 */
+        display: inline;
+    }
+    .introduce .group h2 br {/* 줄바꿈 없애는 방식1 : br 태그 이용 */
+        display: none;
+    }
+    .introduce .group p {
+        width: auto; /* 고정값 삭제 후 원래대로 */
+    }
+    .introduce .group p strong {
+        font-weight: 600;
+        color: #3d3d3d;
+    }
+    body {
+        margin-bottom: 200px;
+    }
+} /* @media */

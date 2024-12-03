@@ -9,7 +9,7 @@ body, html {
     word-wrap: break-word; /* 단어가 너무 길면 그걸 강제로 줄바꿈 하는 명령 */
 }
 
-/*pc 버전 css*/
+/* pc 버전 css */
 .wrapper {
     width: 1260px;
     margin: 0 auto;
@@ -26,25 +26,13 @@ body, html {
 
 
 
-
-
-
-
-
-
-
-
-
-/*mobile 버전 css*/
-@media screen and (max-width:640px){
-    body, html {
-        font-size: 13px;
-    }
-    .wrapper { /* 모바일에서는 너비가 고정이 아니라 브라우저 사이즈가 줄어드는 대로 줄어들어야 함.*/
-    width:  auto; /* 너비의 고정된 값을 해제해주는 값 */
-    margin: 0 20px; /* 콘텐츠의 좌우 여백*/
+/* mobile 버전 css */
+@media screen and (max-width:640px){ /* 브라우저 너비 기준 640px이하에서만 실행*/
+    .wrapper {
+        width: auto; /* 나를 감싸는 요소를 따라 자동으로 너비가 조정됨. block요소일 때는 감싸는 요소의 너비의 100%가 들어감.*/
+        margin: 0 20px;
     }
     #wrap {
-    min-width: 320px; /*최소 너비*/
-    }
-} /*@media <- 이 주석은 꼭 달아주기!! */
+        min-width: 0;
+    }    
+} /* @media */
