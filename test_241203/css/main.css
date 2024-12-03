@@ -2,6 +2,30 @@
 @import url(font.css);
 @import url(common.css);
 
+/*header*/
+header {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100px;
+}
+header .logo {
+    margin: 25px 0 0 0;
+}
+/* mobile 버전 css */
+@media screen and (max-width:640px){
+    header {
+        height: 50px;
+    }
+    header .logo {
+        margin: 15px 0 0 0;
+        height: 20px;
+        width: auto;
+    }
+}
+
+/* introduce */
 .introduce .photo {
     margin: 120px 0 0 0 ;
     border-radius: 10px;
@@ -81,4 +105,182 @@ body {
     body {
         margin-bottom: 200px;
     }
+} /* @media */
+
+
+
+
+/* news*/
+.news {
+    margin: 100px 0;
+}
+.news h2 {
+    font-size: 45px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0; /* 자간 */
+    margin: 0 0 30px 0;
+}
+.news .news_wrap {
+    display: flex;
+    justify-content: space-between;
+}
+.news .news_wrap h3 {
+    display: none; /* 웹접근성 때문에 해당 영역에 대한 제목을 넣어줘야 하지만 디자인에는 없기 때문에 숨김처리함. */
+}
+
+/* notice */
+.news .news_wrap .notice {
+    width: 618px;
+    margin: 0 46px 0 0;
+    background-color: #F2F4F8;
+    padding: 50px 40px; /* 상하여백 50px 좌우여백 40px*/
+}
+.news .news_wrap .notice ul li a {
+    display: flex;
+    justify-content: space-between;
+    padding: 19px 0; 
+    border-bottom:  1px solid #ccc;
+}
+.news .news_wrap .notice ul li:last-child a {
+    border-bottom: none;
+}
+/* li의 마지막 밑줄을 없애는 코드 2가지 : none을 주거나 0을 준다. border-bottom: none; or border-bottom: 0;*/
+.news .news_wrap .notice ul li a strong {
+    color: #3d3d3d;
+    /* 한 줄 제한 */
+    width: calc(100% - 160px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+.news .news_wrap .notice ul li a:hover strong {
+    color: #17498C;
+    font-weight: 600;
+}
+.news .news_wrap .notice ul li a span{
+    font-size: 15px;
+    color: #555;
+}
+
+/* gallery */
+.news .news_wrap .gallery {
+    width: 596px;
+}
+
+.news .news_wrap .gallery ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; /* 여러 줄 허용*/
+    gap: 30px 24px; /* 첫번째가 위아래 여백, 두번째가 좌우 여백 */
+}
+.news .news_wrap .gallery ul li {
+    width: calc(50% - 12px); 
+    /* 계산식 : {(ul의 너비) / (한 줄에 들어가는 li 개수)}% - {(여백의 총합) / (한 줄에 들어가는 li 개수)}px = (100% / 2개) - (24px / 2개)
+     = 50% - 12px */
+}
+.news .news_wrap .gallery ul li a {
+    display: block;
+}
+.news .news_wrap .gallery ul li a .photo {
+    height: 180px; /* 웹에서 바로 저장한 이미지는 사이즈가 제각각이어서 위에서 한 방법 중 case2 방법만 사용가능함 */
+    overflow: hidden; /* a에 마우스 오버했을 때 이미지가 영역 밖으로 나가는 걸 숨김처리하는 코드 */
+}
+.news .news_wrap .gallery ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    transition: 0.8s; /* a에 마우스 오버했을 때 효과를 천천히 수행하게 해주는 코드 */
+}
+.news .news_wrap .gallery ul li a:hover .photo img {
+    transform: scale3d(1.2,1.2, 1); /* a에 마우스 오버했을 때 커지는 코드 */
+}
+.news .news_wrap .gallery ul li a strong {
+    display: inline-block; /* margin 적용되라고 줌.*/
+    font-weight: 600;
+    color: #3d3d3d;
+    margin: 10px 0 0 0;
+
+/* 1줄 제한하려면
+    1. 너비가 있어야 함. (혹은 block태그이거나)
+    2. 제목을 한 줄로 제한하는 코드 : white-space: nowrap 
+    3. 글자가 영역을 넘치면 잘라버림 overflow: hidden;
+    4. 잘린 글자는 뒤에 ... 추가하는 코드 : text-overflow: ellipsis;*/
+    width: 260px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.news .news_wrap .gallery ul li a:hover strong {
+    color: #17498C;
+}
+
+
+
+
+
+/* mobile 버전 css */
+@media screen and (max-width:640px){ 
+    .news {
+        margin: 50px 0;
+    }
+    .news h2 {
+        font-size: 30px;
+        margin: 0 0 15px 0;
+    }
+    .news .news_wrap {
+        display: block; /* block을 줌으로써 flex해제함.*/
+    }
+    /* notice */
+    .news .news_wrap .notice {
+        width: auto;
+        padding: 25px 20px; /* 하단여백 꼭 있어야 함!. */
+    }
+    .news .news_wrap .notice ul li a {
+        padding: 10px 0; 
+    }
+    .news .news_wrap .notice ul li:last-child a {
+        border-bottom: none;
+    }
+    /* li의 마지막 밑줄을 없애는 코드 2가지 : none을 주거나 0을 준다. border-bottom: none; or border-bottom: 0;*/
+    .news .news_wrap .notice ul li a strong {
+        font-size: 13px;
+        width: calc(100% - 70px); 
+    }
+    .news .news_wrap .notice ul li a span{
+        font-size: 10px;
+        color: #555;
+    }
+    
+    /* gallery */
+    .news .news_wrap .gallery {
+        width: auto;
+        margin: 60px 0 0 0;
+    }
+    .news .news_wrap .gallery ul {
+        gap: 30px 16px; /* 첫번째가 위아래 여백, 두번째가 좌우 여백 */
+    }
+    .news .news_wrap .gallery ul li {
+        width: calc(50% - 8px); 
+    }
+    .news .news_wrap .gallery ul li a .photo {
+        height: 152px;
+    }
+    .news .news_wrap .gallery ul li a .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    
+        transition: 0.8s; /* a에 마우스 오버했을 때 효과를 천천히 수행하게 해주는 코드 */
+    }
+    .news .news_wrap .gallery ul li a strong {
+        font-size: 13px;
+        margin: 10px 0 0 0;
+        /* 한 줄 제한했던 제목을 무제한으로 바꿀 것임. */
+        width: auto;
+        white-space: normal; 
+        overflow: visible;
+    }   
 } /* @media */
