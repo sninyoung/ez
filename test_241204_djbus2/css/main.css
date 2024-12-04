@@ -204,6 +204,40 @@ header .gnb .gnb_wrap ul li a:hover span::after {
 }
 
 
+@media screen and (max-width:640px){
+    .int {
+        margin: 50px 0 0 0;
+    }
+    /* txt_right */
+    .int .txt_right, .int .txt_left {
+        display: block;
+    }
+    .int strong {
+        color: #255698;
+    }
+    .int h2 {
+        font-size: 25px;
+        margin: 6px 0 13px 0;
+    }
+    .int .sub_title {
+        margin: 0 0 13px 0;
+    }
+    .int .btn_wrap {
+        margin: 20px 0 0 0;
+        gap: 10px;
+    }
+    .int .btn_wrap a {
+        padding: 9px 18px;
+        transition: 0.5s; /* 마우스 오버 시 천천히(느리게) 색이 바뀌도록 */
+    }
+    .int .photo {
+        width: auto;
+        height: 168px;
+        border-radius: 15px;
+        margin: 11px;
+    }
+}/* int @media */
+
 
 footer {
     margin-top: 500px;
