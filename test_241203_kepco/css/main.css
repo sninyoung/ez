@@ -272,8 +272,6 @@ body {
         width: 100%;
         height: 100%;
         object-fit: cover;
-    
-        transition: 0.8s; /* a에 마우스 오버했을 때 효과를 천천히 수행하게 해주는 코드 */
     }
     .news .news_wrap .gallery ul li a strong {
         font-size: 13px;

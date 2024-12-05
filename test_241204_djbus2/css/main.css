@@ -169,6 +169,7 @@ header .gnb .gnb_wrap ul li a:hover span::after {
 }
 .int .btn_wrap {
     display: flex;
+    flex-wrap: wrap; /* 버튼 두 줄 허용 */
     margin: 60px 0 0 0;
     gap: 10px;
 }
@@ -208,39 +209,45 @@ header .gnb .gnb_wrap ul li a:hover span::after {
     .int {
         margin: 50px 0 0 0;
     }
-    /* txt_right */
-    .int .txt_right, .int .txt_left {
-        display: block;
+    .int .txt_left {
+        display: block; /* flex해제하기 위해서*/
     }
-    .int strong {
-        color: #255698;
+    .int .txt_right {
+        display: block; /* flex해제하기 위해서*/
+        margin: 60px 0 0 0;
+    }
+    .int .txt_left .inner {
+        padding: 0 0;
+        width: auto; /* 너비 제한 풀고 원래 너비대로 들어가도록 함. */
+    }
+    .int .txt_right .inner {
+        padding: 0 0;
+        width: auto; /* 너비 제한 풀고 원래 너비대로 들어가도록 함. */
     }
     .int h2 {
         font-size: 25px;
         margin: 6px 0 13px 0;
     }
     .int .sub_title {
+        font-size: 15px;
         margin: 0 0 13px 0;
     }
     .int .btn_wrap {
         margin: 20px 0 0 0;
-        gap: 10px;
+        gap: 5px;
     }
     .int .btn_wrap a {
         padding: 9px 18px;
-        transition: 0.5s; /* 마우스 오버 시 천천히(느리게) 색이 바뀌도록 */
     }
     .int .photo {
-        width: auto;
         height: 168px;
         border-radius: 15px;
         margin: 11px;
     }
 }/* int @media */
 
-body {
-    background-color: red;
-}
+
+
 footer {
-    margin-top: 500px;
+    margin-top: 300px;
 }
