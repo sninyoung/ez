@@ -567,15 +567,77 @@ header .gnb .gnb_wrap ul li a:hover span::after {
     .pr .video .more a:hover::after {
         background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='11' height='11' viewBox='0 0 11 11'%3E%3Cdefs%3E%3CclipPath id='clip-path'%3E%3Crect id='사각형_73' data-name='사각형 73' width='11' height='11' transform='translate(220 1770)' fill='%23fff'/%3E%3C/clipPath%3E%3C/defs%3E%3Cg id='마스크_그룹_29' data-name='마스크 그룹 29' transform='translate(-220 -1770)' clip-path='url(%23clip-path)'%3E%3Cpath id='chevron_right_16dp_FFFFFF_FILL0_wght200_GRAD0_opsz20' d='M17.638-18.956l-4.9-4.9.6-.6,5.5,5.5-5.5,5.5-.6-.6Z' transform='translate(209.706 1794.456)' fill='%23fff'/%3E%3C/g%3E%3C/svg%3E%0A");
     }
-
 }/* pr .video @media */
 
-/*
-body {
-    background-color: #F9FCFF;
-}
-*/
-
+/*footer*/
 footer {
-    margin-top: 300px;
-}          
+    background-color: #3d3d3d;
+    padding: 68px 0 100px 0;
+    margin: 140px 0 0 0;
+    color: rgba(255, 255, 255, 0.8);
+}
+footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap; /* 두줄 허용 */
+}
+footer .f_nav ul li {
+    position: relative;
+}
+footer .f_nav ul li a {
+    display: inline-block;
+    padding: 2px 21px; /* 혹은 footer .f_nav ul에 gap: 10px 42px; 코드를 넣음. */
+}
+footer .f_nav ul li::after { /*li옆에 작대기*/
+    content: "";
+    position: absolute;
+    right: -1px;
+    top: 8px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(255, 255, 255, 0.3);
+}
+footer .f_nav ul li:last-child::after {
+    display: none; /* 숨김처리 */
+}
+footer .f_nav ul li.privacy a {
+    color: #66D7D1;
+    font-weight: 600;
+}
+footer .f_nav ul li a:hover {
+    text-decoration: underline;
+}
+footer .f_info {
+    margin: 40px 0 30px 21px;
+}
+footer .f_info span {
+    display: inline-block;
+    margin: 8px 21px 0 0;
+}
+footer .copyright {
+    margin: 0 0 0 21px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* 모바일 .pr .video css*/
+@media screen and (max-width:640px){
+    footer {
+        margin: 70px 0 0 0;
+    }
+    footer .f_nav ul li a {
+        padding: 2px 10px; 
+    }  
+    footer .f_nav ul li::after { /*li옆에 작대기*/
+        right: -1px;
+        top: 6px;
+        height: 10px;
+    } 
+    footer .f_info {
+        margin: 20px 0 15px 10px;
+    }
+    footer .f_info span {
+        margin: 4px 10px 0 0;
+    }
+    footer .copyright {
+        margin: 0 0 0 10px;
+    }
+}/* footer @media */
