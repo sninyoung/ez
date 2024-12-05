@@ -242,12 +242,12 @@ header .gnb .gnb_wrap ul li a:hover span::after {
     .int .photo {
         height: 168px;
         border-radius: 15px;
-        margin: 11px;
+        margin: 11px 0;
     }
 }/* int @media */
 
 body {
-    background-color: aqua;
+    background-color: #F9FCFF;
 }
 
 footer {
