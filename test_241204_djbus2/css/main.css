@@ -238,7 +238,9 @@ header .gnb .gnb_wrap ul li a:hover span::after {
     }
 }/* int @media */
 
-
+body {
+    background-color: #255698;
+}
 footer {
     margin-top: 500px;
 }
