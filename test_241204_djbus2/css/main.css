@@ -622,6 +622,8 @@ footer .copyright {
 @media screen and (max-width:640px){
     footer {
         margin: 70px 0 0 0;
+        padding: 40px 0 80px 0;
+
     }
     footer .f_nav ul li a {
         padding: 2px 10px; 
