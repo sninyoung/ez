@@ -226,18 +226,18 @@ header .gnb .gnb_wrap ul li a:hover span::after {
     }
     .int h2 {
         font-size: 25px;
-        margin: 6px 0 13px 0;
+        margin: 6px 0 6px 0;
     }
     .int .sub_title {
         font-size: 15px;
-        margin: 0 0 13px 0;
+        margin: 0 0 12px 0;
     }
     .int .btn_wrap {
         margin: 20px 0 0 0;
         gap: 5px;
     }
     .int .btn_wrap a {
-        padding: 9px 18px;
+        padding: 6px 18px;
     }
     .int .photo {
         height: 168px;
