@@ -239,7 +239,7 @@ header .gnb .gnb_wrap ul li a:hover span::after {
 }/* int @media */
 
 body {
-    background-color: #255698;
+    background-color: red;
 }
 footer {
     margin-top: 500px;
