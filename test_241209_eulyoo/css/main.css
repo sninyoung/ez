@@ -1,0 +1,137 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+/*header*/
+body {
+    position: relative; /*header 정렬의 기준이 되어줌*/
+}
+header {
+    position: absolute ; /*header를 visual 위에 나타나게 하기 위함. 기준할 게 없으므로 body를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: 100; /* 내가 맨 위야!! -  visual이 position: relative 라서 헤더가 밑으로 깔리게 됨.*/
+    color: #fff;
+    width: 100%; /*header에 absolute를 주면 무조건 너비에 100% 준다고 생각하면 됨*/
+    height: 100px;
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+header .logo {
+    margin: 36px 0 0 36px;
+}
+header .gnb .gnb_open, header .gnb .gnb_close {
+    display: none; /*모바일에서만 나옴*/
+}
+header .gnb .gnb_wrap ul {
+    display: flex;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    font-size: 20px;
+    line-height: 100px;
+    padding: 0 24px;
+}
+
+/*visual*/
+.visual {
+    height: 100vh; /*모바일에서 네이버처럼 하단에 자신의 툴바가 나오면 내가 생각하는 100vh와 다름.*/
+    background: url(../images/visual_bg.jpg) no-repeat center center / cover;
+    color: #fff;
+    position: relative; /*scoll정렬의 기준*/
+    overflow: hidden; /*영역의 높이가 낮으면 글자가 영역 밖으로 나갈 수도 있어서 숨김처리해야 함. */
+}
+.visual .wrapper {
+    padding: 60vh 0 0 0; 
+}
+.visual .inner {
+    /* h2와 p전체의 콘텐츠의 높이를 안다. 콘텐츠 */
+    transform: translateY(-50%);
+}
+.visual h2 {
+    position: relative;
+    font-size: 80px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0 0 17px 0;
+}
+.visual h2 span {
+    position: absolute;
+    left: 115px;
+    top: -204px;
+    font-size: 250px;
+    letter-spacing: -0.1em;
+    color: rgba(255,255,255,0.08);
+}
+.visual h3 {
+    font-size: 35px;
+}
+.visual .scroll {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+    color: rgba(255,255,255,0.7);
+}
+.visual .scroll::after {
+    content: "";
+    position: absolute; /*scroll을 기준으로 정렬*/
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -17px;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.58268 4.16797V14.2336L4.75581 9.40672L4.16602 10.0013L9.99935 15.8346L15.8327 10.0013L15.2429 9.40672L10.416 14.2336V4.16797H9.58268Z' fill='white' fill-opacity='0.7'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+
+    animation-name: scroll_move;
+    animation-duration: 1.8s; /*3초에 한번*/
+    animation-iteration-count: infinite; /* 반복횟수 - 무한*/
+    animation-timing-function: linear; /* 기본값인 가속도 삭제*/
+}
+@keyframes scroll_move { 
+    0% {bottom: -17px;}
+    50% {bottom: -30px;}
+    100% {bottom: -17px;}
+}
+
+@media screen and (max-width:640px){
+    .visual .wrapper {
+        padding: 55vh 0 0 0; 
+    }
+    .visual h2 {
+        font-size: 30px;
+        margin: 0 0 16px 10px;
+    }
+    .visual h2 span { /*한자*/
+        position: absolute;
+        left: 40px;
+        top: -65px;
+        font-size: 80px;
+    }
+    .visual h3 {
+        font-size: 17px;
+        margin: 0 0 0 10px;
+    }
+    .visual h3 br {
+        display: none;
+    }
+    .visual .scroll {
+        bottom: 50px;
+        font-size: 12px;
+    }
+    .visual .scroll::after {
+        bottom: -12px;
+    }
+}/*@media*/
+
+
+
+footer {
+    margin-top: 500px;
+}
