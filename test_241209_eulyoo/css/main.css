@@ -351,6 +351,7 @@ header .tnb .search::before {
     .book .list {
         overflow-x: auto; /* x는 좌우, 좌우면 내부 컨텐츠의 길이가 나보다 더 길면 콘텐츠를 좌우스크롤한다. */
         margin: 32px 0 0 0;
+        width: calc(100% + 20px);
     }
     .book .list ul {
         display: flex;
