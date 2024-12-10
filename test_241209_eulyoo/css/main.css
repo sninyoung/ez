@@ -115,7 +115,6 @@ header .tnb .search::before {
             background-size: contain; 을 준다. 
         */
     }
-
     header .gnb .gnb_wrap {
         display: none; 
     }
@@ -128,7 +127,7 @@ header .tnb .search::before {
 
 /*visual*/
 .visual {
-    height: 100vh; /*모바일에서 네이버처럼 하단에 자신의 툴바가 나오면 내가 생각하는 100vh와 다름.*/
+    height: 100dVh; /*모바일에서 네이버처럼 하단에 자신의 툴바가 나오면 내가 생각하는 100vh와 다름.*/
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
     color: #fff;
     position: relative; /*scoll정렬의 기준*/
