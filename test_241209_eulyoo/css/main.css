@@ -7,7 +7,7 @@ body {
     position: relative; /*header 정렬의 기준이 되어줌*/
 }
 header {
-    position: absolute ; /*header를 visual 위에 나타나게 하기 위함. 기준할 게 없으므로 body를 기준으로 정렬*/
+    position: absolute ; /*header를 visual 위에 나타나게 하기 위함. wrap를 기준으로 정렬*/
     left: 0;
     top: 0;
     z-index: 100; /* 내가 맨 위야!! -  visual이 position: relative 라서 헤더가 밑으로 깔리게 됨.*/
@@ -21,7 +21,7 @@ header {
     padding: 0 20px;
 }
 header .logo {
-    margin: 36px 0 0 36px;
+    margin: 36px 0 0 10px;
 }
 header .gnb .gnb_open, header .gnb .gnb_close {
     display: none; /*모바일에서만 나옴*/
@@ -35,6 +35,96 @@ header .gnb .gnb_wrap ul li a {
     line-height: 100px;
     padding: 0 24px;
 }
+header .tnb{
+    display: flex;
+}
+header .tnb .mypage, header .tnb .search {
+    position: relative; /* before 정렬의 기준 */
+
+    font-size: 0; /* 글자를 안보이게 하려고 */
+    line-height: 0;
+
+    width: 44px; /* 아이콘의 크기 */
+    height: 44px;
+}
+header .tnb .mypage::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 26px;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14 13.6393C12.8771 13.6393 11.9158 13.2395 11.1163 12.44C10.3165 11.6402 9.91667 10.6789 9.91667 9.55599C9.91667 8.43307 10.3165 7.47184 11.1163 6.67228C11.9158 5.87253 12.8771 5.47266 14 5.47266C15.1229 5.47266 16.0842 5.87253 16.8837 6.67228C17.6835 7.47184 18.0833 8.43307 18.0833 9.55599C18.0833 10.6789 17.6835 11.6402 16.8837 12.44C16.0842 13.2395 15.1229 13.6393 14 13.6393ZM5.25 22.5241V19.9303C5.25 19.359 5.40517 18.8299 5.7155 18.343C6.02583 17.8561 6.44058 17.4818 6.95975 17.2201C8.11281 16.6549 9.27607 16.2309 10.4495 15.9482C11.623 15.6654 12.8065 15.5241 14 15.5241C15.1935 15.5241 16.377 15.6654 17.5505 15.9482C18.7239 16.2309 19.8872 16.6549 21.0402 17.2201C21.5594 17.4818 21.9742 17.8561 22.2845 18.343C22.5948 18.8299 22.75 19.359 22.75 19.9303V22.5241H5.25ZM7 20.7741H21V19.9303C21 19.694 20.9316 19.4753 20.7947 19.274C20.6578 19.073 20.472 18.9089 20.2373 18.7817C19.232 18.2866 18.2071 17.9116 17.1625 17.6564C16.1178 17.4015 15.0636 17.2741 14 17.2741C12.9364 17.2741 11.8822 17.4015 10.8375 17.6564C9.7929 17.9116 8.76799 18.2866 7.76271 18.7817C7.52801 18.9089 7.34222 19.073 7.20533 19.274C7.06844 19.4753 7 19.694 7 19.9303V20.7741ZM14 11.8893C14.6417 11.8893 15.191 11.6609 15.6479 11.2039C16.1049 10.747 16.3333 10.1977 16.3333 9.55599C16.3333 8.91432 16.1049 8.36502 15.6479 7.90807C15.191 7.45113 14.6417 7.22266 14 7.22266C13.3583 7.22266 12.809 7.45113 12.3521 7.90807C11.8951 8.36502 11.6667 8.91432 11.6667 9.55599C11.6667 10.1977 11.8951 10.747 12.3521 11.2039C12.809 11.6609 13.3583 11.8893 14 11.8893Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 28px; /*원래 아이콘의 너비, 높이는 자동으로 들어갈 것임.*/
+}
+header .tnb .search::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 27px;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='28' height='28' viewBox='0 0 28 28' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M22.7987 24.0068L15.4711 16.679C14.8878 17.1606 14.217 17.5376 13.4586 17.8098C12.7003 18.082 11.9158 18.2181 11.1052 18.2181C9.11113 18.2181 7.42355 17.5278 6.04241 16.147C4.66127 14.7663 3.9707 13.0791 3.9707 11.0854C3.9707 9.09198 4.66108 7.40421 6.04183 6.02209C7.42258 4.64018 9.10977 3.94922 11.1034 3.94922C13.0969 3.94922 14.7846 4.63979 16.1667 6.02093C17.5487 7.40207 18.2396 9.08965 18.2396 11.0837C18.2396 11.9169 18.0998 12.7126 17.8202 13.471C17.5404 14.2293 17.1672 14.8889 16.7005 15.4496L24.028 22.7772L22.7987 24.0068ZM11.1052 16.4684C12.6084 16.4684 13.8816 15.9467 14.9248 14.9033C15.9682 13.8601 16.4899 12.5869 16.4899 11.0837C16.4899 9.58043 15.9682 8.3072 14.9248 7.26401C13.8816 6.22062 12.6084 5.69893 11.1052 5.69893C9.60191 5.69893 8.32869 6.22062 7.28549 7.26401C6.24211 8.3072 5.72041 9.58043 5.72041 11.0837C5.72041 12.5869 6.24211 13.8601 7.28549 14.9033C8.32869 15.9467 9.60191 16.4684 11.1052 16.4684Z' fill='white'/%3E%3C/svg%3E%0A");    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 28px; /*원래 아이콘의 너비, 높이는 자동으로 들어갈 것임.*/
+}
+
+@media screen and (max-width:640px){
+    header {
+        height: 50px;
+        padding: 0 0 0 20px;
+    }
+    header .logo {
+        margin: 18px 0 0 0;
+    }
+    header .logo img {
+        width: 103px; /* img 태그는 너비만 주면 높이는 비율에 맞게 알아서 들어감.*/
+    }
+    header .gnb .gnb_open {
+        display: block; /*모바일에서만 나옴*/
+        position: relative; /*before 정렬의 기준*/
+        width: 50px;
+        height: 50px;
+
+        /*기존 글씨(메뉴열기, 메뉴닫기) 숨김*/
+        font-size: 0;
+        line-height: 0;
+    }
+    header .gnb .gnb_open::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%; /* 위에서 너비와 높이를 줬을 때는 before에서 안줌.*/
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='30' viewBox='0 0 30 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.35742 22.555V21.1264H25.3574V22.555H5.35742ZM5.35742 15.7418V14.3132H25.3574V15.7418H5.35742ZM5.35742 8.92857V7.5H25.3574V8.92857H5.35742Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 30px; /*원래 아이콘의 너비, 높이는 자동으로 들어갈 것임.*/
+        
+        /*  어떨 때 px을 주고 contain을 주냐..
+            width: 100%; 
+            height: 100%; 가 들어가면
+            background-size: 30px; 을 주고
+
+            width: 30px; 
+            height: 30px; 가 들어가면
+            background-size: contain; 을 준다. 
+        */
+    }
+
+    header .gnb .gnb_wrap {
+        display: none; 
+    }
+    header .tnb{
+        display: none;
+    }
+}/* @media */
+
+
 
 /*visual*/
 .visual {
