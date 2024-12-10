@@ -179,7 +179,7 @@ header .tnb .search::before {
     background-size: contain;
 
     animation-name: scroll_move;
-    animation-duration: 1.8s; /*3초에 한번*/
+    animation-duration: 1.8s; /*1.8초에 한번*/
     animation-iteration-count: infinite; /* 반복횟수 - 무한*/
     animation-timing-function: linear; /* 기본값인 가속도 삭제*/
 }
@@ -220,7 +220,8 @@ header .tnb .search::before {
 
 /*book*/
 .book {
-    margin: 150px 0 0 0;
+    padding: 150px 0 135px 0;
+    background-color: #E4E0DE;
 }
 .book .inner {
     position: relative;
@@ -237,7 +238,7 @@ header .tnb .search::before {
 }
 .book .list ul {
     display: flex;
-    gap: 0 36px;
+    gap: 36px;
 }
 .book .list ul li {
     width: 200px; /* pc와 모바일 모두 브라우저의 넓이에 따라서 책의 너비가 바뀌지 않고 보이는 책의 수만 달라짐. */
@@ -249,7 +250,6 @@ header .tnb .search::before {
     overflow: hidden;
     font-size: 0; /* 이미지 하단에 여백 삭제 */
     line-height: 0;
-    border: 1px solid #E4E1DE;
 }
 .book .list ul li a .photo img {
     width: 100%;
@@ -307,19 +307,20 @@ header .tnb .search::before {
     background-position: center center;
     background-size: contain; /*원래 아이콘의 너비, 높이는 자동으로 들어갈 것임.*/
 }
-
-.book .more a:hover {
-    background-color: #A19B67;
-    border-color: #A19B67;
-    color: #fff;
-}
-.book .more a:hover::after {
-    background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23fff' stroke-linecap='square'/%3E%3C/svg%3E%0A");
-    animation-name: more_ani;
-    animation-timing-function: linear; /*가속도 제거*/
-    animation-duration: 2s; /*2초에 한번*/
-    animation-iteration-count: infinite; /*무한반복*/
-}
+@media screen and (min-width:641px){
+    .book .more a:hover {
+        background-color: #A19B67;
+        border-color: #A19B67;
+        color: #fff;
+    }
+    .book .more a:hover::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23fff' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+        animation-name: more_ani;
+        animation-timing-function: linear; /*가속도 제거*/
+        animation-duration: 2s; /*2초에 한번*/
+        animation-iteration-count: infinite; /*무한반복*/
+    }
+}/* media */
 @keyframes more_ani {
     0% {right: 17px;}
     50% {right: 2px;}
@@ -330,13 +331,13 @@ header .tnb .search::before {
 
 /*book*/
     .book {
-        margin: 80px 0 0 0;
+        padding: 80px 0 90px 0;
     }
     .book .inner {
         display: block;
-        width: 100%; /* 원래대로 */
+        width: auto; /* 원래대로 */
         left: auto; /* 원래대로 */
-        margin: 0 20px;
+        margin: 0 0 0 20px;
     }
     .book .title h2 {
         font-size: 24px;
@@ -354,58 +355,30 @@ header .tnb .search::before {
         width: calc(100% + 20px);
     }
     .book .list ul {
-        display: flex;
-        gap: 0 36px;
+        gap: 16px;
+        width: 1752px;
+        /* 200(img width) * 8(개수) = 1600
+           16(gap) * (8-1)(개수-1) = 112 
+           1600 + 112 + 20(최우측 여백) = 1732  + 20 (여백이 안들어가서 20 또 줌)*/
     }
     .book .list ul li {
         width: 200px; /* pc와 모바일 모두 브라우저의 넓이에 따라서 책의 너비가 바뀌지 않고 보이는 책의 수만 달라짐. */
     }
-    .book .list ul li a {
-        display: block;
-    }
-    .book .list ul li a .photo {
-        overflow: hidden;
-        font-size: 0; /* 이미지 하단에 여백 삭제 */
-        line-height: 0;
-        border: 1px solid #E4E1DE;
-    }
-    .book .list ul li a .photo img {
-        width: 100%;
-    }
     .book .list ul li a h3 {
-        font-size: 20px;
-        line-height: 1.2;
-        padding: 20px 0 8px 0;
+        font-size: 15px;
+        padding: 13px 0 4px 0;
 
-        /*한줄 제한*/
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-    }
-    .book .list ul li a h3 span {
-        position: relative; /* after 정렬의 기준 */
+        /*한 줄 제한 해제 => 두 줄 허용 */
+        overflow: visible;
+        white-space: normal;
     }
     .book .list ul li a h3 span::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 0; /* 마우스 오버하기 전엔 안보이게 */
-        height: 1px;
-        background-color: #483B32;
-
-        transition: 0.5s;
-    }
-    .book .list ul li a:hover h3 span::after {
-        width: 100%; /* 마우스 오버시 나타나게 */
-    }
-    .book .list ul li a .writer {
-        font-family: 'Pretendard';
+        bottom: -2px;
     }
 
     .book .more {
         left: auto; /* left:0 을 right:0으로 바꾸고 싶을 땐 반드시 left:auto로 바꿔야 함. */
-        right: 0;
+        right: 20px;
         top: 3px;
     }
     .book .more a {
@@ -417,26 +390,115 @@ header .tnb .search::before {
         line-height: 0;
     }
     .book .more a::after {
-        content: "";
-        position: absolute;
-        right: 45px;
-        top: 23px;
+        right: 0;
+        top: 0;
         width: 100%;
         height: 100%;
-        background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23483B32' stroke-linecap='square'/%3E%3C/svg%3E%0A");
-        background-repeat: no-repeat;
-        background-position: center center;
         background-size: 26px;
-    }
-    .book .more a:hover::after {
-        background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23483B32' stroke-linecap='square'/%3E%3C/svg%3E%0A");
     }
 
 }/*@media*/
 
 
+/*interview*/
+.interview {
+    margin: 150px 0 125px 0;
+}
+.interview .title {
+    text-align: center;
+}
+.interview .title h2 {
+    font-size: 35px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0 0 9px 0;
+}
+.interview .list ul {
+    display: flex;
+    justify-content: space-between;
+}
+.interview .list ul li {
+    width: 404px; 
+    margin: 75px 0 0 0;
+}
+.interview .list ul li:nth-child(2) {
+    margin: 150px 0 0 0;
+}
+.interview .list ul li:nth-child(3) {
+    margin: 90px 0 0 0;
+}
+.interview .list ul li a {
+    display: block;
+}
+.interview .list ul li a .photo {
+    overflow: hidden;
+    height: 475px;
+    border-radius: 40px 0 60px 0;
+    font-size: 0; /* 이미지 하단에 여백 삭제 */
+    line-height: 0;
+}
+.interview .list ul li:nth-child(2) a .photo {
+    height: 465px;
+    border-radius: 30px 80px 0 50px;
+}
+.interview .list ul li:nth-child(3) a .photo {
+    height: 416px;
+    border-radius: 0 50px 10px 90px;
+}
+.interview .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); /*이미지 흑백으로 만들기*/
+}
+.interview .list ul li a .inner {
+    background-color: #483B32;
+    padding: 37px 44px 26px 37px;
+    z-index: -1;
+    color: #fff;
+    border-radius: 40px 0 60px 0;
+    transform: translateY(-186px);
+}
+.interview .list ul li:nth-child(1) a .inner {
+    border-radius: 0 40px 60px 0;
+}
+.interview .list ul li a .inner h3 {
+    font-size: 30px;
+    line-height: 1.2;
+    padding: 0 0 15px 0;
+}
+.interview .list ul li a .inner p {
+    /*두 줄 제한*/
+    overflow: hidden;
+    white-space: normal;
+    text-overflow: ellipsis;
+}
+.interview .list ul li a .inner span { /*자세히보기*/
+    display: inline-block;
+    position: relative; /* after 정렬의 기준 */
+    font-family: 'Pretendard';
+    font-size: 15px;
+    color: rgba(255,255,255,0.7);
+    margin: 50px 0 0 0;
+}
+.interview .list ul li a .inner span::after { /*자세히보기 우측 아이콘*/
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    right: -21px;
+    top: 2px;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.66667 8.33333H4V7.66667H7.66667V4H8.33333V7.66667H12V8.33333H8.33333V12H7.66667V8.33333Z' fill='white' fill-opacity='0.7'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
 
-
+    transition: 0.5s;
+}
+.interview .list ul li a:hover h3 span::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M7.66667 8.33333H4V7.66667H7.66667V4H8.33333V7.66667H12V8.33333H8.33333V12H7.66667V8.33333Z' fill='%23A19B67' fill-opacity='0.7'/%3E%3C/svg%3E%0A");
+    width: 100%; /* 마우스 오버시 나타나게 */
+}
 
 
 
