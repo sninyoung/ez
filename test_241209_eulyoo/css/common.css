@@ -2,7 +2,7 @@ body, html {
     font-family: "eulyoo",  "Pretendard", sans-serif; /* sans-serif :고딕서체 */
     font-size: 17px;
     font-weight: 400;
-    color: #1d1d1d;
+    color: #483B32;
     line-height: 1.4; /* 배수 - 글자크기에 몇배 */
     letter-spacing: -0.03em; /* 자간 */
     word-break: keep-all; /* 단어별로(여백기준) 줄바꿈 */

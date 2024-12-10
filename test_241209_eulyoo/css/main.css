@@ -198,7 +198,6 @@ header .tnb .search::before {
         margin: 0 0 16px 10px;
     }
     .visual h2 span { /*한자*/
-        position: absolute;
         left: 40px;
         top: -65px;
         font-size: 80px;
@@ -218,6 +217,267 @@ header .tnb .search::before {
         bottom: -12px;
     }
 }/*@media*/
+
+/*book*/
+.book {
+    margin: 150px 0 0 0;
+}
+.book .inner {
+    position: relative;
+    left: calc(50% - 630px);
+    display: flex;
+    justify-content: space-between;
+    width: 2173px;
+}
+.book .title h2 {
+    font-size: 35px;
+    line-height: 1.2;
+    letter-spacing: -0.05em;
+    margin: 0 0 9px 0;
+}
+.book .list ul {
+    display: flex;
+    gap: 0 36px;
+}
+.book .list ul li {
+    width: 200px; /* pc와 모바일 모두 브라우저의 넓이에 따라서 책의 너비가 바뀌지 않고 보이는 책의 수만 달라짐. */
+}
+.book .list ul li a {
+    display: block;
+}
+.book .list ul li a .photo {
+    overflow: hidden;
+    font-size: 0; /* 이미지 하단에 여백 삭제 */
+    line-height: 0;
+    border: 1px solid #E4E1DE;
+}
+.book .list ul li a .photo img {
+    width: 100%;
+}
+.book .list ul li a h3 {
+    font-size: 20px;
+    line-height: 1.2;
+    padding: 20px 0 8px 0;
+
+    /*한줄 제한*/
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.book .list ul li a h3 span {
+    position: relative; /* after 정렬의 기준 */
+}
+.book .list ul li a h3 span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0; /* 마우스 오버하기 전엔 안보이게 */
+    height: 1px;
+    background-color: #483B32;
+
+    transition: 0.5s;
+}
+.book .list ul li a:hover h3 span::after {
+    width: 100%; /* 마우스 오버시 나타나게 */
+}
+
+.book .list ul li a .writer {
+    font-family: 'Pretendard';
+}
+.book .more {
+    position: absolute;
+    left: 0;
+    top: 220px;
+}
+.book .more a {
+    display: block;
+    padding: 7px 60px 7px 25px;
+    border: 1px solid #483B32;
+}
+.book .more a::after {
+    content: "";
+    position: absolute;
+    right: 17px;
+    top: 12px;
+    width: 30px;
+    height: 10px;
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23483B32' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain; /*원래 아이콘의 너비, 높이는 자동으로 들어갈 것임.*/
+}
+
+.book .more a:hover {
+    background-color: #A19B67;
+    border-color: #A19B67;
+    color: #fff;
+}
+.book .more a:hover::after {
+    background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23fff' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+    animation-name: more_ani;
+    animation-timing-function: linear; /*가속도 제거*/
+    animation-duration: 2s; /*2초에 한번*/
+    animation-iteration-count: infinite; /*무한반복*/
+}
+@keyframes more_ani {
+    0% {right: 17px;}
+    50% {right: 2px;}
+    100% {right: 17px;}
+}
+
+@media screen and (max-width:640px){
+
+/*book*/
+    .book {
+        margin: 80px 0 0 0;
+    }
+    .book .inner {
+        display: block;
+        width: 100%; /* 원래대로 */
+        left: auto; /* 원래대로 */
+        margin: 0 20px;
+    }
+    .book .title h2 {
+        font-size: 24px;
+        margin: 0 0 4px 0;
+    }
+    .book .title h2 br {
+        display: none;
+    }
+    .book .title p br {
+        display: none;
+    }
+    .book .list {
+        overflow-x: auto; /* x는 좌우, 좌우면 내부 컨텐츠의 길이가 나보다 더 길면 콘텐츠를 좌우스크롤한다. */
+        margin: 32px 0 0 0;
+    }
+    .book .list ul {
+        display: flex;
+        gap: 0 36px;
+    }
+    .book .list ul li {
+        width: 200px; /* pc와 모바일 모두 브라우저의 넓이에 따라서 책의 너비가 바뀌지 않고 보이는 책의 수만 달라짐. */
+    }
+    .book .list ul li a {
+        display: block;
+    }
+    .book .list ul li a .photo {
+        overflow: hidden;
+        font-size: 0; /* 이미지 하단에 여백 삭제 */
+        line-height: 0;
+        border: 1px solid #E4E1DE;
+    }
+    .book .list ul li a .photo img {
+        width: 100%;
+    }
+    .book .list ul li a h3 {
+        font-size: 20px;
+        line-height: 1.2;
+        padding: 20px 0 8px 0;
+
+        /*한줄 제한*/
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+    .book .list ul li a h3 span {
+        position: relative; /* after 정렬의 기준 */
+    }
+    .book .list ul li a h3 span::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -5px;
+        width: 0; /* 마우스 오버하기 전엔 안보이게 */
+        height: 1px;
+        background-color: #483B32;
+
+        transition: 0.5s;
+    }
+    .book .list ul li a:hover h3 span::after {
+        width: 100%; /* 마우스 오버시 나타나게 */
+    }
+    .book .list ul li a .writer {
+        font-family: 'Pretendard';
+    }
+
+    .book .more {
+        left: auto; /* left:0 을 right:0으로 바꾸고 싶을 땐 반드시 left:auto로 바꿔야 함. */
+        right: 0;
+        top: 3px;
+    }
+    .book .more a {
+        width: 26px;
+        height: 26px;
+        padding: 0;
+        border: 0;
+        font-size: 0; /* 글자 안나오게 숨김처리 */
+        line-height: 0;
+    }
+    .book .more a::after {
+        content: "";
+        position: absolute;
+        right: 45px;
+        top: 23px;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23483B32' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 26px;
+    }
+    .book .more a:hover::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='30' height='10' viewBox='0 0 30 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 8H24L18.8649 2' stroke='%23483B32' stroke-linecap='square'/%3E%3C/svg%3E%0A");
+    }
+
+}/*@media*/
+
+
+
+
+
+
+
+
+
+
+
+footer {
+    margin-bottom: 500px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
