@@ -127,14 +127,14 @@ header .tnb .search::before {
 
 /*visual*/
 .visual {
-    height: 100dVh; /*모바일에서 네이버처럼 하단에 자신의 툴바가 나오면 내가 생각하는 100vh와 다름.*/
+    height: 100dvh; /*모바일에서 네이버처럼 하단에 자신의 툴바가 나오면 내가 생각하는 100vh와 다름.*/
     background: url(../images/visual_bg.jpg) no-repeat center center / cover;
     color: #fff;
     position: relative; /*scoll정렬의 기준*/
     overflow: hidden; /*영역의 높이가 낮으면 글자가 영역 밖으로 나갈 수도 있어서 숨김처리해야 함. */
 }
 .visual .wrapper {
-    padding: 60vh 0 0 0; 
+    padding: 60dvh 0 0 0; 
 }
 .visual .inner {
     /* h2와 p전체의 콘텐츠의 높이를 안다. 콘텐츠 */
@@ -191,7 +191,7 @@ header .tnb .search::before {
 
 @media screen and (max-width:640px){
     .visual .wrapper {
-        padding: 55vh 0 0 0; 
+        padding: 55dvh 0 0 0; 
     }
     .visual h2 {
         font-size: 30px;
