@@ -37,3 +37,14 @@ body, html {
                             min-width: 0;
                         }
 }/*media*/
+
+
+
+::selection {
+    background-color: #483B32;
+    color: yellowgreen;
+}
+::-moz-selection {
+    background-color: #483B32;
+    color: yellowgreen;
+}
