@@ -228,7 +228,8 @@ header .tnb .search::before {
     left: calc(50% - 630px);
     display: flex;
     justify-content: space-between;
-    width: 2173px;
+    width: 2173px;  /* flex는 flex를 준 요소의 넓이보다 내부의 넓이가 길면 무조건 넓이를 바꿈. 넓이를 유지하려면 flex를 준 요소에 넓이를 고정값으로 줘야함.
+    이거 어떻게 계산했더라.. */
 }
 .book .title h2 {
     font-size: 35px;
