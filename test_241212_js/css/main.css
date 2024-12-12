@@ -1,0 +1,27 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.box {
+    width: 500px;
+    height: 300px;
+    border: 1px solid #ccc;
+    background-color: #f4f4f4;
+    font-size: 50px;
+}
+.box.red {
+    background-color: palevioletred;
+    color: #fff;
+}
+.box_btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: blue;
+    color: #fff;
+}
+.box_btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: darkcyan;
+    color: #fff;
+}
