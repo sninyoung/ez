@@ -45,14 +45,15 @@ $(document).ready(function(){ // '$(document).ready'는 html이 모두 로딩 �
     scroll_chk() //함수의 실행
 
     $(window).scroll(function(){ //브라우저가 스크롤 될 때마다 1번 실행
-        scroll_chk()
-    }); //$(window).scroll
+        scroll_chk() //함수의 실행
+    }) //$(window).scroll
 
-    $'(aside .top').on('click', function(){ //브라우저가 스크롤 될 때마다 1번 실행
+    $
+
+    $('aside .top').on('click', function(){ 
         $('html, body').animate({
             scrollTop : 0
-        })
-    }); //$(window).scroll
-
+        }, 500);
+    });
 
 })//$(document).ready
