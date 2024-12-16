@@ -3,7 +3,7 @@ $(document).ready(function(){ //html이 모두 로딩되면 그때 단 한번 �
     const swiper = new Swiper('.popup .swiper', { /* 팝업을 감싸는 요소의 class명 */
 
         autoplay: {  /* 팝업 자동 실행 */
-            delay: 2500,
+            delay: 100,
             disableOnInteraction: true,
         },
 
@@ -18,14 +18,14 @@ $(document).ready(function(){ //html이 모두 로딩되면 그때 단 한번 �
 
     $('.popup .btn_wrap .stop').on('click', function(){
         swiper.autoplay.stop();  /* 일시정지 기능 */
-        $(this).removeClass('stop')
-        $(this).addClass('play')
+        $(this).hide()//숨김
+        $('.popup .btn_wrap .play').show()//보임
     })
 
     $('.popup .btn_wrap .play').on('click', function(){
         swiper.autoplay.start();  /* 다시시작 재생 기능 */
-        $(this).removeClass('play')
-        $(this).addClass('stop')
+        $(this).hide()//숨김
+        $('.popup .btn_wrap .stop').show()//보임
     })
 
 })/*$(document).ready*/

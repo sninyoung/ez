@@ -31,9 +31,9 @@
     justify-content: center;
 }
 .popup .btn_wrap button {
+    display: block;
     font-family: 'Pretendard';
     font-weight: 500;
-    display: block;
     padding: 8px 11px;
     border: 1px solid #001A53;
     border-left-width: 0; /*왼쪽 선(border)의 두께를 안준다.*/
