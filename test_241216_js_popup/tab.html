@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/jquery-3.7.1.min.js"></script> <!--jquery(라이브러리) 호출-->
+    <script src="js/tab.js"></script> <!--javascript 호출-->
+    <link rel="stylesheet" href="css/tab.css"> <!--css 호출-->
+    <title>tab</title>
+</head>
+<body>
+    <div id="wrap">
+        <main class="container">
+            <section class="news">
+                <h2>탭 tab 구현</h2>
+                <div class="wrapper">
+                    <div class="tab_list">
+                        <ul>
+                            <!--제목(tab_list)과 내용(tab_contents)이 분리되어 있음. 떄문에 제목을 클릭하면 내용이 선택되게 하기 위해 연결고리가 필요함.-->
+                            <li data-panel="news1" class="active"><button title="선택됨">공지사항 <span>선택됨</span></button></li>
+                            <li data-panel="news2"><button>고시공고</button></li>
+                            <li data-panel="news3"><button>문화행사</button></li>
+                        </ul>
+                    </div><!--tab_list-->
+                    <div class="tab_contents">
+                        <div class="tab_pannel" data-panel="news1" class="active">공지사항 내용</div>
+                        <div class="tab_pannel" data-panel="news2">고시공고 내용</div>
+                        <div class="tab_pannel" data-panel="news3">문화행사 내용</div>
+                    </div><!--tab_contents-->
+                </div><!--wrapper-->
+            </section><!--news-->
+        </main>
+    </div><!--wrap-->
+</body>
+</html>

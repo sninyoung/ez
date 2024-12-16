@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> <!-- 2줄 : swiper 라이브러리-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+
+    <script src="js/jquery-3.7.1.min.js"></script> <!--jquery(라이브러리) 호출-->
+    <script src="js/visual_popup2.js"></script> <!--javascript 호출-->
+    <link rel="stylesheet" href="css/visual_popup2.css"> <!--css 호출-->
+    <title>비주얼 팝업</title>
+</head>
+<body>
+    <div id="wrap">
+        <main class="container">
+            <section class="visual">
+                <h2>비주얼 팝업</h2>
+                <div class="swiper">
+                    <ul class="swiper-wrapper">
+                        <li class="swiper-slide">
+                            <!--팝업은 대부분 관리자 기능이 있음. 이미지는 background로 처리가 안됨. 대부분 img태그로 코딩.-->
+                            <div class="photo"><img src="images/visual_popup01.jpg" alt="팝업 1"></div>
+                            <div class="visual_txt">
+                                <div class="wrapper">
+                                    <h3>1 Christmas</h3>
+                                    <p>크리스마스는 예수님의 탄생을 기념하는 날로, 그 날의 공기는 사랑과 나눔으로 가득했다. <br>사람들은 가족의 품에서 따뜻한 시간을 보내며, 선물과 기쁨을 서로 나누며 세상의 모든 어둠을 잠시 잊고 빛 속에 머물렀다.</p>
+                                </div><!--wrapper-->
+                            </div><!--visual_txt-->
+                        </li><!--swiper-slide-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_popup02.jpg" alt="팝업 2"></div>
+                            <div class="visual_txt">
+                                <div class="wrapper">
+                                    <h3>2 Christmas</h3>
+                                    <p>크리스마스는 예수님의 탄생을 기념하는 날로, 그 날의 공기는 사랑과 나눔으로 가득했다. <br>사람들은 가족의 품에서 따뜻한 시간을 보내며, 선물과 기쁨을 서로 나누며 세상의 모든 어둠을 잠시 잊고 빛 속에 머물렀다.</p>
+                                </div><!--wrapper-->
+                            </div><!--visual_txt-->
+                        </li><!--swiper-slide-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_popup03.jpg" alt="팝업 3"></div>
+                            <div class="visual_txt">
+                                <div class="wrapper">
+                                    <h3>3 Christmas</h3>
+                                    <p>크리스마스는 예수님의 탄생을 기념하는 날로, 그 날의 공기는 사랑과 나눔으로 가득했다. <br>사람들은 가족의 품에서 따뜻한 시간을 보내며, 선물과 기쁨을 서로 나누며 세상의 모든 어둠을 잠시 잊고 빛 속에 머물렀다.</p>
+                                </div><!--wrapper-->
+                            </div><!--visual_txt-->
+                        </li><!--swiper-slide-->
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/visual_popup04.jpg" alt="팝업 4"></div>
+                            <div class="visual_txt">
+                                <div class="wrapper">
+                                    <h3>4 Christmas</h3>
+                                    <p>크리스마스는 예수님의 탄생을 기념하는 날로, 그 날의 공기는 사랑과 나눔으로 가득했다. <br>사람들은 가족의 품에서 따뜻한 시간을 보내며, 선물과 기쁨을 서로 나누며 세상의 모든 어둠을 잠시 잊고 빛 속에 머물렀다.</p>
+                                </div><!--wrapper-->
+                            </div><!--visual_txt-->
+                        </li><!--swiper-slide-->
+                    </ul><!--swiper-wrapper-->
+                </div><!--swiper-->
+                <button class="prev">이전 팝업보기</button>
+	            <button class="next">다음 팝업보기</button>
+                <div class="btn_wrap">
+                    <div class="paging"></div><!--전체팝업수/현재팝업 표시-->
+                    <button class="stop">일시정지</button>
+                    <button class="play">다시시작</button>
+                </div>
+            </section><!--visual-->
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,198 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+
+.visual {
+    margin: 100px 0;
+    position: relative;
+}
+.visual h2 {
+    margin: 0 0 0 50px;
+}
+.visual .popup .item {
+    height: 900px;
+    position: relative;
+}
+.visual .popup .item .photo {
+    position: absolute; /*item을 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%; /*li와 동일한 사이즈*/
+    overflow: hidden;
+}
+.visual .popup .item .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .popup .item .visual_txt {
+    margin: 380px 0 0 0;
+    color: #fff;
+}
+.visual .popup .item .visual_txt h3 {
+    font-size: 60px;
+    line-height: 1.2;
+    margin: 0 0 6px 0;
+}
+.visual .popup .slick-prev {
+    left: 2%;
+}
+.visual .popup .slick-prev, .visual .popup .slick-next {
+    z-index: 10;
+    top: 420px;
+    right: 2%;
+    width: 60px;
+    height: 60px;
+    transform: translate(0,0);
+}
+.visual .popup .slick-prev::before, .visual .popup .slick-next::before {
+    content: "";
+    opacity: 1;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.3096 53.2181L42.6958 50.8544L21.7902 29.9488L42.6958 9.07501L40.3096 6.67938L17.0402 29.9488L40.3096 53.2181Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+} 
+.visual .popup .slick-next::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.6909 53.2181L17.3047 50.8544L38.2103 29.9488L17.3047 9.07501L19.6909 6.67938L42.9603 29.9488L19.6909 53.2181Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+.visual .popup .slick-dots {
+    bottom: 43px;
+    left: calc(50% - 60px);
+    z-index: 10;
+    width: auto;
+    display: flex;
+    gap: 6px;
+}
+.visual .popup .slick-dots li {
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+.visual .popup .slick-dots li button {
+    width: 8px;
+    height: 8px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+}
+.visual .popup .slick-dots li button::before {
+    display: none;
+}
+.visual .popup .slick-dots li.slick-active button {
+    background-color: #fff;
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: calc(50% + 30px);
+    bottom: 36px;
+    color: #fff;
+}
+.visual .btn_wrap .stop, .visual .btn_wrap .play {
+    font-size: 0; /*글자숨김*/
+    line-height: 0;
+    width: 25px;
+    height: 25px;
+    position: relative; /*before 정렬의 기준*/
+}
+.visual .btn_wrap .play {
+    display: none;
+}
+.visual .btn_wrap .stop::before, .visual .btn_wrap .play::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16.5' cy='16.5' r='15.5' fill='white'/%3E%3Cpath d='M12.375 23.606V9.32697L23.5864 16.4667L12.375 23.606Z' fill='%23001A53'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+} 
+.visual .btn_wrap .play::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_49_74)'%3E%3Ccircle cx='16.5' cy='16.5' r='15.5' fill='white'/%3E%3Crect x='10.5317' y='9.4787' width='3.51064' height='13.6915' fill='%23001A53'/%3E%3Crect x='18.9575' y='9.4787' width='3.51064' height='13.6915' fill='%23001A53'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_49_74'%3E%3Crect width='33' height='33' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:1600px){ 
+    .visual {
+        margin: 100px 0;
+        position: relative;
+    }
+    .visual h2 {
+        margin: 0 0 0 50px;
+    }
+    .visual .popup .item {
+        height: 500px;
+    }
+    .visual .popup .item .visual_txt {
+        margin: 160px 0 0 0;
+    }
+    .visual .popup .item .visual_txt h3 {
+        font-size: 30px;
+    }
+    .visual .popup .item .visual_txt p br {
+        display: none;
+    }
+    .visual .popup .slick-prev {
+        left: 1%;
+    }
+    .visual .popup .slick-prev, .visual .popup .slick-next {
+        display: none;
+    }
+    .visual .popup .slick-prev::before, .visual .popup .slick-next::before {
+        content: "";
+        opacity: 1;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.3096 53.2181L42.6958 50.8544L21.7902 29.9488L42.6958 9.07501L40.3096 6.67938L17.0402 29.9488L40.3096 53.2181Z' fill='white'/%3E%3C/svg%3E%0A");
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
+    } 
+    .visual .popup .slick-next::before {
+        background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.6909 53.2181L17.3047 50.8544L38.2103 29.9488L17.3047 9.07501L19.6909 6.67938L42.9603 29.9488L19.6909 53.2181Z' fill='white'/%3E%3C/svg%3E%0A");
+    }
+    .visual .popup .slick-dots {
+        bottom: 43px;
+        left: calc(50% - 60px);
+        z-index: 10;
+        width: auto;
+        display: flex;
+        gap: 6px;
+    }
+    .visual .popup .slick-dots li {
+        width: auto;
+        height: auto;
+        margin: 0;
+    }
+    .visual .popup .slick-dots li button {
+        width: 8px;
+        height: 8px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+    }
+    .visual .popup .slick-dots li button::before {
+        display: none;
+    }
+    .visual .popup .slick-dots li.slick-active button {
+        background-color: #fff;
+    }
+    .visual .btn_wrap {
+        position: absolute;
+        left: calc(50% + 30px);
+        bottom: 36px;
+        color: #fff;
+    }
+}/*@media */
+

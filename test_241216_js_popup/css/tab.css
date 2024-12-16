@@ -1,0 +1,10 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.news {
+    margin: 100px 0;
+}
+.news h2 {
+    display: none;
+}

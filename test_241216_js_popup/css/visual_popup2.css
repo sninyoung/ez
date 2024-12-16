@@ -1,0 +1,135 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+.visual {
+    margin: 100px 0;
+    position: relative;
+}
+.visual h2 {
+    display: none;
+}
+.visual .swiper ul li {
+    /* position: relative; 원래 있어서 줘도 되고 안줘두 됨.*/
+    height: 900px;
+}
+.visual .swiper ul li .photo {
+    position: absolute; /*li를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%; /*li와 동일한 사이즈*/
+    overflow: hidden;
+}
+.visual .swiper ul li .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper ul li .visual_txt {
+    margin: 380px 0 0 0;
+    color: #fff;
+}
+.visual .swiper ul li .visual_txt h3 {
+    font-size: 60px;
+    line-height: 1.2;
+    margin: 0 0 6px 0;
+}
+.visual .prev, .visual .next {
+    position: absolute; /*li를 기준으로 정렬*/
+    left: 2%;
+    top: 406px;
+    z-index: 10;
+    width: 60px;
+    height: 80px; 
+    font-size: 0;/*글자 숨김*/
+    line-height: 0;
+}
+.visual .next {
+    left: auto;
+    right: 2%;
+}
+.visual .prev::before, .visual .next::before  {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M40.3096 53.2181L42.6958 50.8544L21.7902 29.9488L42.6958 9.07501L40.3096 6.67938L17.0402 29.9488L40.3096 53.2181Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.visual .next::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.6909 53.2181L17.3047 50.8544L38.2103 29.9488L17.3047 9.07501L19.6909 6.67938L42.9603 29.9488L19.6909 53.2181Z' fill='white'/%3E%3C/svg%3E%0A");
+    left: auto;
+    right: 0;
+}
+
+@media screen and (max-width:1600px){ 
+    .visual .prev, .visual .next {
+        width: 40px; /* 아이콘 사이즈 줄임*/
+        height: 60px;
+    }
+}
+@media screen and (max-width:1420px){ 
+    .visual .prev, .visual .next {
+        display: none; /*숨김처리*/
+    }
+}
+.visual .btn_wrap {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 40px;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+}
+.visual .btn_wrap .paging {
+    display: flex;
+    gap: 6px;
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet {
+    margin: 0;
+    width: 10px;
+    height: 10px;
+    background: none;
+    opacity: 1;
+    border: 1px solid #fff;   
+}
+.visual .btn_wrap .paging .swiper-pagination-bullet-active {
+    background: #fff;
+}
+.visual .btn_wrap .stop, .visual .btn_wrap .play {
+    font-size: 0; /*글자숨김*/
+    line-height: 0;
+    width: 33px;
+    height: 33px;
+    position: relative; /*before 정렬의 기준*/
+    margin: 0 0 0 12px;
+}
+.visual .btn_wrap .play {
+    display: none;
+}
+.visual .btn_wrap .stop::before, .visual .btn_wrap .play::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='16.5' cy='16.5' r='15.5' fill='white'/%3E%3Cpath d='M12.375 23.606V9.32697L23.5864 16.4667L12.375 23.606Z' fill='%23001A53'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+} 
+.visual .btn_wrap .play::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='33' height='33' viewBox='0 0 33 33' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_49_74)'%3E%3Ccircle cx='16.5' cy='16.5' r='15.5' fill='white'/%3E%3Crect x='10.5317' y='9.4787' width='3.51064' height='13.6915' fill='%23001A53'/%3E%3Crect x='18.9575' y='9.4787' width='3.51064' height='13.6915' fill='%23001A53'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_49_74'%3E%3Crect width='33' height='33' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+.visual ul li .visual_txt {
+
+}
