@@ -182,7 +182,6 @@ header .logo a::before {
         display: block;
         position: relative; /*after 정렬의 기준 */
         font-size: 20px;
-        font-weight: 700;
         color: #001A53;
         line-height: 60px;
     }
