@@ -1,5 +1,34 @@
-<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
-<rect width="256" height="256" fill="#D9D9D9"/>
-<rect width="256" height="256" fill="#1F4381"/>
-<path d="M91.2695 62.7344L126.25 121.797H127.832L162.812 62.7344H181.094L135.039 137.793V190H119.043V137.793L73.1641 62.7344H91.2695Z" fill="#E3B2B5"/>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <style>
+      .cls-1 {
+        font-family: Constantia, Constantia;
+        font-size: 234.38px;
+      }
+
+      .cls-1, .cls-2 {
+        fill: #231f20;
+      }
+
+      .cls-3 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-4 {
+        letter-spacing: -.02em;
+      }
+
+      .cls-2, .cls-5 {
+        stroke-width: 0px;
+      }
+
+      .cls-5 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <rect class="cls-2" width="500" height="500"/>
+  <rect class="cls-5" x="87.49" y="95.99" width="316.05" height="316.05"/>
+  <text class="cls-1" transform="translate(131.3 304.56)"><tspan class="cls-4" x="0" y="0">S</tspan><tspan class="cls-3" x="114.33" y="0">y</tspan></text>
 </svg>

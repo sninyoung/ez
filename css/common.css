@@ -1,0 +1,52 @@
+body, html {
+    font-family: "Pretendard", sans-serif, "eulyoo"; /* sans-serif :고딕서체 */
+    font-size: 17px;
+    font-weight: 400;
+    color: #1d1d1d;
+    line-height: 1.4; /* 배수 - 글자크기에 몇배 */
+    letter-spacing: -0.03em; /* 자간 */
+    word-break: keep-all; /* 단어별로(여백기준) 줄바꿈 */
+    word-wrap: break-word; /* 단어가 너무 길면 그걸 강제로 줄바꿈 하는 명령 */
+}
+
+/* pc 버전 css */
+.wrapper {
+    width: 1260px;
+    margin: 0 auto;
+}
+#wrap {
+    min-width: 1300px;
+    overflow: hidden; /* wrap 영역 밖으로 나간 요소는 숨김처리함. absolute가 대부분 나감.*/
+    position: relative; /*header정렬의 기준 - wrap이 전체를 감싸기 때문*/
+}
+
+
+
+
+
+
+
+
+/* mobile 버전 css */
+@media screen and (max-width:640px){ /* 브라우저 너비 기준 640px이하에서만 실행*/
+    body, html {
+        font-size: 13px;
+    }
+    .wrapper {
+        width: auto; /* 나를 감싸는 요소를 따라 자동으로 너비가 조정됨. block요소일 때는 감싸는 요소의 너비의 100%가 들어감.*/
+        margin: 0 20px;
+    }
+    #wrap {
+        min-width: 0;
+    }
+} /* @media */
+
+
+::selection {
+    background-color: #001A53;
+    color: #f4f4f4;
+}
+::-moz-selection {
+    background-color: #001A53;
+    color: #f4f4f4;
+}

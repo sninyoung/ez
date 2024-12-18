@@ -1,0 +1,41 @@
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+
+body {
+    margin: 100px 0;
+}
+
+h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #001A53;
+    margin-bottom: 40px;
+}
+ul {
+    display: flex;
+    flex-wrap: wrap; /* 두 줄 허용 */
+    gap: 24px;
+    
+}
+ul li {
+    width: 297px;
+}
+ul li a {
+    display: block; 
+    height: 297px; 
+    padding: 60px 60px 0 60px;
+    border: 2px solid #001A53;
+    border-radius: 30px;
+    text-align: center;
+    font-size: 23px;
+    font-weight: 500;
+}
+ul li a:hover{
+    background-color: #001A53;
+    color: #fff; 
+}
+ul li a span {
+    font-size: 17px;
+    font-weight: 400;
+}
