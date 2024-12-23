@@ -8,7 +8,6 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: inherit; /* 브라우저가 주는 속성 무시 */
     font-size: inherit;
 }
-
 strong {
     font-weight: inherit;
 }
@@ -35,7 +34,7 @@ fieldset {
     border: 0;
 }
 legend {
-    display: none;
+    display: none; /* 숨김 */
 }
 input, textarea, select {
     font-family: inherit;

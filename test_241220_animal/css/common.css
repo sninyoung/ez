@@ -2,7 +2,7 @@ body, html {
     font-family:"Pretendard", sans-serif; /* sans-serif :고딕서체 */
     font-size: 17px;
     font-weight: 400;
-    color:  #1d1d1d;
+    color:  #1A2212;
     line-height: 1.4; /* 배수 - 글자크기에 몇배 */
     letter-spacing: -0.03em; /* 자간 */
     word-break: keep-all; /* 단어별로(여백기준) 줄바꿈 */
@@ -25,8 +25,6 @@ body, html {
 
 
 
-
-
 /* mobile 버전 css */
 @media screen and (max-width:640px){ /* 브라우저 너비 기준 640px이하에서만 실행*/
     body, html {
@@ -43,10 +41,10 @@ body, html {
 
 
 ::selection {
-    background-color: #001A53;
+    background-color: #1A2212;
     color: #fff;
 }
 ::-moz-selection {
-    background-color: #001A53;
+    background-color: #1A2212;
     color: #fff;
 }
