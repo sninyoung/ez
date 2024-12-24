@@ -28,7 +28,7 @@ $(document).ready(function(){ // '$(document).ready'는 html이 모두 로딩 �
         $('header').removeClass('on')
         }
     });
-    
+    1
 
     //함수의 선언
     function scroll_chk(){ 
