@@ -5,14 +5,14 @@
 @import url(common.css);
 @import url(layout.css);
 
-.visual h2 {
-    display: none;
-}
 .visual {
-    position: relative;
+    position: relative;  /* ctrl_wrap 정렬의 기준 */
+}
+.visual h2 {
+    display: none;  /* 숨김 */
 }
 .visual .swiper ul li {
-    position: relative;
+    position: relative; /* .visual_txt 정렬의 기준 */
 }
 .visual .swiper ul li .photo {
     overflow: hidden;
@@ -22,7 +22,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-
 }
 .visual .swiper ul li.swiper-slide-active .photo img {
     animation-name: visual_photo;
@@ -30,11 +29,11 @@
     animation-timing-function: linear; /*가속도x*/
     animation-iteration-count: 1;
     animation-fill-mode: forwards; /*마지막을 유지함*/
-    transform: scale3d(1.1,1.1,1);
+    transform: scale3d(1.1, 1.1, 1);
 }
 @keyframes visual_photo {
-    0% { transform: scale3d(1,1,1);}
-    100% { transform: scale3d(1.2,1.2,1);}
+    0% { transform: scale3d(1, 1, 1);}
+    100% { transform: scale3d(1.2, 1.2, 1);}
 }
 .visual .swiper ul li .visual_txt {
     position: absolute;
@@ -55,16 +54,17 @@
     font-size: 1.1765rem; /*글자 크기 20px를 17px을 기준으로 환산*/
     color: #fff;
     display: flex;
+    align-items: center;
     gap: 6px;
 }
 .visual .ctrl_wrap .paging { 
     font-size: 0; /*숫자 중간에 '/' 없애기*/
     line-height: 0;
     display: flex;
-    align-items: center;
 }
 .visual .ctrl_wrap .paging span {
     font-size: 1.1765rem; /*글자 크기 20px를 17px을 기준으로 환산*/
+    line-height: 1;
 }
 .visual .ctrl_wrap .paging span.swiper-pagination-current {
     margin-right: 6em;
@@ -84,7 +84,7 @@
     position: absolute; /*span current를 기준으로 정렬*/
     left: calc(100% + 0.6em);
     top: 35%;
-    width: 2em;
+    width: 0;
     height: 3px;
     background-color: #CE0112;
 
@@ -93,24 +93,21 @@
     animation-timing-function: linear; /*가속도x*/
     animation-iteration-count: infinite;
 }
-.visual .ctrl_wrap .paging span.swiper-pagination-total {
-    color: rgba(255,255,255,0.7);
-}
 @keyframes paging_ani {
     0% { width: 0; }       
     100% { width: 4.75em; }       
 }/*@keyframes*/
 
+.visual .ctrl_wrap .paging span.swiper-pagination-total {
+    color: rgba(255,255,255,0.7);
+}
 .visual .ctrl_wrap button {
     color: transparent; /*색상 투명*/
     /*font-size: 0;
     line-height: 0; 폰트 사이즈를 0을 주면 rem, em이 0이 되기 때문에 색 속성을 바꿔서 글자를 안보이게 해줌*/
     width: 1.5882em;
     height: 1.5882em;
-    position: relative;
-}
-.visual .ctrl_wrap button.play {
-    display: none;
+    position: relative; /* before 정렬의 기준 */
 }
 .visual .ctrl_wrap button::before {
     content: "";
@@ -129,8 +126,11 @@
 .visual .ctrl_wrap button.play::before {
     background-image: url("data:image/svg+xml,%3Csvg width='27' height='27' viewBox='0 0 27 27' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.25 9.23686L18.5 14L10.25 18.7631V9.23686Z' stroke='white' stroke-width='1.5'/%3E%3C/svg%3E%0A");
 }
+.visual .ctrl_wrap button.play {
+    display: none;
+}
 
-@media screen and (max-width:1300px){ /* 브라우저 너비 기준 640px이하에서만 실행*/
+@media screen and (max-width:1300px){ /* 브라우저 너비 기준 1300px이하에서만 실행*/
     .visual .ctrl_wrap {
         left: 20px;
     }
