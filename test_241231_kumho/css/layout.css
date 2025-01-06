@@ -59,7 +59,7 @@ header .logo a::before { /*a를 기준으로 정렬*/
     background: url(../images/common/logo_w.svg) no-repeat center center / contain;
 }
 
-/******-----header가 고정되었을 때: class="fixed" 추가 -----*****/
+/******-----header가 고정되었을 때: header.fixed -----*****/
 header.fixed, header.menu_pc {
     background-color: #fff;
     color: #1d1d1d;

@@ -17,9 +17,19 @@ body, html {
     margin: 0 auto;
 }
 #wrap {
+    width: 100%;
     overflow: hidden; /* wrap 영역 밖으로 나간 요소는 숨김처리함. absolute가 대부분 나감.*/
     position: relative; /*header정렬의 기준 - wrap이 전체를 감싸기 때문*/
 }
+@media screen and (max-width:1250px){
+    .wrapper {
+        width: auto; 
+        /* 원래 너 하던대로해 - block요소 
+        - 감싸는 요소의 넓이의 100% 
+        - 100%로 주면 margin과 충돌 그래서 auto */
+        margin: 0 20px;
+    }
+}/*media*/
 
 /* mobile 버전 css */
 :root {
@@ -27,9 +37,14 @@ body, html {
     --header-h: 100px;
     --hader-depth2-h: 280px;
 }
-@media screen and (max-width:1000px){ 
+@media screen and (max-width:1250px){ 
     :root {
         --base-font-size: 16px;
+    }
+} /* @media */
+@media screen and (max-width:1000px){ 
+    :root {
+        --base-font-size: 15px;
         --header-h: 50px;
     }
 } /* @media */
