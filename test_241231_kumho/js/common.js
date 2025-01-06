@@ -129,12 +129,13 @@ $(document).ready(function(){
             e.preventDefault(); /* a의 클릭 막기 */
             if($(this).parent().hasClass('open') == true){ //open이 있으면
                 $(this).parent().removeClass('open')
-                //$(this).next().slideUp()
+                $(this).next().slideUp()
                 //console.log('열렸어요')
             }else{
                 $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+                $('header .gnb .gnb_wrap ul.depth1 > li > ul.depth2').slideUp()
                 $(this).parent().addClass('open')
-                //$(this).next().slideDown()
+                $(this).next().slideDown()
                 //console.log('닫혔어요')
             }
         }

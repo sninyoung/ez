@@ -6,7 +6,7 @@ header/footer 모든 페이지의 공통 스타일 적용 */
     left: 0;
     top: 0;
     width: 100%;
-    z-index: 1000000000000000;
+    z-index: 1000;
 }
 .skipnav a {
     position: absolute;
@@ -105,9 +105,8 @@ header.fixed .gnb .gnb_open::before {
         font-weight: 700;
         line-height: var(--header-h); /*header의 높이 */
     }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { /*여기*/
-        /*display: none;*/
-        overflow: hidden;
+    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 { 
+        display: none; /* 숨김 */
         position: absolute;
         left: 0;
         top: var(--header-h); /*header의 높이*/
@@ -328,7 +327,8 @@ header.fixed .gnb .gnb_open::before {
         padding: 0.6em 0;
         font-size: 1rem;
     }
-    /*  2차메뉴가 열렸을 때: ul.depth1의 li에 open 클래스 추가*/
+
+    /*  2차메뉴가 열렸을 때: li.open */
     header .gnb .gnb_wrap ul.depth1 > li.open > a {
         color: #CE0112;
         font-size: 1.1538rem; /*15px을 13px을 기준으로 환산*/
@@ -340,6 +340,10 @@ header.fixed .gnb .gnb_open::before {
         transform: rotate(180deg);
         top: 1.2em;
     }
+    header .gnb .gnb_wrap ul.depth1 > li.open ul.depth2 {
+        /*display: block;  나타남 */
+    }
+
     header .gnb .gnb_close {
         /*display: none;*/
         position: absolute;
