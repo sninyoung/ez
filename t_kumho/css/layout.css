@@ -255,7 +255,8 @@ header.fixed .logo a::before, header.menu_pc .logo a::before {
                     background-color: #fff;
                 }
                 header.menu_pc .gnb .gnb_wrap ul.depth1 > li > ul.depth2 {
-                    display: block; /* 나타남 */
+                    display: block !important; /* 나타남 */ /*여기*/
+                    /*2차 메뉴를 */
                 }
 }/* media */
 @media screen and (max-width:1000px){
