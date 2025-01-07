@@ -1,1 +1,298 @@
-/*sub.css : */
+/*
+ * sub.css
+ * 서브 레이아웃 (공통사항, tab, sub_visual) 스타일
+ * 다른 css import 
+ */
+ @import url(default.css);
+ @import url(font.css);
+ @import url(common.css);
+ @import url(layout.css); 
+ @import url(contents.css);
+
+
+ /* 상단 메뉴가 미리 선택되어있는 스타일 */
+
+header .gnb .gnb_wrap ul.depth1 > li.active > a {
+    position: relative; /*after 정렬의 기준*/
+}
+header.menu_pc .gnb .gnb_wrap ul.depth1 > li.active > a {
+    color: #CE0112;
+}
+header.fixed .gnb .gnb_wrap ul.depth1 > li.active > a {
+    color: #CE0112;  
+}
+header .gnb .gnb_wrap ul.depth1 > li.active > a::after {
+    content: "";
+    position: absolute;/*a를 기준으로 정렬*/
+    right: 0;
+    bottom: -2px;
+    height: 5px;
+    width: 100%;
+    background-color: #CE0112;
+    z-index: 10;
+}
+header .gnb .gnb_wrap ul.depth1 > li.active > ul.depth2 > li.active > a {
+    font-weight: 700;
+    text-decoration: underline;
+    color: #CE0112;
+}
+header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
+    color: #fff;
+}
+
+@media screen and (max-width:1000px){ 
+    header .gnb .gnb_wrap ul.depth1 > li.active > a::after {
+        height: 0;
+        width: 0;
+    }
+    header .gnb .gnb_wrap ul.depth1 > li.active > a {
+        background-color: #CE0112;
+        color: #fff;
+        font-weight: 700;
+    }
+    header.menu_mo.fixed .gnb .gnb_wrap ul.depth1 > li.active > a {
+        background-color: #CE0112;
+        color: #fff;
+        font-weight: 700;
+    }
+    
+} /* @media */
+
+ 
+.sub_visual {
+    position: relative; /* snb의 정렬의 기준*/
+    height: 39.7647em; /*676px*/
+    background: url(../images/sub/sub_visual_bg01.jpg) no-repeat center center / cover;
+    color: #fff;
+}
+.sub_visual.bg1 {
+    background-image: url(../images/sub/sub_visual_bg01.jpg);
+}
+.sub_visual.bg2 {
+    background-image: url(../images/sub/sub_visual_bg02.jpg);
+}
+.sub_visual.bg3 {
+    background-image: url(../images/sub/sub_visual_bg03.jpg);
+}
+.sub_visual.bg4 {
+    background-image: url(../images/sub/sub_visual_bg04.jpg);
+}
+.sub_visual.bg5 {
+    background-image: url(../images/sub/sub_visual_bg05.jpg);
+}
+.sub_visual.bg6 {
+    background-image: url(../images/sub/sub_visual_bg06.jpg);
+}
+.sub_visual .sub_txt strong {
+    display: none;
+}
+.sub_visual .sub_txt span {
+    display: block;
+    font-size: 2.6471rem; /*45px*/
+    font-weight: 700;
+    line-height: 1.2;
+    padding: 7.7333em 0 0 0; /*348px- 45px 기준으로 환산*/
+}
+.sub_visual .snb {
+    position: absolute; /*sub_visual을 기준으로 정렬*/
+    left: 0;   /* 하위메뉴 bar를 전체 브라우저 너비에 꽉 차지 않게 디자인 했다면 - 0 대신에 calc(50% - 630px)을 준다.  630px은 1260px의 반*/
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(29,29,29,0.6);
+}
+.sub_visual .snb ul {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1260px; 
+    width: 100%;
+}
+.sub_visual .snb ul li {
+    width: 50%;
+    border-left: 1px solid #fff;
+}
+.sub_visual .snb ul li a {
+    background-color: rgba(29,29,29,0.6);
+}
+.sub_visual .snb ul li:first-child {
+    border-left: 0;
+}
+
+/******--------여기 확인하기-------------꼭!!!!!!*********/
+.sub_visual .snb ul li a {
+    display: block;
+    font-weight: 600;
+    color: #fff;
+    text-align: center;
+    line-height: 3.5294em; /*76px*/
+    white-space: nowrap; /*무조건 한줄로 나오게 -줄바꿈 금지*/
+    z-index: 100;
+}
+.sub_visual .snb ul li.active a, .sub_visual .snb ul li a:hover {
+    font-weight: 700;
+    color: #CE0112;
+    background-color: #fff;
+}
+/******--------여기 확인하기-------------꼭!!!!!!*********/
+
+
+@media screen and (max-width:1250px){ /*16px*/
+    .sub_visual .sub_txt span {
+        font-size: 2.5rem; /*40px*/
+        padding: 9em 0 0 0; /*360px- 40px 기준으로 환산*/
+    }
+} /* @media */
+
+@media screen and (max-width:1000px){ /*15px*/
+    .sub_visual {
+        height: 30.6667em; /*460px*/
+    }
+    .sub_visual .sub_txt span {
+        font-size: 2.3333rem; /*35px*/
+        padding: 7.4286em 0 0 0 ; /*348px- 35px 기준으로 환산*/
+    }
+    .sub_visual .snb {
+        left: 0;   /* 하위메뉴 bar를 전체 브라우저 너비에 꽉 차지 않게 디자인 했다면 - 0 대신에 calc(50% - 630px)을 준다.  630px은 1260px의 반*/
+        bottom: 0;
+    }
+    .sub_visual .snb ul li a {
+        line-height: 3.5294em; /*76px*/
+    }
+} /* @media */
+
+@media screen and (max-width:760px){ /*14px*/
+    .sub_visual {
+        height: 23.5294em; /*400px*/
+    }
+    .sub_visual .sub_txt span {
+        font-size: 2rem; /*28px*/
+        padding: 6.7857em 0 0 0 ; /* 190px- 28px 기준으로 환산*/
+    }
+} /* @media */
+
+@media screen and (max-width:640px){  /*13px*/
+    .sub_visual {
+        height: 25.3846em; /*330px*/
+    }
+    .sub_visual .sub_txt span {
+        font-size: 1.9231rem; /*25px*/
+        padding: 7.2em 0 0 0 ; /*180px- 25px 기준으로 환산*/
+    }
+    .sub_visual .snb{
+        overflow-x: auto;
+        /*ul의 너비가 snb보다 클 때 - 메뉴가 한 줄에 표시가 안될 것 같으면 가로 스크롤바 생성*/
+    }
+} /* @media */
+
+
+.sub_tit {
+    margin: 6.3529em 0 15.6471em 0; /*108px 0 266px 0*/
+}
+.sub_tit .wrapper{
+    position: relative;
+}
+.sub_tit h1 {
+    font-size: 2.6471rem; /*45px*/
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.7111em;
+}
+.sub_tit nav.breadcrumb {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.sub_tit nav.breadcrumb ol {
+    display: flex;
+    gap: 1.4118em;
+}
+.sub_tit nav.breadcrumb ol li a {
+    display: block;
+    position: relative; /*before, after 정렬의 기준*/
+    font-size: 0.8824em; /*15px*/
+    color: #454A51;
+}
+.sub_tit nav.breadcrumb ol li + li a::before { /* 앞에 li 태그가 있는 li만 선택, 즉 두번째 li부터 */
+    content: "";
+    position: absolute;
+    left: -1.3333em;
+    top: 0.0667em;
+    width: 1.2em; /*18px*/
+    height: 1.2em;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.70977 9.00008L6.25977 5.55008L7.05008 4.75977L11.2904 9.00008L7.05008 13.2404L6.25977 12.4501L9.70977 9.00008Z' fill='%23454A51'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.sub_tit nav.breadcrumb ol li.home a::after { /*집모양 아이콘*/
+    content: "";
+    position: absolute; /*a를 기준으로 정렬*/
+    left: -1.3em; /*17px*/
+    top: 0; 
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.5 14.2508H7.00969V9.79408H10.9903V14.2508H13.5V7.50077L9 4.11133L4.5 7.50077V14.2508ZM3.375 15.3758V6.93827L9 2.70508L14.625 6.93827V15.3758H9.86531V10.9191H8.13469V15.3758H3.375Z' fill='%23454A51'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.sub_tit nav.breadcrumb ol li.curr a {
+    color: #1d1d1d;
+}
+.sub_tit nav.breadcrumb ol li.curr a::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='18' height='18' viewBox='0 0 18 18' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.70977 9.00008L6.25977 5.55008L7.05008 4.75977L11.2904 9.00008L7.05008 13.2404L6.25977 12.4501L9.70977 9.00008Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+}
+
+
+@media screen and (max-width:1250px){ /*16px*/
+    .sub_tit h1 {
+        font-size: 2.5rem; /*40px*/
+        margin-bottom: 0.7111em;
+    }
+} /* @media */
+
+@media screen and (max-width:1000px){ /*15px*/
+    .sub_tit h1 {
+        font-size: 2.3333rem; /*35px*/
+        margin-bottom: 0.7111em;
+    }
+} /* @media */
+
+@media screen and (max-width:760px){ /*14px*/
+    .sub_tit h1 {
+        font-size: 2rem; /*28px*/
+        margin-bottom: 0.7111em;
+    }
+} /* @media */
+
+@media screen and (max-width:640px){  /*13px*/
+    .sub_tit {
+        margin: 6.3529em 0 15.6471em 0; /*108px 0 266px 0*/
+    }
+    .sub_tit h1 {
+        font-size: 1.9231rem;  /*25px*/
+        margin-bottom: 0.7111em;
+    }
+    .sub_tit nav.breadcrumb ol {
+        display: flex;
+        gap: 1.4118em;
+    }
+    .sub_tit nav.breadcrumb ol li a {
+        font-size: 0.7692em; /*10px*/
+    }
+    .sub_tit nav.breadcrumb ol li + li a::before { 
+        left: -1.3333em;
+        top: 0;
+        width: 1.2em; /*12px*/
+        height: 1.2em;
+    }
+    .sub_tit nav.breadcrumb ol li.home a {
+        color: transparent;
+        white-space: nowrap;
+    }
+    .sub_tit nav.breadcrumb ol li.home a::after { 
+        left: 1.7em; /*?px*/
+        top: 0; 
+        width: 1.2em; /*12px*/
+        height: 1.2em;
+    }
+} /* @media */

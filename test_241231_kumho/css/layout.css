@@ -156,11 +156,11 @@ header.fixed .gnb .gnb_open::before {
     header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a[target="_blank"] > span::after {
         content: "";
         position: absolute; /*span을 기준으로 정렬*/
-        right: 0.6em;
+        right: -0.1em;
         top: 0.4em;
         width: 1.3333em;
         height: 1.3333em;
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.42296 17.0827C4.00199 17.0827 3.64567 16.9368 3.354 16.6452C3.06234 16.3535 2.9165 15.9972 2.9165 15.5762V4.42247C2.9165 4.0015 3.06234 3.64518 3.354 3.35352C3.64567 3.06185 4.00199 2.91602 4.42296 2.91602H9.0063V4.16602H4.42296C4.3588 4.16602 4.30005 4.19275 4.24671 4.24622C4.19324 4.29956 4.1665 4.35831 4.1665 4.42247V15.5762C4.1665 15.6404 4.19324 15.6991 4.24671 15.7525C4.30005 15.8059 4.3588 15.8327 4.42296 15.8327H15.5767C15.6409 15.8327 15.6996 15.8059 15.753 15.7525C15.8064 15.6991 15.8332 15.6404 15.8332 15.5762V10.9929H17.0832V15.5762C17.0832 15.9972 16.9373 16.3535 16.6457 16.6452C16.354 16.9368 15.9977 17.0827 15.5767 17.0827H4.42296ZM13.3332 9.16602V6.66602H10.8332V5.41602H13.3332V2.91602H14.5832V5.41602H17.0832V6.66602H14.5832V9.16602H13.3332Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.4165 16.5827V3.41602H9.67921V4.49935H4.49984V15.4993H15.4998V10.32H16.5832V16.5827H3.4165ZM8.07838 12.6948L7.30442 11.9208L14.7259 4.49935H11.9998V3.41602H16.5832V7.99935H15.4998V5.27331L8.07838 12.6948Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
         background-position: center center; 
         background-repeat: no-repeat;
         background-size: contain;
@@ -430,5 +430,129 @@ header.fixed .gnb .gnb_open::before {
 
 
 footer {
-    margin-bottom: 2000px;
+    background-color: #2D2D2D;
+    color: rgba(255,255,255,0.8);
+    padding: 5.2941em 0 8.1176em 0;
+    position: relative; /* top정렬의 기준 */
 }
+footer .top {
+    position: absolute;
+    right: 20px;
+    top: 0;
+    transform: translateY(-50%);
+    /* 나 자신의 높이의 절반을 상단으로 */
+}
+footer .top button {
+    width: 2.8235em;
+    height: 2.8235em;
+    background-color: var(--main-color);
+    color: transparent; /* 투명 */
+}
+footer .top button::before {
+    content: "";
+    position: absolute; /* top을 기준으로 정렬 */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 50%;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 10.4534L7.927 14.5267C7.7885 14.665 7.61441 14.7358 7.40475 14.7392C7.19525 14.7423 7.018 14.6715 6.873 14.5267C6.72816 14.3817 6.65575 14.206 6.65575 13.9997C6.65575 13.7933 6.72816 13.6177 6.873 13.4727L11.3672 8.97841C11.4609 8.88491 11.5597 8.81891 11.6635 8.78041C11.7673 8.74191 11.8795 8.72266 12 8.72266C12.1205 8.72266 12.2327 8.74191 12.3365 8.78041C12.4403 8.81891 12.5391 8.88491 12.6327 8.97841L17.127 13.4727C17.2653 13.6112 17.3362 13.7852 17.3395 13.9949C17.3427 14.2044 17.2718 14.3817 17.127 14.5267C16.982 14.6715 16.8063 14.7439 16.6 14.7439C16.3937 14.7439 16.218 14.6715 16.073 14.5267L12 10.4534Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+footer .wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse; /* 좌우 요소 뒤집기 */
+    align-items: flex-start; /* flex는 좌우로 정렬되는 요소의 높이를 똑같이 줌. 높이를 각자주는 값이 align-item */
+}
+footer .family_site {
+    position: relative; /* list 정렬의 기준 */
+}
+footer .family_site button {
+    background-color: #404040;
+    padding: 0 0 0 1.1765em;
+    width: 12.2353em;
+    height: 2.8235em;
+    line-height: 2.8235em;
+    text-align: left;
+    position: relative; /* after 정렬의 기준 */
+}
+footer .family_site button::after {
+    content: "";
+    position: absolute; /* button을 기준으로 정렬 */
+    right: 1em;
+    top: 0.6em;
+    width: 1.4118em;
+    height: 1.4118em;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 10.4534L7.927 14.5267C7.7885 14.665 7.61441 14.7358 7.40475 14.7392C7.19525 14.7423 7.018 14.6715 6.873 14.5267C6.72816 14.3817 6.65575 14.206 6.65575 13.9997C6.65575 13.7933 6.72816 13.6177 6.873 13.4727L11.3672 8.97841C11.4609 8.88491 11.5597 8.81891 11.6635 8.78041C11.7673 8.74191 11.8795 8.72266 12 8.72266C12.1205 8.72266 12.2327 8.74191 12.3365 8.78041C12.4403 8.81891 12.5391 8.88491 12.6327 8.97841L17.127 13.4727C17.2653 13.6112 17.3362 13.7852 17.3395 13.9949C17.3427 14.2044 17.2718 14.3817 17.127 14.5267C16.982 14.6715 16.8063 14.7439 16.6 14.7439C16.3937 14.7439 16.218 14.6715 16.073 14.5267L12 10.4534Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    transition: 0.5s;
+}
+footer .family_site .list {
+    display: none;
+    position: absolute;
+    left: 0;
+    bottom: 2.9em;
+    width: 100%;
+    background-color: #404040;
+    padding: 0.8235em 0 0.8235em 1.1765em;
+}
+footer .family_site .list ul li a {
+    display: block;
+    line-height: 2;
+}
+/**********family_site가 열렸을때**************/
+footer .family_site.open button::after {
+    transform: rotate(180deg);
+}
+footer .f_nav {
+    margin: 0.6471em 0 1.7059em 0;
+}
+footer .f_nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 2.9412em;
+}
+footer .f_nav ul li {
+    position: relative; /* after 정렬의 기준 */
+}
+footer .f_nav ul li::after {
+    content: "";
+    position: absolute; /* li를 기준으로 정렬 */
+    right: -1.45em;
+    top: 0.3em;
+    width: 1px;
+    height: 0.6471em;
+    background-color: rgba(255,255,255,0.2);
+}
+footer .f_nav ul li:last-child:after {
+    display: none;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+}
+@media screen and (max-width:1000px){ /* 1000px이하 */
+    footer {
+        padding: 3.8571em 0 5.6429em 0;
+    }
+    footer .top {
+        position: absolute;
+        right: 20px;
+        top: 0;
+        transform: translateY(-50%);
+        /* 나 자신의 높이의 절반을 상단으로 */
+    }
+    footer .wrapper {
+        display: block; /* flex해제 */
+    }
+    footer .family_site button {
+        width: 100%;
+    }
+    footer .f_nav {
+        margin: 3.2143em 0 2.0714em 0;
+    }
+}   

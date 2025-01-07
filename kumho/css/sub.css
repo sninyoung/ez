@@ -1,0 +1,16 @@
+/*
+ * sub.css
+ * 서브 레이아웃 (공통사항, tab, sub_visual) 스타일
+ * 다른 css import 
+ */
+@import url(default.css);
+@import url(font.css);
+@import url(common.css);
+@import url(layout.css); 
+@import url(contents.css);
+
+.sub_visual {
+    height: 30em;
+    background: url(../images/sub/sub_visual_bg01.jpg) no-repeat center center / cover;
+    color: #fff;
+}
