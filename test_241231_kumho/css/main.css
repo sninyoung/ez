@@ -539,8 +539,10 @@
         margin: 0.6667em 0;
     }
 } /* @media */
+/*****뉴스 끗***/
 
 
+/******서비스 시작***/
 .service {
     margin: 10em 0 0 0;
     background: url(../images/main/service_bg.jpg) no-repeat center center / cover;

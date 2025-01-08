@@ -83,6 +83,9 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
 .sub_visual.bg6 {
     background-image: url(../images/sub/sub_visual_bg06.jpg);
 }
+.sub_visual.bg7 {
+    background-image: url(../images/sub/sub_visual_bg07.jpg);
+}
 .sub_visual .sub_txt strong {
     display: none;
 }
@@ -294,5 +297,133 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
         top: 0; 
         width: 1.2em; /*12px*/
         height: 1.2em;
+    }
+} /* @media */
+
+
+/****news 시작***** (pr01.html에 있는 news)*/
+.news {
+    margin: 0 0 0 0;
+}
+.news .tit strong {
+    font-weight: 700;
+    color: #CE0112;
+}
+.news .tit h2 {
+    font-size: 1.8rem; /*45px*/
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.3778em 0 1.1111em 0; /*상단:17px 하단: 50px*/
+}
+.news .tit strong span {
+    position: relative;
+}
+.news .tit strong span::after { /*글자 우측상단에 꾸며주는 아이콘*/
+    content: "";
+    position: absolute;
+    right:-11px;
+    top: -3px;
+    width: 0.5882em; /*10px*/
+    height: 0.5882em; /*10px*/
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.97329C1 5.11152 1.02011 5.25476 1.07541 5.39047C1.31925 5.99363 1.94017 6.36558 2.72951 6.05143C2.91805 5.97604 8.13927 3.87253 8.13927 3.87253C8.13927 3.87253 6.08295 9.08481 6.00502 9.27832C5.70588 10.0247 6.06536 10.7008 6.67622 10.9269C6.81196 10.9772 6.95274 11.0023 7.091 10.9998C7.59125 10.9973 8.03117 10.7033 8.24736 10.1152C8.28004 10.0272 10.8517 2.9678 10.907 2.79942C10.9397 2.69889 11 2.46265 11 2.2993C11 1.94997 10.8718 1.62075 10.6229 1.37195C10.3791 1.12566 10.0523 1 9.70789 1C9.53947 1 9.40372 1.03016 9.19759 1.0955C9.07441 1.13571 2.44545 3.60111 1.87984 3.81222C1.31423 4.02332 0.999999 4.47569 1.00251 4.97329' fill='%23CE0112'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.news .list {
+    padding-top: 2px;
+}
+.news .list ul li {
+    width: 100%;
+}
+.news .list ul li a {
+    display: flex;
+    border-top: 1px solid #454A51;
+    position: relative; /*before의 정렬의 기준*/
+}
+.news .list ul li a::before { /*마우스 오버하면 빨간 선 그어주는 효과*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: -2px;
+    width: 0;
+    height: 4px;
+    background-color: #CE0112;
+    /*transition: 0.5s; width: 100%; 얘랑 세트인데 이렇게 코딩하면 역실행을 무조건 하기 떄문에 그것을 없애려고 애니메이션으로 효과를 줌*/
+}
+.news .list ul li a .date {
+    display: block;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin: 0.7143em 0 0.4857em 0;
+}
+.news .list ul li a h3 {
+    font-size: 1.5rem;
+    line-height: 1.2; /*두줄 제한*/
+    height: 2.4em;
+    overflow: hidden;
+}
+.news .list ul li a p {
+    margin: 1em 0 1.1765em 0;
+    line-height: 1.4; /*두줄 제한*/
+    height: 2.8em;
+    overflow: hidden;
+}
+.news .list ul li a .photo {
+    overflow: hidden;
+    height: 11.7647em;
+}
+.news .list ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+/*a에 마우스를 오버했을 때*/
+.news .list ul li a:hover::before {
+    /*width: 100%; */
+    animation-name: news_ani;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards; /*마지막 유지*/
+    
+}
+@keyframes news_ani {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+.news .list ul li a:hover h3 {
+    font-weight: 600;
+}
+.news .list ul li a:hover .photo img {
+    transform: scale3d(1.1,1.1,1);
+}
+
+@media screen and (max-width:1000px){ /*모바일버전 -1000px이하*/
+    .news {
+        margin-top: 6em;
+    }
+    .news .tit h2 {
+        font-size: 1.9231rem; /*25px*/
+        margin: 6px 0 0 0;
+    }
+    .news .tit strong span::after { /*글자 우측상단에 꾸며주는 아이콘*/
+        right:-11px;
+        top: -3px;
+    }
+    .news .list {
+        margin-top: 2.9412em; /*50px*/
+    }
+    .news .list ul li a .date {
+        font-size: 1.5333rem; /*23px 15px기준*/
+        margin: 0.7143em 0 0.4857em 0;
+    }
+    .news .list ul li a h3 {
+        font-size: 1.5333rem;
+    }
+    .news .list ul li a p {
+        margin: 0.6667em 0;
     }
 } /* @media */
