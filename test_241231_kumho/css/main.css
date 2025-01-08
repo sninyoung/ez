@@ -310,7 +310,7 @@
     }   
 } /* @media */
 
-@media screen and (max-width:1000px){ /*모바일버전 -1000px이하*/
+@media screen and (max-width:1000px){ /*모바일버전 -1000px이하 폰트 사이즈 15px*/
     .biz {
         margin-top: 6em;
     }
@@ -332,7 +332,7 @@
         width: 100%; 
     }
     .biz .list ul li a {
-        height: 30.6667em; /*460px*/
+        height: 25.3333em; /*380px*/
     }
     .biz .list ul li a::after { 
         display: none;
@@ -357,9 +357,21 @@
     }
 } /* @media */
 
+@media screen and (max-width:760px){ /*14px*/
+    .biz .list ul li a {
+        height: 24.2857em; /*340px*/
+    }
+} /* @media */
+
+
 @media screen and (max-width:640px){ /*base-font-size: 13px;*/
     .biz .list ul li a {
-        height: 14.6154em; /*190px*/
+        height: 21.5385em; /*280px*/
+    }
+} /* @media */
+@media screen and (max-width:360px){ /*base-font-size: 13px;*/
+    .biz .list ul li a {
+        height: 15.3846em; /*200px*/
     }
 } /* @media */
 /*****biz 끗******/
