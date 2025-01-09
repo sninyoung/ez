@@ -486,13 +486,16 @@
 }
 .news .list .ctrl_wrap .scroll{
     width: calc(80% - 5.3333em);
-    height: 5px;
+    height: 6px;
     background-color: #DBDBDB;
+    border-radius: 30px;
 }
-.news .list .ctrl_wrap .scroll .swiper-scrollbar-horizontal {
+.news .list .ctrl_wrap .scroll .swiper-scrollbar-drag {
     background-color: #454A51;
+    height: 8px;
+    top: -1px;
 }
-.news .list .ctrl_wrap .scroll .swiper-scrollbar-horizontal:hover {
+.news .list .ctrl_wrap .scroll .swiper-scrollbar-drag:hover {
     background-color: #CE0112;
 }
 .news .list .ctrl_wrap .more a {
@@ -537,6 +540,32 @@
     }
     .news .list .swiper ul li a p {
         margin: 0.6667em 0;
+    }
+    .news .list .ctrl_wrap .more a::after {
+        width: 1em;
+        height: 1em;
+    }
+} /* @media */
+
+@media screen and (max-width:640px){ /*13px*/
+    .news .list .ctrl_wrap .more a {
+        padding: 1em 1em 1em 1em;
+    }
+    .news .list .ctrl_wrap .more a span {
+        display: none; /*글자 없앰*/
+    }
+    .news .list .ctrl_wrap .more a::after {
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.1em;
+        height: 1.1em;
+    }
+    .news .list .ctrl_wrap .scroll{
+        width: calc(100% - 4.6667em);
+        height: 6px;
+        background-color: #DBDBDB;
+        border-radius: 30px;
     }
 } /* @media */
 /*****뉴스 끗***/
