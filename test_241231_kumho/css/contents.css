@@ -1,1 +1,91 @@
-/*contents.css : 콘텐츠 페이지 (인사말, 연혁, 찾아오시는 길) 스타일 저장*/
+/*
+ * contents.css
+ * 콘텐츠 페이지 (인사말, 연혁, 찾아오시는길) 스타일 저장
+*/
+.cnt_info {
+    margin-top: 5.8824em; /*100px*/
+}
+.cnt_ceo .wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+.cnt_ceo .photo {
+    width: 36.3529em; /*618px*/
+    height: 41.1765em; /*700px*/
+    height: 100%;
+}
+.cnt_ceo .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.cnt_ceo .inner {
+    position: relative; /*sign의 정렬의 기준*/
+    width: 36.3529em; /*618px*/
+    height: auto;
+}
+.cnt_ceo .inner strong {
+    display: block;
+    width: calc(100% - 10.1765em); /*sign너비 158px + 우측 여백 15px*/
+    font-weight: 600;
+    margin-top: 3.8235em; /*65px*/
+    text-align: right;
+}
+.cnt_ceo .inner .sign {
+    position: absolute; /*strong을 기준으로 정렬*/
+    right: 0;
+    bottom: 0;
+    width: 9.2941em;
+    height: 4.1765em;
+    margin-bottom: 0; /*65px*/
+}
+.cnt_ceo .inner .sign img {
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width:760px){ /*14px;*/
+    .cnt_info {
+        margin-top: 5em; /*70px*/
+    }
+    .cnt_ceo .wrapper {
+        display: block; /* flex 해제*/
+    }
+    .cnt_ceo .photo {
+        width: 100%;
+        max-height: 28.5714em; /*400px*/
+        height: 27.6923em; /*360px*/
+    }
+    .cnt_ceo .inner {
+        width: 100%;
+    }
+    .cnt_ceo .inner strong {
+        width: calc(100% - 8.2308em); /*sign너비 94px + 우측 여백 13px*/
+        margin: 3.8235em 0 0 0;
+    }
+    .cnt_ceo .inner .sign {
+        bottom: -1.9412em;
+        width: 7.2308em; /*sign너비 94px*/
+    }
+} /* @media */
+
+@media screen and (max-width:640px){ /*13px;*/
+    .cnt_info {
+        margin-top: 5em; /*70px*/
+    }
+    .cnt_ceo .photo {
+        max-height: 27.6923em; /*360px*/
+        height: 23.0769em; /*300px*/
+    }
+    .cnt_ceo .inner {
+        width: 100%;
+    }
+    .cnt_ceo .inner strong {
+        width: calc(100% - 8.2308em); /*sign너비 94px + 우측 여백 13px*/
+        margin: 3.8235em 0 0 0;
+    }
+    .cnt_ceo .inner .sign {
+        bottom: -1.9412em;
+        width: 7.2308em;
+    }
+} /* @media */
