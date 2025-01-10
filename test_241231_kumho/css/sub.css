@@ -102,6 +102,7 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
     bottom: 0;
     width: 100%;
     background-color: rgba(29,29,29,0.6);
+    overflow-x: auto; /* 가로스크롤 허용 */
 }
 .sub_visual .snb ul {
     display: flex;
@@ -115,6 +116,8 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
 }
 .sub_visual .snb ul li a {
     background-color: rgba(29,29,29,0.6);
+    white-space: nowrap; /*한 줄 제한*/
+    padding: 0 1.7143em;
 }
 .sub_visual .snb ul li:first-child {
     border-left: 0;
@@ -180,10 +183,10 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
         font-size: 1.9231rem; /*25px*/
         padding: 7.2em 0 0 0 ; /*180px- 25px 기준으로 환산*/
     }
-    .sub_visual .snb{
-        overflow-x: auto;
+    .sub_visual .snb {
         /*ul의 너비가 snb보다 클 때 - 메뉴가 한 줄에 표시가 안될 것 같으면 가로 스크롤바 생성*/
     }
+    
 } /* @media */
 
 .contents {

@@ -9,7 +9,7 @@
     <script src="../js/sub.js"></script>
     <script src="../js/contents.js"></script>
     <link rel="stylesheet" href="../css/sub.css">
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="../favicon.svg">
     <title>연혁 > 회사소개 - 금호건설</title>
     <!-- 서브페이지의 타이틀에는 현재메뉴명 > 상위메뉴명 - 사이트명 -->
 </head>
@@ -40,7 +40,7 @@
                                 <li class="active"><a href="history.html"><span>연혁</span></a></li>
                                 <li><a href="org.html"><span>조직도</span></a></li>
                                 <li><a href="tech.html"><span>기술혁신</span></a></li>
-                                <li><a href="map.html"><span>찾아오시는길</span></a></li>
+                                <li><a href="map.html"><span>찾아오시는 길</span></a></li>
                             </ul>
                         </li>
                         <li>
@@ -147,20 +147,20 @@
                 <div class="sub_contents cnt_history">
                     <div class="wrapper">
                         <p class="introduce">금호건설의 집념과 도전의 반세기 역사를 소개합니다</p>
-                        <div class="history_tab_top"> <!--a를 사용해 내부링크로 이동하도록-->
+                        <div class="history_tab_top"> <!--a를 사용해 내부링크 #으로 이동하도록-->
                             <ul>
                                 <li><a href="#history_2010">현재 ~ 2011</a></li>
-                                <li><a href="#history_2000">2010~2001</a></li>
+                                <li><a href="#history_2000">2010 ~ 2001</a></li>
                                 <li><a href="#history_1990">2000 ~ 1991</a></li>
                                 <li><a href="#history_1980">1990 ~ 1960</a></li>
                             </ul>
                         </div>
-                        <div class="history_tab_bottom"> <!--button을 클릭해서 이동하도록 jquery로 작동시킴-->
+                        <div class="history_tab"> <!--button을 클릭해서 이동하도록 jquery로 작동시킴-->
                             <ul>
-                                <li class="active"><button title="선택됨">현재 ~ 2011</button></li>
-                                <li><button>2010~2001</button></li>
-                                <li><button>2000 ~ 1991</button></li>
-                                <li><button>1990 ~ 1960</button></li>
+                                <li class="active" data-anchor="history_2010"><button title="선택됨">현재 ~ 2011</button></li>
+                                <li data-anchor="history_2000"><button>2010 ~ 2001</button></li>
+                                <li data-anchor="history_1990"><button>2000 ~ 1991</button></li>
+                                <li data-anchor="history_1980"><button>1990 ~ 1960</button></li>
                             </ul>
                         </div>
                         <div class="history_wrap"><!--작대기 그리려고 전체를 한 번 묶어줌.-->
