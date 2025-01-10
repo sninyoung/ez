@@ -108,7 +108,7 @@
             </div><!--global-->
         </header>
         <main class="container">
-            <div class="sub_visual bg7">
+            <div class="sub_visual bg1">
                 <!-- 1차메뉴 마다 배경이미지가 다름 bg1 bg2 bg3 -->
                 <div class="sub_txt">
                     <div class="wrapper">
@@ -144,56 +144,302 @@
                 </div><!--sub_tit-->
 
                 <!--각 페이지별 콘텐츠 시작, 절대 이름이 겹치면 안됨.-->
-                <div class="cnt_info">
-                    <div class="sub_contents cnt_history">
-                        <div class="wrapper">
-                            <div class="history_wrap"><!--작대기 그리려고 전체를 한 번 묶어줌.-->
-                                <div class="year_wrap photo_left">
-                                    <div class="his_tit">
-                                        <h2>현재 ~ 2011</h2>
-                                        <p>연구영역 다각화 및 외연 확대</p>
-                                        <div class="photo"><img src="../images/contents/history_img01.jpg" alt="연혁 사진"></div>
-                                    </div><!--his_tit-->
-                                    <div class="his_cont">]
-                                        <div class="his_row">
-                                            <h3>2024 ~ 2021</h3>
-                                            <ul>
-                                                <li>
-                                                    <strong>2024. 06.</strong>
-                                                    <span>조경특화 브랜드 '아트시스' 출시</span>
-                                                </li>
-                                            </ul>
-                                        </div><!--his_row-->
-                                    </div><!--his_cont-->
-                                </div><!--year_wrap-->
-
-                                <div class="year_wrap photo_right">
-                                    <div class="his_tit">
-                                        <h2>2010 ~ 2001</h2>
-                                        <strong>글로벌 확대</strong>
-                                        <div class="photo"><img src="../images/contents/history_img02.jpg" alt="연혁 사진"></div>
-                                    </div><!--his_tit-->
-                                </div><!--year_wrap-->
-
-                                <div class="year_wrap photo_left">
-                                    <div class="his_tit">
-                                        <h2>2000 ~ 1991</h2>
-                                        <strong>국내 사업 확대</strong>
-                                        <div class="photo"><img src="../images/contents/history_img03.jpg" alt="연혁 사진"></div>
-                                    </div><!--his_tit-->
-                                </div><!--year_wrap-->
-
-                                <div class="year_wrap photo_right">
-                                    <div class="his_tit">
-                                        <h2>1990 ~ 1960</h2>
-                                        <strong>창업기</strong>
-                                        <div class="photo"><img src="../images/contents/history_img04.jpg" alt="연혁 사진"></div>
-                                    </div><!--his_tit-->
-                                </div><!--year_wrap-->
-                            </div><!--history_wrap-->
+                <div class="sub_contents cnt_history">
+                    <div class="wrapper">
+                        <p class="introduce">금호건설의 집념과 도전의 반세기 역사를 소개합니다</p>
+                        <div class="history_tab_top"> <!--a를 사용해 내부링크로 이동하도록-->
+                            <ul>
+                                <li><a href="#history_2010">현재 ~ 2011</a></li>
+                                <li><a href="#history_2000">2010~2001</a></li>
+                                <li><a href="#history_1990">2000 ~ 1991</a></li>
+                                <li><a href="#history_1980">1990 ~ 1960</a></li>
+                            </ul>
                         </div>
-                    </div><!--sub_contents-->
-                </div>
+                        <div class="history_tab_bottom"> <!--button을 클릭해서 이동하도록 jquery로 작동시킴-->
+                            <ul>
+                                <li class="active"><button title="선택됨">현재 ~ 2011</button></li>
+                                <li><button>2010~2001</button></li>
+                                <li><button>2000 ~ 1991</button></li>
+                                <li><button>1990 ~ 1960</button></li>
+                            </ul>
+                        </div>
+                        <div class="history_wrap"><!--작대기 그리려고 전체를 한 번 묶어줌.-->
+                            <div class="year_wrap photo_left" id="history_2010">
+                                <div class="his_tit">
+                                    <h2>현재 ~ 2011</h2>
+                                    <p>연구영역 다각화 및 외연 확대</p>
+                                    <div class="photo"><img src="../images/contents/history_img01.jpg" alt="연혁 사진"></div>
+                                </div><!--his_tit-->
+                                <div class="his_cont">
+                                    <div class="his_row">
+                                        <h3>2024 ~ 2021</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>2024. 06.</strong>
+                                                <span>조경특화 브랜드 '아트시스' 출시</span>
+                                            </li>
+                                            <li>
+                                                <strong>2024. 05.</strong>
+                                                <span>금호건설 주거 브랜드 아테라 런칭</span>
+                                            </li>
+                                            <li>
+                                                <strong>2023. 12.</strong>
+                                                <span>조완석 사장 체제로 조직 개편</span>
+                                            </li>
+                                            <li>
+                                                <strong>2023. 09.</strong>
+                                                <span>임직원 기부활동 "DOVE's (Do Love, Sustainable)" 전개</span>
+                                            </li>
+                                            <li>
+                                                <strong>2021. 03.</strong>
+                                                <span>금호건설(주)로 상호변경</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>2020 ~ 2013</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>2018. 10.</strong>
+                                                <span>건설업계 최초 자회사형 장애인 표준사업장 설립 협약 체결</span>
+                                            </li>
+                                            <li>
+                                                <strong>2016. 07.</strong>
+                                                <span>서재환 사장 체제로 조직 개편</span>
+                                                <span>충북 증평군 사곡리마을과 1社1村 자매결연</span>
+                                            </li>
+                                            <li>
+                                                <strong>2013. 01.</strong>
+                                                <span>원일우 사장 체제로 조직 개편</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>2012 ~ 2011</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>2012. 03.</strong>
+                                                <span>다기능 스마트 스위치, 레드닷 디자인 어워드 수상</span>
+                                            </li>
+                                            <li>
+                                                <strong>2011. 10.</strong>
+                                                <span>베트남 21개 현지 협력사와 ‘우수 협력사 Partnershipㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ 강화’ MOU 체결</span>
+                                            </li>
+                                            <li>
+                                                <strong>2011. 04.</strong>
+                                                <span>UAE 아부다비 공항 관제탑 그랜드 오픈(Grand Open)</span>
+                                                <span>경기도 화성시 신천마을과 1社1村 자매결연식</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                </div><!--his_cont-->
+                            </div><!--year_wrap-->
+
+                            <div class="year_wrap photo_right" id="history_2000">
+                                <div class="his_tit">
+                                    <h2>2010 ~ 2001</h2>
+                                    <p>글로벌 확대</p>
+                                    <div class="photo"><img src="../images/contents/history_img02.jpg" alt="연혁 사진"></div>
+                                </div><!--his_tit-->
+                                <div class="his_cont">
+                                    <div class="his_row">
+                                        <h3>2010 ~ 2009</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>2010. 11.</strong>
+                                                <span>도심 최대규모 오피스빌딩 센터원(CENTER1) 준공</span>
+                                            </li>
+                                            <li>
+                                                <strong>2010. 10.</strong>
+                                                <span>UAE 아부다비 공합 관제탑 준공</span>
+                                            </li>
+                                            <li>
+                                                <strong>2009. 09.</strong>
+                                                <span>베트남 금호아시아나플라자 준공</span>
+                                                <span>빛그린어울림마을 1호 조성(홍제동 개미마을)</span>
+                                            </li>
+                                            <li>
+                                                <strong>2009. 03.</strong>
+                                                <span>전력산업기술기준(KEPIC:Korea Electric Power Industry Code) 자격 인증서 취득</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>2008 ~ 2005</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>2008. 10.</strong>
+                                                <span>여수시 신재생에너지 사업 참여 MOU 체결</span>
+                                            </li>
+                                            <li>
+                                                <strong>2007. 03.</strong>
+                                                <span>건설업계 최저 재해율 1위 달성</span>
+                                            </li>
+                                            <li>
+                                                <strong>2006. 12.</strong>
+                                                <span>2008년 상반기 건설업계 최다 GD마크 획득</span>
+                                            </li>
+                                            <li>
+                                                <strong>2005. 09.</strong>
+                                                <span>베트남 금호아시아나플라자 착공, 해외사업 재개</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>2004 ~ 2001</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>2004. 12.</strong>
+                                                <span>질소,인을 활용한 하수고도처리시스템 K-MBR 日 도레이사, KIST와 공동 개발 완료</span>
+                                            </li>
+                                            <li>
+                                                <strong>2003. 05.</strong>
+                                                <span>'1산ㆍ1하천ㆍ1거리 가꾸기' 환경정화활동 시행</span>
+                                            </li>
+                                            <li>
+                                                <strong>2001. 11.</strong>
+                                                <span>광화문 "용비어천가"로 오피스텔 브랜드 첫 선</span>
+                                            </li>
+                                            <li>
+                                                <strong>2001. 05.</strong>
+                                                <span>주상복합 브랜드 "리첸시아" 런칭 _ 여의도 리첸시아 첫 적용 </span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                </div><!--his_cont-->
+
+                            </div><!--year_wrap-->
+
+                            <div class="year_wrap photo_left" id="history_1990">
+                                <div class="his_tit">
+                                    <h2>2000 ~ 1991</h2>
+                                    <p>국내 사업 확대</p>
+                                    <div class="photo"><img src="../images/contents/history_img03.jpg" alt="연혁 사진"></div>
+                                </div><!--his_tit-->
+                                <div class="his_cont">
+                                    <div class="his_row">
+                                        <h3>2000 ~ 1998</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>1999. 07.</strong>
+                                                <span>플랜트사업 본격화, T-5 비축생산기지 완공으로 대통령 표창 수상</span>
+                                                <span>T-5 비축생산기지 완공으로 대통령 표창 수상</span>
+                                            </li>
+                                            <li>
+                                                <strong>1999. 03.</strong>
+                                                <span>금호베스티빌 브랜드 도입 _ 용인 수지 금호베스트빌 1ㆍ2차</span>
+                                            </li>
+                                            <li>
+                                                <strong>1999. 02.</strong>
+                                                <span>금호산업(주)로 상호변경</span>
+                                            </li>
+                                            <li>
+                                                <strong>1998. 06.</strong>
+                                                <span>‘금호베스트빌 APT‘ 매일경제 살기좋은 아파트 선정</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>1997 ~ 1996</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>1997. ~</strong>
+                                                <span>지식경영 캠페인 '1:10:100' 운동 전개</span>
+                                            </li>
+                                            <li>
+                                                <strong>1996. 11.</strong>
+                                                <span>제 22회 전국품질경영대회 품질경영상 대통령상 수상</span>
+                                                <span>국내 1호 SOC 민자사업 "인천국제공항고속도로" 첫 삽</span>
+                                            </li>
+                                            <li>
+                                                <strong>1996. 02.</strong>
+                                                <span>수도권 신공항건설공단 우수시공업체 선정</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>1995 ~ 1991</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>1995. 10.</strong>
+                                                <span>하수고도처리 기술 KIDEA공법 KIST와 공동 추진</span>
+                                            </li>
+                                            <li>
+                                                <strong>1995. 02.</strong>
+                                                <span>주거공간 고유 브랜드 "금호베스트홈" 도입</span>
+                                            </li>
+                                            <li>
+                                                <strong>1994. 04.</strong>
+                                                <span>국내 최초 PC부문 ISO 9001 인증획득</span>
+                                            </li>
+                                            <li>
+                                                <strong>1992. 11.</strong>
+                                                <span>인천국제공항 사업 참여 _ 활주로, 관제탑 등 전 공종 참여 국내 유일</span>
+                                            </li>
+                                            <li>
+                                                <strong>1992. 07.</strong>
+                                                <span>대한주택공사 우수업체 선정</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                </div><!--his_cont-->
+                            </div><!--year_wrap-->
+
+                            <div class="year_wrap photo_right" id="history_1980">
+                                <div class="his_tit">
+                                    <h2>1990 ~ 1960</h2>
+                                    <p>창업기</p>
+                                    <div class="photo"><img src="../images/contents/history_img04.jpg" alt="연혁 사진"></div>
+                                </div><!--his_tit-->
+                                <div class="his_cont">
+                                    <div class="his_row">
+                                        <h3>1980년대</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>1989. 12.</strong>
+                                                <span>건설기술연구소 설립</span>
+                                            </li>
+                                            <li>
+                                                <strong>1984. 10.</strong>
+                                                <span>(주)광주고속으로 상호변경</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>1970년대</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>1979. 01.</strong>
+                                                <span>필리핀 치코강 댐 건설공사 수주</span>
+                                            </li>
+                                            <li>
+                                                <strong>1978. 09.</strong>
+                                                <span>해외사업 첫 진출_사우디국방항공성으로부터 알슈레일 장교숙소, 화약고 건설공사 수주</span>
+                                            </li>
+                                            <li>
+                                                <strong>1978. 04.</strong>
+                                                <span>사우디아라비아 리야드지사 설립</span>
+                                            </li>
+                                            <li>
+                                                <strong>1973. 05.</strong>
+                                                <span>제일토건 주식회사로 상호변경</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                    <div class="his_row">
+                                        <h3>1960년대</h3>
+                                        <ul>
+                                            <li>
+                                                <strong>1967. 02.</strong>
+                                                <span>제일토목건축 주식회사 설립</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--his_row-->
+                                </div><!--his_cont-->
+                            </div><!--year_wrap-->
+                        </div><!--history_wrap-->
+                    </div><!--wrapper-->
+                </div><!--sub_contents-->
                 <!--각 페이지별 콘텐츠 종료-->
             </div>
         </main>
