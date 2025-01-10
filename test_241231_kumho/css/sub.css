@@ -141,7 +141,7 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
 /******--------여기 확인하기-------------꼭!!!!!!*********/
 
 
-@media screen and (max-width:1250px){ /*16px*/
+@media screen and (max-width:1300px){ /*16px*/
     .sub_visual .sub_txt span {
         font-size: 2.5rem; /*40px*/
         padding: 9em 0 0 0; /*360px- 40px 기준으로 환산*/
@@ -251,7 +251,7 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
 }
 
 
-@media screen and (max-width:1250px){ /*16px*/
+@media screen and (max-width:1300px){ /*16px*/
     .page_tit h1 {
         font-size: 2.5rem; /*40px*/
         margin-bottom: 0.7111em;

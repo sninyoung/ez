@@ -131,7 +131,7 @@
 .cnt_history .history_tab_top ul li a::before { /*옆에 작대기*/
     content: "";
     position: absolute; /*a를 기준으로 정렬*/
-    right: -1.2em; /*24px*/
+    left: -1.2em; /*24px*/
     top: 50%;
     transform: translateY(-50%);
     width: 1.2em; /*24px 기준: 20px*/ 
@@ -141,7 +141,7 @@
 .cnt_history .history_tab_top ul li a::after { /*작대기 옆에 동그라미 */
     content: "";
     position: absolute; /*a를 기준으로 정렬*/
-    right: -29px; /*29px 기준: 20px*/
+    left: -29px; /*29px 기준: 20px*/
     top: 50%;
     transform: translateY(-50%);
     width: 9px; /*9px 기준: 20px*/
@@ -149,7 +149,7 @@
     border-radius: 50%;
     background-color: #CE0112;
 }
-.cnt_history .history_tab_top ul li:last-child a::before, .cnt_history .history_tab_top ul li:last-child a::after { 
+.cnt_history .history_tab_top ul li:first-child a::before, .cnt_history .history_tab_top ul li:first-child a::after { 
     display: none;/*옆에 작대기랑 동그라미 숨겨줌*/
 }
 
@@ -534,9 +534,156 @@
         margin: 0.8824em 0 0 5.4118em; /*15px 0 0 92px=68+24*/
     }
 } /* @media */
-
-
-
-
-
 /******-------회사 소개 > 연혁 (종료)-------************/
+
+
+
+/******-------회사 소개 > 찾아오시는 길 (시작)-------************/
+.cnt_map .map_wrap .map {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);
+    height: 795px;
+}
+.cnt_map .map_wrap .map h2 {
+    display: none; /* 웹접근성 때문에 제목 넣어주고 글자 숨김.*/
+}
+.cnt_map .map_wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.cnt_map .map_txt_wrap .map_tit {
+    margin: 50px 0 120px 0;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+.cnt_map .map_txt_wrap .map_tit .map_btn {
+    display: flex;
+    gap: 6px;
+}
+.cnt_map .map_txt_wrap .map_tit .map_btn a {
+    display: block;
+    border: 1px solid #454A51;
+    padding: 13px 21px 13px 53px;
+    color: #454A51;
+    border-radius: 2em;
+    position: relative;
+}
+.cnt_map .map_txt_wrap .map_tit .map_btn a::before { /* 아이콘 */
+    content: "";
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cnt_map .map_txt_wrap .map_tit .map_btn a.kakaomap::before {    
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='22' height='22' rx='5' fill='%23F9E000'/%3E%3Cpath d='M16.5 8.55469C16.5 11.5923 13.75 15.9797 11 19.2797C8.8 16.5297 5.5 11.5923 5.5 8.55469C5.5 5.51712 7.96243 3.05469 11 3.05469C14.0376 3.05469 16.5 5.51712 16.5 8.55469Z' fill='%23007DFD'/%3E%3Cellipse cx='10.925' cy='8.925' rx='1.925' ry='1.925' fill='%23F9E000'/%3E%3C/svg%3E%0A");
+}
+.cnt_map .map_txt_wrap .map_tit .map_btn a.navermap::before {
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='30' viewBox='0 0 22 30' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.607 28.3091L10.992 28.7986L11.3867 28.3169C12.0404 27.5192 12.6975 26.7346 13.3454 25.9609C15.1559 23.799 16.8949 21.7225 18.2878 19.6849C20.1834 16.912 21.5 14.1277 21.5 11.1695C21.5 5.28485 16.8069 0.5 11 0.5C5.19312 0.5 0.5 5.28485 0.5 11.1695C0.5 14.1406 2.07979 17.1857 4.08978 20.07C5.42229 21.9821 6.98756 23.8806 8.46562 25.6732C9.21583 26.5831 9.94357 27.4658 10.607 28.3091Z' fill='%235BCE36' stroke='white'/%3E%3Cg clip-path='url(%23clip0_242_559)'%3E%3Cpath d='M15 8V16H12.316L9.68401 11.9725V16H7V8H9.68401L12.316 12.1894V8H15Z' fill='white'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_242_559'%3E%3Crect width='8' height='8' fill='white' transform='translate(7 8)'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+}
+.cnt_map .map_txt_wrap .map_tit .map_btn a.kakaomap:hover {
+    background-color: #F9E000;
+    color: #1d1d1d;
+}
+.cnt_map .map_txt_wrap .map_tit .map_btn a.navermap:hover {
+    background-color: #5BCE36;
+    color: #fff;
+
+}
+.cnt_map .map_txt_wrap .map_tit address {
+    font-size: 1.4706rem; /*25px 기준: 17px*/
+    font-weight: 600;
+    color: #454A51;
+}
+.cnt_map .map_txt_wrap .map_cont {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 115px 0;
+    position: relative;
+}
+.cnt_map .map_txt_wrap .map_cont h2 {
+    font-size: 1.4706rem; /*25px 기준: 17px*/
+    font-weight: 600;
+    color: #454A51;
+    position: relative;
+    padding: 0 0 0 41px;
+}
+.cnt_map .map_txt_wrap .map_cont::before { /*위에 작대기*/
+    content: "";
+    position: absolute;
+    right: 0; /*24px*/
+    top: -45px;
+    width: 100%; 
+    height: 1px; 
+    background-color: #454A51;
+}
+.cnt_map .map_txt_wrap .map_cont h2::after { /* 왼쪽 아이콘 */
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35px;
+    height: 35px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.cnt_map .map_txt_wrap .map_cont h2.call::after { /* 대표전화 아이콘 */
+    background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.5468 29.8971C25.7143 29.8971 22.8934 29.2665 20.0841 28.0053C17.2751 26.7443 14.7068 24.95 12.379 22.6222C10.0608 20.2945 8.26871 17.7252 7.00288 14.9142C5.73704 12.1033 5.10413 9.28335 5.10413 6.45443V5.10547H12.6426L13.9354 11.7464L9.89147 15.6729C10.4916 16.7236 11.1337 17.7 11.8179 18.602C12.5024 19.5042 13.2259 20.3293 13.9887 21.0771C14.7309 21.8381 15.5565 22.557 16.4653 23.2336C17.3738 23.9106 18.3843 24.5612 19.4968 25.1856L23.5156 21.0968L29.8958 22.3951V29.8971H28.5468ZM8.85642 13.6032L11.5853 11.0004L10.8532 7.29297H7.31423C7.38885 8.39595 7.55473 9.46965 7.81189 10.5141C8.06904 11.5582 8.41722 12.5879 8.85642 13.6032ZM21.5439 26.2065C22.4787 26.6384 23.4757 26.9782 24.535 27.2258C25.5942 27.4735 26.652 27.6198 27.7083 27.6648V24.1619L24.2531 23.4692L21.5439 26.2065Z' fill='%235F6368'/%3E%3C/svg%3E%0A");
+}
+.cnt_map .map_txt_wrap .map_cont h2.transport::after { /* 대중교통 아이콘 */
+    background-image: url("data:image/svg+xml,%3Csvg width='35' height='35' viewBox='0 0 35 35' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.41349 29.8945V25.9235C7.95727 25.5776 7.53472 25.0882 7.14583 24.4553C6.75694 23.8224 6.5625 23.1115 6.5625 22.3225V8.7487C6.5625 6.98363 7.43981 5.69167 9.19443 4.87281C10.9488 4.05396 13.7172 3.64453 17.4996 3.64453C21.4187 3.64453 24.2213 4.03804 25.9077 4.82505C27.5942 5.61182 28.4375 6.9197 28.4375 8.7487V22.3225C28.4375 23.1115 28.2431 23.8224 27.8542 24.4553C27.4653 25.0882 27.0427 25.5776 26.5865 25.9235V29.8945H23.5018V26.9779H11.4982V29.8945H8.41349ZM17.5448 7.68302H25.9361H9.15396H17.5448ZM23.3333 17.4987H8.75H26.25H23.3333ZM8.75 15.3112H26.25V9.87052H8.75V15.3112ZM12.3991 23.0517C12.9297 23.0517 13.3796 22.8659 13.7488 22.4942C14.1182 22.1228 14.303 21.6718 14.303 21.1412C14.303 20.6107 14.1172 20.1608 13.7455 19.7916C13.3741 19.4221 12.9231 19.2374 12.3926 19.2374C11.862 19.2374 11.4121 19.4232 11.0429 19.7948C10.6734 20.1662 10.4887 20.6172 10.4887 21.1478C10.4887 21.6784 10.6745 22.1283 11.0461 22.4975C11.4175 22.8669 11.8685 23.0517 12.3991 23.0517ZM22.6074 23.0517C23.138 23.0517 23.5879 22.8659 23.9571 22.4942C24.3266 22.1228 24.5113 21.6718 24.5113 21.1412C24.5113 20.6107 24.3255 20.1608 23.9539 19.7916C23.5825 19.4221 23.1315 19.2374 22.6009 19.2374C22.0703 19.2374 21.6204 19.4232 21.2512 19.7948C20.8818 20.1662 20.697 20.6172 20.697 21.1478C20.697 21.6784 20.8828 22.1283 21.2545 22.4975C21.6259 22.8669 22.0769 23.0517 22.6074 23.0517ZM9.15396 7.68302H25.9361C25.6274 7.10163 24.8459 6.64772 23.5915 6.3213C22.3368 5.99512 20.3213 5.83203 17.5448 5.83203C14.8134 5.83203 12.8203 6.00266 11.5657 6.34391C10.311 6.68516 9.50712 7.13153 9.15396 7.68302ZM11.6667 24.7904H23.3333C24.1354 24.7904 24.822 24.5048 25.3932 23.9336C25.9644 23.3624 26.25 22.6758 26.25 21.8737V17.4987H8.75V21.8737C8.75 22.6758 9.03559 23.3624 9.60677 23.9336C10.178 24.5048 10.8646 24.7904 11.6667 24.7904Z' fill='%235F6368'/%3E%3C/svg%3E%0A");
+}
+
+.cnt_map .map_txt_wrap .map_cont .inner {
+    width: calc(100% - 250px);
+}
+.cnt_map .map_txt_wrap .map_cont .map_item {
+    
+}
+.cnt_map .map_txt_wrap .map_cont .map_item h3 {
+    
+}
+.cnt_map .map_txt_wrap .map_cont .map_item p {
+    
+}
+
+
+
+
+
+@media screen and (max-width:1300px){ /*16px*/
+    .cnt_map .map_wrap .map {
+        left: 20px;
+        width: calc(100% - 20px);
+    }
+} /* @media */
+
+@media screen and (max-width:1000px){ /*15px*/
+    :root {
+        --base-font-size: 15px;
+        --header-h: 50px;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:760px){ /*14px*/
+    :root {
+        --base-font-size: 14px;
+    }
+} /* @media */
+
+@media screen and (max-width:640px){ /*13px*/
+    :root {
+        --base-font-size: 13px;
+    }
+} /* @media */
+/******-------회사 소개 > 찾아오시는 길 (종료)-------************/

@@ -35,7 +35,6 @@ $(document).ready(function(){
                 scrollTop: area_scroll
             }, 500)
         })
-
         function history_tab_show(){
             area_top = area_name.offset().top
             area_h = area_name.height()
