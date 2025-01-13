@@ -31,6 +31,18 @@ body, html {
     }
 }/*media*/
 
+
+
+::selection {
+    background-color: #CE0112;
+    color: #f4f4f4;
+}
+::-moz-selection {
+    background-color: #CE0112;
+    color: #f4f4f4;
+}
+
+
 /* mobile 버전 css */
 :root {
     --base-font-size: 17px;
