@@ -174,6 +174,7 @@
 }
 .cnt_history .history_tab ul li {
     width: 50%;
+    position: relative; /*before와 after 정렬의 기준*/
 }
 .cnt_history .history_tab ul li button {
     display: block;
@@ -188,14 +189,13 @@
     border: 1px solid #454A51;
     white-space: nowrap; /*한 줄 제한*/
     padding: 0 1.7143em;
-    position: relative; /*before와 after 정렬의 기준*/
 }
 .cnt_history .history_tab ul li.active button {
     background-color: #CE0112;
     border: 1px solid #CE0112;
     color: #fff;
 }
-.cnt_history .history_tab_top ul li button::before { /*옆에 작대기*/
+.cnt_history .history_tab_top ul li::before { /*옆에 작대기*/
     content: "";
     position: absolute; /*button를 기준으로 정렬*/
     right: -1.2em; /*24px*/
@@ -205,7 +205,7 @@
     height: 0.05em; /*1px 기준: 20px*/ 
     background-color: #454A51;
 }
-.cnt_history .history_tab_top ul li button::after { /*작대기 옆에 동그라미 */
+.cnt_history .history_tab_top ul li::after { /*작대기 옆에 동그라미 */
     content: "";
     position: absolute; /*button를 기준으로 정렬*/
     right: -29px; /*29px 기준: 20px*/
