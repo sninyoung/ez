@@ -4,115 +4,275 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="js/swiper-bundle.min.js"></script> <!--swiper 라이브러리 js 호출-->
     <script src="js/jquery-3.7.1.min.js"></script> <!--jquery(라이브러리) js 호출-->
     <script src="js/main.js"></script> <!--javascript 호출-->
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"> <!--swiper 라이브러리 css (내 css보다 위에 배치 : 그래야 내가 css를 변경할 수 있음)-->
+    <script src="js/swiper-bundle.min.js"></script> <!--swiper 라이브러리 js 호출-->
+
+    <link rel="stylesheet" href="css/slick.css"> <!--slick 라이브러리 css -->
+    <link rel="stylesheet" href="css/slick-theme.css"> <!--slick-theme 라이브러리 css -->
+    <script src="js/slick.min.js"></script> <!--slick 라이브러리 js 호출-->
 
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!-- AOS를 작동시키기 위한 css파일 -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- AOS를 작동시키기 위한 js파일 -->
 
-    <link rel="stylesheet" href="css/swiper-bundle.min.css"> <!--swiper 라이브러리 css (내 css보다 위에 배치 : 그래야 내가 css를 변경할 수 있음)-->
     <link rel="stylesheet" href="css/main.css"> <!--css 호출-->
 
     <link rel="shortcut icon" type="image/x-icoon" href="favicon.svg">
     <title>인터랙티브</title>
 </head>
 <body>
-    <section class="txt_ani">
-        <div class="wrapper">
-            <div class="txt_wrap">
-                <div class="row">
-                    세계로 뻗어가는
-                    <span>세계로 뻗어가는</span>
-                </div>
-                <div class="row">
-                    건설 한류의 중심에 금호건설이 있습니다. 
-                    <span>건설 한류의 중심에 금호건설이 있습니다. </span>
+    <div class="wrap">
+        <section class="txt_ani">
+            <div class="wrapper">
+                <div class="txt_wrap">
+                    <div class="row">
+                        세계로 뻗어가는
+                        <span>세계로 뻗어가는</span>
+                    </div>
+                    <div class="row">
+                        건설 한류의 중심에 금호건설이 있습니다.
+                        <span>건설 한류의 중심에 금호건설이 있습니다. </span>
+                    </div>
                 </div>
             </div>
+        </section><!--txt_ani-->
+        <section class="txt_slide">
+            <div class="wrapper">
+                <div class="txt_wrap">
+                    <div class="row">
+                        KUMHO E&C
+                        <span>KUMHO E&C</span>
+                    </div><!--row-->
+                    <div class="row">
+                        THINK OF THE PEOPLE AND NATURE
+                        <span>THINK OF THE PEOPLE AND NATURE</span>
+                    </div><!--row-->
+                    <div class="row">
+                        KUMHO E&C
+                        <span>KUMHO E&C</span>
+                    </div><!--row-->
+                    <div class="row">
+                        THINK OF THE PEOPLE AND NATURE
+                        <span>THINK OF THE PEOPLE AND NATURE</span>
+                    </div><!--row-->
+                    <div class="row">
+                        KUMHO E&C
+                        <span>KUMHO E&C</span>
+                    </div><!--row-->
+                    <div class="row">
+                        THINK OF THE PEOPLE AND NATURE
+                        <span>THINK OF THE PEOPLE AND NATURE</span>
+                    </div><!--row-->
+                    <div class="row">
+                        KUMHO E&C
+                        <span>KUMHO E&C</span>
+                    </div><!--row-->
+                    <div class="row">
+                        THINK OF THE PEOPLE AND NATURE
+                        <span>THINK OF THE PEOPLE AND NATURE</span>
+                    </div><!--row-->
+                </div><!--txt_wrap-->
+            </div><!--wrapper-->
+        </section><!--txt_slide-->
+        <section class="photo_resize">
+            <div class="wrapper">
+                <div class="photo"><img src="images/interaction_img02.jpg" alt="사진"></div>
         </div>
-    </section>
-    <section class="txt_slide">
-        <div class="wrapper">
-            <div class="txt_wrap">
-                <div class="row">
-                    KUMHO E&C
-                    <span>KUMHO E&C</span>
-                </div><!--row-->
-                <div class="row">
-                    THINK OF THE PEOPLE AND NATURE
-                    <span>THINK OF THE PEOPLE AND NATURE</span>
-                </div><!--row-->
-
-                <div class="row">
-                    KUMHO E&C
-                    <span>KUMHO E&C</span>
-                </div><!--row-->
-                <div class="row">
-                    THINK OF THE PEOPLE AND NATURE
-                    <span>THINK OF THE PEOPLE AND NATURE</span>
-                </div><!--row-->
-                <div class="row">
-                    KUMHO E&C
-                    <span>KUMHO E&C</span>
-                </div><!--row-->
-                <div class="row">
-                    THINK OF THE PEOPLE AND NATURE
-                    <span>THINK OF THE PEOPLE AND NATURE</span>
-                </div><!--row-->
-                <div class="row">
-                    KUMHO E&C
-                    <span>KUMHO E&C</span>
-                </div><!--row-->
-                <div class="row">
-                    THINK OF THE PEOPLE AND NATURE
-                    <span>THINK OF THE PEOPLE AND NATURE</span>
-                </div><!--row-->
-            </div><!--txt_wrap-->
-        </div><!--wrapper-->
-    </section><!--txt_slide-->
-    <section class="photo_resize">
-        <div class="wrapper">
-            <div class="photo"><img src="images/interaction_img02.jpg" alt="사진"></div>
-    </div>  
-    </section>
-    <section class="bg_fixed">
-        <div class="wrapper">
-            <h2>GLOBAL STANDARD<br>IN CONSTRUCTION INDUSTRY</h2>
-        </div>
-    </section><!--bg_fixed-->
-
-    <!-- 스크롤을 내리면 black 추가 -->
-    <div class="bg_change">
-        <section class="video_fit">
-            <div class="tit">
+        </section><!--photo_resize-->
+        <section class="bg_fixed">
+            <div class="wrapper">
+                <h2>GLOBAL STANDARD<br>IN CONSTRUCTION INDUSTRY</h2>
+            </div>
+        </section><!--bg_fixed-->
+        <!-- 스크롤을 내리면 black 추가 -->
+        <div class="bg_change">
+            <section class="video_fit">
+                <div class="tit">
+                    <div class="wrapper">
+                        <h2>No.1 Lifestyle<br> Creation Company</h2>
+                        <p>우리는 안정과 지속성장을 추구하는 기업, 형지엘리트입니다.<br>
+                            고객에게 행복과 기쁨을 주는 혁신적인 제품과 서비스를 창출하며,<br>
+                            보다 편리하고 세련된 라이프스타일을 만들어 나갑니다.<br>
+                            영상 속에 담긴 형지엘리트의 브랜드 가치와 비전을 경험해보세요.
+                        </p>
+                    </div><!--wrapper-->
+                </div><!--tit-->
+                <div class="video_area" data-status="before">
+                    <!-- 비디오가 스크롤될 영역의 높이를 줌
+                        계속 상태를 업데이트 해야 해서 class로 주기보다 data로 주는게 나음
+                        처음에 고정되기 이전   before
+                        고정되었을때          fixed
+                        고정 이후             after
+                    -->
+                    <div class="video_wrap">
+                        <div class="video_inner">
+                            <video>
+                                <source src="images/11901574_1920_1080_30fps.mp4" type="video/mp4">
+                            </video>
+                        </div><!--video_inner-->
+                    </div><!--video_wrap-->
+                </div><!--video_area-->
+            </section><!--video_fit-->
+            <section class="scroll_event">
                 <div class="wrapper">
-                    <h2>No.1 Lifestyle<br> Creation Company</h2>
-                    <p>우리는 안정과 지속성장을 추구하는 기업, 형지엘리트입니다.<br>
-                        고객에게 행복과 기쁨을 주는 혁신적인 제품과 서비스를 창출하며,<br>
-                        보다 편리하고 세련된 라이프스타일을 만들어 나갑니다.<br>
-                        영상 속에 담긴 형지엘리트의 브랜드 가치와 비전을 경험해보세요.
-                    </p>
-                </div><!--wrapper-->
-            </div><!--tit-->
-            <div class="video_area" data-status="before"> 
-                <!-- 비디오가 스크롤될 영역의 높이를 줌 
-                    계속 상태를 업데이트 해야 해서 class로 주기보다 data로 주는게 나음
-                    처음에 고정되기 이전   before
-                    고정되었을때          fixed
-                    고정 이후             after
-                -->
-                <div class="video_wrap">
-                    <div class="video_inner">
-                        <video>
-                            <source src="images/11901574_1920_1080_30fps.mp4" type="video/mp4">
-                        </video>
-                    </div><!--video_inner-->
-                </div><!--video_wrap-->
-            </div><!--video_area-->
-        </section><!--video_fit-->
-        <section class="scroll_event"></section><!--scroll_event-->
-    </div><!--bg_change-->
-    <section class="book"></section>
+                    <div class="event_wrap">
+                        <h2>POSITIVE CHANGE<br> THROUGH ACTION</h2>
+                        <div class="photo"><img src="images/interaction_img03.jpg" alt="사진3"></div>
+                    </div>
+                </div>
+            </section><!--scroll_event-->
+        </div><!--bg_change-->
+        <section class="book">
+            <!--이렇게 중간에 삽입하면 html오류, 웹호환성 오류 뜬다.
+            <link rel="stylesheet" href="css/slick.css">
+            <link rel="stylesheet" href="css/slick-theme.css">
+            <script src="js/slick.min.js"></script>-->
+
+            <div class="list">
+                <div class="popup">
+                    <div class="popup_wrap">
+                        <div class="popup_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img01.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>PERIWINKLE VALUES</h2>
+                                    <span>Vinca minor #CCCCFF</span>
+                                </div><!--txt-->
+                            </a>
+                        </div><!--popup_item-->
+                        <div class="popup_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img02.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>GREEN VALUES</h2>
+                                    <span>Mountain #6A8656</span>
+                                </div><!--txt-->
+                            </a>
+                        </div><!--popup_item-->
+                        <div class="popup_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img03.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>LIGHTBLUE VALUES</h2>
+                                    <span>Sea sun glitter #87C1CF</span>
+                                </div><!--txt-->
+                            </a>
+                        </div>
+                        <div class="popup_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img04.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>RED VALUES</h2>
+                                    <span>Rose flower#C00423</span>
+                                </div><!--txt-->
+                            </a>
+                        </div>
+                        <div class="popup_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img05.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>VIOLET VALUES</h2>
+                                    <span>Aurora #834177</span>
+                                </div><!--txt-->
+                            </a>
+                        </div>
+                        <div class="popup_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img06.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>PINK VALUES</h2>
+                                    <span>Peach #EC7D74</span>
+                                </div><!--txt-->
+                            </a>
+                        </div>
+                        <div class="popup_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img07.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>CHARCOAL VALUES</h2>
+                                    <span>Winter snow #82828B</span>
+                                </div><!--txt-->
+                            </a>
+                        </div><!--popup_item-->
+                    </div><!--popup_wrap-->
+                </div><!--popup-->
+                <button class="stop">일시정지</button>  <!-- 일시정지 버튼 -->
+                <button class="play">재생</button>  <!-- 재생 버튼 -->
+            </div><!--list-->
+        </section><!--book-->
+        <section class="bestseller"> <!--다산북스 참고-->
+            <div class="list">
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img01.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>PERIWINKLE VALUES</h2>
+                                    <span>Vinca minor #CCCCFF</span>
+                                </div><!--txt-->
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img02.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>GREEN VALUES</h2>
+                                    <span>Mountain #6A8656</span>
+                                </div><!--txt-->
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img03.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>LIGHTBLUE VALUES</h2>
+                                    <span>Sea sun glitter #87C1CF</span>
+                                </div><!--txt-->
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img04.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>RED VALUES</h2>
+                                    <span>Rose flower#C00423</span>
+                                </div><!--txt-->
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img05.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>VIOLET VALUES</h2>
+                                    <span>Aurora #834177</span>
+                                </div><!--txt-->
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img06.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>PINK VALUES</h2>
+                                    <span>Peach #EC7D74</span>
+                                </div><!--txt-->
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                        <li class="swiper-slide">
+                            <a href="#n">
+                                <div class="photo"><img src="images/book_img07.jpg" alt="사진"></div>
+                                <div class="txt">
+                                    <h2>CHARCOAL VALUES</h2>
+                                    <span>Winter snow #82828B</span>
+                                </div><!--txt-->
+                            </a>
+                        </li> <!-- 팝업 요소들 (div로 해도 상관없음) -->
+                    </ul>
+                </div>
+            </div>
+        </section><!--bestseller-->
+    </div><!--wrap-->
 </body>
 </html>

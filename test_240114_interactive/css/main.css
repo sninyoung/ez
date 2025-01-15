@@ -124,7 +124,7 @@
 }
 .bg_fixed h2 {
     padding: 300px 0 0 80px;
-    font-size: 45px;
+    font-size: 2.6em;
     font-weight: 700;
     color: #12255B;
     line-height: 1.2;
@@ -141,7 +141,7 @@
 }
 .bg_change .video_fit .tit h2 {
     color: #1d1d1d;
-    font-size: 45px;
+    font-size: 2.6em;
     font-weight: 700;
     line-height: 1.2;
     margin: 0 0 024px 0;
@@ -181,8 +181,7 @@
     width: 40%;
     height: 40%;
     transition: 0.2s;
-    border-radius: 50px;
-
+    border-radius: 2.2em;
 
     /*동영상이 상하좌우 가운데 오도록*/
     left: 50%;
@@ -205,9 +204,120 @@
 }
 
 
+/********-----------scroll_event--------********/
+.scroll_event {
+    padding: 20px 0 250px 0;
+}
+.scroll_event .event_wrap {
+    position: relative; /*h2정렬의 기준*/
+
+    /*.photo를 오른쪽으로 보내기 위함.*/
+    display: flex;
+    justify-content: flex-end;
+}
+.scroll_event .event_wrap h2 {
+    position: absolute; /*event_wrap를 기준으로 정렬*/
+    left: 0;
+    top: 200px;
+    font-size: 3.5em;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    transition: 0.4s;
+}
+.scroll_event .event_wrap .photo {
+    overflow: hidden;
+    border-radius: 2.2em;
+    width: 80%;
+    max-width: 48.5em;
+    height: 27em;
+}
+.scroll_event .event_wrap .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+/**********----------book-------********/
+.book, .bestseller {
+    margin: 10em 0 0 0;
+}
+.book .list, .bestseller .list {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);
+    border: 4px solid #ff0000;
+}
+.book .list .popup .popup_wrap .popup_item, .bestseller .list .swiper ul li { /* 팝업 한 개 */
+    width: 190px;
+    margin-right: 16px;
+}
+.book .list .popup .popup_wrap .popup_item a, .bestseller .list .swiper ul li a {
+    display: block;
+}
+.book .list .popup .popup_wrap .popup_item a .photo, .bestseller .list .swiper ul li a .photo {
+    overflow: hidden;
+    height: 240px;
+    border-radius: 20px;
+}
+.book .list .popup .popup_wrap .popup_item a .photo img, .bestseller .list .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.book .list .popup .popup_wrap .popup_item a h2, .bestseller .list .swiper ul li a h2 {
+    margin: 12px 0 0 0;
+    font-weight: 700;
+    color: #454A51;
+}
+.book .list .popup .popup_wrap .popup_item a span, .bestseller .list .swiper ul li a span {
+    display: block;
+    margin: 1px 0 0 0;
+}
+
+
+
+
+
+@media screen and (max-width:1300px){ /*16px*/
+    .book .list {
+        left: 20px;
+        width: calc(100% - 20px);
+    }
+} /* @media */
+@media screen and (max-width:1000px){ /*15px*/
+    :root {
+        --base-font-size: 15px;
+        --header-h: 50px;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:760px){ /*14px*/
+    :root {
+        --base-font-size: 14px;
+    }
+} /* @media */
+
+@media screen and (max-width:640px){ /*13px*/
+    :root {
+        --base-font-size: 13px;
+    }
+} /* @media */
+
+
+
+
+
+
+
 
 
 /***************************/
+
+
+
+
+
+
 
 body {
     margin: 0 0 100dvh 0;
