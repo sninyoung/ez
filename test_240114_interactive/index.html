@@ -77,24 +77,42 @@
     </div>  
     </section>
     <section class="bg_fixed">
-        <h2>GREENPEACE CAMPAIGN</h2>
-    </section>
+        <div class="wrapper">
+            <h2>GLOBAL STANDARD<br>IN CONSTRUCTION INDUSTRY</h2>
+        </div>
+    </section><!--bg_fixed-->
+
+    <!-- 스크롤을 내리면 black 추가 -->
     <div class="bg_change">
         <section class="video_fit">
             <div class="tit">
                 <div class="wrapper">
-                    <h2>POSITIVE CHANGE THROUGH ACTION</h2>
-                    <p>Greenpeace is a campaign organization that identifies the causes of global environmental problems and works to solve them in a peaceful and creative way. Greenpeace believes that the greatest force for creating change for the planet is the 'power of citizens.'</p>
+                    <h2>No.1 Lifestyle<br> Creation Company</h2>
+                    <p>우리는 안정과 지속성장을 추구하는 기업, 형지엘리트입니다.<br>
+                        고객에게 행복과 기쁨을 주는 혁신적인 제품과 서비스를 창출하며,<br>
+                        보다 편리하고 세련된 라이프스타일을 만들어 나갑니다.<br>
+                        영상 속에 담긴 형지엘리트의 브랜드 가치와 비전을 경험해보세요.
+                    </p>
                 </div><!--wrapper-->
             </div><!--tit-->
-            <div class="video_wrap">
-                <video>
-                    <source src ="images/11901574_1920_1080_30fps.mp4">
-                </video>
-            </div>
+            <div class="video_area" data-status="before"> 
+                <!-- 비디오가 스크롤될 영역의 높이를 줌 
+                    계속 상태를 업데이트 해야 해서 class로 주기보다 data로 주는게 나음
+                    처음에 고정되기 이전   before
+                    고정되었을때          fixed
+                    고정 이후             after
+                -->
+                <div class="video_wrap">
+                    <div class="video_inner">
+                        <video>
+                            <source src="images/11901574_1920_1080_30fps.mp4" type="video/mp4">
+                        </video>
+                    </div><!--video_inner-->
+                </div><!--video_wrap-->
+            </div><!--video_area-->
         </section><!--video_fit-->
-        <section class="scroll_event"></section>
-    </div>
+        <section class="scroll_event"></section><!--scroll_event-->
+    </div><!--bg_change-->
     <section class="book"></section>
 </body>
 </html>
