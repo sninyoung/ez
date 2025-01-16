@@ -288,7 +288,7 @@ $(document).ready(function(){
         //cssEase: 'linear',
         dots: false, //하단 페이지 버튼 (true, false)
         arrows: true,  //다음, 이전팝업 (true, false)
-        pauseOnHover: true, //마우스 오버시 일시정지
+        pauseOnHover: false, //마우스 오버시 일시정지
         infinite: true, //무한반복
         variableWidth: true, //너비를 자유롭게 설정
         slidesToShow: 4, //한번에 보일 팝업 수 -variableWidth: true로 하면 소용없음
@@ -316,15 +316,38 @@ $(document).ready(function(){
     },
 });
 swiper.on('slideChangeTransitionEnd', function () { //슬라이드 바뀔 때 위치를 재조정해줌.
+    //console.log('end')
     swiper.slideReset()
     swiper.update()
 });
 swiper.on('slideChange', function () { //슬라이드 바뀔 때 위치를 재조정해줌.    
+    //console.log('change')
     swiper.update()
 });
 
 
 /************************bestseller:: 종료 **********************/
+
+/************************마우스포인터: 시작 **********************/
+$(window).on('scroll mousemove', function(e){
+    $('.cursor').css('left', e.pageX + 'px');
+    $('.cursor').css('top', e.pageY + 'px');
+})
+$('.book a').hover(function(){
+    $('.cursor').toggleClass('drag')
+})
+$('.bestseller a').hover(function(){
+    $('.cursor').toggleClass('view')
+})
+
+
+// $('.book a').on('mouseenter', function(){
+//     $('.cursor').addClass('drag')
+// })
+// $('.book a').on('mouseleave', function(){
+//     $('.cursor').removeClass('drag')
+// })
+/************************마우스포인터:: 종료 **********************/
 
 
 })//$(document).ready
