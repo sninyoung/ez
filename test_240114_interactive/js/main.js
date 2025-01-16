@@ -280,21 +280,24 @@ $(document).ready(function(){
 
     /***********************book:: 시작 **********************/
     
+
     $('.book .list .popup .popup_wrap').slick({
         autoplay: false, //팝업 자동 실행
-        autoplaySpeed: 3000, //팝업이 머무는 시간
-        speed: 500, //팝업 전환 속도
+        autoplaySpeed: 0, //팝업이 머무는 시간
+        speed: 0, //팝업 전환 속도
+        //cssEase: 'linear',
         dots: false, //하단 페이지 버튼 (true, false)
         arrows: true,  //다음, 이전팝업 (true, false)
-        //pauseOnHover: true, //마우스호버시 일시정지
+        pauseOnHover: true, //마우스 오버시 일시정지
         infinite: true, //무한반복
-        //variableWidth: true, //넓이를 자유롭게 설정
-        slidesToShow: 5, //한번에 보일 팝업 수
+        variableWidth: true, //너비를 자유롭게 설정
+        slidesToShow: 4, //한번에 보일 팝업 수 -variableWidth: true로 하면 소용없음
         //slidesToScroll: 1, //한번 드래그에 움직이는 슬라이드 제한
         swipeToSlide: true, //드래그한만큼 슬라이드 움직이기
-        //centerMode: true, //가운데정렬(가운데가 1번)
+        centerMode: false, //가운데정렬(가운데가 1번)
+        //centerMode: true,
+        //centerPadding: '100px',
     });
-    
     //$('.클래스명').slick('slickPause');  /* 일시정지 기능 */
     //$('.클래스명').slick('slickPlay');  /* 재생 기능 */
     /************************book:: 종료 **********************/
@@ -303,18 +306,23 @@ $(document).ready(function(){
 
     /************************bestseller:: 시작**********************/
     const swiper = new Swiper('.bestseller .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
-	slidesPerView: 4, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
-	//centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
-	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+    spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+    loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev',
-	},
+    navigation: {
+        nextEl: '.bestseller .list .btn_wrap .next',
+        prevEl: '.bestseller .list .btn_wrap .prev',
+    },
 });
-swiper.autoplay.stop();  /* 일시정지 기능 */
-swiper.autoplay.start();  /* 재생 기능 */
+swiper.on('slideChangeTransitionEnd', function () { //슬라이드 바뀔 때 위치를 재조정해줌.
+    swiper.slideReset()
+    swiper.update()
+});
+swiper.on('slideChange', function () { //슬라이드 바뀔 때 위치를 재조정해줌.    
+    swiper.update()
+});
+
 
 /************************bestseller:: 종료 **********************/
 
