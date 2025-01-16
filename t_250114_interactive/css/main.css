@@ -66,12 +66,6 @@
     overflow: hidden;
     transition: 0.2s;
 }
-@media screen and (max-width:1300px){
-    .txt_slide .txt_wrap .row {
-        font-size: 5vw;
-    }
-}
-
 .photo_resize {
     margin: 150px 0 0 0;
 }
@@ -108,7 +102,7 @@
     transition: 0.5s;
 }
 .bg_change .video_fit .tit {
-    padding: 130px 0 120px 0;
+    padding: 130px 0 0 0;
 }
 .bg_change .video_fit .tit h2 {
     color: #1d1d1d;
@@ -119,33 +113,39 @@
     transition: color 0.5s;
 }
 .bg_change .video_fit .video_area {
-    height: 2000px;
+    height: 200vh;
     position: relative; /* video_wrap 정렬의 기준 */
-    border: 4px solid #ff0000;
 }
+
 .bg_change .video_fit .video_area .video_wrap {
-    left: 50%;
-    transform: translateX(-50%);
-    overflow: hidden;
+    left: 0;
+    width: 100%;
+    height: 100vh;
 }
 .bg_change .video_fit .video_area[data-status="before"] .video_wrap {
     position: absolute; /*video_area*/
     top: 0;
-    width: 80%;
 }
 .bg_change .video_fit .video_area[data-status="fixed"] .video_wrap {
     position: fixed;
     top: 0;
-    width: 100%;
-    height: 100vh;
 }
 .bg_change .video_fit .video_area[data-status="after"] .video_wrap {
     position: absolute;
     bottom: 0;
-    width: 100%;
-    height: 100vh;
 }
-.bg_change .video_fit .video_area .video_wrap video {
+.bg_change .video_fit .video_area .video_wrap .video_inner {
+    overflow: hidden;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    /* video_wrap 영역의 좌우에 가운데 위아래 가운데 */
+    width: 80%;
+    height: 80%;
+    transition: 0.2s;
+}
+.bg_change .video_fit .video_area .video_wrap .video_inner video {
     /* video태그는 이미지랑 조금 비슷함 */
     width: 100%;
     height: 100%;
@@ -159,6 +159,132 @@
 }
 .bg_change.black .video_fit .tit h2 {
     color: #fff;
+}
+
+@media screen and (max-width:1300px){
+    .txt_slide .txt_wrap .row {
+        font-size: 5vw;
+    }
+}
+@media screen and (max-width:1000px){
+
+}
+
+.scroll_event {
+    padding: 300px 0 150px 0;
+}
+.scroll_event .event_wrap {
+    position: relative; /* h2 정렬의 기준 */
+    display: flex;
+    justify-content: flex-end;
+}
+.scroll_event .event_wrap h2 {
+    position: absolute;
+    left: 0;
+    top: 1.3em;
+    font-size: 9rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    transition: 0.2s;
+}
+.scroll_event .event_wrap .photo {
+    overflow: hidden;
+    border-radius: 1.2em;
+    max-width: 52.5em;
+    width: 100%;
+    height: 30em;
+}
+.scroll_event .event_wrap .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:1000px){
+    .scroll_event .event_wrap h2 {
+        top: 0.2em;
+        font-size: 6rem;
+    }
+}
+@media screen and (max-width:640px){
+    .scroll_event .event_wrap h2 {
+        font-size: 4rem;
+    }
+}
+
+.book, .best {
+    margin: 15em 0 0 0;
+}
+.book .list, .best .list {
+    position: relative;
+    left: calc(50% - 630px);
+    width: calc(50% + 630px);
+    border: 4px solid #ff0000;
+}
+.book .list .popup .popup_wrap .popup_item,
+.best .list .swiper ul li { /* 팝업 1개 */
+    width: 11.18em;
+    margin-right: 24px;
+}
+.book .list .popup .popup_wrap .popup_item a,
+.best .list .swiper ul li a {
+    display: block;
+}
+.book .list .popup .popup_wrap .popup_item a .photo,
+.best .list .swiper ul li a .photo {
+    overflow: hidden;
+    height: 13em;
+    border-radius: 0.3em;
+}
+.book .list .popup .popup_wrap .popup_item a .photo img,
+.best .list .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.book .list .popup .popup_wrap .popup_item a h2,
+.best .list .swiper ul li a h2 {
+    margin: 0.4em 0 0 0;
+    font-size: 1.18rem;
+    font-weight: 700;
+    color: #1d1d1d;
+}
+.book .list .popup .popup_wrap .popup_item a span,
+.best .list .swiper ul li a span {
+    display: none; /* 안보임 */
+    margin: 0.9em 0 0 0;
+}
+/* slick 이전 다음 버튼 */
+.book .list .popup .popup_wrap .slick-prev,
+.book .list .popup .popup_wrap .slick-next {
+    font-size: 0;
+    line-height: 0;
+    position: absolute;
+    top: 50%;
+    display: block;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    -webkit-transform: translate(0, -50%);
+    -ms-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    cursor: pointer;
+    color: transparent;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+.book .list .popup .popup_wrap .slick-prev {
+    left: -25px;
+}
+.book .list .popup .popup_wrap .slick-next {
+    right: -25px;
+}
+@media screen and (max-width:1300px){
+    .book .list {
+        left: 20px;
+        width: calc(100% - 20px);
+    }
 }
 
 body {
