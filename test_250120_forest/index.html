@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/swiper-bundle.min.js"></script> <!--swiper 라이브러리 js 호출-->
+    <script src="js/jquery-3.7.1.min.js"></script> <!--jquery(라이브러리) js 호출-->
+    <script src="js/main.js"></script> <!--javascript 호출-->
+    <script src="js/common.js"></script> <!--javascript 호출-->
+    <script src="js/fullpage.min.js"></script> <!--fullpage(라이브러리) js 호출-->
+
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"><!-- AOS를 작동시키기 위한 css파일 -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> <!-- AOS를 작동시키기 위한 js파일 -->
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"> <!--swiper 라이브러리 css (내 css보다 위에 배치 : 그래야 내가 css를 변경할 수 있음)-->
+    <link rel="stylesheet" href="css/fullpage.css"> <!--fullpage 호출-->
+    <link rel="stylesheet" href="css/main.css"> <!--css 호출-->
+
+    <link rel="shortcut icon" type="image/x-icoon" href="favicon.svg">
+    <title>생명의 숲</title>
+</head>
+<body>
+    <div class="skipnav">
+        <a class="cnt" href="#skip_content">본문 바로가기</a> <!--내부링크-->
+        <a class="menu" href="#skip_nav">주메뉴 바로가기</a>
+    </div>
+    <div id="wrap">
+        <div id="fullpage"> <!--fullpage 전체를 감싸는 요소-->
+            <section class="visual section fp-auto-height-responsive"><!--한페이지-->
+                visual
+            </section>
+            <section class="tree section fp-auto-height-responsive"><!--한페이지-->
+                tree
+            </section>
+            <section class="act section fp-auto-height-responsive"><!--한페이지-->
+                act
+            </section>
+            <section class="story section fp-auto-height-responsive"><!--한페이지-->
+                story
+            </section>
+            <footer class="section fp-auto-height"><!--footer 처럼 높이를 낮게 설정할 요소는 클래스명 fp-auto-height 추가-->
+                footer
+            </section>
+        </div>
+                 
+    </div>
+</body>
+</html>

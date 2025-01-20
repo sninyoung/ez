@@ -1,0 +1,22 @@
+/* 웹폰트 파일을 이용해서 웹폰트의 이름과 두께 등을 선언 */
+
+/*더 잠실체*/
+@font-face {
+	font-family: 'Jamsil';
+	font-weight: 700;
+	font-display: swap;
+	src: local('TheJamsil5Bold'), url(../fonts/TheJamsil5Bold.woff2) format('woff2')
+}
+@font-face {
+	font-family: 'Jamsil';
+	font-weight: 600;
+	font-display: swap;
+	src: local('TheJamsil4Medium'), url(../fonts/TheJamsil4Medium.woff2) format('woff2')
+}
+
+@font-face {
+	font-family: 'Jamsil';
+	font-weight: 400;
+	font-display: swap;
+	src: local('TheJamsil3Regular'), url(../fonts/TheJamsil3Regular.woff2) format('woff2')
+}

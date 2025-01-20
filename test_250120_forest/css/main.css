@@ -1,0 +1,42 @@
+/*
+ * main.css
+ * 메인페이지에만 적용되는 스타일 입력,
+ * 다른 css import 
+ */
+ @import url(default.css);
+ @import url(font.css);
+ @import url(common.css);
+ @import url(layout.css);
+
+.visual {
+    background-color: #3F3114;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+}
+.tree {
+    background-color: blue;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+}
+.act {
+    background-color: palevioletred;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+}
+.story {
+    background-color: darkgoldenrod;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+}
+footer {
+    background-color: #517D21;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    height: 600px;
+    padding: 200px 0 200px 0;
+}
