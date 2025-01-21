@@ -8,20 +8,20 @@
  @import url(common.css);
  @import url(layout.css);
 
-
-
 .visual h2 {
     display: none;
 }
 .visual .swiper {
     width: 100%;
-    height: 100%;
+    height: 100%; /*visual의 높이와 동일하게*/
 }
 .visual .swiper ul li {
     /*상하좌우 가운데 정렬하는 가장 간단한 방법*/
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: var(--section_min-height);
+
 }
 .visual .swiper ul li .photo {
     overflow: hidden;
@@ -73,9 +73,10 @@
 
 
 .tree {
-    background-color: blue;
+    background-color: #fff;
     font-size: 60px;
-    color: #fff;
+    color: #1d1d1d;
+    padding: 300px 0;
     text-align: center;
 }
 .act {

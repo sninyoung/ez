@@ -27,3 +27,33 @@
 .footer {
     background-color: #517D21;
 }
+
+@media screen and (max-width:1000px){ /*15px*/
+    .visual {
+        background-color: #F7F7F7;
+        font-size: 160px;
+        font-weight: 800;
+        text-align: center;
+        color: #1d1d1d;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:760px){ /*14px*/
+    .visual {
+        background-color: #F7F7F7;
+        font-size: 100px;
+        font-weight: 800;
+        text-align: center;
+        color: #1d1d1d;
+    }
+} /* @media */
+
+@media screen and (max-width:640px){ /*13px*/
+    .visual {
+        background-color: #F7F7F7;
+        font-size: 60px;
+        font-weight: 800;
+        text-align: center;
+        color: #1d1d1d;
+    }
+} /* @media */
