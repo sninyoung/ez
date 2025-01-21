@@ -32,6 +32,17 @@
     width: 100%;
     height: 100%;
 }
+.visual .swiper ul li .photo::before { /*검정색 깔아주기*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.1);
+
+}
 .visual .swiper ul li .photo img, .visual .swiper ul li .photo video {
     width: 100%;
     height: 100%;
@@ -43,7 +54,7 @@
     /*글자가 가운데 정렬이면 안줘도 되지만 만약 왼쪽이나 오른쪽 정렬이면 visual_txt에 너비(width)를 줘야 함.*/
 }
 .visual .swiper ul li .visual_txt h3 {
-    font-size: 50px;
+    font-size: 2.9412rem;
     font-weight: 600;
     line-height: 1.2;
 }

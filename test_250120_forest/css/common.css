@@ -35,11 +35,11 @@ body, html {
 
 
 ::selection {
-    background-color: #1C65A6;
+    background-color: #3F3114;
     color: #F6F9EC;
 }
 ::-moz-selection {
-    background-color: #1C65A6;
+    background-color: #3F3114;
     color: #F6F9EC;
 }
 
@@ -49,25 +49,20 @@ body, html {
     --base-font-size: 17px;
     --header-h: 100px;
 }
-@media screen and (max-width:1300px){ /*16px*/
-    :root {
-        --base-font-size: 16px;
-    }
-} /* @media */
-@media screen and (max-width:1000px){ /*15px*/
+@media screen and (max-width:1300px){ /*15px*/
     :root {
         --base-font-size: 15px;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*14px*/
+    :root {
+        --base-font-size: 14px;
         --header-h: 50px;
+
     }
 } /* @media */
 /* mobile 버전 css */
-@media screen and (max-width:760px){ /*14px*/
-    :root {
-        --base-font-size: 14px;
-    }
-} /* @media */
-
-@media screen and (max-width:640px){ /*13px*/
+@media screen and (max-width:768px){ /*13px*/
     :root {
         --base-font-size: 13px;
     }
