@@ -40,3 +40,11 @@ footer {
     height: 600px;
     padding: 200px 0 200px 0;
 }
+
+.quick_nav {
+    position: fixed;
+    left: 20px;
+    top: 50%;
+    color: #F6F9EC;
+    z-index: 10;
+}

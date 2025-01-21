@@ -8,17 +8,15 @@ $(document).ready(function(){
     
 	const myFullpage = new fullpage('#fullpage', {  /* html에서 페이지 전체를 감싸는 요소 */
 
-    // navigation은 글자를 클릭할 수가 없어서 사용안할거임, anchor, menu라는 다른 기능을 사용할 것임.
-    navigation: false, /* 오른쪽에 각 페이지의 paging */ 
-    navigationPosition: 'left', /* 위치 */
-    navigationTooltips: ['Main', '나무 심기', '숲 활동', '활동 이야기', 'footer'], /* 툴팁 */
+    navigation: false, /* 오른쪽에 각 페이지의 paging */
+    navigationPosition: 'right', /* 위치 */
+    navigationTooltips: ['Main', '주제', '날짜', '연락처'], /* 툴팁 */
     showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
     
-    lockAnchors: false,
-    menu: '.quick_nav',
-    anchors: ['main', 'tree', 'act', 'story'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
+    lockAnchors: true,
+    anchors: ['link1', 'link2', 'link3', 'link4'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
 
-    autoScrolling: true, /* 한페이지씩 스크롤 */
+    autoScrolling:true, /* 한페이지씩 스크롤 */
     scrollHorizontally: true,
 
     verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
@@ -31,8 +29,7 @@ $(document).ready(function(){
         }
     },
 
-    responsiveWidth: 1000, /* fullpage를 적용시키지 않을 모바일 너비 사이즈 */
-    responsiveHeight: 740, /* fullpage를 적용시키지 않을 모바일 높이 사이즈 */
+    responsiveWidth: 200 /* fullpage를 적용시키지 않을 모바일 사이즈 */
 });
         
 })//$(document).ready  /**news의 swiper 종료 */
