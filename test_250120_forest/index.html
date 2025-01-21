@@ -27,9 +27,106 @@
         <a class="menu" href="#skip_nav">주메뉴 바로가기</a>
     </div>
     <div id="wrap">
+        <header>
+            <h1 class="logo"><a href="index.html">생명의 숲 forest for life</a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap"> 
+                    <!--모바일에서 gnb_wrap이 전체적으로 이동, 그래서 모바일 메뉴에 같이 나오는 요소를 gnb_wrap 안에 둔다.-->
+                    <ul class="depth1">
+                        <li>
+                            <a href="#n"><span>소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>생명의 숲은?</span></a></li>
+                                <li><a href="#n"><span>함께하는 이들</span></a></li>
+                                <li><a href="#n"><span>재정공개</span></a></li>
+                                <li><a href="#n"><span>공지사항</span></a></li>
+                                <li><a href="#n"><span>찾아오시는 길</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>활동</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>활동 소개</span></a></li>
+                                <li><a href="#n"><span>활동 이야기</span></a></li>
+                                <li><a href="#n"><span>그린짐 이야기</span></a></li>
+                                <li><a href="#n"><span>아름다운 숲</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>참여와 후원</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>후원 이야기</span></a></li>
+                                <li><a href="#n"><span>후원 안내</span></a></li>
+                                <li><a href="#n"><span>기업 후원</span></a></li>
+                                <li><a href="#n"><span>참여 프로그램</span></a></li>
+                                <li><a href="#n"><span>자원 활동 안내</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>자료실</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>정기 간행물</span></a></li>
+                                <li><a href="#n"><span>문서 자료실</span></a></li>
+                                <li><a href="#n"><span>미디어 자료실</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>나의 후원</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>바로가기</span></a></li>
+                            </ul><!--depth2-->
+                        </li>
+                    </ul><!--depth1-->
+                    <div class="m_lang"><button>KOR</button></div>
+                    <button class="gnb_close">메뉴닫기</button>
+                </div><!--gnb_wrap-->
+            </nav>
+            <div class="tnb">
+                <div class="search"><button>검색</button></div>
+                <div class="lang"><button>언어선택</button></div>
+            </div>
+        </header>
         <div id="fullpage"> <!--fullpage 전체를 감싸는 요소-->
             <section class="visual section fp-auto-height-responsive"><!--한페이지-->
-                visual
+                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                        <li class="swiper-slide video"> <!-- 하나의 팝업-->
+                            <div class="photo">
+                                <video muted autoplay playsinline loop> <!--비디오 자동재생, 반복재생-->
+                                    <source src="images/main/visual.mp4" type="video/mp4">
+                                </video>
+                            </div><!--movie-->
+                            <div class="visual_txt">
+                                <h3>생명의 숲은 모두가 건강한 숲을 만나는 일상을<br>시민과 함께 만들어갑니다.</h3>
+                                <p>도시 속 나무심기를 위한  #같이가치 #매달기부</p>
+                            </div><!--visual_txt-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual_bg02.jpg" alt="사진1"></div>
+                            <div class="visual_txt">
+                                <h3>기념하고 싶은 날! <br>서울 곳곳에 나무 한그루 심어보는 건 어떠세요?</h3>
+                                <p>내 나무 갖기 _서울 마이트리</p>
+                            </div><!--visual_txt-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual_bg03.jpg" alt="사진2"></div>
+                            <div class="visual_txt">
+                                <h3>지금부터 고목나무  이야기를 <br>함께 들어 볼까요?</h3>
+                                <p>생명의 숲과 나무 할아버지,  박상진 교수</p>
+                            </div><!--visual_txt-->
+                        </li>
+                        <li class="swiper-slide">
+                            <div class="photo"><img src="images/main/visual_bg04.jpg" alt="사진3"></div>
+                            <div class="visual_txt">
+                                <h3>생명의 숲은 모두가 건강한 숲을 만나는 일상을<br>시민과 함께 만들어갑니다.</h3>
+                                <p>도시 속 나무심기를 위한  #같이가치 #매달기부</p>
+                            </div><!--visual_txt-->
+                        </li>
+                    </ul>
+                    <div class="swiper-pagination"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                </div>
+                    
             </section>
             <section class="tree section fp-auto-height-responsive"><!--한페이지-->
                 tree

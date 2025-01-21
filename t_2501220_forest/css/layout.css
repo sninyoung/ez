@@ -26,3 +26,14 @@
 .skipnav a:focus {
     top: 0;
 }
+
+header {
+    position: fixed; /* 무조건 body를 기준으로 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+    overflow: hidden;
+}

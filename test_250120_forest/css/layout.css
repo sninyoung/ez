@@ -25,3 +25,29 @@ header/footer 모든 페이지의 공통 스타일 적용 */
 .skipnav a:focus{
     top: 0;
 }
+/**---------header---------**/
+header {
+    position: fixed; /*무조건 body를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: var(--header-h);
+    z-index: 100;
+    color: #fff;
+    overflow: hidden;
+}
+header .logo {
+    font-size: 0;
+    line-height: 0;
+}
+
+
+/**--------footer--------**/
+footer {
+    background-color: #517D21;
+    font-size: 60px;
+    color: #fff;
+    text-align: center;
+    height: 600px;
+    padding: 200px 0 200px 0;
+}

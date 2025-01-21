@@ -9,6 +9,7 @@ body, html {
     letter-spacing: -0.03em; /* 자간 */
     word-break: keep-all; /* 단어별로(여백기준) 줄바꿈 */
     word-wrap: break-word; /* 단어가 너무 길면 그걸 강제로 줄바꿈 하는 명령 */
+    position: relative; /*header의 정렬의 기준*/
 }
 
 /* pc 버전 css */

@@ -8,12 +8,59 @@
  @import url(common.css);
  @import url(layout.css);
 
-.visual {
-    background-color: #3F3114;
-    font-size: 60px;
-    color: #fff;
-    text-align: center;
+
+
+.visual h2 {
+    display: none;
 }
+.visual .swiper {
+    width: 100%;
+    height: 100%;
+}
+.visual .swiper ul li {
+    /*상하좌우 가운데 정렬하는 가장 간단한 방법*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.visual .swiper ul li .photo {
+    overflow: hidden;
+    position: absolute; /*li를 기준으로 정렬 - swiper 라이브러리 때문에 li.swiper-slide에 position: relative;가 들어있음.*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+.visual .swiper ul li .photo img, .visual .swiper ul li .photo video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper ul li .visual_txt {
+    color: #fefefe;
+    text-align: center;
+    /*글자가 가운데 정렬이면 안줘도 되지만 만약 왼쪽이나 오른쪽 정렬이면 visual_txt에 너비(width)를 줘야 함.*/
+}
+.visual .swiper ul li .visual_txt h3 {
+    font-size: 50px;
+    font-weight: 600;
+    line-height: 1.2;
+}
+.visual .swiper ul li .visual_txt p {
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0 0 0;
+
+}
+
+
+
+
+
+
+
 .tree {
     background-color: blue;
     font-size: 60px;
@@ -32,16 +79,8 @@
     color: #fff;
     text-align: center;
 }
-footer {
-    background-color: #517D21;
-    font-size: 60px;
-    color: #fff;
-    text-align: center;
-    height: 600px;
-    padding: 200px 0 200px 0;
-}
 
-.quick_nav {
+.quick_nav { 
     position: fixed;
     left: 20px;
     top: 50%;
