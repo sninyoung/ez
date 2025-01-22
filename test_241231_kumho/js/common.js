@@ -142,6 +142,9 @@ $(document).ready(function(){
      })
 
     
+
+ /*********-------모바일 메뉴 열기 - menu_mo 시작 ----------****/
+
     $('header .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_mo')
     })

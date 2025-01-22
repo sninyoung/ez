@@ -59,7 +59,7 @@ body, html {
     :root {
         --base-font-size: 14px;
         --header-h: 50px;
-        --section_min-height: 500px; /*나중에 0으로 바꿔야 함.*/
+        --section_min-height: 0; /*나중에 0으로 바꿔야 함.*/
     }
 } /* @media */
 /* mobile 버전 css */

@@ -4,6 +4,7 @@
 */
 
 $(document).ready(function(){
+
     console.log('연결됨')
     
 	const myFullpage = new fullpage('#fullpage', {  /* html에서 페이지 전체를 감싸는 요소 */
@@ -15,7 +16,7 @@ $(document).ready(function(){
     showActiveTooltip: true, /* 현재 활성화된 페이지의 툴팁에 특정 클래스 주기 */
     
     lockAnchors: false,
-    menu: '.quick_nav',
+    //menu: '.quick_nav',
     anchors: ['main', 'tree', 'act', 'story'], /* href="#link1" 이렇게 코딩하면 해당 링크명으로 이동 */
 
     autoScrolling: true, /* 한페이지씩 스크롤 */
@@ -26,16 +27,41 @@ $(document).ready(function(){
     scrollOverflow: false, /* 컨텐츠가 넘쳐도 스크롤 금지 */
 
     afterLoad: function(origin, destination, direction, trigger){
-        if(destination.index == 2){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
-            console.log('3번째 슬라이드가 로딩 되었을때');
+        $('.quick_nav ul li').removeClass('active')
+        $('.quick_nav ul li').eq(destination.index).addClass('active')
+
+        if(destination.index == 0){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
+            //console.log('1번 main');
+            //$('.quick_nav ul li').eq(0).addClass('active')
+            $('header').removeClass('dark')
+            $('.quick_nav').removeClass('dark')
+            $('.quick_link').removeClass('color2') //퀵메뉴 색깔 바꿔줄때
+
+        }else if(destination.index == 1){
+           // console.log('2번 나무심기');
+           $('header').eq(1).addClass('dark')
+           $('.quick_nav').addClass('dark')
+           $('.quick_link').removeClass('color2') //퀵메뉴 색깔 바꿔줄때
+
+        }else if(destination.index == 2){
+            //console.log('3번 숲활동');
+            //$('.quick_nav ul li').eq(2).addClass('active')
+            $('header').removeClass('dark')
+            $('.quick_nav').removeClass('dark')
+            $('.quick_link').removeClass('color2') //퀵메뉴 색깔 바꿔줄때
+            
+        }else if(destination.index == 3){
+            //console.log('4번 활동이야기');   
+            //$('.quick_nav ul li').eq(3).addClass('active')
         }
     },
 
-    responsiveWidth: 769, /* fullpage를 적용시키지 않을 모바일 너비 사이즈 */
-    responsiveHeight: 768, /* fullpage를 적용시키지 않을 모바일 높이 사이즈 */
+    responsiveWidth: 1025, /* fullpage를 적용시키지 않을 모바일 너비 사이즈 */
+    //responsiveHeight: 768, /* fullpage를 적용시키지 않을 모바일 높이 사이즈 */
 });//fullpage
 
-
+let visual_name = ['생명의 숲','서울 마이트리','고목 나무 이야기','#같이가치 #매달기부']
+//console.log(visual_name[2]);
 
 const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
@@ -47,11 +73,11 @@ const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요
 	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
 
 	pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
-		el: '.swiper-pagination', /* 해당 요소의 class명 */
+		el: '.visual .paging', /* 해당 요소의 class명 */
 		clickable: true,  /* 클릭하면 해당 팝업으로 이동할 것인지 값 */
-		type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
+		//type: 'fraction',  /* type fraction을 주면 paging이 숫자로 표시됨 */
 		renderBullet: function (index, className) {   /* paging에 특정 코드 넣기 */
-		    return '<span class="' + className + '">' + (index + 1) + "</span>";
+		    return '<div class="' + className + '"><span>' + visual_name[index] + "</span></div>";
 		},
 	},
 	

@@ -19,7 +19,7 @@ $(document).ready(function(){
     autoScrolling:true, /* 한페이지씩 스크롤 */
     scrollHorizontally: true,
 
-    verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
+    //verticalCentered: true, /* 컨텐츠 요소 위아래 가운데 */
     
     scrollOverflow: false, /* 컨텐츠가 넘쳐도 스크롤 금지 */
 
