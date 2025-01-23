@@ -22,7 +22,13 @@ body, html {
     overflow: hidden; /* wrap 영역 밖으로 나간 요소는 숨김처리함. absolute가 대부분 나감.*/
     position: relative; /*header정렬의 기준 - wrap이 전체를 감싸기 때문*/
 }
-@media screen and (max-width:1300px){
+@media screen and (max-width:1500px){
+    .wrapper {
+        width: auto; 
+        margin: 0 120px; /*(1500 - 1260) / 2 = 120*/
+    }
+}/*media*/
+@media screen and (max-width:1024px){
     .wrapper {
         width: auto; 
         /* 원래 너 하던대로해 - block요소 
@@ -35,11 +41,11 @@ body, html {
 
 
 ::selection {
-    background-color: #3F3114;
+    background-color: #517D21;
     color: #F6F9EC;
 }
 ::-moz-selection {
-    background-color: #3F3114;
+    background-color: #517D21;
     color: #F6F9EC;
 }
 
@@ -55,6 +61,7 @@ body, html {
         --base-font-size: 15px;
     }
 } /* @media */
+/* mobile 버전 css */
 @media screen and (max-width:1024px){ /*14px*/
     :root {
         --base-font-size: 14px;
@@ -62,7 +69,6 @@ body, html {
         --section_min-height: 0; /*나중에 0으로 바꿔야 함.*/
     }
 } /* @media */
-/* mobile 버전 css */
 @media screen and (max-width:768px){ /*13px*/
     :root {
         --base-font-size: 13px;

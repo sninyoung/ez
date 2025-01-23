@@ -39,9 +39,12 @@ $(document).ready(function(){
 
         }else if(destination.index == 1){
            // console.log('2번 나무심기');
-           $('header').eq(1).addClass('dark')
+           $('header').addClass('dark')
            $('.quick_nav').addClass('dark')
            $('.quick_link').removeClass('color2') //퀵메뉴 색깔 바꿔줄때
+
+			$('.tree .numbering .number_tit .counter').counterUp(); /* 숫자 요소의 클래스명을 써준다. */
+
 
         }else if(destination.index == 2){
             //console.log('3번 숲활동');
@@ -53,6 +56,8 @@ $(document).ready(function(){
         }else if(destination.index == 3){
             //console.log('4번 활동이야기');   
             //$('.quick_nav ul li').eq(3).addClass('active')
+			$('header').addClass('dark')
+			$('.quick_nav').addClass('dark')
         }
     },
 
@@ -66,7 +71,7 @@ let visual_name = ['생명의 숲','서울 마이트리','고목 나무 이야�
 const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
 
 	autoplay: {  /* 팝업 자동 실행 */
-		delay: 2500,
+		delay: 3000,
 		disableOnInteraction: true,
 	},
 
@@ -80,14 +85,30 @@ const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요
 		    return '<div class="' + className + '"><span>' + visual_name[index] + "</span></div>";
 		},
 	},
-	
-
-	navigation: {  /* 이전, 다음 버튼 */
-		nextEl: '.swiper-button-next',  /* 다음 버튼의 클래스명 */
-		prevEl: '.swiper-button-prev',  
-	},
-
 });//Swiper
 
-        
-})//$(document).ready  /**news의 swiper 종료 */
+
+
+//활동이야기 .story Swiper
+
+const story_swiper = new Swiper('.story .list .swiper', { /* 팝업을 감싼는 요소의 class명 */
+	slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+	spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+	breakpoints: {
+        769: {   /* 769px 이상일때 적용 */
+			slidesPerView: 3,
+			spaceBetween: 16,
+		},
+		1025: {   /* 1025px 이상일때 적용 */
+			slidesPerView: 3,
+			spaceBetween: 24,
+		},
+        1301: {   /* 1301px 이상일때 적용 */
+			slidesPerView: 4,
+			spaceBetween: 24,
+		},
+	},
+	loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+});
+
+})//$(document).ready  

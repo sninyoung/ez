@@ -8,10 +8,11 @@ $(document).ready(function(){
 
     let window_w //브라우저 너비
     let device_status //pc, mobile 현재 상태 저장
+    let scrolling = $(window).scrollTop() //스크롤된 값
 
     function device_chk(){
         window_w = $(window).width()
-        console.log(window_w)
+        //console.log(window_w)
 
         if(window_w > 1024){
             device_status = 'pc'
@@ -26,6 +27,12 @@ $(document).ready(function(){
     $(window).resize(function(){ //브라우저가 리사이즈 될 때마다
         device_chk()
     })//$(window).resize
+
+    $(window).scroll(function(){
+        scrolling = $(window).scrollTop()
+        console.log(scrolling)
+    })
+   
 
 
  /*********-------모바일 1차 메뉴 열기 - open 시작----------**** */
@@ -90,7 +97,38 @@ $(document).ready(function(){
             ('header .gnb .gnb_wrap > ul.depth1 > li').removeClass('over')
         }
     })
- /*********-------pc 메뉴 열기 - menu_pc 끝 ----------****/
+    /*********-------pc 메뉴 열기 - menu_pc 끝 ----------****/
+
+
+
+
+
+
+
+    /*********-------모바일에서 header fixed 클래스 추가 _ 시작 ----------***
+     * 스크롤을 내리면 header에 fixed 클래스 추가
+     * 스크롤이 다시 맨 상단에 내려가면fixed 클래스 삭제
+     */
+
+
+    function header_fixed(){
+        if(device_status = 'mobile'){
+            if(scrolling > 0){
+                $('header').addClass('fixed')
+            }else{
+                $('header').removeClass('fixed')
+            }
+        }
+    }
+    header_fixed() 
+    $(window).scroll(function(){
+        header_fixed() 
+    })
+
+
+
+
+ /*********-------모바일에서 header fixed 클래스 추가 _ 끝 ----------****/
 
 
 
