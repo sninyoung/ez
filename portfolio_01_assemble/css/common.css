@@ -48,25 +48,25 @@ body, html {
     --header-h: 100px;
     --hader-depth2-h: 280px;
 }
-@media screen and (max-width:1300px){ /*16px*/
+@media screen and (max-width:1440px){ /*16px*/
     :root {
         --base-font-size: 16px;
     }
 } /* @media */
-@media screen and (max-width:1000px){ /*15px*/
+@media screen and (max-width:1024px){ /*15px*/
     :root {
         --base-font-size: 15px;
-        --header-h: 50px;
     }
 } /* @media */
 /* mobile 버전 css */
-@media screen and (max-width:760px){ /*14px*/
+@media screen and (max-width:768px){ /*14px*/
     :root {
         --base-font-size: 14px;
+        --header-h: 50px;
     }
 } /* @media */
 
-@media screen and (max-width:640px){ /*13px*/
+@media screen and (max-width:320px){ /*13px*/
     :root {
         --base-font-size: 13px;
     }
