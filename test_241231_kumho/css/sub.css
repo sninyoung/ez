@@ -184,7 +184,8 @@ header .gnb .gnb_wrap ul.depth1 > li.active.over > ul.depth2 > li.active > a {
         padding: 7.2em 0 0 0 ; /*180px- 25px 기준으로 환산*/
     }
     .sub_visual .snb {
-        /*ul의 너비가 snb보다 클 때 - 메뉴가 한 줄에 표시가 안될 것 같으면 가로 스크롤바 생성*/
+        overflow-x: auto;
+        /* ul의 넓이가 snb보다 크면 - 메뉴가 한줄에 표시가 안될 것 같으면 가로 스크롤바 생성 */
     }
     
 } /* @media */
