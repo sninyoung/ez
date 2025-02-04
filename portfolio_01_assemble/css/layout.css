@@ -70,6 +70,9 @@ header .gnb .gnb_wrap ul {
     justify-content: center;
     gap: 80px;
 }
+header .gnb .gnb_wrap ul li a span {
+    font-weight: 700;
+}
 
 
 /******-----header가 고정되었을 때: header.fixed -----*****/
@@ -114,7 +117,7 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
     }
     
 } /* @media */
-@media screen and (max-width:320px){ /*13px*/
+@media screen and (max-width:380px){ /*13px*/
     
 } /* @media */
 
