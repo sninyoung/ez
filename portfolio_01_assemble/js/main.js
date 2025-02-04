@@ -3,6 +3,9 @@
 * main에서만 작동되는 스크립트 저장
 */
 
+
+let tab_name //product의 클릭한 tab의 이름
+
 $(document).ready(function(){
     
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싸는 요소의 class명 */
@@ -29,20 +32,20 @@ $(document).ready(function(){
     });
 
 
-     /************************* product 팝업 (시작)  **************************/
+     /************************* product 스위퍼 (시작)  **************************/
      const product_panel01_swiper = new Swiper('.product .panel01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            361: {    /* 361px이상 640px이하일때 적용 */
+            321: {    /* 321px이상 768px이하일때 적용 */
                 slidesPerView: 2,
                 spaceBetween: 24,
             },
-            641: {    /* 641px이상 1000px이하일때 적용 */
+            769: {    /* 769px이상 1024px이하일때 적용 */
                 slidesPerView: 3,
                 spaceBetween: 24,
             },
-            1001: {    /* 1001px이상일때 적용 */
+            1025: {    /* 1025px이상일때 적용 */
                 slidesPerView: 4,
                 spaceBetween: 24,
             },
@@ -55,17 +58,17 @@ $(document).ready(function(){
     });
     const product_panel02_swiper = new Swiper('.product .panel02 .swiper', { /* 팝업을 감싸는 요소의 class명 */
         slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            641: {    /* 1300px 이상일때 적용 */
+            321: {    /* 321px이상 768px이하일때 적용 */
                 slidesPerView: 2,
                 spaceBetween: 24,
             },
-            801: {    /* 1300px 이상일때 적용 */
+            769: {    /* 769px이상 1024px이하일때 적용 */
                 slidesPerView: 3,
                 spaceBetween: 24,
             },
-            1001: {    /* 1300px 이상일때 적용 */
+            1025: {    /* 1025px이상일때 적용 */
                 slidesPerView: 4,
                 spaceBetween: 24,
             },
@@ -77,7 +80,7 @@ $(document).ready(function(){
         },
     });
 
-    /************************* product 팝업 (끝)  **************************/
+    /************************* product 스위퍼 (끝)  **************************/
     /************************* product 탭 기능 (시작)  *************************
      * .product .tab_list ul li 버튼을 누른 후 하는 일
      * li에 active 클래스 추가
@@ -88,11 +91,11 @@ $(document).ready(function(){
         $('.product .tab_list ul li').removeClass('active')
         $(this).addClass('active')
         $('.product .tab_list ul li button').attr('title', '')
-        $(this).product('button').attr('title', '선택됨')
+        $(this).find('button').attr('title', '선택됨')
         tab_name = $(this).attr('data-tab')
         console.log(tab_name)
         $('.product .tab_content .tab_panel').removeClass('active')
-        $('.product .tab_content').product('[data-tab="'+tab_name+'"]').addClass('active')
+        $('.product .tab_content').find('[data-tab="'+tab_name+'"]').addClass('active')
     })
     /*************************  product 탭 기능 (끝)  **************************/
 

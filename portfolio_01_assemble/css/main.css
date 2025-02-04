@@ -32,17 +32,20 @@ main.container {
     height: 100%;
     object-fit: cover;
 }
- .visual .swiper ul li .visual_txt {
+.visual .swiper ul li .visual_txt {
     position: absolute; /*li를 기준으로 정렬*/
     right: 320px;
     bottom: 115px;
     color: #fff;
 }
 .visual .swiper ul li .visual_txt h3 {
-    position: relative; /*span의 정렬의 기준*/
     font-size: 2.6471rem; /*45px 기준:17px*/
     font-weight: 700;
     margin: 0 0 0 25px;
+    z-index: 10;
+}
+.visual .swiper ul li .visual_txt h3 strong {
+    position: relative;
     z-index: 10;
 }
 .visual .swiper ul li .visual_txt h3 span {
@@ -90,10 +93,21 @@ main.container {
     width: auto;
 }
 
+
+@media screen and (max-width:1440px){ /*16px*/
+    .visual .swiper ul li .photo {
+        height: 600px;
+    }
+} /* @media */
 @media screen and (max-width:1024px){ /*15px*/
     .visual {
-        position: relative;  /* ctrl_wrap 정렬의 기준 */
         padding: 0 20px;
+    }
+    .visual .ctrl_wrap {
+        height: 80px;
+    }
+    .visual .swiper ul li .photo {
+        height: 420px;
     }
 } /* @media */
 /* mobile 버전 css */
@@ -108,28 +122,161 @@ main.container {
 
 /***------product 시작-------*****/
 .product {
-    padding: 0 60px;
-    margin: 150px 0;
+    padding: 150px 60px 200px 60px;
+}
+.product .wrapper {
+    position: relative; /*prev, next, more의 정렬의 기준*/
 }
 .product .inner {
     padding: 0 110px;
+    position: relative; /*more의 정렬의 기준*/
 }
 .product h2 {
     font-size: 2.6471rem; /*45px 기준:17px*/
     font-weight: 700;
     line-height: 1.2;
+    margin-bottom: 52px;
 }
 .product .tab_list {
     overflow-x: auto;/* ul의 넓이가 snb보다 크면 - 메뉴가 한줄에 표시가 안될 것 같으면 가로 스크롤바 생성 */
+    width: 100%;
+    padding-top: 20px;
+    border-top: 1px solid rgba(0,0,0,0.1);
 }
+
 .product .tab_list ul {
     display: flex;
-}
-.product .tab_list ul li {
-    height: 40px;
+    max-width: 1580px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 0 20px 0;
 }
 .product .tab_list ul li button {
     padding: 8px 20px;
     font-weight: 700;
+    border-radius: 50px;
+    white-space: nowrap; /*한 줄 제한*/
 }
+.product .tab_list ul li.active button {
+    background-color: #555;
+    color: #fff;
+}
+.product .tab_content {
+    margin: 58px 0 0 0;
+}
+.product .tab_content .tab_panel {
+    display: none; /* 숨김 */
+}
+.product .tab_content .tab_panel.active {
+    display: block;
+}
+.product .tab_content .tab_panel h3 {
+    display: none;
+}
+.product .tab_content .tab_panel .swiper ul li a {
+    display: block;
+}
+.product .tab_content .tab_panel .swiper ul li a .photo {
+    height: 302px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+.product .tab_content .tab_panel .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.product .tab_content .tab_panel .swiper ul li a:hover .photo img {
+    transform: scale3d(1.1, 1.1, 1);
+}
+.product .tab_content .tab_panel .swiper ul li a strong {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 20px 7px 20px;
+    margin: 20px 0 14px 0;
+    border: 1px solid #1d1d1d;
+    border-radius: 5px;
+}
+.product .tab_content .tab_panel .swiper ul li a span {
+    display: block;
+    font-weight: 700;
+    width: 100%;
+}
+.product .tab_content .tab_panel .btn_wrap .prev {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    left: 0;
+    bottom: 30%;
+    transform: translateY(-70%);
+    width: 50px;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M33.3212 5.60888L35.5369 7.82451L18.3613 25L35.5369 42.1756L33.3212 44.3912L13.9301 25L33.3212 5.60888Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    
+    font-size: 0;
+    line-height: 0;
+}
+.product .tab_content .tab_panel .btn_wrap .next {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: 0;
+    bottom: 30%;
+    transform: translateY(-70%);
+    width: 50px;
+    height: 50px;
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.6785 44.3911L14.4629 42.1755L31.6384 25L14.4629 7.82445L16.6785 5.60883L36.0697 25L16.6785 44.3911Z' fill='%23555555'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    
+    font-size: 0;
+    line-height: 0;
+}
+.product .tab_content .tab_panel .btn_wrap .more {
+    position: absolute; /*inner를 기준으로 정렬..하고 싶은데 안되는건가*/
+    right: 110px;
+    top: 18px;
+}
+.product .tab_content .tab_panel .btn_wrap .more a {
+    position: relative; /*after의 정렬의 기준*/
+    padding: 8px 33px 8px 15px;
+    border: 1px solid #1d1d1d;
+}
+.product .tab_content .tab_panel .btn_wrap .more a::after { /*더보기 + 아이콘*/
+    content: "";
+    position: absolute; /*a를 기준으로 정렬*/
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3123 11.6875H5.0415V10.3125H10.3123V5.04169H11.6873V10.3125H16.9582V11.6875H11.6873V16.9584H10.3123V11.6875Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+
+@media screen and (max-width:1024px){ /*15px*/
+    .product {
+        padding: 80px 20px 100px 20px;
+    }
+    .product .inner {
+        padding: 0 50px;
+    }
+    .product h2 {
+        font-size: 2rem;/*30px 기준:15px*/
+        margin-bottom: 52px;
+    }
+    
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*14px*/
+    
+} /* @media */
+@media screen and (max-width:320px){ /*13px*/
+    
+} /* @media */
 /***------product 끝-------*****/

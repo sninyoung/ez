@@ -94,6 +94,9 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
+    header {
+        padding: 0 20px;
+    }
     header .gnb .gnb_wrap ul {
         display: flex;
         justify-content: center;
