@@ -109,11 +109,32 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
+    header .gnb {
+        left: auto;
+        right: 0;
+        top: 0;
+        transform: translate(0, 0);
+    }
     header .gnb .gnb_wrap, header .gnb .gnb_close {
         display: none;
     }
     header .gnb .gnb_open{
         display: block;
+        position: relative; /* after 정렬의 기준 */
+        color: transparent;
+    }
+    header .gnb .gnb_open::after {
+        content: "";
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: -1;
+        width: 3.5714em; /*50px 기준:14px*/
+        height: 3.5714em; /*50px 기준:14px*/
+        background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5 20.8334V19.1667H32.5V20.8334H17.5ZM17.5 30.8334V29.1667H32.5V30.8334H17.5ZM17.5 25.8334V24.1667H32.5V25.8334H17.5Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
     }
     
 } /* @media */

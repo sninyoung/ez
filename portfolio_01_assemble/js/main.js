@@ -28,9 +28,7 @@ $(document).ready(function(){
                 return '<span class="' + className + '">' + (index + 1) + "</span>";
             },
         },
-
     });
-
 
      /************************* product 스위퍼 (시작)  **************************/
      const product_panel01_swiper = new Swiper('.product .panel01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -39,11 +37,11 @@ $(document).ready(function(){
         breakpoints: {
             381: {    /* 381px이상 768px이하일때 적용 */
                 slidesPerView: 3,
-                spaceBetween: 16,
+                spaceBetween: 12,
             },
             769: {    /* 769px이상 1024px이하일때 적용 */
                 slidesPerView: 4,
-                spaceBetween: 24,
+                spaceBetween: 16,
             },
             1025: {    /* 1025px이상일때 적용 */
                 slidesPerView: 4,
