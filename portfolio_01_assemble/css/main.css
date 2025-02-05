@@ -240,9 +240,9 @@ main.container {
 }
 .product .tab_content .tab_panel .btn_wrap .prev, .product .tab_content .tab_panel .btn_wrap .next {
     position: absolute; /*wrapper를 기준으로 정렬*/
-    left: 0;
-    bottom: 30%;
-    transform: translateY(-70%);
+    left: -6%;
+    bottom: 50%;
+    transform: translateY(-50%);
     width: 2.6471em;
     height: 2.6471em;
     background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5.4375L31.5938 7.03125L16.125 22.5L31.5938 37.9688L30 39.5625L12.9375 22.5L30 5.4375Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
@@ -253,7 +253,7 @@ main.container {
 }
 .product .tab_content .tab_panel .btn_wrap .next { /*prev에서 바뀌는 것만*/
     left: auto;
-    right: 0;
+    right: -6%;
     background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 39.5625L13.4062 37.9688L28.875 22.5L13.4062 7.03125L15 5.4375L32.0625 22.5L15 39.5625Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
 }
 .product .tab_content .tab_panel .btn_wrap .more {
@@ -287,10 +287,6 @@ main.container {
     .product .tab_content .tab_panel .swiper ul li a .photo {
         height: 80%;/*296px*/
     }
-    .product .tab_content .tab_panel .btn_wrap .prev, .product .tab_content .tab_panel .btn_wrap .next {
-        bottom: 35%;
-        transform: translateY(-35%);
-    }
 } /* @media */
 
 @media screen and (max-width:1024px){ /*15px*/
@@ -322,8 +318,6 @@ main.container {
         top: -42px;
     }
     .product .tab_content .tab_panel .btn_wrap .prev, .product .tab_content .tab_panel .btn_wrap .next {
-        bottom: 40%;
-        transform: translateY(-40%);
         width: 2em;
         height: 2em;
     }
@@ -423,47 +417,72 @@ main.container {
 .project .list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-columns: minmax(22.1765em, auto);
-    grid-auto-rows: minmax(20.1765em, auto);
+    grid-auto-columns: repeat(4, minmax(12.2353em, 22.1765em));
+    grid-template-rows: repeat(2, minmax(12.8235em, 20.1765em)); /*auto-fit: 개수에 맞게 자동으로 높이 조절, minmax함수로 최소높이랑 최대높이 지정*/
     grid-auto-flow: dense;
     grid-gap: 24px;
 }
-.project .list .project01 {
+.project .list .box.list01 {
     border: 1px solid #ff3355;
     background-color: #ff3355;
-    border-radius: 30px;
 }
-.project .list .project02 {
-	/* 1번 라인에서 2칸 */
+.project .list .box.list02 {
 	grid-column: 2 / span 1;
-	/* 1번 라인에서 3칸 */
-	grid-row: 1 / span 2;
+	grid-row: 1 / span 2;/* 1번 라인에서 2칸 */
     border: 1px solid #0051FF;
     background-color: #0051FF;
-    border-radius: 30px;
 }
-.project .list .project03 {
+.project .list .box.list03 {
     border: 1px solid #00FF2F;
     background-color: #00FF2F;
-    border-radius: 30px;
+
 }
-.project .list .project04 {
+.project .list .box.list04 {
     border: 1px solid #FF2CD1;
     background-color: #FF2CD1;
-    border-radius: 30px;
+
 }
-.project .list .project05 {
+.project .list .box.list05 {
     border: 1px solid #00F6FF;
     background-color: #00F6FF;
-    border-radius: 30px;
 }
-.project .list .project06 {
-	grid-column: 3 / span 2; /* 1번 라인에서 2칸 */
-	grid-row: 2 / span 1; /* 1번 라인에서 3칸 */
+.project .list .box.list06 {
+	grid-column: 3 / span 2; /* 3번 라인에서 2칸 */
+	grid-row: 2 / span 1; /* 2번 라인에서 1칸 */
     border: 1px solid #FF8800;
-    background-color: #FF8800;
-    border-radius: 30px;
 }
 
-
+@media screen and (max-width:1440px){ /*16px*/
+    .project .inner {
+        padding: 0 50px;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*15px*/
+    .project {
+        padding: 80px 20px 100px 20px;
+    }
+    .project h2 {
+        font-size: 2rem;/*30px 기준:15px*/
+        margin-bottom: 1em;  /*30px 기준:30px*/
+    }
+    .project .list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-auto-columns: repeat(4, minmax(12.2353em, 22.1765em));
+        grid-template-rows: repeat(2, minmax(12.8235em, 20.1765em)); /*auto-fit: 개수에 맞게 자동으로 높이 조절, minmax함수로 최소높이랑 최대높이 지정*/
+        grid-auto-flow: dense;
+        grid-gap: 24px;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*14px*/
+    .project .inner {
+        padding: 0;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*13px*/
+    :root {
+        --base-font-size: 13px;
+    }
+} /* @media */
 /***------project 끝-------*****/
