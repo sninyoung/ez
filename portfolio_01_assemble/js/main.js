@@ -8,6 +8,7 @@ let tab_name //product의 클릭한 tab의 이름
 
 $(document).ready(function(){
     
+     /************************* visual 스위퍼 (시작)  **************************/
     const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싸는 요소의 class명 */
 
         autoplay: {  /* 팝업 자동 실행 */
@@ -29,6 +30,8 @@ $(document).ready(function(){
             },
         },
     });
+     /************************* visual 스위퍼 (끝)  **************************/
+
 
      /************************* product 스위퍼 (시작)  **************************/
      const product_panel01_swiper = new Swiper('.product .panel01 .swiper', { /* 팝업을 감싼는 요소의 class명 */
@@ -59,19 +62,23 @@ $(document).ready(function(){
         },
     });
     const product_panel02_swiper = new Swiper('.product .panel02 .swiper', { /* 팝업을 감싸는 요소의 class명 */
-        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 12, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            321: {    /* 321px이상 768px이하일때 적용 */
-                slidesPerView: 2,
-                spaceBetween: 24,
+            381: {    /* 381px이상 768px이하일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 12,
             },
             769: {    /* 769px이상 1024px이하일때 적용 */
-                slidesPerView: 3,
-                spaceBetween: 24,
+                slidesPerView: 4,
+                spaceBetween: 16,
             },
             1025: {    /* 1025px이상일때 적용 */
                 slidesPerView: 4,
+                spaceBetween: 24,
+            },
+            1441: {    /* 1441px이상일때 적용 */
+                slidesPerView: 5,
                 spaceBetween: 24,
             },
         },
@@ -82,19 +89,23 @@ $(document).ready(function(){
         },
     });
     const product_panel03_swiper = new Swiper('.product .panel03 .swiper', { /* 팝업을 감싸는 요소의 class명 */
-        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 12, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            321: {    /* 321px이상 768px이하일때 적용 */
-                slidesPerView: 2,
-                spaceBetween: 24,
+            381: {    /* 381px이상 768px이하일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 12,
             },
             769: {    /* 769px이상 1024px이하일때 적용 */
-                slidesPerView: 3,
-                spaceBetween: 24,
+                slidesPerView: 4,
+                spaceBetween: 16,
             },
             1025: {    /* 1025px이상일때 적용 */
                 slidesPerView: 4,
+                spaceBetween: 24,
+            },
+            1441: {    /* 1441px이상일때 적용 */
+                slidesPerView: 5,
                 spaceBetween: 24,
             },
         },
@@ -105,19 +116,23 @@ $(document).ready(function(){
         },
     });
     const product_panel04_swiper = new Swiper('.product .panel04 .swiper', { /* 팝업을 감싸는 요소의 class명 */
-        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
-        spaceBetween: 24, /* 팝업과 팝업 사이 여백 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 12, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            321: {    /* 321px이상 768px이하일때 적용 */
-                slidesPerView: 2,
-                spaceBetween: 24,
+            381: {    /* 381px이상 768px이하일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 12,
             },
             769: {    /* 769px이상 1024px이하일때 적용 */
-                slidesPerView: 3,
-                spaceBetween: 24,
+                slidesPerView: 4,
+                spaceBetween: 16,
             },
             1025: {    /* 1025px이상일때 적용 */
                 slidesPerView: 4,
+                spaceBetween: 24,
+            },
+            1441: {    /* 1441px이상일때 적용 */
+                slidesPerView: 5,
                 spaceBetween: 24,
             },
         },
@@ -147,6 +162,48 @@ $(document).ready(function(){
     })
     /*************************  product 탭 기능 (끝)  **************************/
 
+
+    /************************* insights 스위퍼 (시작)  *************************/
+    const insights_tip_swiper = new Swiper('.insights .tip .swiper', { /* 팝업을 감싸는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 12, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            381: {    /* 381px이상 768px이하일때 적용 */
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            769: {    /* 769px이상 1024px이하일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1025: {    /* 1025px이상일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+        loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    });
+
+    const insights_haccp_swiper = new Swiper('.insights .haccp .swiper', { /* 팝업을 감싸는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 12, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            381: {    /* 381px이상 768px이하일때 적용 */
+                slidesPerView: 2,
+                spaceBetween: 16,
+            },
+            769: {    /* 769px이상 1024px이하일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 16,
+            },
+            1025: {    /* 1025px이상일때 적용 */
+                slidesPerView: 3,
+                spaceBetween: 24,
+            },
+        },
+        loop: false,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+    });
+    /************************* insights 스위퍼 (끝)  **************************/
 
 
 

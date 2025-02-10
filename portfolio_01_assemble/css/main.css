@@ -11,7 +11,6 @@
 main.container {
     padding: 100px 0 0 0;
 }
-
 /***------visual 시작-------*****/
 .visual {
     position: relative;  /* ctrl_wrap 정렬의 기준 */
@@ -102,7 +101,7 @@ main.container {
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
     .visual {
-        padding: 0 20px;
+        padding: 0 60px;
     }
     .visual .ctrl_wrap {
         height: 80px;
@@ -122,6 +121,9 @@ main.container {
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
+    .visual {
+        padding: 0 20px;
+    }
     .visual .swiper ul li .visual_txt {
         left: 10%;
     }
@@ -161,10 +163,10 @@ main.container {
     padding: 0 110px;
 }
 .product h2 {
-    font-size: 2.6471rem; /*45px 기준:17px*/
+    font-size: 2.65rem; /*45px 기준:17px*/
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 1.1556em; /*52px 기준:45px*/
+    margin-bottom: 1.16em; /*52px 기준:45px*/
     position: relative; /*before의 정렬의 기준*/
 }
 .product h2::before { /*선*/
@@ -177,7 +179,7 @@ main.container {
     background-color: rgba(0,0,0,0.1);
 }
 .product .tab_list {
-    overflow-x: auto;/* ul의 넓이가 snb보다 크면 - 메뉴가 한줄에 표시가 안될 것 같으면 가로 스크롤바 생성 */
+    overflow-x: auto;/* ul의 넓이가 tab_list보다 크면 - 메뉴가 한줄에 표시가 안될 것 같으면 가로 스크롤바 생성 */
     width: 100%;
 }
 .product .tab_list ul {
@@ -185,7 +187,7 @@ main.container {
     margin: 1em 0 1em 0;
 }
 .product .tab_list ul li button {
-    padding: 0.4706em 1.1765em; /*8px 20px*/
+    padding: 0.47em 1.18em; /*8px 20px*/
     font-weight: 700;
     border-radius: 50px;
     white-space: nowrap; /*한 줄 제한*/
@@ -195,7 +197,7 @@ main.container {
     color: #fff;
 }
 .product .tab_content {
-    padding: 2.1176em 0 0 0; /*36px*/
+    padding: 2.12em 0 0 0; /*36px*/
     position: relative; /*more의 정렬의 기준*/
 }
 .product .tab_content .tab_panel {
@@ -226,7 +228,7 @@ main.container {
 }
 .product .tab_content .tab_panel .swiper ul li a strong {
     display: inline-block;
-    font-size: 0.8824rem; /*15px*/
+    font-size: 0.88rem; /*15px*/
     font-weight: 700;
     padding: 0.4667em 1.3333em; /*7px 20px*/
     margin: 1.3333em 0 0.9333em 0; /*20px 14px*/
@@ -265,6 +267,7 @@ main.container {
     position: relative; /*after의 정렬의 기준*/
     padding: 0.4706em 1.9412em 0.4706em 0.8824em; 
     border: 1px solid #1d1d1d;
+    display: inline-block;
 }
 .product .tab_content .tab_panel .btn_wrap .more a::after { /*더보기 + 아이콘*/
     content: "";
@@ -281,8 +284,11 @@ main.container {
 }
 
 @media screen and (max-width:1440px){ /*16px*/
+    .product {
+        padding: 100px 60px 150px 60px;
+    }
     .product .inner {
-        padding: 0 50px;
+        padding: 0 40px;
     }
     .product .tab_content .tab_panel .swiper ul li a .photo {
         height: 80%;/*296px*/
@@ -398,14 +404,12 @@ main.container {
 
 /***------project 시작-------*****/
 .project {
-    padding: 150px 60px 200px 60px;
+    padding: 150px 170px 200px 170px;
     background-color: #1d1d1d;
 }
 .project .wrapper {
-}
-.project .inner {
     position: relative; /*more의 정렬의 기준*/
-    padding: 0 110px;
+    align-items: center;
 }
 .project h2 {
     font-size: 2.6471rem; /*45px 기준:17px*/
@@ -417,72 +421,407 @@ main.container {
 .project .list {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-auto-columns: repeat(4, minmax(12.2353em, 22.1765em));
     grid-template-rows: repeat(2, minmax(12.8235em, 20.1765em)); /*auto-fit: 개수에 맞게 자동으로 높이 조절, minmax함수로 최소높이랑 최대높이 지정*/
     grid-auto-flow: dense;
     grid-gap: 24px;
 }
-.project .list .box.list01 {
-    border: 1px solid #ff3355;
-    background-color: #ff3355;
+.project .list .box a {
+    position: relative; /* .project_txt 정렬의 기준 */
+    display: block;
 }
 .project .list .box.list02 {
 	grid-column: 2 / span 1;
 	grid-row: 1 / span 2;/* 1번 라인에서 2칸 */
-    border: 1px solid #0051FF;
-    background-color: #0051FF;
-}
-.project .list .box.list03 {
-    border: 1px solid #00FF2F;
-    background-color: #00FF2F;
-
-}
-.project .list .box.list04 {
-    border: 1px solid #FF2CD1;
-    background-color: #FF2CD1;
-
-}
-.project .list .box.list05 {
-    border: 1px solid #00F6FF;
-    background-color: #00F6FF;
 }
 .project .list .box.list06 {
 	grid-column: 3 / span 2; /* 3번 라인에서 2칸 */
 	grid-row: 2 / span 1; /* 2번 라인에서 1칸 */
-    border: 1px solid #FF8800;
 }
-
+.project .list .box a .photo {
+    position: relative;
+    overflow: hidden;
+    height: 20.1765em; /*343px*/
+}
+.project .list .box.list02 a .photo {
+    height: 41.7647em; /*710px*/
+}
+.project .list .box a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.5;
+    z-index: 1;
+    transition: all 0.5s;
+}
+.project .list .box.list02 a .photo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #17293A;
+    opacity: 0.95;
+    z-index: 1;
+}
+.project .list .box a:hover .photo::before {
+    opacity: 0;
+}
+.project .list .box.list02 a:hover .photo::before {
+    opacity: 0;
+}
+.project .list .box a .photo img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.project .list .box a:hover .photo img {
+    transform: scale3d(1.1, 1.1, 1); /* 마우스 over했을 때 이미지 크게 보이게 하는 것*/
+}
+.project .list .box a .project_txt_t {
+    position: absolute; /*.box를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    color: #fff;
+    margin: 1.45em 1.45em; /*24px*/
+    z-index: 2;
+}
+.project .list .box a .project_txt_b {
+    position: absolute; /*.box를 기준으로 정렬*/
+    left: 0;
+    bottom: 0;
+    color: #fff;
+    margin: 0 0.5em 1.45em 1.45em; /*24px*/
+    z-index: 2;
+}
+.project .list .box a .project_txt_t strong {
+    font-size: 0.7333rem; /*11px*/
+    background-color: #17293A;
+    padding: 0.4em 1em;
+    border-radius: 0.45em;
+}
+.project .list .box a .project_txt_t h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.6667em 0 0.6667em 0.3333em; /*10px 5px*/
+}
+.project .more {
+    position: absolute; /*wrapper를 기준으로 정렬*/
+    right: 0;
+    top: 0;
+}
+.project .more a {
+    position: relative; /*after의 정렬의 기준*/
+    display: inline-block;
+    padding: 0.4706em 1.9412em 0.4706em 0.8824em; 
+    border: 1px solid #fff;
+    color: #fff;
+}
+.project .more a::after { /*더보기 + 아이콘*/
+    content: "";
+    position: absolute; /*a를 기준으로 정렬*/
+    right: 0.5882em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.2941em;
+    height: 1.2941em;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10.3123 11.6875H5.0415V10.3125H10.3123V5.04169H11.6873V10.3125H16.9582V11.6875H11.6873V16.9584H10.3123V11.6875Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
 @media screen and (max-width:1440px){ /*16px*/
-    .project .inner {
-        padding: 0 50px;
+    .project {
+        padding: 100px 100px 150px 100px;
+    }
+    .project .list {
+        grid-template-rows: repeat(2, minmax(12.8235em, 16.75em)); /*max: 268px*/
+    }
+    .project .list .box a .photo {
+        height: 16.75em; /*268px*/
+    }
+    .project .list .box.list02 a .photo {
+        height: 35em; /*560px*/
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
     .project {
-        padding: 80px 20px 100px 20px;
+        padding: 80px 20px;
     }
     .project h2 {
         font-size: 2rem;/*30px 기준:15px*/
-        margin-bottom: 1em;  /*30px 기준:30px*/
+        padding: 0  0 0 ;
+        margin-bottom: 1em 0 0 ;  /*30px 기준:30px*/
     }
     .project .list {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-auto-columns: repeat(4, minmax(12.2353em, 22.1765em));
-        grid-template-rows: repeat(2, minmax(12.8235em, 20.1765em)); /*auto-fit: 개수에 맞게 자동으로 높이 조절, minmax함수로 최소높이랑 최대높이 지정*/
-        grid-auto-flow: dense;
-        grid-gap: 24px;
+        grid-template-rows: repeat(2, minmax(12.82em, 14.53em)); /*max: 218px*/
+        grid-gap: 16px;
+    }
+    .project .list .box a .photo {
+        height: 14.53em; /*218px*/
+    }
+    .project .list .box.list02 a .photo {
+        height: 30.13em; /*452px*/
+    }
+    .project .list .box a .project_txt_t {
+        margin: 0.67em 0.67em; /*10px 기준:15px*/
+    }
+    .project .list .box a .project_txt_b {
+        margin: 0.67em 1em; /*10px 15px*/
+    }
+    .project .list .box a .project_txt_t strong {
+        font-size: 0.73rem; /*11px 기준:15px*/
+        padding: 0.55em 1.36em; /*6px 15px 기준:11px*/
+    }
+    .project .list .box a .project_txt_t h3 {
+        margin: 0.67em 0 0 0.33em; /*10px 0 0 5px*/
     }
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
     .project .inner {
-        padding: 0;
+        overflow-x: auto;/*메뉴가 한줄에 표시가 안될 것 같으면 가로 스크롤바 생성 */
+        overflow-y: hidden;/* 세로 스크롤바 숨기기 */
+    }
+    .project .list {
+        display: flex; /*grid 해제*/
+        gap: 16px;
+    }
+    .project .list .box.list02 {
+        width: auto;
+        height: auto;
+    }
+    .project .list .box a .photo {
+        height: 15.6em; /*218px*/
+        width: 14.9286em; /*209px*/
+    }
+    .project .list .box.list02 a .photo {
+        height: 15.6em; /*218px*/
+    }
+    .project .list .box.list02 a .photo::before {
+        background-color: #000;
+        opacity: 0.4;
+    }
+    .project .list .box a .project_txt_t {
+        margin: 1.45em 1.45em; /*24px*/
+    }
+    .project .list .box a .project_txt_b {
+        margin: 0 0.5em 1.45em 1.45em; /*24px*/
+    }
+    .project .list .box a .project_txt_t strong {
+        font-size: 0.7333rem; /*11px*/
+        padding: 0.4em 1em;
+        border-radius: 0.45em;
+    }
+    .project .list .box a .project_txt_t h3 {
+        font-size: 1.2rem;
+        margin: 0.6667em 0 0.6667em 0.3333em; /*10px 5px*/
+    }
+    .project .more {
+        position: relative;
+        display: block;
+        left: 40%;
+        top: 0;
+        margin: 2.7em 0 0 0;
     }
 } /* @media */
 @media screen and (max-width:380px){ /*13px*/
-    :root {
-        --base-font-size: 13px;
-    }
+    
 } /* @media */
 /***------project 끝-------*****/
+
+/*----------- banner 시작----------*/
+.banner {
+    background-color: #E3E3E3;
+}
+.banner a {
+    display: block;
+    position: relative; /*ai의 정렬의 기준*/
+    margin: 0 170px; 
+    padding: 47px 0 56px 0;
+
+}
+.banner a span {
+    display: block;
+    font-size: 1.47rem; /*25px*/
+    font-weight: 700;
+    line-height: 1.2;
+    color: #17293A;
+}
+.banner a h2 {
+    position: relative;
+    display: inline-block;
+    font-size: 2.35rem; /*40px*/
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0.2em 1.85em 0 0;
+}
+.banner a h2::after { /*화살표 아이콘*/
+    content: "";
+    position: absolute;
+    right: -1.75em; /*70px 기준:40px*/
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.5em; /*60px 기준:40px*/
+    height: 1.5em;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M55.5145 33.2808L37.5889 18.24L35.2753 20.9976L49.4125 32.8596H4.08008V36.4596H54.4801V36.4536C54.9505 36.4212 55.4089 36.2064 55.7365 35.8164C56.3761 35.0544 56.2765 33.9192 55.5145 33.2808Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.banner a .ai {
+    position: absolute; /*inner를 기준으로 정렬*/
+    right: 0;
+    top: 50%;
+    width: 10.19em; /*174px*/
+    height: 9.18em; /*167px*/
+    transform: translateY(-50%);
+}
+.banner a .ai img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+@media screen and (max-width:1440px){ /*16px*/
+    .banner a {
+        margin: 0 100px;
+        padding: 47px 0 56px 0;
+    }
+    .banner a .ai {
+        width: 9em; /*144px*/ 
+        height: 8.6em; /*138px*/
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*15px*/
+    .banner a {
+        margin: 0 60px;
+    }
+    .banner a span {
+        font-size: 1.5rem; /*24px*/
+    }
+    .banner a h2 {
+        font-size: 2rem; /*30px*/
+        margin: 0.15em 1.96em 0 0; 
+    }
+    .banner a h2::after { /*화살표 아이콘*/
+        width: 1.5em; /*36px 기준:24px*/
+        height: 1.5em;
+    }
+    .banner a .ai {
+        width: 7.29em; /*109px*/ 
+        height: 6.98em; /*104px*/
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*14px*/
+    .banner {
+        padding: 30px 20px 33px 20px;
+        background-color: #E3E3E3;
+    }
+    .banner a span {
+        font-size: 1rem; /*14px*/
+    }
+    .banner a h2 {
+        font-size: 1.6rem; /*22px*/
+        margin: 0.15em 2.5em 0 0; 
+    }
+    .banner a h2::after { /*화살표 아이콘*/
+        width: 1.5em; /*36px 기준:24px*/
+        height: 1.5em;
+    }
+    .banner a .ai {
+        width: calc(100% - 0); /*56px*/
+        height: 3.8em; /*53px*/
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*13px*/
+    
+} /* @media */
+/*----------- banner 끝----------*/
+
+
+/*----------- insights 시작----------*/
+.insights {
+    padding: 150px 170px 200px 170px;
+    background-color: #fff;
+}
+.insights h2 {
+    font-size: 2.6471rem; /*45px 기준:17px*/
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.1556em; /*52px 기준:45px*/
+}
+.insights h3 {
+    display: none;
+}
+.insights .tip {
+    display: flex;
+    justify-content: flex-start;
+    gap: 24px;
+}
+.insights .tip .swiper {
+    height: 100%;
+}
+.insights .tip .swiper ul li {
+    position: relative; /*h4의 정렬의 기준*/
+}
+.insights .tip .swiper ul li a {
+    display: block;
+}
+.insights .tip .swiper ul li a .photo {
+    overflow: hidden;
+    height: 100%;
+}
+.insights .tip .swiper ul li:first-child a .photo {
+    border-radius: 100px 0 0 0;
+}
+.insights .tip .swiper ul li a .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.insights .tip .swiper ul li a h4 {
+    position: absolute; /*li를 기준으로 정렬*/
+    font-size: 1.47rem; /*25px*/
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;
+    z-index: 2;
+}
+.insights .tip .more {
+    position: relative; /*span의 정렬의 기준*/
+    width: 185px;
+    background-color: #1d1d1d;
+    color: #fff;
+    text-align: center;
+}
+.insights .tip .more span {
+    position: absolute; /*more을 기준으로 정렬*/
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);   
+}
+
+
+.insights .haccp .more {
+    position: relative;
+    width: 185px;
+    height: 371px;
+    border: 5px solid #1d1d1d;
+    text-align: center;
+}
+.insights .haccp .more span {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);   
+}
+
+/*----------- insights 끝----------*/

@@ -74,7 +74,6 @@ header .gnb .gnb_wrap ul li a span {
     font-weight: 700;
 }
 
-
 /******-----header가 고정되었을 때: header.fixed -----*****/
 header.fixed, header.menu_pc {
     background-color: #fff;
@@ -86,9 +85,6 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
     transform: translateY(-100%);
 }
 
-
-
-
 @media screen and (max-width:1440px){ /*16px*/
     header .gnb .gnb_wrap ul {
         display: flex;
@@ -98,17 +94,19 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
     header {
-        padding: 0 20px;
+        padding: 0 60px;
     }
     header .gnb .gnb_wrap ul {
         display: flex;
         justify-content: center;
         gap: 40px;
     }
-    
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
+    header {
+        padding: 0 20px;
+    }
     header .gnb {
         left: auto;
         right: 0;
@@ -136,7 +134,6 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
         background-repeat: no-repeat;
         background-size: contain;
     }
-    
 } /* @media */
 @media screen and (max-width:380px){ /*13px*/
     
@@ -150,9 +147,21 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
 
 /*********-------footer-----------***********/
 footer {
+    padding: 150px 60px 125px 60px;
     background-color: #1d1d1d;
     color: rgba(255,255,255,0.8);
-    padding: 5.2941em 0 8.1176em 0;
+}
+footer h2 {
+    display: none;
+}
+footer .inner {
+    padding: 0 110px;
+}
+
+footer .slogan {
+    font-size: 2.3em; /*40px*/
+    font-weight: 700;
+    line-height: 1.2;
 }
 
 

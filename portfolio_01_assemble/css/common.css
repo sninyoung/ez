@@ -19,9 +19,6 @@ body, html {
 @media screen and (max-width:1023px){
     
 }/*media*/
-
-
-
 ::selection {
     background-color: #1D1D1D;
     color: #fff;
@@ -30,7 +27,6 @@ body, html {
     background-color: #1D1D1D;
     color: #fff;
 }
-
 
 /* mobile 버전 css */
 :root {
