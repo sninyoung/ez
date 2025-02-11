@@ -13,19 +13,28 @@ body, html {
 
 /* pc 버전 css */
 #wrap {
-    position: relative; /*header,, gnb 정렬의 기준 - wrap이 전체를 감싸기 때문*/
+    position: relative; /*header, gnb 정렬의 기준 - wrap이 전체를 감싸기 때문*/
     overflow: hidden; /* wrap 영역 밖으로 나간 요소는 숨김처리함. absolute가 대부분 나감.*/
 }
-@media screen and (max-width:1023px){
-    
+.wrapper {
+    width: 1580px; /*너비가 고정으로 들어감.*/
+    margin: 0 auto;
+}
+@media screen and (max-width:1770px){ /* 1770 = 1580 + (1580의 6%*2) */
+    .wrapper {
+        width: auto; 
+        margin: 0 6%;
+    }
 }/*media*/
+
+
 ::selection {
-    background-color: #1D1D1D;
-    color: #fff;
+    background-color: #59636D;
+    color: #ECECEC;
 }
 ::-moz-selection {
-    background-color: #1D1D1D;
-    color: #fff;
+    background-color: #59636D;
+    color: #ECECEC;
 }
 
 /* mobile 버전 css */

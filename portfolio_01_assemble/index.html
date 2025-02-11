@@ -431,12 +431,14 @@
                 </div><!--wrapper-->
             </section><!--project-->
 
-            <section class="banner">
-                <a href="#n">
-                    <span>Assemble Manual</span>
-                    <h2>영상으로 보는 어셈블 주방기기 조립 방법</h2>
-                    <div class="ai"><img src="images/banner_img.png" alt="유튜브 모양 동영상 일러스트"></div>
-                </a>
+            <section class="banner">    
+                <div class="wrapper">
+                    <a href="#n">
+                        <span>Assemble Manual</span>
+                        <h2>영상으로 보는 어셈블 주방기기 조립 방법</h2>
+                        <div class="ai"><img src="images/banner_img.png" alt="유튜브 모양 동영상 일러스트"></div>
+                    </a>
+                </div>
             </section><!--banner-->
             <section class="insights">
                 <div class="wrapper">
@@ -444,106 +446,118 @@
                     <div class="inner">
                         <div class="tip">
                             <h3>주방 관리 팁</h3> <!--웹접근성 때문에.. css에서 숨김처리할 것임-->
-                            <div class="swiper"> <!-- 팝업의 높이와 너비를 css에서 줄 수 있는 요소 -->
-                                <ul class="swiper-wrapper"> 
-                                    <li class="swiper-slide">
-                                        <a href="#n">
-                                            <div class="photo"><img src="images/insights_tip_img01.jpg" alt="주방관리팁사진"></div>
-                                            <h4>깨끗한 주방을 위한<br>싱크대 청소 방법 알아봐요</h4>
-                                        </a>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <a href="#n">
-                                            <div class="photo"><img src="images/insights_tip_img02.jpg" alt="주방관리팁사진"></div>
-                                            <h4>싱크대 위생관리의 필수!<br>물때 예방과 관리법!</h4>
-                                        </a>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <a href="#n">
-                                            <div class="photo"><img src="images/insights_tip_img03.jpg" alt="주방관리팁사진"></div>
-                                            <h4>주기적인 싱크대 청소와<br>소독의 필요성은 무엇인가요?</h4>
-                                        </a>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <a href="#n">
-                                            <div class="photo"><img src="images/insights_tip_img04.jpg" alt="주방관리팁사진"></div>
-                                            <h4>주방 공간 활용 극대화하기!<br>주방 수납 꿀팁 알아봐요</h4>
-                                        </a>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <a href="#n">
-                                            <div class="photo"><img src="images/insights_tip_img05.jpg" alt="주방관리팁사진"></div>
-                                            <h4>기름때 많은 주방 후드<br>청결하게 관리하는 방법</h4>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="more"><a href="#n"><span>주방 관리 팁<br>더보기</span></a></div><!--more-->
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 너비를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img01.jpg" alt="주방관리팁사진"></div>
+                                                <h4>깨끗한 주방을 위한<br>싱크대 청소 방법 알아봐요</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img02.jpg" alt="주방관리팁사진"></div>
+                                                <h4>싱크대 위생관리의 필수!<br>물때 예방과 관리법!</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img03.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주기적인 싱크대 청소와<br>소독의 필요성은 무엇인가요?</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img04.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주방 공간 활용 극대화하기!<br>주방 수납 꿀팁 알아봐요</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img05.jpg" alt="주방관리팁사진"></div>
+                                                <h4>기름때 많은 주방 후드<br>청결하게 관리하는 방법</h4>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!--list-->
+                            <div class="more"><a href="#n"><span>주방 관리 팁 <br>더보기</span></a></div><!--more-->
                         </div><!--tip-->
                         <div class="haccp">
                             <h3>HACCP(식품안전관리기준)</h3> <!--웹접근성 때문에.. css에서 숨김처리할 것임-->
-                            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
-                                <ul class="swiper-wrapper"> 
-                                    <li class="swiper-slide">
-                                        <div class="photo"><img src="images/insights_haccp_img01.jpg" alt="주방관리팁사진"></div>
-                                        <h4>HACCP : 식품안전관리기준<br>함께 알아봅시다</h4>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <div class="photo"><img src="images/insights_haccp_img02.jpg" alt="주방관리팁사진"></div>
-                                        <h4>단체급식 식품안전 관리<br>어떻게 해야 할까요?</h4>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <div class="photo"><img src="images/insights_haccp_img03.jpg" alt="주방관리팁사진"></div>
-                                        <h4>주방에서 사용하는 고무장갑<br>관리 어떻게 하고 계시나요?</h4>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <div class="photo"><img src="images/insights_haccp_img04.jpg" alt="주방관리팁사진"></div>
-                                        <h4>주방기기 칼 도마 소독기<br>소개해요</h4>
-                                    </li>
-                                    <li class="swiper-slide">
-                                        <div class="photo"><img src="images/insights_haccp_img05.jpg" alt="주방관리팁사진"></div>
-                                        <h4>행주 세균 수치<br>생각보다 높습니다</h4>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="more"><a href="#n">HACCP<br>더보기</a></div><!--more-->
-
+                            <div class="list"> 
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img01.jpg" alt="주방관리팁사진"></div>
+                                                <h4>HACCP : 식품안전관리기준<br>함께 알아봅시다</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img02.jpg" alt="주방관리팁사진"></div>
+                                                <h4>단체급식 식품안전 관리<br>어떻게 해야 할까요?</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img03.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주방에서 사용하는 고무장갑<br>관리 어떻게 하고 계시나요?</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img04.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주방기기 칼 도마 소독기<br>소개해요</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img05.jpg" alt="주방관리팁사진"></div>
+                                                <h4>행주 세균 수치<br>생각보다 높습니다</h4>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!--swiper-->
+                            </div><!--list-->
+                            <div class="more"><a href="#n"><span>HACCP <br>더보기</span></a></div><!--more-->
                         </div><!--haccp-->
                     </div><!--inner-->
                 </div><!--wrapper-->
             </section>
-            
         </main>
         <footer>
             <div class="wrapper">
                 <h2>사이트 정보</h2>
                 <div class="inner">
-                    <div class="slogan">ASSEMBLE   KITCHEN 은<br>조립식 주방기기 전문 기업입니다.</div>
+                    <div class="slogan"><span class="f_logo"></span>은 <br>조립식 주방기기 전문 기업입니다.</div>
                     <div class="contact_txt">
                         <h3>CONTACT</h3>
-                        <div class="tel">
-                            <span>TEL</span>
+                        <div class="group tel">
+                            <strong>TEL</strong>
                             <ul>
                                 <li><span>031-512-3235</span><span>대표전화 (설계 상담 및 견적 문의)</span></li>
                                 <li><span>031-5175-3235</span><span>고객센터</span></li>
                                 <li><span>010-3468-3235</span><span>설계 상담 및 견적 문의</span></li>
                             </ul>
                         </div><!--tel-->
-                        <div class="fax">
-                            <span>FAX</span>
+                        <div class="group fax">
+                            <strong>FAX</strong>
                             <span>02-732-9154</span>
                         </div>
-                        <div class="email">
-                            <span>EMAIL</span>
+                        <div class="group email">
+                            <strong>EMAIL</strong>
                             <span>assemblek@naver.com</span>
                         </div>
                     </div><!--contact_txt-->
-                    <div class="contact_bnt"><a href="#n"><img src="" alt="어셈블 문의 페이지 이동 버튼"></a></div><!--contact_bnt-->
                     <address>경기도 구리시 갈매순환로 166번길 46 F319</address>
                     <div class="copyright">ⓒ ASSEMBLE KITCHEN & DESIGN BY KAKAO</div>
-                </div><!--inner-->
+                </div>
             </div><!--wrapper-->
         </footer>
-    </div>
+        <div class="contact_bnt"><a href="#n"><img src="images/contact_bnt_img.svg" alt="어셈블 문의 페이지 이동 버튼"></a></div><!--contact_bnt-->
+    </div><!--wrap-->
 </body>
 </html>

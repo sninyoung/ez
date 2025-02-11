@@ -28,7 +28,7 @@ header/footer 모든 페이지의 공통 스타일 적용 */
 
 header {
     position: fixed; /*wrap을 기준으로 정렬*/
-    padding: 0 60px;
+    padding: 0 6%;
     left: 0;
     top: 0;
     z-index: 100;
@@ -93,9 +93,6 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
-    header {
-        padding: 0 60px;
-    }
     header .gnb .gnb_wrap ul {
         display: flex;
         justify-content: center;
@@ -104,9 +101,6 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
-    header {
-        padding: 0 20px;
-    }
     header .gnb {
         left: auto;
         right: 0;
@@ -142,26 +136,149 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
 
 
 
-
-
-
 /*********-------footer-----------***********/
 footer {
-    padding: 150px 60px 125px 60px;
+    padding: 150px 0 125px 0;
     background-color: #1d1d1d;
     color: rgba(255,255,255,0.8);
+}
+footer .inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,0.8);
 }
 footer h2 {
     display: none;
 }
-footer .inner {
-    padding: 0 110px;
-}
-
 footer .slogan {
     font-size: 2.3em; /*40px*/
     font-weight: 700;
     line-height: 1.2;
+    margin: 0 20px 255px 0;
+    color: #fff;
 }
+footer .slogan span.f_logo {
+    position: relative; /* before 정렬의 기준 */
+    display: inline-block;
+    width: 5.7em; /*234px*/
+    height: 1em; /*40px*/
+}
+footer .slogan span.f_logo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-position: bottom top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/f_logo.svg);
+    height: 1em;
+    bottom: -0.2em;
+}
+footer .contact_txt {
+    width: 48%;
+    padding-bottom: 80px;
+}
+footer .contact_txt h3 {
+    font-size: 1.47em; /*25px*/
+    margin-bottom: 1em;
+}
+footer .contact_txt .group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 14px;
+}
+footer .contact_txt .group + .group { /* 인접 형제 선택자 */
+    margin: 1em 0 0 0;
+}
+footer .contact_txt .group span {
+    margin: 0 10px 0 0;
+    font-size: 0.88rem; /*15px*/
+}
+footer .contact_txt .group strong {
+    display: inline-block;
+    width: 3.3em;
+}
+footer address {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem; /*15px*/
+    position: absolute;
+    left: 0;
+    bottom: 0.7em;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem; /*15px*/
+    position: absolute;
+    left: 0;
+    bottom: -2em; 
+}
+@media screen and (max-width:1440px){ /*16px*/
+    footer {
+        padding: 100px 0 100px 0;
+        background-color: #1d1d1d;
+        color: rgba(255,255,255,0.8);
+    }
+    footer .slogan {
+        font-size: 2em; /*32px*/
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 20px 255px 0;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*15px*/
+    footer .slogan {
+        font-size: 1.6em; /*22px*/
+        margin: 0 20px 200px 0;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*14px*/
+    footer {
+        padding: 70px 0 80px 0;
+    }
+    footer .inner {
+        display: block; /*flex 해제*/
+        border: 0; /*선을 slogan한테 줌.*/
+    }
+    footer h2 {
+        display: none;
+    }
+    footer .slogan {
+        padding-bottom: 14px;
+        margin: 0 20px 52px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.8);
+    }
+    footer .contact_txt {
+        width: auto;
+    }
+    footer .contact_txt .group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: 14px;
+    }
+    footer .contact_txt .group + .group { /* 인접 형제 선택자 */
+        margin: 1em 0 0 0;
+    }
+    footer .contact_txt .group span {
+        margin: 0 10px 0 0;
+        font-size: 0.88rem; /*15px*/
+    }
+    footer .contact_txt .group strong {
+        display: inline-block;
+        width: 3.3em;
+    }
+    footer address {
+        bottom: 0;
+    }
+    footer .copyright {
+        bottom: -1.8em; 
+    }
+} /* @media */
 
 

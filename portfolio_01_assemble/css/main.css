@@ -14,7 +14,7 @@ main.container {
 /***------visual 시작-------*****/
 .visual {
     position: relative;  /* ctrl_wrap 정렬의 기준 */
-    padding: 0 60px;
+    padding: 0 6%;
 }
 .visual h2 {
     display: none;  /* 숨김 */
@@ -100,9 +100,6 @@ main.container {
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
-    .visual {
-        padding: 0 60px;
-    }
     .visual .ctrl_wrap {
         height: 80px;
     }
@@ -121,9 +118,6 @@ main.container {
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
-    .visual {
-        padding: 0 20px;
-    }
     .visual .swiper ul li .visual_txt {
         left: 10%;
     }
@@ -154,13 +148,10 @@ main.container {
 
 /***------product 시작-------*****/
 .product {
-    padding: 150px 60px 200px 60px;
+    padding: 150px 0 200px 0;
 }
 .product .wrapper {
     position: relative; /*prev, next의 정렬의 기준*/
-}
-.product .inner {
-    padding: 0 110px;
 }
 .product h2 {
     font-size: 2.65rem; /*45px 기준:17px*/
@@ -242,7 +233,7 @@ main.container {
 }
 .product .tab_content .tab_panel .btn_wrap .prev, .product .tab_content .tab_panel .btn_wrap .next {
     position: absolute; /*wrapper를 기준으로 정렬*/
-    left: -6%;
+    left: -5%;
     bottom: 50%;
     transform: translateY(-50%);
     width: 2.6471em;
@@ -255,7 +246,7 @@ main.container {
 }
 .product .tab_content .tab_panel .btn_wrap .next { /*prev에서 바뀌는 것만*/
     left: auto;
-    right: -6%;
+    right: -5%;
     background-image: url("data:image/svg+xml,%3Csvg width='45' height='45' viewBox='0 0 45 45' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 39.5625L13.4062 37.9688L28.875 22.5L13.4062 7.03125L15 5.4375L32.0625 22.5L15 39.5625Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
 }
 .product .tab_content .tab_panel .btn_wrap .more {
@@ -285,10 +276,7 @@ main.container {
 
 @media screen and (max-width:1440px){ /*16px*/
     .product {
-        padding: 100px 60px 150px 60px;
-    }
-    .product .inner {
-        padding: 0 40px;
+        padding: 100px 0 150px 0;
     }
     .product .tab_content .tab_panel .swiper ul li a .photo {
         height: 80%;/*296px*/
@@ -297,7 +285,7 @@ main.container {
 
 @media screen and (max-width:1024px){ /*15px*/
     .product {
-        padding: 80px 20px 100px 20px;
+        padding: 80px 0 100px 0;
     }
     .product h2 {
         font-size: 2rem;/*30px 기준:15px*/
@@ -346,16 +334,19 @@ main.container {
     .product .tab_content {
         padding: 1em 0 0 0;
     }
-    .product .tab_content .tab_panel .btn_wrap {
-        display: flex;
-        justify-content: center;
-        gap: 0.5em;
-        margin: 1em 0 0 0;
+    .product .tab_content .tab_panel .swiper ul li a span {
+        /*힌줄 제한*/
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     .product .tab_content .tab_panel .btn_wrap .prev, .product .tab_content .tab_panel .btn_wrap .next {
-        position: relative;/*해제*/
-        bottom: 0;
-        transform: translateY(0);
+        left: -7%;
+        bottom: 55%;
+    }
+    .product .tab_content .tab_panel .btn_wrap .next { /*prev에서 바뀌는 것만*/
+        left: auto;
+        right: -7%;
     }
     .product .tab_content .tab_panel .btn_wrap .more {
         top: -40px;
@@ -376,7 +367,7 @@ main.container {
 } /* @media */
 @media screen and (max-width:380px){ /*13px*/
     .product {
-        padding: 50px 20px 70px 20px;
+        padding: 50px 0 70px 0;
     }
     .product .tab_list {
         width: calc(100% - 40px);
@@ -404,7 +395,7 @@ main.container {
 
 /***------project 시작-------*****/
 .project {
-    padding: 150px 170px 200px 170px;
+    padding: 150px 0 200px 0;
     background-color: #1d1d1d;
 }
 .project .wrapper {
@@ -438,7 +429,7 @@ main.container {
 	grid-row: 2 / span 1; /* 2번 라인에서 1칸 */
 }
 .project .list .box a .photo {
-    position: relative;
+    position: relative; /*before의 정렬의 기준*/
     overflow: hidden;
     height: 20.1765em; /*343px*/
 }
@@ -447,7 +438,7 @@ main.container {
 }
 .project .list .box a .photo::before {
     content: "";
-    position: absolute;
+    position: absolute; /*photo를 기준으로 정렬*/
     left: 0;
     top: 0;
     width: 100%;
@@ -485,7 +476,7 @@ main.container {
     transform: scale3d(1.1, 1.1, 1); /* 마우스 over했을 때 이미지 크게 보이게 하는 것*/
 }
 .project .list .box a .project_txt_t {
-    position: absolute; /*.box를 기준으로 정렬*/
+    position: absolute; /* a를 기준으로 정렬*/
     left: 0;
     top: 0;
     color: #fff;
@@ -539,7 +530,7 @@ main.container {
 }
 @media screen and (max-width:1440px){ /*16px*/
     .project {
-        padding: 100px 100px 150px 100px;
+        padding: 100px 0 150px 0;
     }
     .project .list {
         grid-template-rows: repeat(2, minmax(12.8235em, 16.75em)); /*max: 268px*/
@@ -553,12 +544,12 @@ main.container {
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
     .project {
-        padding: 80px 20px;
+        padding: 80px 0;
     }
     .project h2 {
         font-size: 2rem;/*30px 기준:15px*/
         padding: 0  0 0 ;
-        margin-bottom: 1em 0 0 ;  /*30px 기준:30px*/
+        margin-bottom: 1em ;  /*30px 기준:30px*/
     }
     .project .list {
         grid-template-rows: repeat(2, minmax(12.82em, 14.53em)); /*max: 218px*/
@@ -644,7 +635,6 @@ main.container {
 .banner a {
     display: block;
     position: relative; /*ai의 정렬의 기준*/
-    margin: 0 170px; 
     padding: 47px 0 56px 0;
 
 }
@@ -680,8 +670,8 @@ main.container {
     position: absolute; /*inner를 기준으로 정렬*/
     right: 0;
     top: 50%;
-    width: 10.19em; /*174px*/
-    height: 9.18em; /*167px*/
+    width: 11%; /*174px*/
+    height: 87%; /*167px*/
     transform: translateY(-50%);
 }
 .banner a .ai img {
@@ -690,19 +680,12 @@ main.container {
     object-fit: contain;
 }
 @media screen and (max-width:1440px){ /*16px*/
-    .banner a {
-        margin: 0 100px;
-        padding: 47px 0 56px 0;
-    }
     .banner a .ai {
-        width: 9em; /*144px*/ 
-        height: 8.6em; /*138px*/
+        /*144px*/ 
+        height: 83%; /*138px*/
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
-    .banner a {
-        margin: 0 60px;
-    }
     .banner a span {
         font-size: 1.5rem; /*24px*/
     }
@@ -715,21 +698,17 @@ main.container {
         height: 1.5em;
     }
     .banner a .ai {
-        width: 7.29em; /*109px*/ 
-        height: 6.98em; /*104px*/
+         /*109px*/ 
+        height: 63%; /*104px*/
     }
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
-    .banner {
-        padding: 30px 20px 33px 20px;
-        background-color: #E3E3E3;
-    }
     .banner a span {
         font-size: 1rem; /*14px*/
     }
     .banner a h2 {
-        font-size: 1.6rem; /*22px*/
+        font-size: 1.4rem; /*15px*/
         margin: 0.15em 2.5em 0 0; 
     }
     .banner a h2::after { /*화살표 아이콘*/
@@ -737,8 +716,8 @@ main.container {
         height: 1.5em;
     }
     .banner a .ai {
-        width: calc(100% - 0); /*56px*/
-        height: 3.8em; /*53px*/
+        width: 56px; /*56px*/
+        height: 53px; /*53px*/
     }
 } /* @media */
 @media screen and (max-width:380px){ /*13px*/
@@ -749,7 +728,7 @@ main.container {
 
 /*----------- insights 시작----------*/
 .insights {
-    padding: 150px 170px 200px 170px;
+    padding: 150px 0 200px 0;
     background-color: #fff;
 }
 .insights h2 {
@@ -761,67 +740,264 @@ main.container {
 .insights h3 {
     display: none;
 }
-.insights .tip {
+.insights .tip, .insights .haccp {
     display: flex;
     justify-content: flex-start;
     gap: 24px;
+    margin: 0 0 24px 0;
 }
-.insights .tip .swiper {
-    height: 100%;
+.insights .haccp {
+    justify-content: flex-end;
 }
-.insights .tip .swiper ul li {
+.insights .tip .list, .insights .haccp .list {
+    width: 73.5%;
+}
+.insights .tip .list ul li a, .insights .haccp .list ul li a {
+    display: block;
     position: relative; /*h4의 정렬의 기준*/
 }
-.insights .tip .swiper ul li a {
-    display: block;
-}
-.insights .tip .swiper ul li a .photo {
+.insights .tip .list ul li a .photo, .insights .haccp .list ul li a .photo {
+    position: relative; /*before의 정렬의 기준*/
     overflow: hidden;
-    height: 100%;
+    font-size: 0; /*하단에 img가 주는 여백 없애기. 이미지를 글자로 인식해서 생기는 것임.*/
+    line-height: 0;
 }
-.insights .tip .swiper ul li:first-child a .photo {
-    border-radius: 100px 0 0 0;
-}
-.insights .tip .swiper ul li a .photo img {
+.insights .tip .list ul li a .photo::before, .insights .haccp .list ul li a .photo::before {
+    content: "";
+    position: absolute; /*photo를 기준으로 정렬*/
+    left: 0;
+    top: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    background-color: #000;
+    opacity: 0.3;
+    z-index: 1;
+    transition: all 0.5s;
 }
-.insights .tip .swiper ul li a h4 {
-    position: absolute; /*li를 기준으로 정렬*/
-    font-size: 1.47rem; /*25px*/
-    font-weight: 700;
+.insights .tip .list ul li:first-child a .photo, .insights .haccp .list ul li:first-child a .photo {
+    border-radius: 40% 0 0 0;
+}
+.insights .tip .list ul li a .photo img, .insights .haccp .list ul li a .photo img {
+    width: 100%;
+    transition: 1s;
+}
+.insights .tip .list ul li a:hover .photo img, .insights .haccp .list ul li a:hover .photo img {
+    transform: scale3d(1.1,1.1,1);
+}
+.insights .tip .list ul li a h4, .insights .haccp .list ul li a h4 {
+    position: absolute; /*a를 기준으로 정렬*/
+    left: 0;
+    bottom: 0;
+    font-size: 1.2rem; /*20px*/
+    margin: 0 0 1.87em 1.6em; /*44px 36px*/
+    font-weight: 600;
     line-height: 1.2;
     color: #fff;
     z-index: 2;
 }
-.insights .tip .more {
-    position: relative; /*span의 정렬의 기준*/
-    width: 185px;
+.insights .tip .more, .insights .haccp .more {
+    width: 11.7%;
     background-color: #1d1d1d;
     color: #fff;
     text-align: center;
 }
-.insights .tip .more span {
-    position: absolute; /*more을 기준으로 정렬*/
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);   
-}
-
-
 .insights .haccp .more {
-    position: relative;
-    width: 185px;
-    height: 371px;
+    background-color: transparent;
+    color: #1d1d1d;
     border: 5px solid #1d1d1d;
-    text-align: center;
+}
+.insights .tip .more a, .insights .haccp .more a {
+    position: relative; /*span의 정렬의 기준*/
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    height: 100%;
+    padding-bottom: 3.5em;
+}
+.insights .tip .more a::after, .insights .haccp .more a::after { /*화살표 아이콘*/
+    content: "";
+    position: absolute; /*span를 기준으로 정렬*/
+    top: 3.5em;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4em; /*80px 기준:20px*/
+    height: 4em;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.8982 82.8571L17.1431 79.102L73.777 22.4692H38.6V17.1428H82.8574V61.4002H77.531V26.2231L20.8982 82.8571Z' fill='white'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.insights .haccp .more a::after { /*화살표 아이콘*/
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.8982 82.8571L17.1431 79.102L73.777 22.4692H38.6V17.1428H82.8574V61.4002H77.531V26.2231L20.8982 82.8571Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+}
+.insights .tip .more span, .insights .haccp .more span {
+    display: block;
+    font-size: 1.2rem; /*20px*/
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff;  
 }
 .insights .haccp .more span {
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);   
+    color: #1d1d1d;  
 }
 
+@media screen and (max-width:1440px){ /*16px*/
+    .insights {
+        padding: 100px 0 150px 0;
+        background-color: #fff;
+    }
+    .insights .tip .more a, .insights .haccp .more a {
+        padding-bottom: 3em;
+    }
+    .insights .tip .more a::after, .insights .haccp .more a::after { /*화살표 아이콘*/
+        top: 3em;
+        width: 3em; /*80px 기준:20px*/
+        height: 3em;
+    }
+    
+    .insights .tip .list ul li a h4, .insights .haccp .list ul li a h4 {
+        font-size: 1.1rem; /*17.6px*/
+        margin: 0 1em 1.6em 1.5em; 
+    }
+    .insights .tip .more span, .insights .haccp .more span {
+        font-size: 1.1rem; 
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*15px*/
+    .insights h2 {
+        font-size: 2rem;
+        padding: 0 0 0;
+        margin-bottom: 1em;
+    }
+    .insights .tip .more a, .insights .haccp .more a {
+        padding-bottom: 1.5em;
+    }
+    .insights .tip .more a::after, .insights .haccp .more a::after { /*화살표 아이콘*/
+        top: 1.5em;
+        width: 3em; /*80px 기준:20px*/
+        height: 3em;
+    }
+    .insights .tip .list ul li a h4, .insights .haccp .list ul li a h4 {
+        font-size: 1rem; /*15px*/
+        margin: 0 1em 1.5em 1.4em; /*22.5px 21px*/
+    }
+    .insights .tip .more span, .insights .haccp .more span {
+        font-size: 1rem; /*15px*/
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*14px*/
+    .insights .tip, .insights .haccp {
+        display: block; /*flex 해제*/
+    }
+    .insights .haccp {
+        margin: 50px 0 24px 0;
+    }
+    .insights .tip .list, .insights .haccp .list {
+        width: 100%;
+    }
+    .insights .tip .list ul li a h4, .insights .haccp .list ul li a h4 {
+        font-size: 1.3rem;
+    }
+
+    .insights .tip .more, .insights .haccp .more {
+        width: auto;
+        background-color: transparent;
+        color: #1d1d1d;
+        margin: 10px 0;
+    }
+    .insights .haccp .more {
+        border: 0;
+    }
+    .insights .tip .more a, .insights .haccp .more a {
+        position: relative; /*span의 정렬의 기준*/
+        display: inline-block; /*flex 해제*/
+        height: auto;
+        padding: 1.5em 2.2em 1.5em 0;
+    }
+    .insights .tip .more a::before, .insights .haccp .more a::before {
+        content: "";
+        position: absolute; /*a를 기준으로 정렬*/
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        width: 1.6em; /*20px*/
+        height: 1.6em; /*20px*/
+        background-color: #1d1d1d;
+        border: 2px solid #1d1d1d;
+        border-radius: 50%;
+    }
+    .insights .haccp .more a::before {
+        background-color: transparent;
+    }
+    .insights .tip .more a::after, .insights .haccp .more a::after { /*화살표 아이콘*/
+        top: auto;
+        left: auto;
+        bottom: 16px;
+        right: 0;
+        width: 1.1em; /*15px*/
+        height: 1.1em;
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.8982 82.8571L17.1431 79.102L73.777 22.4692H38.6V17.1428H82.8574V61.4002H77.531V26.2231L20.8982 82.8571Z' fill='%23fff'/%3E%3C/svg%3E%0A");
+    }
+    .insights .haccp .more a::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20.8982 82.8571L17.1431 79.102L73.777 22.4692H38.6V17.1428H82.8574V61.4002H77.531V26.2231L20.8982 82.8571Z' fill='%231d1d1d'/%3E%3C/svg%3E%0A");
+    }
+    .insights .tip .more span, .insights .haccp .more span {
+        display: block;
+        font-size: 1rem; /*14px*/
+        color: #1d1d1d;
+    }
+    .insights .tip .more span br, .insights .haccp .more span br {
+        display: none;
+    }
+    
+} /* @media */
+@media screen and (max-width:380px){ /*13px*/
+    .insights .tip .list ul li a h4, .insights .haccp .list ul li a h4 {
+        font-size: 1rem;
+    }
+} /* @media */
 /*----------- insights 끝----------*/
+
+
+
+/*******------------contact_bnt --------------**********/
+.contact_bnt  {
+    position: fixed;
+    right: 6%;
+    top: 89%;
+    transform: translateY(-50%);
+    z-index: 80;
+    margin-bottom:0;
+}
+.contact_bnt a {
+    display: block;
+    width: 6em; 
+    height: 6em;
+    line-height: 6em;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 2px solid #1d1d1d;
+    text-align: center; 
+    padding: 7px 7px;
+}
+.contact_bnt a img {
+    width: 100%;
+    height: 100%;    
+    object-fit: contain;
+}
+.contact_bnt a span::before { /*아이콘*/
+    position: absolute; /*span를 기준으로 정렬*/
+    content: "";
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
+    width: 24px;        
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+
+
+
