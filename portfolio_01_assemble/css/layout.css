@@ -65,8 +65,8 @@ header .gnb .gnb_open {
     display: none;
     position: relative; /* after 정렬의 기준 */
     color: transparent;
-    width: 100%; /*50px 기준:14px*/
-    height: var(--header-h); /*50px 기준:14px*/
+    width: 100%; 
+    height: var(--header-h); 
 }
 header .gnb .gnb_open::after {
     content: "";
@@ -85,8 +85,8 @@ header .gnb .gnb_close {
     display: none;
     position: relative; /* after 정렬의 기준 */
     color: transparent;
-    width: 3.5714em; /*50px 기준:14px*/
-    height: 3.5714em; /*50px 기준:14px*/
+    width: 100%; 
+    height: var(--header-h); 
 }
 header .gnb .gnb_close::after {
     content: "";
@@ -178,14 +178,14 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
     }
     header.menu_mo .gnb .gnb_wrap {
         display: block; /* 나타남 */
-        position: absolute; /* header를 기준으로 정렬 */
+        position: fixed; /* header를 기준으로 정렬 */
         right: 0;
         top: 0;
         z-index: 10;
         width: 100vw;
         height: 100dvh; /* 브라우저 높이와 동일하게 */
         background-color: #fff;
-        border: 1px solid #1d1d1d;
+        border: 3px solid #1d1d1d;
     }
     header.menu_mo .gnb .gnb_wrap ul {
         display: block; /*flex 해제*/
@@ -270,7 +270,7 @@ footer .slogan span.f_logo::before {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-position: bottom top;
+    background-position: left top;
     background-repeat: no-repeat;
     background-size: contain;
     background-image: url(../images/f_logo.svg);

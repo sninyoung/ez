@@ -729,7 +729,7 @@ main.container {
 
 /*----------- insights 시작----------*/
 .insights {
-    padding: 150px 0 200px 0;
+    margin: 150px 0 200px 0;
     background-color: #fff;
 }
 .insights h2 {
@@ -844,7 +844,7 @@ main.container {
 
 @media screen and (max-width:1440px){ /*16px*/
     .insights {
-        padding: 100px 0 150px 0;
+        margin: 100px 0 150px 0;
         background-color: #fff;
     }
     .insights .tip .more a, .insights .haccp .more a {
