@@ -986,6 +986,20 @@ main.container {
     text-align: center; 
     padding: 7px 7px;
 }
+.contact_bnt a span {
+    color: transparent;
+    font-weight: 600;
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: all 0.3s;
+}
+.contact_bnt a:hover span {
+    color: #1d1d1d;
+    opacity: 1;
+}
+.contact_bnt a:hover img {
+    display: none;
+}
 .contact_bnt a img {
     width: 100%;
     height: 100%;    
