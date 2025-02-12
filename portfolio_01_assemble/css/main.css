@@ -616,10 +616,10 @@ main.container {
         margin: 0.6667em 0 0.6667em 0.3333em; /*10px 5px*/
     }
     .project .more {
-        position: relative;
-        display: block;
-        left: 40%;
-        top: 0;
+        position: relative; /*absolute 해제*/
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 2.7em 0 0 0;
     }
 } /* @media */
@@ -643,6 +643,7 @@ main.container {
     font-weight: 700;
     line-height: 1.2;
     color: #17293A;
+    margin-bottom: 0.4em;
 }
 .banner a h2 {
     position: relative;
@@ -650,7 +651,7 @@ main.container {
     font-size: 2.35rem; /*40px*/
     font-weight: 700;
     line-height: 1.2;
-    padding: 0.2em 1.85em 0 0;
+    padding: 0 2em 0 0;
 }
 .banner a h2::after { /*화살표 아이콘*/
     content: "";
@@ -690,7 +691,6 @@ main.container {
     }
     .banner a h2 {
         font-size: 2rem; /*30px*/
-        padding: 0.15em 1.96em 0 0; 
     }
     .banner a h2::after { /*화살표 아이콘*/
         width: 1.5em; /*36px 기준:24px*/
@@ -710,21 +710,23 @@ main.container {
         font-size: 1rem; /*14px*/
     }
     .banner a h2 {
-        font-size: 1.4rem; /*15px*/
-        padding: 0.2em 2em 0 0; 
-        margin: 0 56px 0 0;
+        font-size: 1.18rem; 
+        margin: 0 3.2667em 0 0; /*49px*/
     }
     .banner a h2::after { /*화살표 아이콘*/
-        width: 1.5em; /*36px 기준:24px*/
+        width: 1.5em; /*36px 기준:15px*/
         height: 1.5em;
     }
     .banner a .ai {
-        width: 56px; /*56px*/
-        height: 53px; /*53px*/
+        width: 3.5em; /*49px*/
+        height: 3.29em; /*46px*/
     }
 } /* @media */
 @media screen and (max-width:380px){ /*13px*/
-    
+    .banner a h2 {
+        font-size: 1.1rem; 
+        margin: 0 3em 0 0; /*49px*/
+    }
 } /* @media */
 /*----------- banner 끝----------*/
 

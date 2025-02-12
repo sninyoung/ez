@@ -1,7 +1,4 @@
-/* common.js
-header/footer 공통요소에 들어가는 스크립트 지정
-모든 페이지에서 공통으로 작동되는 스크립트
- */
+/* common.js*/
 
 
 $(document).ready(function(){
@@ -144,6 +141,8 @@ $(document).ready(function(){
     
 
  /*********-------모바일 메뉴 열기 - menu_mo 시작 ----------****/
+  /* header .gnb .gnb_open >> 클릭하면 열리고 header에 menu_mo 클래스 추가
+    * header .gnb .gnb_close >> 클릭하면 닫힘 header에 menu_mo 클래스 삭제 */
 
     $('header .gnb .gnb_open').on('click', function(){
         $('header').addClass('menu_mo')

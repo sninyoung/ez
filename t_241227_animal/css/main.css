@@ -59,8 +59,6 @@ header.fixed .logo a::before {
                 font-size: 22px;
                 padding: 0 24px;
             }
-
-            
             /*
                 <li>               ------ 하위에 depth2가 존재하는 li -  li:has(ul.depth2) 
                     <a></a>

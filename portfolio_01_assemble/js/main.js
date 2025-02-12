@@ -1,7 +1,4 @@
-/*
-* main.js
-* main에서만 작동되는 스크립트 저장
-*/
+/* main.js*/
 
 
 let tab_name //product의 클릭한 tab의 이름
