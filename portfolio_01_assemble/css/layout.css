@@ -159,7 +159,7 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
 @media screen and (max-width:768px){ /*14px*/
     header .gnb {
         left: auto;
-        right: 4%;
+        right: 0;
         top: 0;
         transform: translate(0, 0);
     }
@@ -168,6 +168,7 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
     }
     header .gnb .gnb_open{
         display: block;
+        
     }
     /******* 메뉴가 열렸을때 header에 menu_mo 클래스 추가*******/
     header.menu_mo {
