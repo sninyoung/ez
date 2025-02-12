@@ -14,7 +14,6 @@ main.container {
 /***------visual 시작-------*****/
 .visual {
     position: relative;  /* ctrl_wrap 정렬의 기준 */
-    padding: 0 6%;
 }
 .visual h2 {
     display: none;  /* 숨김 */
@@ -59,9 +58,6 @@ main.container {
 }
 .visual .ctrl_wrap {
     height: 100px;
-    left: 0;
-    bottom: 0;
-    z-index: 10;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -148,7 +144,7 @@ main.container {
 
 /***------product 시작-------*****/
 .product {
-    padding: 150px 0 200px 0;
+    margin: 150px 0 200px 0;
 }
 .product .wrapper {
     position: relative; /*prev, next의 정렬의 기준*/
@@ -276,7 +272,7 @@ main.container {
 
 @media screen and (max-width:1440px){ /*16px*/
     .product {
-        padding: 100px 0 150px 0;
+        margin: 100px 0 150px 0;
     }
     .product .tab_content .tab_panel .swiper ul li a .photo {
         height: 80%;/*296px*/
@@ -285,7 +281,7 @@ main.container {
 
 @media screen and (max-width:1024px){ /*15px*/
     .product {
-        padding: 80px 0 100px 0;
+        margin: 80px 0 100px 0;
     }
     .product h2 {
         font-size: 2rem;/*30px 기준:15px*/
@@ -367,7 +363,7 @@ main.container {
 } /* @media */
 @media screen and (max-width:380px){ /*13px*/
     .product {
-        padding: 50px 0 70px 0;
+        margin: 50px 0 70px 0;
     }
     .product .tab_list {
         width: calc(100% - 40px);

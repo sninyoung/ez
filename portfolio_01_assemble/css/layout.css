@@ -28,17 +28,15 @@ header/footer 모든 페이지의 공통 스타일 적용 */
 
 header {
     position: fixed; /*wrap을 기준으로 정렬*/
-    padding: 0 6%;
     left: 0;
     top: 0;
     z-index: 100;
     width: 100%;
     height: var(--header-h);
     transition: 0.3s;
-
-    /*로고를 위아래 가운데 정렬하기 위해서*/
-    display: flex;
-    align-items: center;
+}
+header .logo {
+    margin-top: 40px;
 }
 header .logo a {
     display: block;
@@ -61,13 +59,14 @@ header .gnb { /*양옆 가운데 정렬 하기 위해서*/
     left: 50%;
     top: 50%;
     transform: translate(-40%, -50%);
+    width: calc(12% + 15px);
 }
 header .gnb .gnb_open {
     display: none;
     position: relative; /* after 정렬의 기준 */
     color: transparent;
-    width: 3.5714em; /*50px 기준:14px*/
-    height: 3.5714em; /*50px 기준:14px*/
+    width: 100%; /*50px 기준:14px*/
+    height: var(--header-h); /*50px 기준:14px*/
 }
 header .gnb .gnb_open::after {
     content: "";
@@ -105,11 +104,11 @@ header .gnb .gnb_close::after {
 header .gnb .gnb_wrap ul {
     display: flex;
     justify-content: center;
-    gap: 80px;
+    gap: 40px;
 }
 header .gnb .gnb_wrap ul li a {
     display: block;
-    padding: 2em 0.6em;
+    padding: 2em 2em;
 }
 header .gnb .gnb_wrap ul li a span {
     position: relative; /*after, before 정렬의 기준*/
@@ -143,20 +142,22 @@ header.fixed.scroll_down, header.menu_pc.scroll_down {
 
 @media screen and (max-width:1440px){ /*16px*/
     header .gnb .gnb_wrap ul {
-        display: flex;
-        justify-content: center;
-        gap: 60px;
+        gap: 20px;
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*15px*/
     header .gnb .gnb_wrap ul {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
+        gap: 5px;
+    }
+    header .gnb .gnb_wrap ul li a {
+        padding: 2em 1.2em;
     }
 } /* @media */
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*14px*/
+    header .logo {
+        margin-top: 19px;
+    }    
     header .gnb {
         left: auto;
         right: 0;
@@ -246,7 +247,6 @@ footer .inner {
     position: relative;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid rgba(255,255,255,0.8);
 }
 footer h2 {
     display: none;
@@ -305,16 +305,13 @@ footer .contact_txt .group strong {
 footer address {
     color: rgba(255,255,255,0.6);
     font-size: 0.88rem; /*15px*/
-    position: absolute;
-    left: 0;
-    bottom: 0.7em;
+    margin-bottom: 1em;
 }
 footer .copyright {
     color: rgba(255,255,255,0.6);
     font-size: 0.88rem; /*15px*/
-    position: absolute;
-    left: 0;
-    bottom: -2em; 
+    padding-top: 1em;
+    border-top: 1px solid rgba(255,255,255,0.8);
 }
 @media screen and (max-width:1440px){ /*16px*/
     footer {
@@ -343,7 +340,6 @@ footer .copyright {
     }
     footer .inner {
         display: block; /*flex 해제*/
-        border: 0; /*선을 slogan한테 줌.*/
     }
     footer h2 {
         display: none;
@@ -374,10 +370,10 @@ footer .copyright {
         width: 3.3em;
     }
     footer address {
-        bottom: 0;
+        margin: 0;
     }
     footer .copyright {
-        bottom: -1.8em; 
+        border: 0; /*선을 slogan한테 줌.*/
     }
 } /* @media */
 
