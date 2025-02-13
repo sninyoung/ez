@@ -11,15 +11,15 @@ body, html {
 
 /* pc 버전 css */
 .wrapper {
-    width: 1260px;
-    margin: 0 auto;
+    margin: 0 100px;
 }
+/* 
 #wrap {
-    min-width: 1300px;
-    overflow: hidden; /* wrap 영역 밖으로 나간 요소는 숨김처리함. absolute가 대부분 나감.*/
-    position: relative; /*header정렬의 기준 - wrap이 전체를 감싸기 때문*/
+    min-width: 1900px;
+    overflow: hidden; 
+    position: relative;
 }
-
+*/
 
 
 

@@ -12,24 +12,30 @@ h1 {
     color: #1d1d1d;
     margin-bottom: 40px;
 }
+h2 {
+    font-size: 30px;
+    font-weight: 600;
+    color: #1d1d1d;
+    margin: 20px 0;
+}
 ul {
     display: flex;
     flex-wrap: wrap; /* 두 줄 허용 */
     gap: 24px;
-    
+    margin: 20px 0 100px 0 ;
 }
 ul li {
-    width: 297px;
+    width: 200px;
 }
 ul li a {
     display: block; 
-    height: 297px; 
-    padding: 60px 60px 0 60px;
+    height: 200px; 
+    padding: 60px 0;
     border: 2px solid #001A53;
     border-radius: 30px;
     text-align: center;
-    font-size: 23px;
-    font-weight: 500;
+    font-size: 17px;
+    font-weight: 700;
 }
 ul li a:hover{
     background-color: #001A53;
@@ -39,13 +45,16 @@ ul li a span {
     font-size: 17px;
     font-weight: 400;
 }
+.box {
+    height: 50px;
+    padding: 20px 0;
+}
 .portfolio {
     margin: 100px 0;
 }
 .portfolio ul {
     display: block;
 }
-
 .portfolio ul li {
     width: 100%;
 }
