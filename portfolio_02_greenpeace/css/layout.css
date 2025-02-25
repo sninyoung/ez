@@ -1,0 +1,380 @@
+/* layout.css
+header/footer 모든 페이지의 공통 스타일 적용 */
+
+.skipnav {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.skipnav a {
+    position: absolute;
+    left: 0;
+    top: -100px;
+    width: 100%;
+    display: block;
+    background-color: #6D801C;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+.skipnav a.menu {
+    background-color: #EC29A5;
+}
+.skipnav a:focus{
+    top: 0;
+}
+
+header {
+    position: fixed; /*wrap을 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    transition: 0.3s;
+}
+header .logo {
+    margin-top: 40px;
+}
+header .logo a {
+    display: block;
+    position: relative; /*before 정렬의 기준*/
+    color: transparent; /*글자 색 투명하게 */
+    width: 8.2353em;
+    height: 1.4118em;
+}
+header .logo a::before { /*a를 기준으로 정렬*/
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../images/logo.svg) no-repeat center center / contain;
+}
+header .gnb { /*양옆 가운데 정렬 하기 위해서*/
+    position: absolute;  /*wrap을 기준으로 정렬*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-40%, -50%);
+    width: calc(12% + 15px);
+}
+header .gnb .gnb_open {
+    display: none;
+    position: relative; /* after 정렬의 기준 */
+    color: transparent;
+    width: 100%; 
+    height: var(--header-h); 
+}
+header .gnb .gnb_open::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%; 
+    height: 100%; 
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5 20.8334V19.1667H32.5V20.8334H17.5ZM17.5 30.8334V29.1667H32.5V30.8334H17.5ZM17.5 25.8334V24.1667H32.5V25.8334H17.5Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+header .gnb .gnb_close {
+    display: none;
+    position: relative; /* after 정렬의 기준 */
+    color: transparent;
+    width: 100%; 
+    height: var(--header-h); 
+}
+header .gnb .gnb_close::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    width: 100%; 
+    height: 100%; 
+    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.4 32L18 30.6L23.6 25L18 19.4L19.4 18L25 23.6L30.6 18L32 19.4L26.4 25L32 30.6L30.6 32L25 26.4L19.4 32Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+header .gnb .gnb_wrap ul {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+header .gnb .gnb_wrap ul li a {
+    display: block;
+    padding: 2em 2em;
+}
+header .gnb .gnb_wrap ul li a span {
+    position: relative; /*after, before 정렬의 기준*/
+    font-weight: 700;
+    display: inline-block;
+}
+header .gnb .gnb_wrap ul li.blog a span::after { /*새창열기 아이콘*/
+    content: "";
+    position: absolute;
+    right: -1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1.3em; 
+    height: 1.3em; 
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.1585 18.7916V18.8416H3.2085H18.7918H18.8418V18.7916V11.3527V11.3027H18.7918H17.4168H17.3668V11.3527V17.3666H4.6335V4.63331H10.6475H10.6975V4.58331V3.20831V3.15831H10.6475H3.2085H3.1585V3.20831V18.7916ZM8.87412 14.092L8.90947 14.1273L8.94483 14.092L17.3668 5.66996V9.16665V9.21665H17.4168H18.7918H18.8418V9.16665V3.20831V3.15831H18.7918H12.8335H12.7835V3.20831V4.58331V4.63331H12.8335H16.3302L7.90818 13.0553L7.87283 13.0907L7.90818 13.126L8.87412 14.092Z' fill='%231D1D1D' stroke='%231D1D1D' stroke-width='0.1'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+/******-----header가 고정되었을 때: header.fixed -----*****/
+header.fixed, header.menu_pc {
+    background-color: #fff;
+    color: #1d1d1d;
+    border-bottom: 1px solid #999;
+    transition: 0.3s;
+}
+header.fixed.scroll_down, header.menu_pc.scroll_down {
+    transform: translateY(-100%);
+}
+
+@media screen and (max-width:1440px){ /*16px*/
+    header .gnb .gnb_wrap ul {
+        gap: 20px;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*15px*/
+    header .gnb .gnb_wrap ul {
+        gap: 5px;
+    }
+    header .gnb .gnb_wrap ul li a {
+        padding: 2em 1.2em;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*14px*/
+    header .logo {
+        margin-top: 19px;
+    }    
+    header .gnb {
+        left: auto;
+        right: 0;
+        top: 0;
+        transform: translate(0, 0);
+    }
+    header .gnb .gnb_wrap {
+        display: none;
+    }
+    header .gnb .gnb_open{
+        display: block;
+        
+    }
+    /******* 메뉴가 열렸을때 header에 menu_mo 클래스 추가*******/
+    header.menu_mo {
+        background-color: #fff;
+        transition: 0.3s;
+    }
+    header.menu_mo .gnb .gnb_wrap {
+        display: block; /* 나타남 */
+        position: fixed; /* header를 기준으로 정렬 */
+        right: 0;
+        top: 0;
+        z-index: 10;
+        width: 100vw;
+        height: 100dvh; /* 브라우저 높이와 동일하게 */
+        background-color: #fff;
+        border: 3px solid #1d1d1d;
+    }
+    header.menu_mo .gnb .gnb_wrap ul {
+        display: block; /*flex 해제*/
+        margin-top: var(--header-h);
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        height: calc(100dvh - var(--header-h));
+        overflow-y: auto;
+    }
+    header.menu_mo .gnb .gnb_wrap ul li:first-child {
+        margin-top: 0.8em;
+    }
+    header.menu_mo .gnb .gnb_wrap ul li a {
+        display: block;
+        padding: 0.8em 45px 0.8em 6%;
+        color: #1d1d1d;
+        font-size: 1.2em; /*15.6px*/
+        position: relative;
+    }
+    header.menu_mo .gnb .gnb_close {
+        display: block; /* 나타남 */
+    }
+    header.menu_mo .gnb .gnb_open{
+        display: none; /*숨김*/
+    }
+    header.menu_mo .logo a {
+        z-index: 50;
+    }
+    header.menu_mo .gnb .gnb_wrap ul li a span::before { /*화살표 아이콘*/
+        content: "";
+        position: absolute; /*span을 기준으로 정렬*/
+        right: -2.3em;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 1.43em; 
+        height: 1.43em; 
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.3334 10.9032L11.7262 7.03752L11.6879 7.00538L11.7201 6.96708L12.4913 6.04788L12.5234 6.00957L12.5617 6.04171L18.5369 11.0553L16.3334 10.9032ZM16.3334 10.9032H1.35999H1.30999V10.9532V12.1532V12.2032H1.35999H18.16H18.21V12.1962C18.3631 12.1747 18.5096 12.099 18.6171 11.971L18.6171 11.971C18.848 11.6958 18.8121 11.2859 18.5369 11.0553L16.3334 10.9032Z' fill='%231D1D1D' stroke='%231D1D1D' stroke-width='0.1'/%3E%3C/svg%3E%0A");
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+    header.menu_mo .gnb .gnb_wrap ul li.blog a span::before{
+        display: none;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*13px*/
+    
+} /* @media */
+
+
+
+
+/*********-------footer-----------***********/
+footer {
+    padding: 150px 0 125px 0;
+    background-color: #1d1d1d;
+    color: rgba(255,255,255,0.8);
+}
+footer .inner {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+footer h2 {
+    display: none;
+}
+footer .slogan {
+    font-size: 2.3em; /*40px*/
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 20px 255px 0;
+    color: #fff;
+}
+footer .slogan span.f_logo {
+    position: relative; /* before 정렬의 기준 */
+    display: inline-block;
+    width: 5.7em; /*234px*/
+    height: 1em; /*40px*/
+}
+footer .slogan span.f_logo::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url(../images/f_logo.svg);
+    height: 1em;
+    bottom: -0.2em;
+}
+footer .contact_txt {
+    width: 48%;
+    padding-bottom: 80px;
+}
+footer .contact_txt h3 {
+    font-size: 1.47em; /*25px*/
+    margin-bottom: 1em;
+}
+footer .contact_txt .group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
+    gap: 14px;
+}
+footer .contact_txt .group + .group { /* 인접 형제 선택자 */
+    margin: 1em 0 0 0;
+}
+footer .contact_txt .group span {
+    margin: 0 10px 0 0;
+    font-size: 0.88rem; /*15px*/
+}
+footer .contact_txt .group strong {
+    display: inline-block;
+    width: 3.3em;
+}
+footer address {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem; /*15px*/
+    margin-bottom: 1em;
+}
+footer .copyright {
+    color: rgba(255,255,255,0.6);
+    font-size: 0.88rem; /*15px*/
+    padding-top: 1em;
+    border-top: 1px solid rgba(255,255,255,0.8);
+}
+@media screen and (max-width:1440px){ /*16px*/
+    footer {
+        padding: 100px 0 100px 0;
+        background-color: #1d1d1d;
+        color: rgba(255,255,255,0.8);
+    }
+    footer .slogan {
+        font-size: 2em; /*32px*/
+        font-weight: 700;
+        line-height: 1.2;
+        margin: 0 20px 255px 0;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*15px*/
+    footer .slogan {
+        font-size: 1.6em; /*22px*/
+        margin: 0 20px 200px 0;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*14px*/
+    footer {
+        padding: 70px 0 80px 0;
+    }
+    footer .inner {
+        display: block; /*flex 해제*/
+    }
+    footer h2 {
+        display: none;
+    }
+    footer .slogan {
+        padding-bottom: 14px;
+        margin: 0 20px 52px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.8);
+    }
+    footer .contact_txt {
+        width: auto;
+    }
+    footer .contact_txt .group {
+        display: flex;
+        justify-content: flex-start;
+        align-items: baseline;
+        gap: 14px;
+    }
+    footer .contact_txt .group + .group { /* 인접 형제 선택자 */
+        margin: 1em 0 0 0;
+    }
+    footer .contact_txt .group span {
+        margin: 0 10px 0 0;
+        font-size: 0.88rem; /*15px*/
+    }
+    footer .contact_txt .group strong {
+        display: inline-block;
+        width: 3.3em;
+    }
+    footer address {
+        margin: 0;
+    }
+    footer .copyright {
+        border: 0; /*선을 slogan한테 줌.*/
+    }
+} /* @media */
+
+

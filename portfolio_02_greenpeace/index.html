@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="js/swiper-bundle.min.js"></script> <!--swiper 라이브러리 js 호출-->
+    <script src="js/jquery-3.7.1.min.js"></script> <!--jquery(라이브러리) js 호출-->
+    <script src="js/main.js"></script> <!--javascript 호출-->
+    <script src="js/common.js"></script> <!--javascript 호출-->
+
+    <link rel="stylesheet" href="css/swiper-bundle.min.css"> <!--swiper 라이브러리 css (내 css보다 위에 배치 : 그래야 내가 css를 변경할 수 있음)-->
+    <link rel="stylesheet" href="css/main.css"> <!--css 호출-->
+
+    <link rel="shortcut icon" type="image/x-icoon" href="favicon.svg">
+    <title>ASSEMBLE</title>
+</head>
+<body>
+    <div class="skipnav">
+        <a class="cnt" href="#skip_content">본문 바로가기</a> <!--내부링크-->
+        <a class="menu" href="#skip_nav">주메뉴 바로가기</a>
+
+    </div>
+    <div id="wrap">
+        <header>
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html">ASSEMBLE</a></h1>
+                <nav class="gnb" id="skip_nav">
+                    <button class="gnb_open">메뉴열기</button>
+                    <div class="gnb_wrap">
+                        <ul>
+                            <li><a href="#n"><span>ABOUT</span></a></li>
+                            <li><a href="#n"><span>PRODUCT</span></a></li>
+                            <li><a href="#n"><span>PROJECT</span></a></li>
+                            <li><a href="#n"><span>CONTACT</span></a></li>
+                            <li class="blog"><a href="https://blog.naver.com/assemblek" target="_blank" title="새창열기"><span>BLOG</span></a></li>
+                        </ul>
+                    </div>
+                    <button class="gnb_close">메뉴닫기</button>
+                </nav><!--gnb-->
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual" id="skip_content">
+                <h2>팝업</h2>
+                <div class="wrapper"> 
+                    <div class="swiper">
+                        <ul class="swiper-wrapper">
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/visual_bg01.jpg" alt="컨설팅하는 사진"></div>
+                                <div class="visual_txt">
+                                    <h3><strong>상업 주방 컨설팅</strong>
+                                        <span>CONSULTING</span>
+                                    </h3>
+                                    <p>25년의 상업용 주방 컨설팅 경력을 바탕으로 <br>HACCP 기준에 적합한 쾌적하고 효율적인 주방 공간 제안</p>
+                                </div><!--visual_txt-->
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/visual_bg02.jpg" alt="설계 도면 사진"></div>
+                                <div class="visual_txt">
+                                    <h3><strong>맞춤형 주방기기 주문제작</strong>
+                                        <span>CUSTOM</span>
+                                    </h3>
+                                    <p>맞춤형 주방기기 주문 생산을 위한 현장 방문, 실측, 설계, <br>시공, 사후 관리까지 책임지는 원스탑 서비스 제공</p>
+                                </div><!--visual_txt-->
+                            </li>
+                            <li class="swiper-slide">
+                                <div class="photo"><img src="images/visual_bg03.jpg" alt="용접하는 사진"></div>
+                                <div class="visual_txt">
+                                    <h3><strong>조립식 주방기기 개발 및 생산</strong>
+                                        <span>ASSEMBLING</span>
+                                    </h3>
+                                    <p>조립과 분해가 간편하여 이동, 보관 유지 관리 및 공간 활용이 탁월한 <br>조립식 주방기기 연구 개발 및 생산</p>
+                                </div><!--visual_txt-->
+                            </li>
+                        </ul>
+                    </div><!--swiper-->
+                    <div class="ctrl_wrap">
+                        <button class="prev">이전 팝업 보기</button>
+                        <div class="paging"></div><!--현재팝업번호/전체팝업수-->
+                        <button class="next">다음 팝업 보기</button>
+                    </div>
+                </div>
+            </section><!--visual-->
+            <section class="product">
+                <div class="wrapper"> 
+                    <div class="inner">
+                        <h2>PRODUCT</h2>
+                        <div class="tab_list">
+                            <ul role="tablist">
+                                <li data-tab="best" role="tab" class="best active"><button title="선택됨">인기제품</button></li>
+                                <li data-tab="rec" role="tab" class="rec"><button>추천제품</button></li>
+                                <li data-tab="new" role="tab" class="new"><button>신제품</button></li>
+                                <li data-tab="custom" role="tab" class="custom"><button>주문제작</button></li>
+                            </ul>
+                        </div><!--tab_list-->
+                        <div class="tab_content">
+                            <div data-tab="best" role="tabpanel" class="tab_panel panel01 active">
+                                <h3>인기제품</h3>
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_best_img01.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>조립식 평판 다단식 4단 선반</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_best_img02.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>GN PAN Strainer</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_best_img03.jpg" alt="제품 사진"></div>
+                                                <strong class="fujimak">fujimak</strong>
+                                                <span>콤비스팀오븐 ( FUJIMAK - iCombi Pro ) 6단 FICP61E</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_best_img04.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>조립식 찬넬 다단식 4단 선반</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_best_img05.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>다용도 14단 시팬 카트 (캐비넷형)</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_best_img06.jpg" alt="제품 사진"></div>
+                                                <strong class="eak">eak</strong>
+                                                <span>소형 4단 컨벡션 베이커리 오븐 EKF 423 M</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_best_img07.jpg" alt="제품 사진"></div>
+                                                <strong class="rinnai">rinnai</strong>
+                                                <span>취반기 (가스자동밥솥)</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!--swiper-->
+                                <div class="btn_wrap">
+                                    <button class="prev">이전 팝업 보기</button>
+                                    <button class="next">다음 팝업 보기</button>
+                                    <div class="more"><a href="#n">View more</a></div>
+                                </div><!--btn_wrap-->
+                            </div><!--tab_panel 01-->
+                            <div data-tab="rec" role="tabpanel" class="tab_panel panel02">
+                                <h3>추천제품</h3>
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_rec_img01.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>서비스 운반카</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_rec_img02.jpg" alt="제품 사진"></div>
+                                                <strong class="nerko">nerko</strong>
+                                                <span>접시 운반카(Dish Cart)</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_rec_img03.jpg" alt="제품 사진"></div>
+                                                <strong class="nerko">nerko</strong>
+                                                <span>폴리머(플라스틱) 다단식 선반</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_rec_img04.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>조립식 우드 논슬립 프리미엄 서빙카트- 3단 발티모 월넷</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_rec_img05.jpg" alt="제품 사진"></div>
+                                                <strong class="rinnai">rinnai</strong>
+                                                <span>주물 회전국솥</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_rec_img06.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>조립식 플라스틱 3단 서빙카트 - 검정</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_rec_img07.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>조립식 우드 논슬립 고급형 서빙카트- 3단  레바다 오크</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!--swiper-->
+                                <div class="btn_wrap">
+                                    <button class="prev">이전 팝업 보기</button>
+                                    <button class="next">다음 팝업 보기</button>
+                                    <div class="more"><a href="#n">View more</a></div>
+                                </div><!--btn_wrap-->
+                            </div><!--tab_panel 02-->
+                            <div data-tab="new" role="tabpanel" class="tab_panel panel03">
+                                <h3>신제품</h3>
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_new_img01.jpg" alt="제품 사진"></div>
+                                                <strong class="nerko">nerko</strong>
+                                                <span>ICE Caddy 슬라이딩리드 아이스캐디</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_new_img02.jpg" alt="제품 사진"></div>
+                                                <strong class="nerko">nerko</strong>
+                                                <span>ICE Caddy 슬라이딩리드 아이스캐디</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_new_img03.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>베이커리 팬 & G/N팬 운반카</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_new_img04.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>세정 작업대</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_new_img05.jpg" alt="제품 사진"></div>
+                                                <strong class="rinnai">rinnai</strong>
+                                                <span>프리미엄 다단식 선반</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_new_img06.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>조립식 우드 논슬립 프리미엄 서빙카트-  3단 네츄럴 오크</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_new_img07.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>조립식 플라스틱 2단 서빙카트 - 그레이</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!--swiper-->
+                                <div class="btn_wrap">
+                                    <button class="prev">이전 팝업 보기</button>
+                                    <button class="next">다음 팝업 보기</button>
+                                    <div class="more"><a href="#n">View more</a></div>
+                                </div><!--btn_wrap-->
+                            </div><!--tab_panel 03-->
+                            <div data-tab="custom" role="tabpanel" class="tab_panel panel04">
+                                <h3>주문제작</h3>
+                                <div class="swiper">
+                                    <ul class="swiper-wrapper">
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_custom_img01.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>병원 배선카 & 배식카트</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_custom_img02.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>그릴 790</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_custom_img03.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>베이커리 팬 & G/N팬 운반카</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_custom_img04.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>3줄 시팬(쟁반) 오픈카트</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_custom_img05.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>오픈 작업대찬장</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_custom_img06.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>2단 작업대</span>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/product_custom_img07.jpg" alt="제품 사진"></div>
+                                                <strong class="assemble">assemble</strong>
+                                                <span>1단 벽반</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!--swiper-->
+                                <div class="btn_wrap">
+                                    <button class="prev">이전 팝업 보기</button>
+                                    <button class="next">다음 팝업 보기</button>
+                                    <div class="more"><a href="#n">View more</a></div>
+                                </div><!--btn_wrap-->
+                            </div><!--tab_panel 03-->
+                        </div><!--tab_content-->
+                    </div>
+                </div>
+            </section><!--product-->
+            <section class="project">
+                <div class="wrapper"> 
+                    <h2>PROJECT</h2>
+                    <div class="inner">
+                        <div class="list">
+                            <div class="box list01">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/project_img01.jpg" alt="시공사례 사진"></div>
+                                    <div class="project_txt_t">
+                                        <strong>주방 설계·시공</strong>
+                                        <h3>엘림 마리나앤 리조트 레스토랑 & 카페</h3>
+                                    </div><!--project_txt_t-->
+                                    <div class="project_txt_b">
+                                        <span>2021. 01~ 05</span>
+                                        <p>주방기기 공사, 덕트 공사, 바닥 배수 트랜치 공사</p>
+                                    </div><!--project_txt_b-->
+                                </a>        
+                            </div><!--box list01-->
+                            <div class="box list02">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/project_img02.jpg" alt="시공사례 사진"></div>
+                                    <div class="project_txt_t">
+                                        <strong>주방자동소화장치 설치</strong>
+                                        <h3>호텔 파크하비오</h3>
+                                    </div><!--project_txt_t-->
+                                    <div class="project_txt_b">
+                                        <span>2024. 07~ 09</span>
+                                        <p>1BT 1대 2BT 2대 (전기식) 상업용 주방자동소화장치 시공</p>
+                                    </div><!--project_txt_b-->
+                                </a>
+                            </div><!--box list02-->
+                            <div class="box list03">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/project_img03.jpg" alt="시공사례 사진"></div>
+                                    <div class="project_txt_t">
+                                        <strong>주방 설계·시공</strong>
+                                        <h3>파머스 키친 강남점</h3>
+                                    </div><!--project_txt_t-->
+                                    <div class="project_txt_b">
+                                        <span>2022. 11~ 2023.03</span>
+                                        <p>주방기기 및 냉동실, 냉장실 납품 시공</p>
+                                    </div><!--project_txt_b-->
+                                </a>
+                            </div><!--box list03-->
+                            <div class="box list04">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/project_img04.jpg" alt="시공사례 사진"></div>
+                                    <div class="project_txt_t">
+                                        <strong>제품 주문제작</strong>
+                                        <h3>부천 순천향대학병원</h3>
+                                    </div><!--project_txt_t-->
+                                    <div class="project_txt_b">
+                                        <span>2021. 12</span>
+                                        <p>병원 환자식 식기반납 퇴식 운반카트</p>
+                                    </div><!--project_txt_b-->
+                                </a>
+                            </div><!--box list04-->
+                            <div class="box list05">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/project_img05.jpg" alt="시공사례 사진"></div>
+                                    <div class="project_txt_t">
+                                        <strong>주방 설계·시공 </strong>
+                                        <h3>제천 명락교회</h3>
+                                    </div><!--project_txt_t-->
+                                    <div class="project_txt_b">
+                                        <span>2023. 12~ 2024.02</span>
+                                        <p>주방기기 냉장실 창고 및 배기후드 시공</p>
+                                    </div><!--project_txt_b-->
+                                </a>
+                            </div><!--box list05-->
+                            <div class="box list06">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/project_img06.jpg" alt="시공사례 사진"></div>
+                                    <div class="project_txt_t">
+                                        <strong>주방 설계·시공 </strong>
+                                        <h3>도하정 (대전 현대프리미엄 아울렛점)</h3>
+                                    </div><!--project_txt_t-->
+                                    <div class="project_txt_b">
+                                        <span>2020. 05~ 06</span>
+                                        <p>전기 및 위생 배관 공사, 주방 기기 공사</p>
+                                    </div><!--project_txt_b-->
+                                </a>
+                            </div><!--box list06-->
+                        </div><!--list-->
+                    </div><!--inner-->
+                    <div class="more"><a href="#n">View more</a></div>
+                </div><!--wrapper-->
+            </section><!--project-->
+
+            <section class="banner">    
+                <div class="wrapper">
+                    <a href="#n">
+                        <span>Assemble Manual</span>
+                        <h2>영상으로 보는 어셈블 주방기기 조립 방법</h2>
+                        <div class="ai"><img src="images/banner_img.png" alt="유튜브 모양 동영상 일러스트"></div>
+                    </a>
+                </div>
+            </section><!--banner-->
+            <section class="insights">
+                <div class="wrapper">
+                    <h2>INSIGHTS</h2>
+                    <div class="inner">
+                        <div class="tip">
+                            <h3>주방 관리 팁</h3> <!--웹접근성 때문에.. css에서 숨김처리할 것임-->
+                            <div class="list">
+                                <div class="swiper"> <!-- 팝업의 높이와 너비를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img01.jpg" alt="주방관리팁사진"></div>
+                                                <h4>깨끗한 주방을 위한<br>싱크대 청소 방법 알아봐요</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img02.jpg" alt="주방관리팁사진"></div>
+                                                <h4>싱크대 위생관리의 필수!<br>물때 예방과 관리법!</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img03.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주기적인 싱크대 청소와<br>소독의 필요성은 무엇인가요?</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img04.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주방 공간 활용 극대화하기!<br>주방 수납 꿀팁 알아봐요</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_tip_img05.jpg" alt="주방관리팁사진"></div>
+                                                <h4>기름때 많은 주방 후드<br>청결하게 관리하는 방법</h4>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div><!--list-->
+                            <div class="more"><a href="#n"><span>주방 관리 팁 <br>더보기</span></a></div><!--more-->
+                        </div><!--tip-->
+                        <div class="haccp">
+                            <h3>HACCP(식품안전관리기준)</h3> <!--웹접근성 때문에.. css에서 숨김처리할 것임-->
+                            <div class="list"> 
+                                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                                    <ul class="swiper-wrapper"> 
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img01.jpg" alt="주방관리팁사진"></div>
+                                                <h4>HACCP : 식품안전관리기준<br>함께 알아봅시다</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img02.jpg" alt="주방관리팁사진"></div>
+                                                <h4>단체급식 식품안전 관리<br>어떻게 해야 할까요?</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img03.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주방에서 사용하는 고무장갑<br>관리 어떻게 하고 계시나요?</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img04.jpg" alt="주방관리팁사진"></div>
+                                                <h4>주방기기 칼 도마 소독기<br>소개해요</h4>
+                                            </a>
+                                        </li>
+                                        <li class="swiper-slide">
+                                            <a href="#n">
+                                                <div class="photo"><img src="images/insights_haccp_img05.jpg" alt="주방관리팁사진"></div>
+                                                <h4>행주 세균 수치<br>생각보다 높습니다</h4>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div><!--swiper-->
+                            </div><!--list-->
+                            <div class="more"><a href="#n"><span>HACCP <br>더보기</span></a></div><!--more-->
+                        </div><!--haccp-->
+                    </div><!--inner-->
+                </div><!--wrapper-->
+            </section>
+        </main>
+        <footer>
+            <div class="wrapper">
+                <h2>사이트 정보</h2>
+                <div class="inner">
+                    <div class="slogan"><span class="f_logo"></span>은 <br>조립식 주방기기 전문 기업입니다.</div>
+                    <div class="contact_txt">
+                        <h3>CONTACT</h3>
+                        <div class="group tel">
+                            <strong>TEL</strong>
+                            <ul>
+                                <li><span>031-512-3235</span><span>대표전화 (설계 상담 및 견적 문의)</span></li>
+                                <li><span>031-5175-3235</span><span>고객센터</span></li>
+                                <li><span>010-3468-3235</span><span>설계 상담 및 견적 문의</span></li>
+                            </ul>
+                        </div><!--tel-->
+                        <div class="group fax">
+                            <strong>FAX</strong>
+                            <span>02-732-9154</span>
+                        </div>
+                        <div class="group email">
+                            <strong>EMAIL</strong>
+                            <span>assemblek@naver.com</span>
+                        </div>
+                    </div><!--contact_txt-->
+                </div><!--inner-->
+                <address>경기도 구리시 갈매순환로 166번길 46 F319</address>
+                <div class="copyright">ⓒ ASSEMBLE KITCHEN & DESIGN BY KAKAO</div>
+            </div><!--wrapper-->
+        </footer>
+        <div class="contact_bnt"><a href="#n"><img src="images/contact_bnt_img.svg" alt="어셈블 문의 페이지 이동 버튼"><span>Contact</span></a></div><!--contact_bnt-->
+    </div><!--wrap-->
+</body>
+</html>
