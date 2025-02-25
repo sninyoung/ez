@@ -1,11 +1,11 @@
 /*글자의 기본 스타일 및 wrapper/wrap 설정*/
 
 body, html {
-    font-family:"Libre Bodoni","Pretendard", "맑은고딕", "Malgun Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* sans-serif :고딕서체 */
+    font-family:"Pretendard", "맑은고딕", "Malgun Gothic", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* sans-serif :고딕서체 */
     font-size: var(--base-font-size);
     font-weight: 400;
-    color:  #1d1d1d;
-    line-height: 1.4; /* 배수 - 글자크기에 몇배 */
+    color:  #111111;
+    line-height: 1.5; /* 배수 - 글자크기에 몇배 */
     letter-spacing: -0.03em; /* 자간 */
     word-break: keep-all; /* 단어별로(여백기준) 줄바꿈 */
     word-wrap: break-word; /* 단어가 너무 길면 그걸 강제로 줄바꿈 하는 명령 */
@@ -17,40 +17,50 @@ body, html {
     overflow: hidden; /* wrap 영역 밖으로 나간 요소는 숨김처리함. absolute가 대부분 나감.*/
 }
 .wrapper {
-    width: 1580px; /*너비가 고정으로 들어감.*/
+    width: 1540px; /*너비가 고정으로 들어감.*/
     margin: 0 auto;
 }
-@media screen and (max-width:1770px){ /* 1770 = 1580 + (1580의 6%*2) */
+@media screen and (max-width:1640px){ /* 1660 = 1540 + (60px*2) */
     .wrapper {
-        width: auto; 
-        margin: 0 6%;
+        width: auto;
+        margin: 0 60px;
+    }
+}/*media*/
+@media screen and (max-width:768px){ /* 1024 = 1024 + (60px*2) */
+    .wrapper {
+        width: auto;
+        margin: 0 20px;
     }
 }/*media*/
 
-
 ::selection {
-    background-color: #59636D;
-    color: #ECECEC;
+    background-color: #111111;
+    color: var(--point-color);
 }
 ::-moz-selection {
-    background-color: #59636D;
-    color: #ECECEC;
+    background-color: #111111;
+    color: var(--point-color);
 }
 
-/* mobile 버전 css */
+/* 변수 지정 */
 :root {
-    --base-font-size: 17px;
+    --base-font-size: 18px;
     --header-h: 100px;
-    --hader-depth2-h: 280px;
+    --main-color: #57820D;
+	--sub-color: #162113;
+	--point-color: #08809D;
 }
+
+
+/* mobile 버전 css */
 @media screen and (max-width:1440px){ /*16px*/
     :root {
         --base-font-size: 16px;
     }
 } /* @media */
-@media screen and (max-width:1024px){ /*15px*/
+@media screen and (max-width:1024px){ /*16px*/
     :root {
-        --base-font-size: 15px;
+        --base-font-size: 16px;
     }
 } /* @media */
 /* mobile 버전 css */
@@ -60,9 +70,9 @@ body, html {
         --header-h: 50px;
     }
 } /* @media */
-@media screen and (max-width:380px){ /*13px*/
+@media screen and (max-width:380px){ /*14px*/
     :root {
-        --base-font-size: 13px;
+        --base-font-size: 14px;
     }
 } /* @media */
 

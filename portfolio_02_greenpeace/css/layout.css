@@ -14,18 +14,19 @@ header/footer 모든 페이지의 공통 스타일 적용 */
     top: -100px;
     width: 100%;
     display: block;
-    background-color: #6D801C;
+    background-color: var(--main-color);
     color: #fff;
     padding: 10px 0;
     text-align: center;
 }
 .skipnav a.menu {
-    background-color: #EC29A5;
+    background-color: var(--point-color);
 }
 .skipnav a:focus{
     top: 0;
 }
 
+/*--------header--------*/
 header {
     position: fixed; /*wrap을 기준으로 정렬*/
     left: 0;
@@ -35,15 +36,17 @@ header {
     height: var(--header-h);
     transition: 0.3s;
 }
-header .logo {
-    margin-top: 40px;
+header .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 header .logo a {
     display: block;
     position: relative; /*before 정렬의 기준*/
-    color: transparent; /*글자 색 투명하게 */
-    width: 8.2353em;
-    height: 1.4118em;
+    color: transparent; /*글자 색 투명하게 해서 숨기기 */
+    width: 12.4em;
+    height: 2.8em;
 }
 header .logo a::before { /*a를 기준으로 정렬*/
     content: "";
@@ -52,329 +55,130 @@ header .logo a::before { /*a를 기준으로 정렬*/
     top: 0;
     width: 100%;
     height: 100%;
-    background: url(../images/logo.svg) no-repeat center center / contain;
+    background: url(../images/logo_g.png) no-repeat center center / contain;
 }
-header .gnb { /*양옆 가운데 정렬 하기 위해서*/
-    position: absolute;  /*wrap을 기준으로 정렬*/
-    left: 50%;
-    top: 50%;
-    transform: translate(-40%, -50%);
-    width: calc(12% + 15px);
+header .gnb .gnb_open, header .gnb .gnb_close {
+    display: none; /*모바일에서만 나타남*/
 }
-header .gnb .gnb_open {
-    display: none;
-    position: relative; /* after 정렬의 기준 */
-    color: transparent;
-    width: 100%; 
-    height: var(--header-h); 
-}
-header .gnb .gnb_open::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
-    width: 100%; 
-    height: 100%; 
-    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.5 20.8334V19.1667H32.5V20.8334H17.5ZM17.5 30.8334V29.1667H32.5V30.8334H17.5ZM17.5 25.8334V24.1667H32.5V25.8334H17.5Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-header .gnb .gnb_close {
-    display: none;
-    position: relative; /* after 정렬의 기준 */
-    color: transparent;
-    width: 100%; 
-    height: var(--header-h); 
-}
-header .gnb .gnb_close::after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 10;
-    width: 100%; 
-    height: 100%; 
-    background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M19.4 32L18 30.6L23.6 25L18 19.4L19.4 18L25 23.6L30.6 18L32 19.4L26.4 25L32 30.6L30.6 32L25 26.4L19.4 32Z' fill='%231D1D1D'/%3E%3C/svg%3E%0A");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-header .gnb .gnb_wrap ul {
+header .gnb .gnb_wrap ul.depth1 {
     display: flex;
-    justify-content: center;
-    gap: 40px;
+    align-items: center;
+    justify-content: space-between;
 }
-header .gnb .gnb_wrap ul li a {
+header .gnb .gnb_wrap ul.depth1 > li {
+    width: 8.4em;
+    text-align: center;
+    position: relative; /* depth2 정렬의 기준 */
+}
+header .gnb .gnb_wrap ul.depth1 > li > a {
     display: block;
-    padding: 2em 2em;
+    font-family: "Moneygraphy";
+    letter-spacing: -0.05em; /* 자간*/
+    width: 100%;
+    line-height: var(--header-h);
 }
-header .gnb .gnb_wrap ul li a span {
-    position: relative; /*after, before 정렬의 기준*/
-    font-weight: 700;
-    display: inline-block;
+header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
+    color: var(--main-color);
 }
-header .gnb .gnb_wrap ul li.blog a span::after { /*새창열기 아이콘*/
+header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 { 
+    background-color: var(--main-color);
+    color: #111;
+    display: inline;
+}
+header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 > li > a { 
+    
+}
+header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
+    
+}
+header .gnb .gnb_wrap ul.depth2 {
+    display: none;
+}
+header .tnb {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+header .tnb .search .search_open { /*검색열기*/
+    position: relative;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    line-height: 0;/*글자숨기기*/
+}
+header .tnb .search .search_open::after { /*검색열기 아이콘*/
     content: "";
     position: absolute;
-    right: -1.5em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_138_97)'%3E%3Cpath d='M11.0271 18.6665C6.65375 18.6665 3.09375 15.1065 3.09375 10.7331C3.09375 6.3598 6.65375 2.7998 11.0271 2.7998C15.4004 2.7998 18.9604 6.3598 18.9604 10.7331C18.9604 15.1065 15.4004 18.6665 11.0271 18.6665ZM11.0271 4.7998C7.74708 4.7998 5.09375 7.46647 5.09375 10.7331C5.09375 13.9998 7.76042 16.6665 11.0271 16.6665C14.2938 16.6665 16.9604 13.9998 16.9604 10.7331C16.9604 7.46647 14.2938 4.7998 11.0271 4.7998Z' fill='%23111111'/%3E%3Cpath d='M15.9923 14.8661L14.5781 16.2803L19.4902 21.1923L20.9044 19.7781L15.9923 14.8661Z' fill='%23111111'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_138_97'%3E%3Crect width='24' height='24' fill='%23111111'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain contain;
+}
+header .tnb .search .search_wrap { /*검색창*/
+    display: none;
+}
+header .tnb .search .search_wrap .search_close { /*검색닫기*/
+    display: none;
+}
+header .tnb .tnb_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+header .tnb .tnb_wrap .login {
+    display: block;
+    font-family: "Moneygraphy";
+    font-size: 0.9rem; /*16px*/
+    color: #777;
+    padding: 0 15px;
+    line-height: 100px;
+}
+header .tnb .tnb_wrap .support {
+    display: block;
+    position: relative;
+    font-family: "Moneygraphy";
+    font-size: 0.9rem; /*16px*/
+    color: #fff;
+    background-color: var(--main-color);
+    padding: 12px 24px 12px 44px;
+    border-radius: 30px;
+}
+header .tnb .tnb_wrap .support::after { /*후원하기 아이콘*/
+    content: "";
+    position: absolute;
+    left: 1.1em;
     top: 50%;
     transform: translateY(-50%);
-    width: 1.3em; 
-    height: 1.3em; 
-    background-image: url("data:image/svg+xml,%3Csvg width='22' height='22' viewBox='0 0 22 22' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.1585 18.7916V18.8416H3.2085H18.7918H18.8418V18.7916V11.3527V11.3027H18.7918H17.4168H17.3668V11.3527V17.3666H4.6335V4.63331H10.6475H10.6975V4.58331V3.20831V3.15831H10.6475H3.2085H3.1585V3.20831V18.7916ZM8.87412 14.092L8.90947 14.1273L8.94483 14.092L17.3668 5.66996V9.16665V9.21665H17.4168H18.7918H18.8418V9.16665V3.20831V3.15831H18.7918H12.8335H12.7835V3.20831V4.58331V4.63331H12.8335H16.3302L7.90818 13.0553L7.87283 13.0907L7.90818 13.126L8.87412 14.092Z' fill='%231D1D1D' stroke='%231D1D1D' stroke-width='0.1'/%3E%3C/svg%3E%0A");
-    background-position: center center;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.99935 17.4997L8.79102 16.4163C7.38824 15.1525 6.22852 14.0622 5.31185 13.1455C4.39518 12.2288 3.66602 11.4059 3.12435 10.6768C2.58268 9.94759 2.20421 9.27745 1.98893 8.66634C1.77365 8.05523 1.66602 7.43023 1.66602 6.79134C1.66602 5.48579 2.10352 4.39551 2.97852 3.52051C3.85352 2.64551 4.94379 2.20801 6.24935 2.20801C6.97157 2.20801 7.65907 2.36079 8.31185 2.66634C8.96463 2.9719 9.52713 3.40245 9.99935 3.95801C10.4716 3.40245 11.0341 2.9719 11.6868 2.66634C12.3396 2.36079 13.0271 2.20801 13.7493 2.20801C15.0549 2.20801 16.1452 2.64551 17.0202 3.52051C17.8952 4.39551 18.3327 5.48579 18.3327 6.79134C18.3327 7.43023 18.225 8.05523 18.0098 8.66634C17.7945 9.27745 17.416 9.94759 16.8743 10.6768C16.3327 11.4059 15.6035 12.2288 14.6868 13.1455C13.7702 14.0622 12.6105 15.1525 11.2077 16.4163L9.99935 17.4997ZM9.99935 15.2497C11.3327 14.0552 12.4299 13.0309 13.291 12.1768C14.1521 11.3226 14.8327 10.5795 15.3327 9.94759C15.8327 9.31565 16.1799 8.75315 16.3743 8.26009C16.5688 7.76704 16.666 7.27745 16.666 6.79134C16.666 5.95801 16.3882 5.26356 15.8327 4.70801C15.2771 4.15245 14.5827 3.87467 13.7493 3.87467C13.0966 3.87467 12.4924 4.0587 11.9368 4.42676C11.3813 4.79481 10.9993 5.26356 10.791 5.83301H9.20768C8.99935 5.26356 8.6174 4.79481 8.06185 4.42676C7.50629 4.0587 6.90213 3.87467 6.24935 3.87467C5.41602 3.87467 4.72157 4.15245 4.16602 4.70801C3.61046 5.26356 3.33268 5.95801 3.33268 6.79134C3.33268 7.27745 3.4299 7.76704 3.62435 8.26009C3.81879 8.75315 4.16602 9.31565 4.66602 9.94759C5.16602 10.5795 5.84657 11.3226 6.70768 12.1768C7.56879 13.0309 8.66602 14.0552 9.99935 15.2497Z' fill='white'/%3E%3C/svg%3E%0A");
     background-repeat: no-repeat;
-    background-size: contain;
-}
+    background-position: center center;
+    background-size: 20px 20px;
+} 
 
-/******-----header가 고정되었을 때: header.fixed -----*****/
+/******* header가 고정되었을 때: header.fixed, pc일때 header 메뉴 열렸을 때 : header.menu_pc*******/
 header.fixed, header.menu_pc {
     background-color: #fff;
-    color: #1d1d1d;
-    border-bottom: 1px solid #999;
+    color: #111;
     transition: 0.3s;
 }
 header.fixed.scroll_down, header.menu_pc.scroll_down {
     transform: translateY(-100%);
 }
 
-@media screen and (max-width:1440px){ /*16px*/
-    header .gnb .gnb_wrap ul {
-        gap: 20px;
-    }
-} /* @media */
-@media screen and (max-width:1024px){ /*15px*/
-    header .gnb .gnb_wrap ul {
-        gap: 5px;
-    }
-    header .gnb .gnb_wrap ul li a {
-        padding: 2em 1.2em;
-    }
-} /* @media */
-/* mobile 버전 css */
-@media screen and (max-width:768px){ /*14px*/
-    header .logo {
-        margin-top: 19px;
-    }    
-    header .gnb {
-        left: auto;
-        right: 0;
-        top: 0;
-        transform: translate(0, 0);
-    }
-    header .gnb .gnb_wrap {
-        display: none;
-    }
-    header .gnb .gnb_open{
-        display: block;
-        
-    }
-    /******* 메뉴가 열렸을때 header에 menu_mo 클래스 추가*******/
-    header.menu_mo {
-        background-color: #fff;
-        transition: 0.3s;
-    }
-    header.menu_mo .gnb .gnb_wrap {
-        display: block; /* 나타남 */
-        position: fixed; /* header를 기준으로 정렬 */
-        right: 0;
-        top: 0;
-        z-index: 10;
-        width: 100vw;
-        height: 100dvh; /* 브라우저 높이와 동일하게 */
-        background-color: #fff;
-        border: 3px solid #1d1d1d;
-    }
-    header.menu_mo .gnb .gnb_wrap ul {
-        display: block; /*flex 해제*/
-        margin-top: var(--header-h);
-        border-top: 1px solid rgba(0, 0, 0, 0.2);
-        height: calc(100dvh - var(--header-h));
-        overflow-y: auto;
-    }
-    header.menu_mo .gnb .gnb_wrap ul li:first-child {
-        margin-top: 0.8em;
-    }
-    header.menu_mo .gnb .gnb_wrap ul li a {
-        display: block;
-        padding: 0.8em 45px 0.8em 6%;
-        color: #1d1d1d;
-        font-size: 1.2em; /*15.6px*/
-        position: relative;
-    }
-    header.menu_mo .gnb .gnb_close {
-        display: block; /* 나타남 */
-    }
-    header.menu_mo .gnb .gnb_open{
-        display: none; /*숨김*/
-    }
-    header.menu_mo .logo a {
-        z-index: 50;
-    }
-    header.menu_mo .gnb .gnb_wrap ul li a span::before { /*화살표 아이콘*/
-        content: "";
-        position: absolute; /*span을 기준으로 정렬*/
-        right: -2.3em;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 1.43em; 
-        height: 1.43em; 
-        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M16.3334 10.9032L11.7262 7.03752L11.6879 7.00538L11.7201 6.96708L12.4913 6.04788L12.5234 6.00957L12.5617 6.04171L18.5369 11.0553L16.3334 10.9032ZM16.3334 10.9032H1.35999H1.30999V10.9532V12.1532V12.2032H1.35999H18.16H18.21V12.1962C18.3631 12.1747 18.5096 12.099 18.6171 11.971L18.6171 11.971C18.848 11.6958 18.8121 11.2859 18.5369 11.0553L16.3334 10.9032Z' fill='%231D1D1D' stroke='%231D1D1D' stroke-width='0.1'/%3E%3C/svg%3E%0A");
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
-    header.menu_mo .gnb .gnb_wrap ul li.blog a span::before{
-        display: none;
-    }
-} /* @media */
-@media screen and (max-width:380px){ /*13px*/
-    
-} /* @media */
+/*******모바일일 때 header에 메뉴 열렸을 때: header.menu_mo *******/
 
 
 
 
-/*********-------footer-----------***********/
+/*--------footer--------*/
 footer {
-    padding: 150px 0 125px 0;
-    background-color: #1d1d1d;
-    color: rgba(255,255,255,0.8);
+    margin: 500px 0 0 0;
 }
-footer .inner {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-}
-footer h2 {
-    display: none;
-}
-footer .slogan {
-    font-size: 2.3em; /*40px*/
-    font-weight: 700;
-    line-height: 1.2;
-    margin: 0 20px 255px 0;
-    color: #fff;
-}
-footer .slogan span.f_logo {
-    position: relative; /* before 정렬의 기준 */
-    display: inline-block;
-    width: 5.7em; /*234px*/
-    height: 1em; /*40px*/
-}
-footer .slogan span.f_logo::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    background-position: left top;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image: url(../images/f_logo.svg);
-    height: 1em;
-    bottom: -0.2em;
-}
-footer .contact_txt {
-    width: 48%;
-    padding-bottom: 80px;
-}
-footer .contact_txt h3 {
-    font-size: 1.47em; /*25px*/
-    margin-bottom: 1em;
-}
-footer .contact_txt .group {
-    display: flex;
-    justify-content: flex-start;
-    align-items: baseline;
-    gap: 14px;
-}
-footer .contact_txt .group + .group { /* 인접 형제 선택자 */
-    margin: 1em 0 0 0;
-}
-footer .contact_txt .group span {
-    margin: 0 10px 0 0;
-    font-size: 0.88rem; /*15px*/
-}
-footer .contact_txt .group strong {
-    display: inline-block;
-    width: 3.3em;
-}
-footer address {
-    color: rgba(255,255,255,0.6);
-    font-size: 0.88rem; /*15px*/
-    margin-bottom: 1em;
-}
-footer .copyright {
-    color: rgba(255,255,255,0.6);
-    font-size: 0.88rem; /*15px*/
-    padding-top: 1em;
-    border-top: 1px solid rgba(255,255,255,0.8);
-}
-@media screen and (max-width:1440px){ /*16px*/
-    footer {
-        padding: 100px 0 100px 0;
-        background-color: #1d1d1d;
-        color: rgba(255,255,255,0.8);
-    }
-    footer .slogan {
-        font-size: 2em; /*32px*/
-        font-weight: 700;
-        line-height: 1.2;
-        margin: 0 20px 255px 0;
-    }
-} /* @media */
-@media screen and (max-width:1024px){ /*15px*/
-    footer .slogan {
-        font-size: 1.6em; /*22px*/
-        margin: 0 20px 200px 0;
-    }
-} /* @media */
-
-/* mobile 버전 css */
-@media screen and (max-width:768px){ /*14px*/
-    footer {
-        padding: 70px 0 80px 0;
-    }
-    footer .inner {
-        display: block; /*flex 해제*/
-    }
-    footer h2 {
-        display: none;
-    }
-    footer .slogan {
-        padding-bottom: 14px;
-        margin: 0 20px 52px 0;
-        border-bottom: 1px solid rgba(255,255,255,0.8);
-    }
-    footer .contact_txt {
-        width: auto;
-    }
-    footer .contact_txt .group {
-        display: flex;
-        justify-content: flex-start;
-        align-items: baseline;
-        gap: 14px;
-    }
-    footer .contact_txt .group + .group { /* 인접 형제 선택자 */
-        margin: 1em 0 0 0;
-    }
-    footer .contact_txt .group span {
-        margin: 0 10px 0 0;
-        font-size: 0.88rem; /*15px*/
-    }
-    footer .contact_txt .group strong {
-        display: inline-block;
-        width: 3.3em;
-    }
-    footer address {
-        margin: 0;
-    }
-    footer .copyright {
-        border: 0; /*선을 slogan한테 줌.*/
-    }
-} /* @media */
-
-
