@@ -29,11 +29,10 @@ $(document).ready(function(){
                 $('header').removeClass('scroll_down')
                 //console.log('올라감')
             }
-        }else if(($('header').hasClass('sch_open') == false)){//맨꼭대기
-            /* 검색이 열려있는 상태에서는 class삭제 안함 -- header에 sch_open클래스가 있으면 열린상태 */
+        }else{
             $('header').removeClass('fixed')
             $('header').removeClass('scroll_down')
-        }   
+        }
 
         //console.log(prev_scroll, scrolling)
     }
@@ -86,23 +85,6 @@ $(document).ready(function(){
         $('header .gnb .gnb_wrap ul.depth1 > li').removeClass('over')
     })
     /***********--------pc버전 메뉴에 마우스 오버했을 때: li에 over 클래스 추가 (종료)-------*********/
-
-
-    /**************************** 검색창 열기 (시작)  **********************************
-     * header .tnb .search .search_open 를 클릭하면  header에 sch_open 추가
-     * header .tnb .search .search_wrap .search_close 를 클릭하면 header에 sch_open 삭제
-     * header.sch_open::after 한테는 클릭이벤트 발생 안함
-     * **/
-
-    $('header .tnb .search .search_open').on('click', function(){
-        $('header').addClass('sch_open')
-        $('header').addClass('fixed')
-    })
-    $('header .tnb .search .search_wrap .search_close').on('click', function(){
-        $('header').removeClass('sch_open')
-    })
-
-    /**************************** 검색창 열기 (종료)  ************************************/
 
 
     /*
