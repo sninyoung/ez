@@ -22,103 +22,105 @@
 
     </div>
     <div id="wrap">
-        <header class="">
-            <div class="wrapper">
-                <h1 class="logo"><a href="index.html">GREENPEACE</a></h1>
-                <nav class="gnb" id="skip_nav">
-                    <button class="gnb_open">메뉴열기</button>
-                    <div class="gnb_wrap">
-                        <ul class="depth1">
-                            <!-- pc버전에서 마우스를 오버하면 over 클래스 추가
-                                 모바일 버전에서 클릭하면 open 클래스 추가 -->
-                            <li class="">
-                                <a href="#n"><span>재단 소개</span></a>
-                                <ul class="depth2">
-                                    <li><a href="#n"><span>개요</span></a></li>
-                                    <li><a href="#n"><span>미션</span></a></li>
-                                    <li><a href="#n"><span>행동방식</span></a></li>
-                                    <li><a href="#n"><span>보고서</span></a></li>
-                                    <li><a href="#n"><span>사람들</span></a></li>
-                                    <li><a href="#n"><span>앰버서더</span></a></li>
-                                    <li><a href="#n"><span>인재채용</span></a></li>
-                                    <li><a href="#n"><span>연락처</span></a></li>
-                                    <li><a href="#n"><span>자주 하는 질문</span></a></li>
-                                    <li><a href="#n"><span>재정 보고서</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#n"><span>캠페인</span></a>
-                                <ul class="depth2">
-                                    <li><a href="#n"><span>해양</span></a></li>
-                                    <li><a href="#n"><span>건강</span></a></li>
-                                    <li><a href="#n"><span>기후</span></a></li>
-                                    <li><a href="#n"><span>산림</span></a></li>
-                                    <li><a href="#n"><span>플라스틱</span></a></li>
-                                    <li><a href="#n"><span>북극</span></a></li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#n"><span>후원/참여</span></a>
-                                <ul class="depth2">
-                                    <li>
-                                        <a href="#n"><span>후원하기</span></a>
-                                        <ul class="depth3">
-                                            <li><a href="#n"><span>지구 살리기</span></a></li>
-                                            <li><a href="#n"><span>플라스틱 제로</span></a></li>
-                                            <li><a href="#n"><span>산림보호구역</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#n"><span>청원하기</span></a>
-                                        <ul class="depth3">
-                                            <li><a href="#n"><span>플라스틱 생산 절감</span></a></li>
-                                            <li><a href="#n"><span>바다 동물 보호</span></a></li>
-                                            <li><a href="#n"><span>기후위기</span></a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
-                                        <a href="#n"><span>참여하기</span></a>
-                                        <ul class="depth3">
-                                            <li><a href="#n"><span>자원봉사자 모집</span></a></li>
-                                        </ul>
-                                    </li>
-                                </ul>
-                            </li>
-                            <li>
-                                <a href="#n"><span>소식/뉴스룸</span></a>
-                                <ul class="depth2">
-                                    <li><a href="#n"><span>최근소식</span></a></li>
-                                    <li><a href="#n"><span>뉴스룸</span></a></li>
-                                    <li><a href="#n"><span>미디어 라이브러리</span></a></li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </div>
-                    <button class="gnb_close">메뉴닫기</button>
-                </nav><!--gnb-->
-                <div class="tnb">
-                    <div class="search">
-                        <button class="search_open" title="검색 열기">검색</button>
-                        <div class="search_wrap">
-                            <div class="search_area">
-                                <form>
-                                    <fieldset>
-                                        <div class="inner">
-                                            <input type="search" id="keyword" class="search_text" title="검색어 입력" placeholder="검색어를 입력해주세요."><!--검색어 입력창-->
-                                            <input type="submit" class="search_btn"><!--검색버튼-->
-                                        </div>
-                                    </fieldset>
-                                </form>
-                            </div><!--search_area-->
-                            <button class="search_close">검색 닫기</button>
-                        </div><!--search_wrap-->
-                    </div><!--search-->
-                    <div class="tnb_wrap">
-                        <a href="#n" class="login">로그인</a>
-                        <a href="#n" class="support">후원하기</a>
-                    </div><!--tnb_wrap-->
-                </div><!--tnb-->
-            </div><!--wrapper-->
+        <header>
+            <!-- (pc일때) 메뉴에 마우스를 오버하면 over 클래스 추가 
+            (모바일일때) 1차메뉴를 클릭하면 open 클래스 추가
+            검색을 클릭했을때 (pc/mobile 공통) : sch_open
+            -->
+            <h1 class="logo"><a href="index.html">GREENPEACE</a></h1>
+            <nav class="gnb" id="skip_nav">
+                <button class="gnb_open">메뉴열기</button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <!-- pc버전에서 마우스를 오버하면 over 클래스 추가
+                                모바일 버전에서 클릭하면 open 클래스 추가 -->
+                        <li>
+                            <a href="#n"><span>재단 소개</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>개요</span></a></li>
+                                <li><a href="#n"><span>미션</span></a></li>
+                                <li><a href="#n"><span>행동방식</span></a></li>
+                                <li><a href="#n"><span>보고서</span></a></li>
+                                <li><a href="#n"><span>사람들</span></a></li>
+                                <li><a href="#n"><span>앰버서더</span></a></li>
+                                <li><a href="#n"><span>인재채용</span></a></li>
+                                <li><a href="#n"><span>연락처</span></a></li>
+                                <li><a href="#n"><span>자주 하는 질문</span></a></li>
+                                <li><a href="#n"><span>재정 보고서</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>캠페인</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>해양</span></a></li>
+                                <li><a href="#n"><span>건강</span></a></li>
+                                <li><a href="#n"><span>기후</span></a></li>
+                                <li><a href="#n"><span>산림</span></a></li>
+                                <li><a href="#n"><span>플라스틱</span></a></li>
+                                <li><a href="#n"><span>북극</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="has3">
+                            <a href="#n"><span>후원/참여</span></a>
+                            <ul class="depth2">
+                                <li>
+                                    <a href="#n"><span>후원하기</span></a>
+                                    <ul class="depth3">
+                                        <li><a href="#n"><span>지구 살리기</span></a></li>
+                                        <li><a href="#n"><span>플라스틱 제로</span></a></li>
+                                        <li><a href="#n"><span>산림보호구역</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>청원하기</span></a>
+                                    <ul class="depth3">
+                                        <li><a href="#n"><span>플라스틱 생산 절감</span></a></li>
+                                        <li><a href="#n"><span>바다 동물 보호</span></a></li>
+                                        <li><a href="#n"><span>기후위기</span></a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#n"><span>참여하기</span></a>
+                                    <ul class="depth3">
+                                        <li><a href="#n"><span>자원봉사자 모집</span></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>소식/뉴스룸</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>최근소식</span></a></li>
+                                <li><a href="#n"><span>뉴스룸</span></a></li>
+                                <li><a href="#n"><span>미디어 라이브러리</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <button class="gnb_close">메뉴닫기</button>
+            </nav><!--gnb-->
+            <div class="tnb">
+                <div class="search">
+                    <button class="search_open" title="검색 열기">검색</button>
+                    <div class="search_wrap">
+                        <div class="search_area">
+                            <form>
+                                <fieldset>
+                                    <div class="inner">
+                                        <input type="search" id="keyword" class="search_text" title="검색어 입력" placeholder="검색어를 입력해주세요."><!--검색어 입력창-->
+                                        <input type="submit" class="search_btn"><!--검색버튼-->
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div><!--search_area-->
+                        <button class="search_close">검색 닫기</button>
+                    </div><!--search_wrap-->
+                </div><!--search-->
+                <div class="tnb_wrap">
+                    <a href="#n" class="login">로그인</a>
+                    <a href="#n" class="support">후원하기</a>
+                </div><!--tnb_wrap-->
+            </div><!--tnb-->
         </header>
         <main class="container">
             <section class="visual" id="skip_content">

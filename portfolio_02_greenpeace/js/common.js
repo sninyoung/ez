@@ -29,10 +29,11 @@ $(document).ready(function(){
                 $('header').removeClass('scroll_down')
                 //console.log('올라감')
             }
-        }else{
+        }else if(($('header').hasClass('sch_open') == false)){//맨꼭대기
+            /* 검색이 열려있는 상태에서는 class삭제 안함 -- header에 sch_open클래스가 있으면 열린상태 */
             $('header').removeClass('fixed')
             $('header').removeClass('scroll_down')
-        }
+        }   
 
         //console.log(prev_scroll, scrolling)
     }
@@ -87,30 +88,21 @@ $(document).ready(function(){
     /***********--------pc버전 메뉴에 마우스 오버했을 때: li에 over 클래스 추가 (종료)-------*********/
 
 
-    /***********--------언어선택 열었을 때: li에 open 클래스 추가 (시작)-------*********/
-    /* 
-    pc버전에서만 구현돼야 함.
-    header .global button에서 title명을 바꿔줘야 함.
-    한 번 클릭하면 열리고 다시 클릭하면 닫힘
-    >> header .global을 클릭했을 때
-    >> header .global에 open 클래스가 있는지 체크
-    */
+    /**************************** 검색창 열기 (시작)  **********************************
+     * header .tnb .search .search_open 를 클릭하면  header에 sch_open 추가
+     * header .tnb .search .search_wrap .search_close 를 클릭하면 header에 sch_open 삭제
+     * header.sch_open::after 한테는 클릭이벤트 발생 안함
+     * **/
 
-    $('header .global').on('click', function(){
-        if(device_status == 'pc'){
-            //console.log('누름')
-            if($(this).hasClass('open') == true){  //열려있는 상태일떄
-                //console.log('열렸어요')
-                $(this).removeClass('open')
-                $(this).find('button').attr('title', '언어선택 열기 버튼')
-            }else{
-                //console.log('닫혔어요')
-                $(this).addClass('open')
-                $(this).find('button').attr('title', '언어선택 닫기 버튼')                
-            }
-        }
+    $('header .tnb .search .search_open').on('click', function(){
+        $('header').addClass('sch_open')
+        $('header').addClass('fixed')
     })
-    /***********--------언어선택 열었을 때: li에 open 클래스 추가 (종료)-------*********/
+    $('header .tnb .search .search_wrap .search_close').on('click', function(){
+        $('header').removeClass('sch_open')
+    })
+
+    /**************************** 검색창 열기 (종료)  ************************************/
 
 
     /*
