@@ -60,7 +60,6 @@ header .logo a::before { /*a를 기준으로 정렬*/
 }
 
 /******* pc일때 -> header가 고정되었을 때: header.fixed, header 메뉴 열렸을 때 : header.menu_pc*******/
-
 @media screen and (min-width:769px){  /* 769px 이상일때 적용 */
     header.fixed, header.menu_pc {
         position: fixed; /* body를 기준으로 정렬 */
@@ -145,7 +144,6 @@ header .logo a::before { /*a를 기준으로 정렬*/
         font-weight: 600;
     }
     
-
     /*------ 메뉴에 마우스를 오버하면 li에 over 클래스 추가------*/
     header .gnb .gnb_wrap ul.depth1 > li.over > a > span {
         color: var(--main-color);
@@ -165,13 +163,11 @@ header .logo a::before { /*a를 기준으로 정렬*/
     header .gnb .gnb_wrap ul.depth1 > li.over > ul.depth2 > li > a:hover { 
         color: var(--main-color);
     }
-    header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover {
-        
-    }
     header .tnb {
         display: flex;
         justify-content: space-between;
-        gap: 5px;
+        align-items: center;
+        gap: 10px;
     }
     header .tnb .search { /*검색*/
         display: block;
@@ -192,13 +188,6 @@ header .logo a::before { /*a를 기준으로 정렬*/
         background-repeat: no-repeat;
         background-position: center center;
         background-size: contain contain;
-    }
-    
-    header .tnb {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
     }
     header .tnb .login {
         display: block;
