@@ -41,7 +41,7 @@ $(document).ready(function(){
 
    let v_area_name =  $('.visual .video_area')
    let v_resize_name = $('.visual .video_area .video_wrap .video_inner')
-   let v_resize_start = 80 //리사이즈 시작값 동영상의 75%
+   let v_resize_start = 75 //리사이즈 시작값 동영상의 75%
    let v_resize_end = 100 //리사이즈 종료값
    let v_resize_w // 리사이즈 될때 계산한 넓이값
    let v_area_gap // 리사이즈를 계산해야할 스크롤 구간값
@@ -53,7 +53,7 @@ $(document).ready(function(){
        v_start = v_area_name.offset().top
        v_end = v_area_name.offset().top + v_area_name.height() - window_h 
        v_area_gap = v_end - v_start
-       console.log('스크롤값', scrolling, '상단값', v_start, '종료값', v_end)
+       //console.log('스크롤값', scrolling, '상단값', v_start, '종료값', v_end)
        if(scrolling < v_start){
            v_area_name.attr('data-status', 'before')
            //기존값을 지우고 내가 준 값으로 교체함
@@ -81,17 +81,77 @@ $(document).ready(function(){
    $(window).resize(function(){//리사이즈 될때마다 실행
        video_fixed() 
    })
-
-
-
     /************************* visual 동영상 (끝)  **************************/
 
 
+    /************************* campaign 왼쪽 제목 고정  (시작)  *************************/
+    
+   
+    /************************* campaign 왼쪽 제목 고정 (끝)  *************************/
 
+    /************************* campaign 아코디언 (시작)  *************************/
+    gsap.registerPlugin(ScrollTrigger);
+    const items = gsap.utils.toArray(".campaign .accordion");
+    
+    items.forEach((item, i) => {
+        const content = item.querySelector(".campaign .accordion .conts");
+        const header = item.querySelector(".campaign .accordion .tit");
+        //console.log ('아코디언 js연결');
+        gsap.to(content, {
+            height: 0,
+            ease: "none",
+            scrollTrigger: {
+                trigger: item,
+                start: "top " + ((header.clientHeight * i)+150),
+                endTrigger: ".final",  // 고정요소 하단에 종료를 뜻하는 class
+                end: "top " + header.clientHeight * items.length,
+                pin: true,
+                pinSpacing: false,
+                scrub: true,
+                markers: false,
+                id: i + 1
+            }
+        });
+    });
+    /************************* campaign 아코디언 (끝)  **************************/
 
+    /*************************project 스위퍼 (시작)  *************************/
+    const project_swiper = new Swiper('.project .swiper', { /* 팝업을 감싸는 요소의 class명 */
+        autoplay: {/* 팝업 자동 실행 */
+            delay: 0,
+            disableOnInteraction: false,
+        },
+        speed: 5000,
+        loop: true, /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        loopAdditionalSlides: 1,
+        slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 20, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            1441: {    /* 1025px이상일때 적용 */
+                slidesPerView: 'auto',
+                spaceBetween: 24,
+            },
+        },
+    });
+    /*************************project 스위퍼 (시작)  *************************/
+    
+
+    /*************************project 스위퍼 (시작)  *************************/
+    const support_swiper = new Swiper('.support .swiper', { /* 팝업을 감싸는 요소의 class명 */
+        autoplay: {/* 팝업 자동 실행 */
+            delay: 5000,
+            disableOnInteraction: false,
+        },
+        speed: 5000,
+        effect:'fade',
+        loop: true, /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 1, /* 팝업과 팝업 사이 여백 */
+    });
+    /*************************project 스위퍼 (시작)  *************************/
 
     /*************************news 스위퍼 (시작)  *************************/
-    const news_swiper = new Swiper('.news .tip .swiper', { /* 팝업을 감싸는 요소의 class명 */
+    const news_swiper = new Swiper('.news .swiper', { /* 팝업을 감싸는 요소의 class명 */
         slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 12, /* 팝업과 팝업 사이 여백 */
         breakpoints: {

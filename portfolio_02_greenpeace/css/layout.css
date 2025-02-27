@@ -58,21 +58,21 @@ header .logo a::before { /*a를 기준으로 정렬*/
     height: 100%;
     background: url(../images/logo_g.png) no-repeat center center / contain;
 }
+header.fixed, header.menu_pc {
+    position: fixed; /* body를 기준으로 정렬 */
+    background-color: #fff;
+    color: #111;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
+}
+header.fixed.scroll_down, header.menu_pc.scroll_down {
+    transform: translateY(-100%);
+}
+header .gnb {
+    white-space: nowrap; /*줄바꿈 금지*/
+}
 
 /******* pc일때 -> header가 고정되었을 때: header.fixed, header 메뉴 열렸을 때 : header.menu_pc*******/
 @media screen and (min-width:769px){  /* 769px 이상일때 적용 */
-    header.fixed, header.menu_pc {
-        position: fixed; /* body를 기준으로 정렬 */
-        background-color: #fff;
-        color: #111;
-        box-shadow: 0px 2px 5px rgba(0,0,0,0.2);
-    }
-    header.fixed.scroll_down, header.menu_pc.scroll_down {
-        transform: translateY(-100%);
-    }
-    header .gnb {
-        white-space: nowrap; /*줄바꿈 금지*/
-    }
     header .gnb .gnb_open, header .gnb .gnb_close {
         display: none; /*모바일에서만 나타남*/
     }
