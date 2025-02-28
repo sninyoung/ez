@@ -191,7 +191,7 @@
                                 <p>그린피스는 플라스틱 문제의 근본부터 해결하기 위해,<br> 기업과 정부에 플라스틱 사용 규제와 정책 변화를 요구합니다.</p>
                             </div>
                             <div class="accordion"> <!-- 고정요소, 이름은 자유롭게 설정가능 -->
-                                <div class="tit n06">기후 CLIMATE</div> <!-- 상단에 고정되는 요소 -->
+                                <div class="tit n06">북극 ARCTIC</div> <!-- 상단에 고정되는 요소 -->
                                 <div class="photo"><img src="images/campaign_img06.jpg" alt="바다 파도치는 사진"></div>
                                 <p>그린피스는 화석연료에서 벗어나고, 석유 시추와 파괴적인 어업 또한 중단하도록 <br>극지방에 해양보호구역을 만들기 위한 캠페인을 진행하고 있습니다.</p>
                             </div>
@@ -354,6 +354,90 @@
                         <h2>그린피스의 소식</h2>
                         <p>그린피스의 행동을 통한 긍정적인 변화 소식을 전합니다.</p>
                     </div><!--title_txt-->
+                    <div class="swiper">
+                        <ul class="swiper-wrapper"> 
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img01.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="frs">산림</span>
+                                        <h3>멸종 위기 코알라의 집을 지켜내다</h3>
+                                        <p>2024. 09. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img02.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="heal">건강</span>
+                                        <h3>빵🍞 좋아하시나요?</h3>
+                                        <p>2024. 06. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img03.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="oce">해양</span>
+                                        <h3>제주 바다를 지키는 해녀 이유정의 이야기를 들어보다</h3>
+                                        <p>2024. 05. 08.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img04.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="cli">기후</span>
+                                        <h3>강릉 산불 2년, 아직 끝나지 않은 재난</h3>
+                                        <p>2025. 01. 13.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img05.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="cli">기후</span>
+                                        <h3>그린피스 기후재난 퀴즈 챌린지 정답 공개 및 당첨자 발표</h3>
+                                        <p>2024. 10. 08.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img06.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="arc">북극</span>
+                                        <h3>그린란드에서 들려온 기쁜 소식! 북극 석유 탐사 중단 발표</h3>
+                                        <p>2024. 09. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img07.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="oce">해양</span>
+                                        <h3>기후위기로부터 바다를 지킨 커다란 승리</h3>
+                                        <p>2024. 06. 26.</p>
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="swiper-slide">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/news_img08.jpg" alt="구를 사진"></div>
+                                    <div class="news_txt">
+                                        <span class="pla">플라스틱</span>
+                                        <h3>지구가 건강하게 숨 쉴 때까지! 그린피스 플라스틱 캠페인이 만든..</h3>
+                                        <p>2024. 07. 23.</p>
+                                    </div>
+                                </a>
+                            </li> 
+                        </ul>
+                    </div><!--swiper-->
                 </div><!--wrapper-->
             </section><!--news-->
             <section class="subscribe">
@@ -363,18 +447,28 @@
                         <h2>뉴스레터 구독하기</h2>
                         <p>그린피스와 함께하는 소식을 놓치지 말고 만나보세요!</p>
                     </div><!--title_txt-->
-
+                    <div class="cont_wrap">
+                        <form>
+                            <div class="input_box"><label for="nme" class="input_tit">이름</label><input id="name" type="text" class="field"></div> <!-- for="name" id="name"는 짝꿍임. "" 안에 꼭 동일하게 줘야함.-->
+                            <div class="input_box"><label for="email" class="input_tit">이메일</label><input id="email" type="email" class="field"></div>
+                            <div class="check_box"><input id="checkbox" type="checkbox" class="check"><label for="checkbox" class="agree">(필수) 개인정보 수집 및 이용에 동의합니다.</label></div>
+                            <input type="submit" class="scb_btn" value="구독하기">
+                        </form>
+                    </div>
                 </div><!--wrapper-->
+                <div class="ai01"></div>
+                <div class="ai02"></div>
+                <div class="ai03"></div>
             </section><!--subscribe-->
         </main>
         <footer>
             <div class="wrapper">
                 <h2>사이트 정보</h2>
-                <div class="f_logo"></div>
+                <div class="f_logo"><a href="index.html">GREENPEACE</a></div>
                 <div class="slogan">그린피스는 1971년 태어난 독립적인 국제환경단체로 <br>지구 환경보호와 평화를 위해 활동하고 있습니다.</div>
                 <div class="inner">
                     <div class="f_info">
-                        <p>재단법인 그린피스</p>
+                        <p class="fdn">재단법인 그린피스</p>
                         <div class="group">
                             <strong>대표자</strong>
                             <span>남부원</span>
@@ -393,28 +487,71 @@
                         </div>
                         <div class="group">
                             <strong>Email</strong>
-                            <span>greenpeace.kr@greenpeace.org</span>
+                            <email>greenpeace.kr@greenpeace.org</span>
                         </div>
                         <div class="group">
                             <strong>Fax</strong>
                             <span>02-6455-1995</span>
                         </div>
                     </div><!--f_info-->
-                    <div class="sns"></div>
-                    <div class="intl_site "><!-- international_site가 열리면 open 클래스가 추가 -->
+                    <div class="sns">
+                        <ul>
+                            <li class="insta"><a href="https://www.instagram.com/greenpeacekorea/"><span>인스타그램</span></a></li>
+                            <li class="youtube"><a href="https://www.youtube.com/greenpeacekorea"><span>유튜브</span></a></li>
+                            <li class="blog"><a href="https://blog.naver.com/greenpeace_korea"><span>블로그</span></a></li>
+                            <li class="xcom"><a href="https://x.com/greenpeacekorea"><span>트위터</span></a></li>
+                            <li class="facebook"><a href="https://www.facebook.com/greenpeacekorea"><span>페이스북</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="intl_site"><!-- international_site가 열리면 open 클래스가 추가 -->
                         <button title="열기버튼">East Asia</button>
                         <div class="list">
                             <p>Greenpeace International</p>
                             <ul>
-                                <li><a href="#n">Africa | English</a></li>
-                                <li><a href="#n">Argentina | Español</a></li>
-                                <li><a href="#n">Australia | English</a></li>
-                                <li><a href="#n">Belgium | Français</a></li>
-                                <li><a href="#n">Belgium | Nederlands</a></li>
-                                <li><a href="#n">Brazil | Português</a></li>
-                                <li><a href="#n">Canada | Français</a></li>
-                                <li><a href="#n">Croatia | Hrvatski</a></li>
-                                <li><a href="#n">Czech Republic | Česky</a></li>
+                                <li class="a_box">
+                                    <span>A</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/africa/fr/">Africa | Français</a></li>
+                                        <li><a href="https://www.greenpeace.org/argentina/">Argentina | Español</a></li>
+                                        <li><a href="https://greenpeace.at/">Austria | Deutsch</a></li>
+                                    </ul>
+                                </li>
+                                <li class="b_box">
+                                    <span>B</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/belgium/fr/">Belgium | Français</a></li>
+                                        <li><a href="https://www.greenpeace.org/brasil/">Brazil | Português</a></li>
+                                    </ul>
+                                </li>
+                                <li class="c_box">
+                                    <span>C</span>
+                                    <ul>
+                                        <li><a href="#n">Canada | Français</a></li>
+                                        <li><a href="#n">Croatia | Hrvatski</a></li>
+                                        <li><a href="#n">Czech Republic | Česky</a></li>
+                                    </ul>
+                                </li>
+                                <li class="d_box">
+                                    <span>D</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/denmark/">Denmark | Dansk</a></li>
+                                    </ul>
+                                </li>
+                                <li class="e_box">
+                                    <span>E</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org.cn/">East Asia | 中文简体</a></li>
+                                        <li><a href="https://www.greenpeace.org/korea/">East Asia | 한국어</a></li>
+                                        <li><a href="https://www.greenpeace.org/eastasia/">East Asia | English</a></li>
+                                    </ul>
+                                </li>
+                                <li class="i_box">
+                                    <span>I</span>
+                                    <ul>
+                                        <li><a href="https://www.greenpeace.org/india/en/">India | Hindi</a></li>
+                                        <li><a href="https://www.greenpeace.org/indonesia/">Indonesia | Indonesian</a></li>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </div><!--intl_site-->
