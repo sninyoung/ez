@@ -73,7 +73,33 @@
     left: 37%;
     bottom: 28%;
     color: #fff;
+    padding-right: 4.5em;
 }
+/* mobile 버전 css */
+@media screen and (max-width:1440px){ /*17px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 4rem;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 3rem;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 2.2rem;
+    }
+    .visual .video_area .video_wrap {
+        height: 80dvh;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .visual .video_area .video_wrap .video_inner .video_txt h3 {
+        font-size: 2.1rem;
+    }
+} /* @media */
 
 
 /*******---------value------*******/
@@ -173,7 +199,68 @@
     bottom: -1.4em;
     background-image: url(../images/value_icon4.png);
 }
-
+/* mobile 버전 css */
+@media screen and (max-width:1440px){ /*17px*/
+    .value {
+        padding: 10em 0;
+    }
+    .value ul li {
+        position: relative;
+        width: 15em;
+        height: 15em;
+    }
+    .value .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .value .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    
+    .value ul li::after {
+        width: 50%;
+        height: 50%;
+    }
+    .value ul li:nth-child(2)::after {
+        width: 50%;
+        height: 50%;
+    }
+    .value ul li:nth-child(3)::after {
+        width: 50%;
+        height: 50%;
+    }
+    .value ul li:nth-child(4)::after {
+        width: 65%;
+        height: 65%;
+        bottom: -0.5em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .value ul li h3 {
+        font-size: 2rem;
+    }
+    .value ul li {
+        position: relative;
+        width: 12em;
+        height: 12em;
+    }
+    .value .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .value .title_txt h2 {
+        font-size: 2.3rem;
+    }
+} /* @media */
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .value ul li h3 {
+        font-size: 2rem;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .value {
+        padding:8em 0;
+    }
+} /* @media */
 
 
 /*******---------campaign------*******/

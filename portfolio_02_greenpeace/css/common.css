@@ -53,9 +53,9 @@ body, html {
 
 
 /* mobile 버전 css */
-@media screen and (max-width:1440px){ /*16px*/
+@media screen and (max-width:1440px){ /*17px*/
     :root {
-        --base-font-size: 16px;
+        --base-font-size: 17px;
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*16px*/
@@ -64,9 +64,9 @@ body, html {
     }
 } /* @media */
 /* mobile 버전 css */
-@media screen and (max-width:768px){ /*14px*/
+@media screen and (max-width:768px){ /*15px*/
     :root {
-        --base-font-size: 14px;
+        --base-font-size: 15px;
         --header-h: 50px;
     }
 } /* @media */
