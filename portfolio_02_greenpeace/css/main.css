@@ -995,11 +995,11 @@
     margin: 0 0 0.6em 0;
     font-size: 1.2rem;
 }
-.subscribe .cont_wrap .input_tit {
-    width: 3em;
+.subscribe .cont_wrap .input_box .input_tit {
+    width: 10%;
 }
-.subscribe .cont_wrap .field { 
-    width: 34em;
+.subscribe .cont_wrap .input_box .field { 
+    width: 90%;
     height: 2.3em;
     padding: 0 1.5em;
     border-radius: 2em;
@@ -1170,6 +1170,18 @@
 @media screen and (max-width:768px){ /*15px*/
     .subscribe .cont_wrap .agree {
         margin: 2em 0 0 0.4em;
+    }
+    .subscribe .cont_wrap .input_box {
+        display: block; /*flex 해제*/
+        margin: 0 0 0.6em 0;
+        font-size: 1.1rem;
+    }
+    .subscribe .cont_wrap .input_box .input_tit {
+        width: 25%;
+        margin-right: 0.6em;
+    }
+    .subscribe .cont_wrap .input_box .field { 
+        width: 75%;
     }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
