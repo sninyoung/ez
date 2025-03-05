@@ -708,7 +708,7 @@
     transition: 1.2s;
 }
 .support .cont_wrap .cont_txt a:hover span::after {
-    right: -150px;
+    right: -15em;
 }
 @media screen and (max-width:1440px){ /*17px*/
     .support {
