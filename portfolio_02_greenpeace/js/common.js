@@ -56,7 +56,7 @@ $(document).ready(function(){
     /***********--------pc버전 메뉴에 마우스 오버했을 때: li에 over 클래스 추가 (시작)-------*********/
     function resize_chk(){
         window_w = $(window).width()
-        if(window_w > 1000){ /*브라우저 브레이크 포인트 너비 기준값 1300, 1000, 760, 640, 320 등*/
+        if(window_w > 769){ /*브라우저 브레이크 포인트 너비 기준값 1300, 1000, 760, 640, 320 등*/
             device_status = 'pc'
         }else{
             device_status = 'mobile'

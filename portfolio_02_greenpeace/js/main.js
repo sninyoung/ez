@@ -8,6 +8,9 @@ $(document).ready(function(){
     /************************ 공통요소 :: 시작 ***********************/
     let scrolling = $(window).scrollTop()// 현재 스크롤 된 값
     let window_h = $(window).height() //브라우저 높이
+    let window_w //브라우저 너비
+    let device_status //pc나 모바일이냐 상태 지정
+
     $(window).scroll(function(){
         scrolling = $(window).scrollTop()
         //console.log(scrolling)
@@ -22,17 +25,8 @@ $(document).ready(function(){
 
 
     /************************* visual 동영상 (시작) *************************
-    * .visual .video_area 이 
-    *  - 브라우저의 상단일 때                data-status="before"
-    *  - 도달해서 스크롤 되는 중                      data-status="fixed"
-    *  - 이미지 스크롤 되어서 화면 밖으로 사라지는 경우 data-status="after"
-    *  >>>> 스크롤 되는 중에는 동영상의 크기가 천천히 늘어남
-    * 
-    * >>> 스크롤 1000일때 고정 시작
-    *     스크롤 2000일때 고정 종료   ---- 스크롤 1000동안 사이즈가 리사이즈됨
-    * >>> 리사이즈 시작 값은 75
-    *     리사이즈 종료 값은 100 
-   */
+    * 리사이즈 시작 값은 75
+    * 리사이즈 종료 값은 100 */
 
    let v_area_name =  $('.visual .video_area')
    let v_resize_name = $('.visual .video_area .video_wrap .video_inner')
@@ -42,7 +36,7 @@ $(document).ready(function(){
    let v_area_gap // 리사이즈를 계산해야할 스크롤 구간값
    let v_scroll_per //스크롤 된 값의 퍼센트
    let v_start = 20 //영역을 고정하는 시작 지점
-   let v_end //영역 고정을 종료하는 종료 지점 
+   let v_end //영역 고정을 종료하는 종료 지점
 
    function video_fixed(){
        v_start = v_area_name.offset().top
@@ -53,6 +47,7 @@ $(document).ready(function(){
            v_area_name.attr('data-status', 'before')
            //기존값을 지우고 내가 준 값으로 교체함
            v_resize_w = v_resize_start
+           $(v_resize_name).removeClass('brzero')
        }else if(scrolling < v_end){
            v_area_name.attr('data-status', 'fixed')
            v_scroll_per = (scrolling - v_start) / v_area_gap
@@ -61,9 +56,11 @@ $(document).ready(function(){
            if(v_resize_w > v_resize_end){ ///end값이상 늘어나지 못하게 막음
                v_resize_w = v_resize_end
            }
+           $(v_resize_name).removeClass('brzero')
        }else{
            v_area_name.attr('data-status', 'after')
            v_resize_w = v_resize_end
+           $(v_resize_name).addClass('brzero')
        }//if문
        //console.log(v_resize_w)
        v_resize_name.width(v_resize_w + '%')
@@ -82,7 +79,7 @@ $(document).ready(function(){
     /************************* campaign 아코디언 (시작)  *************************/
     gsap.registerPlugin(ScrollTrigger);
     const items = gsap.utils.toArray(".campaign .accordion");
-    
+
     items.forEach((item, i) => {
         const content = item.querySelector(".campaign .accordion .conts");
         const header = item.querySelector(".campaign .accordion .tit");
@@ -91,7 +88,7 @@ $(document).ready(function(){
             ease: "none",
             scrollTrigger: {
                 trigger: item,
-                start: "top " + ((header.clientHeight * i)+40),
+                start: "top " + ((header.clientHeight * i)+160),
                 endTrigger: ".final",  // 고정요소 하단에 종료를 뜻하는 class
                 end: "top " + header.clientHeight * items.length,
                 pin: true,
@@ -102,6 +99,7 @@ $(document).ready(function(){
             }
         });
     });
+
     /************************* campaign 아코디언 (끝)  **************************/
 
     /*************************project 스위퍼 (시작)  *************************/
@@ -149,7 +147,6 @@ $(document).ready(function(){
         speed: 500,
         loop: true, 
         slidesPerView: 1,
-        slidesPerView: 2,
         spaceBetween: 0,
         breakpoints: {
             381: {    /* 381px이상 768px이하일때 적용 */
@@ -175,7 +172,7 @@ $(document).ready(function(){
      * footer .intl_site .list 열고 닫기 slideUp slideDown
      * >> 현재 버튼이 열려있는지 닫혀 있는지 구분 >> open클래스 존재 유무로
     */
-      $('footer .intl_site button').on('click', function(){
+    $('footer .intl_site button').on('click', function(){
         if($(this).parent().hasClass('open') == true){//open클래스가 있을때 (열렸을때 >> 닫는기능)
             //console.log('open클래스 있음')
             $(this).parent().removeClass('open')

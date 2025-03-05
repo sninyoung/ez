@@ -45,6 +45,9 @@
     border-radius: 60px;
     transition: 0.2s;
 }
+.visual .video_area .video_wrap .video_inner.brzero { /*비디오 모서리 둥글게 만든거 없애주기 -> js에서 코드*/
+    border-radius: 0;
+}
 .visual .video_area .video_wrap .video_inner video {
     width: 100%;
     height: 100%;
@@ -80,10 +83,21 @@
     .visual .video_area .video_wrap .video_inner .video_txt h3 {
         font-size: 4rem;
     }
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 15%;
+        top: 18%;
+    }
 } /* @media */
 @media screen and (max-width:1024px){ /*16px*/
     .visual .video_area .video_wrap .video_inner .video_txt h3 {
         font-size: 3rem;
+    }
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 15%;
+        top: 18%;
+    }
+    .visual .video_area .video_wrap .video_inner p {
+        left: 34%;
     }
 } /* @media */
 /* mobile 버전 css */
@@ -91,20 +105,33 @@
     .visual .video_area .video_wrap .video_inner .video_txt h3 {
         font-size: 2.2rem;
     }
-    .visual .video_area .video_wrap {
-        height: 80dvh;
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 12%;
+        top: 18%;
+    }
+    .visual .video_area .video_wrap .video_inner p {
+        left: 13%;
+        padding-right: 2em;
     }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
     .visual .video_area .video_wrap .video_inner .video_txt h3 {
         font-size: 2.1rem;
     }
+    .visual .video_area .video_wrap .video_inner .video_txt {
+        left: 15%;
+        top: 18%;
+    }
+    .visual .video_area .video_wrap .video_inner p {
+        left: 10%;
+        padding-right: 1em;
+    }
 } /* @media */
 
 
 /*******---------value------*******/
 .value {
-    padding: 14em 0;
+    padding: 10em 0;
     background: linear-gradient(to top,  #eee 50%, #fff);
 }
 .value .title_txt {
@@ -127,15 +154,15 @@
 .value ul {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 1.1em;
+    margin: 3em 0 0 0;
 }
 .value ul li {
     position: relative; /*after의 정렬의 기준*/
     width: 20em;
     height: 20em;
     background-color: var(--point-color);
-    border-radius: 40px;
-    margin: 3em 0 0 0;
+    border-radius: 2.5em;
     padding: 3em 0 0 0;
     color: #fff;
     overflow: hidden;
@@ -199,15 +226,18 @@
     bottom: -1.4em;
     background-image: url(../images/value_icon4.png);
 }
-/* mobile 버전 css */
 @media screen and (max-width:1440px){ /*17px*/
     .value {
-        padding: 10em 0;
+        padding: 8em 0;
+    }
+    .value ul {
+        margin: 2em 0 0 0;
     }
     .value ul li {
         position: relative;
-        width: 15em;
-        height: 15em;
+        width: 13em;
+        height: 13em;
+        padding: 2.5em 0 0 0;
     }
     .value .title_txt strong {
         font-size: 1.2rem;
@@ -215,7 +245,9 @@
     .value .title_txt h2 {
         font-size: 2.5rem;
     }
-    
+    .value ul li h3 {
+        font-size: 2rem;
+    }
     .value ul li::after {
         width: 50%;
         height: 50%;
@@ -235,13 +267,20 @@
     }
 } /* @media */
 @media screen and (max-width:1024px){ /*16px*/
+    .value {
+        padding: 6em 0;
+    }
     .value ul li h3 {
-        font-size: 2rem;
+        font-size: 1.7rem;
+    }
+    .value ul {
+        margin: 1.5em 0 0 0;
     }
     .value ul li {
-        position: relative;
-        width: 12em;
-        height: 12em;
+        width: 9em;
+        height: 9em;
+        border-radius: 1.5em;
+        padding: 1.8em 0 0 0;
     }
     .value .title_txt strong {
         font-size: 1.2rem;
@@ -250,15 +289,31 @@
         font-size: 2.3rem;
     }
 } /* @media */
+
 /* mobile 버전 css */
 @media screen and (max-width:768px){ /*15px*/
     .value ul li h3 {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+    .value ul {
+        gap: 0.8em;
+        flex-wrap: wrap;
+        width: 20em;
+        margin: 1em auto; /*가운데 정렬*/
+    }
+    .value ul li {
+        width: calc((100% - 1.8em) / 2);
+        border-radius: 1em;
+        padding: 1em 0 0 0;
     }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
     .value {
-        padding:8em 0;
+        padding: 6em 0;
+    }
+    .value ul li {
+        border-radius: 1.2em;
+        padding: 0.8em 0 0 0;
     }
 } /* @media */
 
@@ -278,6 +333,7 @@
     text-align: left;
     top: 11.1em;
     padding-bottom: 20em;
+    width: 40%;
 }
 .campaign .title_txt strong {
     font-size: 1.4rem;
@@ -293,7 +349,9 @@
     letter-spacing: -0.05em;
     margin: 0.11em 0 0.3em 0;
 }
-
+.campaign .cont_wrap {
+    width: 60%;
+}
 .campaign .accordion_wrap { 
     position: relative;
 }
@@ -353,18 +411,73 @@
     position: absolute;
     left: 2em;
     top: 6em;
-    margin-right: 1em;
+    margin-right: 1.5em;
 }
 .campaign .cont_wrap .final {
     background-color: #fff;
     height: 38.8em;
 }
 
+@media screen and (max-width:1440px){ /*17px*/
+    .campaign {
+        padding: 10em 0;
+    }
+    .campaign .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .campaign .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .campaign .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .campaign {
+        padding: 7em 0;
+    }
+    .campaign .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .campaign .title_txt h2 {
+        font-size: 2.3rem;
+    }
+    .campaign .accordion_wrap .accordion .photo {
+        border-radius: 30px;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .campaign .wrapper {
+        display: block; /*flex 해제*/
+    }
+    .campaign .title_txt {
+        top: 0;
+        padding-bottom: 0;
+        padding-top: 2.8em;
+        width: 100%;
+    }
+    .campaign .cont_wrap {
+        width: 100%;
+    }
+    .campaign .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 2em;
+        top: 6.5em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    
+} /* @media */
+
 
 /*******---------project------*******/
 .project {
     padding: 8em 0;
-    border-radius: 60px 60px 0 0;
+    border-radius: 3em 3em 0 0;
     background-color: var(--sub-color);
     color: #fff;
 }
@@ -439,6 +552,44 @@
     font-weight: 600;
 }
 
+@media screen and (max-width:1440px){ /*17px*/
+    .project {
+        padding: 8em 0;
+    }
+    .project .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .project .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .project .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .project {
+        padding: 5em 0;
+    }
+    .project .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .project .title_txt h2 {
+        font-size: 2.3rem;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .project .swiper ul li {
+        width: 14em;
+        height: 14em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    
+} /* @media */
 
 /*******---------support------*******/
 .support {
@@ -461,8 +612,7 @@
     gap: 2.8em;
 }
 .support .cont_wrap .swiper {
-    width: 33.34em;
-    height: 22.23em;
+    width: 50%;
     margin: 0;
 }
 .support .cont_wrap .swiper ul li a {
@@ -481,7 +631,6 @@
 }
 .support .cont_wrap .cont_txt {
     width: 33.34em;
-    height: 22.23em;
     text-align: left;
     margin: 1.4em 0 0 0;
 }
@@ -524,7 +673,7 @@
     font-weight: 600;
     color: #fff;
     background-color: var(--point-color);
-    padding: 24px 300px 24px 65px;
+    padding: 0.9em 0 0.9em 2.6em;
     border-radius: 1em 2.4em 2.4em 1em;
     margin: 4em 0 0 0;
 }
@@ -541,10 +690,13 @@
     background-position: center center;
     background-size: contain;
 }
-.support .cont_wrap .cont_txt a::after {
+.support .cont_wrap .cont_txt a span {
+    position: relative;
+}
+.support .cont_wrap .cont_txt a span::after {
     content: "";
     position: absolute;
-    right: 15em;
+    right: -2em;
     top: 50%;
     width: 1.6em;
     height: 1.6em;
@@ -555,9 +707,85 @@
     background-size: contain;
     transition: 1.2s;
 }
-.support .cont_wrap .cont_txt a:hover::after {
-    right: 1em;
+.support .cont_wrap .cont_txt a:hover span::after {
+    right: -150px;
 }
+@media screen and (max-width:1440px){ /*17px*/
+    .support {
+        padding: 8em 0;
+    }
+    .support h2 {
+        font-size: 2.5rem;
+    }
+    .support .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+    .support .cont_wrap .cont_txt {
+        width: 30em;
+        margin: 0.5em 0 0 0;
+    }
+    .support .cont_wrap .cont_txt a {
+        font-size: 1.2rem;
+        margin: 1em 0 0 0;
+    }
+    .support .cont_wrap .cont_txt p br {
+        display: none;
+    }
+    
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .support {
+        padding: 5em 0;
+    }
+    .support h2 {
+        font-size: 2.3rem;
+    }
+    .support .cont_wrap .cont_txt {
+        width: 50%;
+        margin: 0.5em 0 0 0;
+    }
+    .support .cont_wrap .cont_txt a:hover span::after {
+        right: -150px;
+    }
+    .support .cont_wrap .cont_txt h3 {
+        font-size: 1.2rem;
+    }
+    .support .cont_wrap .cont_txt p {
+        margin: 0.7em 0 0 0.2em;
+    }
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .support .cont_wrap {
+        flex-direction: column;
+        align-items: center;
+        gap: 1em;
+    }
+    .support .cont_wrap .swiper {
+        width: 100%;
+    }
+    .support .cont_wrap .swiper ul li a {
+        padding: 0 4em;
+    }
+    .support .cont_wrap .cont_txt {
+        width: 100%;
+        margin: 0.5em 0 0 0;
+        padding: 0 4em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    .support .cont_wrap .swiper ul li a {
+        padding: 0;
+    }
+    .support .cont_wrap .cont_txt {
+        padding: 0;
+    }
+} /* @media */
+
+
 
 /*******---------news------*******/
 .news {
@@ -664,9 +892,42 @@
     font-size: 0.9rem;
     color: #555;
     margin: 0 0 1.2em 1.6em;
-    
 }
+@media screen and (max-width:1440px){ /*17px*/
+    .news {
+        padding: 8em 0;
+    }
+    .news .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .news .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .news .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .news {
+        padding: 5em 0;
+    }
+    .news .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .news .title_txt h2 {
+        font-size: 2.3rem;
+    }
+} /* @media */
 
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    
+} /* @media */
 
 
 /*******---------subscribe------*******/
@@ -685,6 +946,7 @@
 }
 .subscribe .title_txt {
     text-align: left;
+    width: 40%;
 }
 .subscribe .title_txt strong {
     font-size: 1.4rem;
@@ -700,7 +962,7 @@
     margin: 0.11em 0 0.3em 0;
 }
 .subscribe .cont_wrap {
-    width: 40em;
+    width: 60%;
     text-align: right;
     margin-top: 1.9em;
 }
@@ -792,8 +1054,8 @@
     animation-name: slidein;
     animation-iteration-count: 10;
     animation-direction: alternate;
-  }
-  @keyframes slidein {
+}
+@keyframes slidein {
     0% {
         left: 2%;
     }
@@ -803,7 +1065,7 @@
     100% {
         left: 2%;
     }
-  }
+}
 .subscribe .ai02 {
     position: absolute;
     left: 0;
@@ -826,3 +1088,68 @@
     background-position: bottom left;
     background-size: contain;
 }
+@media screen and (max-width:1440px){ /*17px*/
+    .subscribe {
+        padding: 10em 0;
+    }
+    .subscribe .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .subscribe .title_txt h2 {
+        font-size: 2.5rem;
+    }
+    .subscribe .accordion_wrap .accordion p {
+        font-size: 1rem;
+        left: 3em;
+        top: 7em;
+    }
+} /* @media */
+@media screen and (max-width:1024px){ /*16px*/
+    .subscribe {
+        padding: 7em 0;
+    }
+    .subscribe .wrapper {
+        display: block; /*flex해제*/
+    }
+    .subscribe .title_txt {
+        width: 100%;
+    }
+    .subscribe .cont_wrap {
+        width: 100%;
+    }
+    .subscribe .ai01 {
+        animation-duration: 30s;   
+    }
+    .slidein {
+        animation-duration: 30s;
+        animation-iteration-count: 30;
+    }
+    @keyframes slidein {
+        0% {
+            left: 2%;
+        }
+        50% { 
+            left: 50%;
+        }
+        100% {
+            left: 2%;
+        }
+    }
+    .subscribe .title_txt strong {
+        font-size: 1.2rem;
+    }
+    .subscribe .title_txt h2 {
+        font-size: 2.3rem;
+    }
+    
+} /* @media */
+
+/* mobile 버전 css */
+@media screen and (max-width:768px){ /*15px*/
+    .subscribe .cont_wrap .agree {
+        margin: 2em 0 0 0.4em;
+    }
+} /* @media */
+@media screen and (max-width:380px){ /*14px*/
+    
+} /* @media */
