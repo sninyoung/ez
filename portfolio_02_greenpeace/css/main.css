@@ -42,7 +42,7 @@
     /* video_wrap 영역의 좌우위아래 가운데 */
     width: 75%;
     height: 70%;
-    border-radius: 60px;
+    border-radius: 3.2em;
     transition: 0.2s;
 }
 .visual .video_area .video_wrap .video_inner.brzero { /*비디오 모서리 둥글게 만든거 없애주기 -> js에서 코드*/
@@ -113,6 +113,9 @@
         left: 13%;
         padding-right: 2em;
     }
+    .visual .video_area .video_wrap .video_inner {
+        border-radius: 1.5em;
+    }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
     .visual .video_area .video_wrap .video_inner .video_txt h3 {
@@ -179,7 +182,6 @@
     font-size: 1.4rem;
     padding: 2em 1.6em 1em 1.6em;
     word-break: break-all; /* 단어별로(여백기준) 줄바꿈 */
-
 }
 .value ul li:hover p {
     display: block;
@@ -235,9 +237,12 @@
     }
     .value ul li {
         position: relative;
-        width: 13em;
+        width: 15em;
         height: 13em;
         padding: 2.5em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 1.1rem;
     }
     .value .title_txt strong {
         font-size: 1.2rem;
@@ -277,10 +282,14 @@
         margin: 1.5em 0 0 0;
     }
     .value ul li {
-        width: 9em;
-        height: 9em;
+        width: 12em;
+        height: 12em;
         border-radius: 1.5em;
         padding: 1.8em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 1rem;
+        padding: 1em 1.6em 1em 1.6em;
     }
     .value .title_txt strong {
         font-size: 1.2rem;
@@ -298,22 +307,35 @@
     .value ul {
         gap: 0.8em;
         flex-wrap: wrap;
-        width: 20em;
+        width: 22em;
         margin: 1em auto; /*가운데 정렬*/
     }
     .value ul li {
         width: calc((100% - 1.8em) / 2);
+        height: 10em;
         border-radius: 1em;
         padding: 1em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 0.8rem;
+        padding: 1em 1.6em 1em 1.6em;
     }
 } /* @media */
 @media screen and (max-width:380px){ /*14px*/
     .value {
         padding: 6em 0;
     }
+    .value ul {
+        width: 18em;
+    }
     .value ul li {
+        height: 8em;
         border-radius: 1.2em;
         padding: 0.8em 0 0 0;
+    }
+    .value ul li p {
+        font-size: 0.7rem;
+        padding: 1em 1.6em 1em 1.6em;
     }
 } /* @media */
 

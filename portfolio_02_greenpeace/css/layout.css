@@ -188,7 +188,7 @@ header .gnb {
         background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg clip-path='url(%23clip0_138_97)'%3E%3Cpath d='M11.0271 18.6665C6.65375 18.6665 3.09375 15.1065 3.09375 10.7331C3.09375 6.3598 6.65375 2.7998 11.0271 2.7998C15.4004 2.7998 18.9604 6.3598 18.9604 10.7331C18.9604 15.1065 15.4004 18.6665 11.0271 18.6665ZM11.0271 4.7998C7.74708 4.7998 5.09375 7.46647 5.09375 10.7331C5.09375 13.9998 7.76042 16.6665 11.0271 16.6665C14.2938 16.6665 16.9604 13.9998 16.9604 10.7331C16.9604 7.46647 14.2938 4.7998 11.0271 4.7998Z' fill='%23111111'/%3E%3Cpath d='M15.9923 14.8661L14.5781 16.2803L19.4902 21.1923L20.9044 19.7781L15.9923 14.8661Z' fill='%23111111'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_138_97'%3E%3Crect width='24' height='24' fill='%23111111'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E%0A");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: contain contain;
+        background-size: contain;
     }
     header .tnb .login {
         display: block;
@@ -273,7 +273,7 @@ header .gnb {
         background-image: url("data:image/svg+xml,%3Csvg width='20' height='50' viewBox='0 0 20 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.18924 30.2222C5.54479 30.2222 2.57812 27.2556 2.57812 23.6111C2.57812 19.9667 5.54479 17 9.18924 17C12.8337 17 15.8003 19.9667 15.8003 23.6111C15.8003 27.2556 12.8337 30.2222 9.18924 30.2222ZM9.18924 18.6667C6.4559 18.6667 4.24479 20.8889 4.24479 23.6111C4.24479 26.3333 6.46701 28.5556 9.18924 28.5556C11.9115 28.5556 14.1337 26.3333 14.1337 23.6111C14.1337 20.8889 11.9115 18.6667 9.18924 18.6667Z' fill='%23111111'/%3E%3Cpath d='M13.3269 27.0549L12.1484 28.2334L16.2418 32.3268L17.4203 31.1482L13.3269 27.0549Z' fill='%23111111'/%3E%3C/svg%3E%0A");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: contain contain;
+        background-size: contain;
     }
     header.menu_mo .gnb .search_mo::after {
         background-image: url("data:image/svg+xml,%3Csvg width='20' height='50' viewBox='0 0 20 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9.18924 30.2222C5.54479 30.2222 2.57812 27.2556 2.57812 23.6111C2.57812 19.9667 5.54479 17 9.18924 17C12.8337 17 15.8003 19.9667 15.8003 23.6111C15.8003 27.2556 12.8337 30.2222 9.18924 30.2222ZM9.18924 18.6667C6.4559 18.6667 4.24479 20.8889 4.24479 23.6111C4.24479 26.3333 6.46701 28.5556 9.18924 28.5556C11.9115 28.5556 14.1337 26.3333 14.1337 23.6111C14.1337 20.8889 11.9115 18.6667 9.18924 18.6667Z' fill='white'/%3E%3Cpath d='M13.3269 27.0549L12.1484 28.2334L16.2418 32.3268L17.4203 31.1482L13.3269 27.0549Z' fill='white'/%3E%3C/svg%3E%0A");
@@ -307,7 +307,7 @@ header .gnb {
         background-image: url("data:image/svg+xml,%3Csvg width='14' height='50' viewBox='0 0 14 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.4 32L0 30.6L5.6 25L0 19.4L1.4 18L7 23.6L12.6 18L14 19.4L8.4 25L14 30.6L12.6 32L7 26.4L1.4 32Z' fill='white'/%3E%3C/svg%3E%0A");
         background-repeat: no-repeat;
         background-position: center center;
-        background-size: contain contain;
+        background-size: contain;
     }
     header .gnb .gnb_open {
         display: block; /*모바일에서만 나타남*/
