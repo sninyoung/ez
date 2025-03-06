@@ -52,7 +52,6 @@ body, html {
 }
 
 
-/* mobile 버전 css */
 @media screen and (max-width:1440px){ /*17px*/
     :root {
         --base-font-size: 17px;
